@@ -1,0 +1,446 @@
+        ArtPowerEnabled ^{
+            Broken=(перегрелись)
+            BrokenInBattle=Внимание! Двигатель сильно перегрелся в бою. Отморозки не смогли скомпенсировать тепловое излучение и собрались в снежный ком, чтобы выжить. Разморозить их можно только в лабораторных условиях.
+            BrokenInUse=Колония отморозков долгое время пыталась заморозить двигатель, но их усилия были напрасны: двигатель продолжает греться!!! Бросив свою работу, отморозки собрались в снежный ком. Разморозить их можно только в лабораторных условиях.
+            CountsAs=ArtPower
+            Name=Отморозки
+            OnActCode ^{
+                01=if(!ScriptItemActShip()) exit;
+                02=if(ItemIsBroken(CurItem())) exit;
+                03=if(CustomArtData(CurItem(), 1))
+                04 ^{
+                    01=if(ScriptItemActionType(t_OnStep, 11))
+                    02 ^{
+                        01=if(CustomArtData(CurItem(), 1) == 3)
+                        02 ^{
+                            01=int nrj = CustomArtData(CurItem(), 2);
+                            02=dword cur_item = CurItem();
+                            03=dword cur_ship = ScriptItemActShip();
+                            04=if(!cur_ship) exit;
+                            05=if(ScriptItemActionType(t_OnTakingDamage))
+                            06 ^{
+                                01=if(ObjectType(ScriptItemActObject1()) == 1)
+                                02 ^{
+                                    01=ItemDurability(cur_item, ItemDurability(cur_item) - 3);
+                                    02=int i = 0;
+                                    03=dword ship = 0;
+                                    04=dword damag = ScriptItemActParam();
+                                    05=if(ShipTypeN(cur_ship) == 1)
+                                    06 ^{
+                                        01=for(i = 0; i < StarShips(ShipStar(cur_ship)); i = i + 1)
+                                        02 ^{
+                                            01=ship = StarShips(ShipStar(cur_ship), i);
+                                            02=if(Dist(ship, cur_ship) > 330) continue;
+                                            03=if(RelationToRanger(ship, cur_ship) >= 10) continue;
+                                            04=if(!ShipInNormalSpace(ship)) continue;
+                                            05=if(Dist(ship, cur_ship) > 165) damag = damag - (damag / 3);
+                                            06=if(HullHP(ship) > damag) HullHP(ship, HullHP(ship) - damag);
+                                            07=else ShipDestroy(ship, 1);
+                                            08=if(ShipStar(Player()) == ShipStar(cur_ship) && ShipInNormalSpace(Player()))
+                                            09 ^{
+                                                01=ShowEffect('Weapon.NoGraph', 0, ship, cur_ship, damag, 0, 0);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    03=else
+                    04 ^{
+                        01=if(ObjectType(ScriptItemActObject1()) == 1)
+                        02 ^{
+                            01=ItemDurability(CurItem(), ItemDurability(CurItem()) - 1);
+                            02=if(CustomArtData(CurItem(), 1) == 2)
+                            03 ^{
+                                01=int dmg = ScriptItemActParam();
+                                02=dmg = dmg + CustomArtData(CurItem(), 2);
+                                03=CustomArtData(CurItem(), 2, dmg);
+                                04=CustomArtTextData(CurItem(), 2, 'dmg');
+                            }
+                            02=ScriptItemActParam(0);
+                        }
+                        03=if(ScriptItemActionType(t_OnTakingDamageSp)
+                        04 ^{
+                            01=int Randomchik = Rnd(0,100);
+                            02=if(Randomchik < 21)
+                            03 ^{
+                                01=ScriptItemActParam(0);
+                            }
+                        }
+                    }
+                }
+            }
+            OnActCodeTypes=t_OnStep,t_OnTakingDamage,t_OnTakingDamageEn,t_OnTakingDamageSp
+            OnActStepTypes=11
+            OnUseCode ^{
+                01=if(!CustomArtData(CurItem(), 1))
+                02 ^{
+                    01=CustomArtData(CurItem(), 1, 1);
+                    02=CustomArtTextData(CurItem(), 1, '<color=0,255,0>Дополнительное свойство активно:</color>');
+                    03=Sound('Sound.Mod_Switch');
+                }
+                03=else
+                04 ^{
+                    01=if(CustomArtData(CurItem(), 1,) != 2)
+                    02 ^{
+                        01=if(MessageBoxYesNo('Вы хотите инициировать запуск накопления энергии?') == 1)
+                        02 ^{
+                            01=CustomArtData(CurItem(), 1, 2);
+                            02=CustomArtTextData(CurItem(), 1, '<color=242,176,7>Активное накопление энергии:</color>');
+                            03=Sound('Sound.Mod_Switch');
+                            04=if(CustomArtData(CurItem(), 2) < 1) CustomArtData(CurItem(), 2, 0);
+                        }
+                        03=else
+                        04 ^{
+                            01=CustomArtData(CurItem(), 1, 0);
+                            02=CustomArtTextData(CurItem(), 1, '<color=255,0,0>Дополнительное свойство отключено:</color>');
+                            03=Sound('Sound.Mod_Switch');
+                        }
+                    }
+                    03=else
+                    04 ^{
+                        01=if(MessageBoxYesNo('Вы хотите инициировать запуск накопленной энергии? Процесс запустится при любом уровне энергии') == 1)
+                        02 ^{
+                            01=CustomArtData(CurItem(), 1, 3);
+                            02=CustomArtTextData(CurItem(), 1, '<color=7,242,242>Вывод энергии в виде сгустка плазмы:</color>');
+                            03=Sound('Sound.Mod_Switch');
+                        }
+                        03=else
+                        04 ^{
+                            01=CustomArtData(CurItem(), 1, 0);
+                            02=CustomArtTextData(CurItem(), 1, '<color=255,0,0>Дополнительное свойство отключено:</color>');
+                            03=Sound('Sound.Mod_Switch');
+                        }
+                    }
+                }
+            }
+            SharedEffect=1
+            SharedUse=1
+            Text=Охлаждают двигатель, защищая его от перегрева, и быстро восстанавливают потерянную скорость во время боя. Кроме того, они защищают корабль, когда тот находится в зоне теплового поражения звезды.
+            Text=<br> <br>
+            Text=<TextData1>
+            Text=Накоплено энергии: <TextData2> ед.
+            Text=Повышают сопротивление урону от звезды до 100%, вместе с тем начиная накапливать энергию для выплеска в виде залпа плазмы по ближайшему враждебному кораблю. Максимальный урон - <color=201,18,18>350</color>.
+            Text=Также с шансом <clr>20<clrEnd>% могут заблокировать урон от <clr>осколочного<clrEnd> оружия. Расход прочности артефакта при этом значительно повышен.
+        }
+        ArtHullEnabled ^{
+            Broken=(жупи в коме)
+            BrokenInBattle=Матка ваших жупи повреждена в бою. Колония более не размножается. Вылечить матку может только чудо.
+            BrokenInUse=Матка жупи тяжело заболела. Колония более не размножается. Говорят, что вылечить матку жупи может только чудо.
+            CountsAs=ArtHull
+            Name=Железные жупи
+            OnActCode ^{
+                01=if(!ScriptItemActShip()) exit;
+                02=if(ItemIsBroken(CurItem())) exit;
+                03=if(EqModule(CurItem()) == -1)
+                04=if(ScriptItemActionType(t_OnTakingDamage))
+                05 ^{
+                    01=if(ScriptItemActionType(t_OnStep, 11))
+                    02 ^{
+                        01=int dab;
+                    }
+                    03=else
+                    04 ^{
+                        01=if(ObjectType(ScriptItemActObject1()) == 8)
+                        02 ^{
+                            01=int damageg = ScriptItemActParam();
+                            02=ScriptItemActParam(0);
+                            03=damageg = damageg / 4;
+                            04=if(HullDamage(Player()) != 0) HullHP(Player(),HullHP(Player()) + damageg);
+                            05=Prochka = ItemDurability(CurItem()) - 7;
+                            06=ItemDurability(CurItem(),Prochka);
+                            07=if(ItemIsBroken(CurItem()) && cur_ship == Player())Ether(8, '', CT('Artefacts.CustomArtefacts.ArtSpeedEnabled.BrokenInUse'));
+                        }
+                    }
+                }
+            }
+            OnActCodeTypes=t_OnStep,t_OnTakingDamage,t_OnTakingDamageEn,t_OnTakingDamageSp,t_OnTakingDamageMi
+            OnActStepTypes=11
+            OnUseCode ^{
+                01=if(!CustomArtData(CurItem(), 1))
+                02 ^{
+                    01=CustomArtData(CurItem(), 1, 1);
+                    02=CustomArtTextData(CurItem(), 1, '<color=0,255,0>Дополнительное свойство активно:</color>');
+                    03=Sound('Sound.Mod_Switch');
+                    04=EqModule(CurItem(), FindBonusByCustomTag('AkrinAmplifier'));
+                }
+                03=else
+                04 ^{
+                    01=CustomArtData(CurItem(), 1, 0);
+                    02=CustomArtTextData(CurItem(), 1, '<color=255,0,0>Дополнительное свойство отключено:</color>');
+                    03=Sound('Sound.Mod_Switch');
+                    04=EqModule(CurItem(), -1);
+                }
+            }
+            SharedEffect=1
+            SharedUse=1
+            Text=Колония железных жупи, во главе с маткой, увеличивает защиту корпуса на <clr>5<clrEnd> единиц.
+            Text=При активации вся колония переселяется на корпус, броня которого увеличивается на <clr>1<clrEnd> ед. Жупи сильно привязываются к месту обитания и уже не возвращаются в контейнер, строят себе новое гнездо в корпусе, уменьшая там самым его вместимость.
+            Text=<br> <br>
+            Text=<TextData1>
+            Text=Блокирует урон от астероидов, дополнительно превращая 25% этого урона в восстановление корпуса.
+        }
+        ArtHookDisabled ^{
+            Broken=(нормально не функционирует)
+            BrokenInBattle=В бою с эриметра был сбит поляризующий наконечник. Устройство вышло из строя и мешает функционированию захвата.
+            BrokenInUse=Длительный срок эксплуатации эриметра подошел к концу. Он срочно требует ремонта, так как стал мешать функционированию захвата.
+            Description=Эриметр фокусирует луч захвата, благодаря чему его направленность резко сужается, а КПД увеличивается. В итоге луч захвата может притягивать предметы с массой больше расчетной.
+            Name=Эриметр
+            CountsAs=ArtHook
+            SharedEffect=1
+            SharedUse=1
+            Text=Позволяет лучу захвата притягивать предметы с массой больше расчетной на <clr>30<clrEnd> единиц. Повышает скорость притягивания вещей и радиус захвата.
+            Text=<br> <br>
+            Text=<color=255,0,0>Дополнительное свойство отключено:</color>
+            Text=Ещё сильнее увеличивает КПД захвата за счёт ускоренного износа артефакта
+            OnUseCode ^{
+                01=if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 2)
+                02 ^{
+                    01=dword cur_item = CurItem();
+                    02=dword ship = Player();
+                    03=dword TnewItem = CreateCustomArt('ArtHookEnabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HBased'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+                03=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 3)
+                04 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledRange', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HRange'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+                05=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 4)
+                06 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledPower', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HPower'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+            }
+        }
+        ArtHookEnabled ^{
+            Broken=(нормально не функционирует)
+            BrokenInBattle=В бою с эриметра был сбит поляризующий наконечник. Устройство вышло из строя и мешает функционированию захвата.
+            BrokenInUse=Длительный срок эксплуатации эриметра подошел к концу. Он срочно требует ремонта, так как стал мешать функционированию захвата.
+            Description=Эриметр фокусирует луч захвата, благодаря чему его направленность резко сужается, а КПД увеличивается. В итоге луч захвата может притягивать предметы с массой больше расчетной.
+            Name=Эриметр
+            CountsAs=ArtHook
+            SharedEffect=1
+            SharedUse=1
+            OnActCode ^{
+                01=if(!ScriptItemActShip()) exit;
+                02=if(ItemIsBroken(CurItem())) exit;
+                03=if(ScriptItemActionType(t_OnStep, 11))
+                04 ^{
+                    01=int Prochka;
+                    02=Prochka = ItemDurability(CurItem()) - 1;
+                    03=ItemDurability(CurItem(),Prochka);
+                }
+            }
+            OnActCodeTypes=t_OnStep
+            OnActStepTypes=11
+            OnUseCode ^{
+                01=if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 1)
+                02 ^{
+                    01=dword cur_item = CurItem();
+                    02=dword ship = Player();
+                    03=dword TnewItem = CreateCustomArt('ArtHookDisabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=Sound('Sound.Mod_Switch');
+                }
+                03=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 3)
+                04 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledRange', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HRange'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+                05=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 4)
+                06 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledPower', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HPower'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+            }
+            Text=Позволяет лучу захвата притягивать предметы с массой больше расчетной на <clr>30<clrEnd> единиц. Повышает скорость притягивания вещей и радиус захвата.
+            Text=<br> <br>
+            Text=<color=0,255,0>Дополнительное свойство активно (базовый режим):</color>
+            Text=Ещё сильнее увеличивает КПД захвата за счёт ускоренногго износа артефакта
+        }
+        ArtHookEnabledRange ^{
+            Broken=(нормально не функционирует)
+            BrokenInBattle=В бою с эриметра был сбит поляризующий наконечник. Устройство вышло из строя и мешает функционированию захвата.
+            BrokenInUse=Длительный срок эксплуатации эриметра подошел к концу. Он срочно требует ремонта, так как стал мешать функционированию захвата.
+            Description=Эриметр фокусирует луч захвата, благодаря чему его направленность резко сужается, а КПД увеличивается. В итоге луч захвата может притягивать предметы с массой больше расчетной.
+            Name=Эриметр
+            CountsAs=ArtHook
+            SharedEffect=1
+            SharedUse=1
+            OnActCode ^{
+                01=if(!ScriptItemActShip()) exit;
+                02=if(ItemIsBroken(CurItem())) exit;
+                03=if(ScriptItemActionType(t_OnStep, 11))
+                04 ^{
+                    01=int Prochka;
+                    02=Prochka = ItemDurability(CurItem()) - 2;
+                    03=ItemDurability(CurItem(),Prochka);
+                }
+            }
+            OnUseCode ^{
+                01=if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 1)
+                02 ^{
+                    01=dword cur_item = CurItem();
+                    02=dword ship = Player();
+                    03=dword TnewItem = CreateCustomArt('ArtHookDisabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=Sound('Sound.Mod_Switch');
+                }
+                03=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 2)
+                04 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HBased'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+                05=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 4)
+                06 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledPower', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HPower'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+            }
+            Text=Позволяет лучу захвата притягивать предметы с массой больше расчетной на <clr>30<clrEnd> единиц. Повышает скорость притягивания вещей и радиус захвата.
+            Text=<br> <br>
+            Text=<color=53,188,229>Дополнительное свойство активно (режим повышенной дальности):</color>
+            Text=Ещё сильнее увеличивает КПД захвата за счёт ускоренногго износа артефакта
+        }
+        ArtHookEnabledPower ^{
+            Broken=(нормально не функционирует)
+            BrokenInBattle=В бою с эриметра был сбит поляризующий наконечник. Устройство вышло из строя и мешает функционированию захвата.
+            BrokenInUse=Длительный срок эксплуатации эриметра подошел к концу. Он срочно требует ремонта, так как стал мешать функционированию захвата.
+            Description=Эриметр фокусирует луч захвата, благодаря чему его направленность резко сужается, а КПД увеличивается. В итоге луч захвата может притягивать предметы с массой больше расчетной.
+            Name=Эриметр
+            CountsAs=ArtHook
+            SharedEffect=1
+            SharedUse=1
+            OnActCode ^{
+                01=if(!ScriptItemActShip()) exit;
+                02=if(ItemIsBroken(CurItem())) exit;
+                03=if(ScriptItemActionType(t_OnStep, 11))
+                04 ^{
+                    01=int Prochka;
+                    02=Prochka = ItemDurability(CurItem()) - 2;
+                    03=ItemDurability(CurItem(),Prochka);
+                }
+            }
+            OnActCodeTypes=t_OnStep
+            OnActStepTypes=11
+            OnUseCode ^{
+                01=if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 1)
+                02 ^{
+                    01=dword cur_item = CurItem();
+                    02=dword ship = Player();
+                    03=dword TnewItem = CreateCustomArt('ArtHookDisabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=Sound('Sound.Mod_Switch');
+                }
+                03=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 2)
+                04 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabled', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HBased'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+                05=else if(ListBox('Выберите режим работы Эриметра','Отключить','Базовый режим','Упор на дальность','Упор на мощность'); == 3)
+                06 ^{
+                    01=cur_item = CurItem();
+                    02=ship = Player();
+                    03=TnewItem = CreateCustomArt('ArtHookEnabledRange', ItemSize(cur_item), ItemCost(cur_item), ItemOwner(cur_item));
+                    04=ItemDurability(TnewItem, ItemDurability(cur_item));
+                    05=int Tcheck = 0;
+                    06=if(ItemIsInUse(cur_item)) Tcheck = ItemIsInUse(cur_item, ship);
+                    07=FreeItem(GetArtFromShip(ship, FindItemInShip(ship, cur_item)));
+                    08=AddItemToShip(ship, TnewItem);
+                    09=if(Tcheck) ItemIsInUse(TnewItem, ship, 1, Tcheck);
+                    10=SpecialToEquipment(FindBonusByCustomTag('RAU_HRange'),TnewItem);
+                    11=Sound('Sound.Mod_Switch');
+                }
+            }
+            Text=Позволяет лучу захвата притягивать предметы с массой больше расчетной на <clr>30<clrEnd> единиц. Повышает скорость притягивания вещей и радиус захвата.
+            Text=<br> <br>
+            Text=<color=229,179,53>Дополнительное свойство активно (режим повышенной мощности):</color>
+            Text=Ещё сильнее увеличивает КПД захвата за счёт ускоренногго износа артефакта
+        }
