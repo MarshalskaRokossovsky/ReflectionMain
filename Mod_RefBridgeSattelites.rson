@@ -1,0 +1,1009 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -696,
+  "ViewPos.y":  -498,
+  "ScriptName":  "Mod_RefZazhor",
+  "ScriptFileOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.scr",
+  "ScriptTextOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.txt",
+  "GraphPoint.Count":  51,
+  "GraphLink.Count":  42,
+  "GraphRectText.Count":  0,
+  "Variables.Count":  11,
+  "Stars.Count":  1,
+  "Planets.Count":  1,
+  "Ships.Count":  1,
+  "States.Count":  1,
+  "Groups.Count":  1,
+  "Places.Count":  0,
+  "Items.Count":  0,
+  "Ethers.Count":  0,
+  "Dialogs.Count":  1,
+  "DialogMessages.Count":  8,
+  "DialogAnswers.Count":  14,
+  "Operations.Count":  9,
+  "Statements.Count":  3,
+  "Loops.Count":  0,
+  "Visual.Objects":  
+  [
+    {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  10,
+          "Msg":  "Об истории ГКИНП",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  11,
+          "Msg":  "Службы доставки",
+          "AMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  12,
+          "Msg":  "Статистическая информация",
+          "AMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  190,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  17,
+          "Msg":  "На главную",
+          "AMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  290,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  18,
+          "Msg":  "На главную",
+          "AMsg.Num":  "4"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "block",
+          "Pos.x":  240,
+          "Pos.y":  160,
+          "Parent":  -1,
+          "#":  22,
+          "Msg":  "Просмотреть список зондов (зонды отсутствуют)",
+          "AMsg.Num":  "5"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  190,
+          "Pos.y":  160,
+          "Parent":  -1,
+          "#":  23,
+          "Msg":  "Просмотреть список зондов",
+          "AMsg.Num":  "6"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  26,
+          "Msg":  "Перевезти обнаруженные зондами объекты на склад планеты.",
+          "AMsg.Num":  "7"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  29,
+          "Msg":  "Просмотреть личную статистику",
+          "AMsg.Num":  "8"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  260,
+          "Parent":  -1,
+          "#":  32,
+          "Msg":  "Вернуться на главную",
+          "AMsg.Num":  "9"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  280,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  34,
+          "Msg":  "Покинуть сайт",
+          "AMsg.Num":  "10"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  290,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  36,
+          "Msg":  "Подробный список планет",
+          "AMsg.Num":  "11"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  90,
+          "Pos.y":  160,
+          "Parent":  -1,
+          "#":  40,
+          "Msg":  "Выбрать систему",
+          "AMsg.Num":  "12"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  90,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  41,
+          "Msg":  "Вернуться на главную",
+          "AMsg.Num":  "13"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  9,
+          "Msg":  "Рады приветствовать вас на сайте <clr>Галактического комитета по изучению необитаемых планет<clrEnd>. Наша служба вот уже более пяти веков занимается координацией действий по освоению незаселённых просторов Галактики. В рамках помощи представителям рейнджерского корпуса мы предлагаем воспользоваться помощью наших служб:",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  14,
+          "Msg":  "ГКИНП - организация с давней историей.\r\n\r\nБолее пятисот лет назад, когда Коалиция была ещё относительно юна, встал вопрос касательно фиксирования процесса колонизации других планет. Тогда Галактический Совет принял решение о формировании Комитета, в чьи обязанности вошли:\r\n- Разведка планет-кандидатов на заселение\r\n- Проведение экспертизы по признанию планеты пригодной к заселению\r\n- Проведение экспертизы местностей, назначенных для постройки первоначальных городов\r\n\r\nПозднее, когда Галактический Совет разрешил ограниченную разработку ресурсов на незаселённых планетах, и параллельно к Совету обратились экологи с просьбой разрешить работы по очистке планет от космического мусора, эти задачи решили также поручить нашему Комитету:\r\n- Сбор данных об исследовании планет\r\n- Поощрение очистки планетот упавшего на них мусора\r\n- Дополнительный контроль за соблюдением режима неприкосновенности заповедных территорий незаселённых планет.\r\n\r\nПосле организации Рейнджерского корпуса в ведение Комитета вошла передача сети научных баз информации касательно разведки планет. Также мы занимаемся информационной поддержкой участников корпуса, а также даём доступ к своим сервисным центрам.",
+          "DMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  15,
+          "Msg":  "Наш Комитет имеет свои собственные службы доставки. Участникам рейнджерского корпуса разрешён доступ к этой службе для перевозки зондов на склады заселённых планет. Также - за отдельную плату - мы можем перевезти предметы, найденные вашими зондами, но для этого нам потребуется <clr>точное указание планеты<clrEnd>, так как персональных списков мы, увы, не ведём.\r\n\r\nКроме того, вместе с доставкой на борту транспортного корабля может быть осуществлена починка зонда!",
+          "DMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  16,
+          "Msg":  "Также, кроме непосредственной помощи рейнджерам, ГКИНП собирает статистику, передаваемую зондами, касательно их \"пробега\" и статуса исследованности планет.\r\n\r\n<clr>Данная информация сугубо конфиденциальна и не разглашается сотрудниками ГКИНП. Все попытки вскрыть или разгласить эту информацию нарушают статью 432 пункт 7 УК КРР и будут сурово пресечены<clrEnd>",
+          "DMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  90,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  27,
+          "Msg":  "ГКИНП, для помощи в освобождения незаселённых планет от мусора, готов оказать помощь рейнджерам (у которых немало дел помимо очистки планет от мусора) в перевозке найденных ими вещей на заселённые планеты.\r\n\r\n<clr>Учтите, что эта услуга стоит денег, пусть и символических!<clrEnd>\r\n\r\n<clr>Учтите: мы не сможем отправить транспорт в системы, неподконтрольные Коалиции!<clrEnd>",
+          "DMsg.Num":  "4"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  190,
+          "Pos.y":  260,
+          "Parent":  -1,
+          "#":  28,
+          "Msg":  "ГКИНП, для помощи в освобождения незаселённых планет от мусора, готов оказать помощь рейнджерам (у которых немало дел помимо очистки планет от мусора) в перевозке исследовательских зондов с уже изученных планет на склады. Кроме того, мы можем ещё и отремонтировать зонд прямо на борту корабля-доставщика!\r\n\r\nСписок зондов:\r\n----------------------------------\r\n<zonds_str>\r\n----------------------------------\r\n\r\n<clr>Учтите, что эта услуга стоит денег, пусть и символических!<clrEnd>\r\n\r\n<clr>Учтите: мы не сможем отправить транспорт в системы, неподконтрольные Коалиции!<clrEnd>",
+          "DMsg.Num":  "5"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  31,
+          "Msg":  "Личная статистика рейнджера <Player>:\r\n\r\n=================================\r\nИсследовано <temp_initka> планет\r\n=================================\r\n\r\nДля более подробной статистики перейдите по соответствующей ссылке ниже",
+          "DMsg.Num":  "6"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  310,
+          "Parent":  -1,
+          "#":  35,
+          "Msg":  "Исследованные планеты:\r\n--------------------------------\r\n<plan_str>\r\n--------------------------------\r\nИсследовано: <space_cnt> кв. км.",
+          "DMsg.Num":  "7"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogZonds",
+          "Pos.x":  140,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  8        
+        }      
+      ],
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -40,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Total.Lines":  1,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  7,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "AddDialogInject('DialogZonds','',\"Службы ГКИНП\",20);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  10,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  13,
+          "Total.Lines":  0,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              ""          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  190,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  25,
+          "Total.Lines":  7,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ExistingZonds(0) == 0) {",
+              "    zonds_str = Name(ExistingZonds(0)) + ': (зонд на складе)';",
+              "}",
+              "int i = 1;",
+              "while() {",
+              "    ",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  340,
+          "Pos.y":  160,
+          "Parent":  -1,
+          "#":  30,
+          "Total.Lines":  0,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              ""          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  450,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  33,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "//графический костыль им. Моего Перфекционизма"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  37,
+          "Total.Lines":  0,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              ""          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  90,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  39,
+          "Total.Lines":  8,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "arraychange(stars_array,GalaxyStars() + 1);",
+              "int countt = 0;",
+              "temp_initka = GalaxyStars() + 1;",
+              "while(countt <= temp_initka) {",
+              "    ArrayAdd(stars_array,Name(GalaxyStar(countt)));",
+              "    countt + 1;",
+              "}",
+              "Answerr = ListBox('Выберите систему',stars_array);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  90,
+          "Pos.y":  260,
+          "Parent":  -1,
+          "#":  50,
+          "Total.Lines":  10,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "arraychange(PlanetsArray,StarPlanets(GalaxyStar(stars_array[Answerr]) + 1)) + 1;",
+              "int countt = 0;",
+              "temp_initka = GalaxyStars() + 1;",
+              "while(countt <= temp_initka) {",
+              "    ArrayAdd(PlanetsArray,Name(StarPlanets(GalaxyStar(stars_array[Answerr])),countt));",
+              "    countt + 1;",
+              "}",
+              "Answerr = ListBox('Выберите планету в выбранной системе',PlanetsArray);",
+              "if(PlanetItems(",
+              "else Ans_str = Name(PlanetsArray[Answerr]);"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "Statements":      
+      [
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  6,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "PlayerBridge()==11"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  20,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ExistingZonds() == 0"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  190,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  21,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ExistingZonds() > 0"          
+          ]        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "PlanetsArray",
+          "Pos.x":  -80,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  19,
+          "Var.Type":  "Array",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "zonds_str",
+          "Pos.x":  -80,
+          "Pos.y":  -170,
+          "Parent":  -1,
+          "#":  24,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "plan_str",
+          "Pos.x":  70,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  38,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "space_cnt",
+          "Pos.x":  70,
+          "Pos.y":  -170,
+          "Parent":  -1,
+          "#":  42,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "PlanFlagsArray",
+          "Pos.x":  -80,
+          "Pos.y":  -230,
+          "Parent":  -1,
+          "#":  43,
+          "Var.Type":  "Array",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "temp_initka",
+          "Pos.x":  70,
+          "Pos.y":  -230,
+          "Parent":  -1,
+          "#":  44,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Ans_str",
+          "Pos.x":  -80,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  45,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "TrashTimer",
+          "Pos.x":  210,
+          "Pos.y":  -230,
+          "Parent":  -1,
+          "#":  46,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "ZondsTimer",
+          "Pos.x":  210,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  47,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Answerr",
+          "Pos.x":  70,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  48,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "stars_array",
+          "Pos.x":  -80,
+          "Pos.y":  -260,
+          "Parent":  -1,
+          "#":  49,
+          "Var.Type":  "Array",
+          "Init":  "0",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  6,
+      "End":  7,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  8,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  10,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  14,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  11,
+      "End":  15,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  12,
+      "End":  16,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  17,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  14,
+      "End":  17,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  18,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  18,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  20,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  21,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  20,
+      "End":  22,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  21,
+      "End":  23,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  23,
+      "End":  25,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  26,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  26,
+      "End":  27,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  25,
+      "End":  28,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  29,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  29,
+      "End":  30,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  31,
+      "End":  32,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  32,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  30,
+      "End":  31,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  32,
+      "End":  33,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  33,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  34,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  31,
+      "End":  36,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  36,
+      "End":  37,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  37,
+      "End":  35,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  35,
+      "End":  32,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  41,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
+      "End":  40,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
+      "End":  41,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  40,
+      "End":  39,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  39,
+      "End":  50,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC":  
+  [
+    {
+      "#":  "1",
+      "String":  "Phaeton"    
+    }  
+  ]
+}
