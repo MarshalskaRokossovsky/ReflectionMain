@@ -1,15 +1,15 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -622,
-  "ViewPos.y":  -640,
+  "ViewPos.x":  -559,
+  "ViewPos.y":  -403,
   "ScriptName":  "Mod_RefMorphinaTheSpAg",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.txt",
-  "GraphPoint.Count":  87,
-  "GraphLink.Count":  75,
+  "GraphPoint.Count":  90,
+  "GraphLink.Count":  77,
   "GraphRectText.Count":  0,
-  "Variables.Count":  19,
+  "Variables.Count":  20,
   "Stars.Count":  1,
   "Planets.Count":  1,
   "Ships.Count":  1,
@@ -21,7 +21,7 @@
   "Dialogs.Count":  3,
   "DialogMessages.Count":  18,
   "DialogAnswers.Count":  26,
-  "Operations.Count":  9,
+  "Operations.Count":  11,
   "Statements.Count":  7,
   "Loops.Count":  0,
   "Visual.Objects":  
@@ -299,7 +299,7 @@
           "Pos.y":  -100,
           "Parent":  -1,
           "#":  11,
-          "Msg":  "Привет, рейнджер <Player>! С чем пожаловал?",
+          "Msg":  "<str1>",
           "DMsg.Num":  "0"        
         },
         {
@@ -459,7 +459,7 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  76,
-          "Msg":  "Твои оговорочки по Фрейду очень увлекательны, но мой командир - рейнджер <clr>Энатайн<clrEnd>. И точка.",
+          "Msg":  "<str1>",
           "DMsg.Num":  "16"        
         },
         {
@@ -479,7 +479,7 @@
           "Type":  "TDialog",
           "Name":  "MorphyMain",
           "Pos.x":  220,
-          "Pos.y":  -140,
+          "Pos.y":  -180,
           "Parent":  -1,
           "#":  9        
         },
@@ -1577,6 +1577,39 @@
           [
               "RelationToRanger(IdToShip(MorphinaID),Player(),RelationToRanger(IdToShip(MorphinaID),Player()) - Rnd(10,15));"          
           ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  220,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  87,
+          "Total.Lines":  5,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "rand = Rnd(1,4);",
+              "if(rand == 1) str1 = 'Привет, рейнджер <Player>! С чем пожаловал?';",
+              "if(rand == 2) str1 = 'Привет, рейнджер! Интересуешься искусством вырезания Иикэ-Бааны? Мне лично больше всего нравится дерево. Оно такое гладкое, этот запах... М-м-м! Ну, или выжигать. Чего молчишь?';",
+              "if(rand == 3) str1 = 'О, <Player, привет! Как думаешь, гаальская дипломатия способна навести порядок в Галактике? Мне кажется, что во ВТорую Клисанскую мы больше растерялись при виде врагов.';",
+              "if(rand == 4) str1 = 'Подозрительная ты личность, рейнджер, но, так и быть, поговорю с тобой.';"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  370,
+          "Pos.y":  20,
+          "Parent":  -1,
+          "#":  89,
+          "Total.Lines":  2,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(Rnd(1,2) == 1) str1 = 'Твои оговорочки по Фрейду очень увлекательны, но мой командир - рейнджер <clr>Энатайн<clrEnd>. И точка.';",
+              "else str1 = 'Слушай, знаешь, сколько я таких перевидала? Готовых продать душу и рейнджерский значок Террону, Келлеру или Блазеру, а то и всем сразу? Кровью узы скрепить предлагали... Портреты мои рисовали. Правда, потом такое делали, что аж вспоминать мерзко. Мой командир - в единственном числе, и переходить под командование кого бы то ни было ещё я <clr>не собираюсь<clrEnd>.';"          
+          ]        
         }      
       ],
       "Planets":      
@@ -1973,6 +2006,17 @@
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "str1",
+          "Pos.x":  30,
+          "Pos.y":  -360,
+          "Parent":  -1,
+          "#":  88,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
         }      
       ]    
     }  
@@ -2004,13 +2048,6 @@
       "Type":  "TGraphLink",
       "Begin":  4,
       "End":  3,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  9,
-      "End":  11,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2422,13 +2459,6 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  78,
-      "End":  76,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  76,
       "End":  77,
       "Nom":  0,
@@ -2503,6 +2533,34 @@
       "End":  34,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  87,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  87,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  78,
+      "End":  89,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  89,
+      "End":  76,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
   "BlockPar.EC.Total.Strings":  50,
@@ -2510,7 +2568,7 @@
   [
     {
       "#":  "1",
-      "String":  "Привет, рейнджер <Player>! С чем пожаловал?"    
+      "String":  "<0>"    
     },
     {
       "#":  "10",
@@ -2642,7 +2700,7 @@
     },
     {
       "#":  "40",
-      "String":  "Твои оговорочки по Фрейду очень увлекательны, но мой командир - рейнджер <clr>Энатайн<clrEnd>. И точка."    
+      "String":  "<0>"    
     },
     {
       "#":  "41",
