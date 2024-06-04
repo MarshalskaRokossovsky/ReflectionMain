@@ -1,0 +1,361 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -870,
+  "ViewPos.y":  -714,
+  "ScriptName":  "Mod_RefSmuggling",
+  "ScriptFileOut":  "M:\\AРазработка\\RefSmuggling\\DATA\\Script\\Mod_RefSmuggling.scr",
+  "ScriptTextOut":  "M:\\AРазработка\\RefSmuggling\\DATA\\Script\\Mod_RefSmuggling.txt",
+  "GraphPoint.Count":  13,
+  "GraphLink.Count":  4,
+  "GraphRectText.Count":  0,
+  "Variables.Count":  6,
+  "Stars.Count":  1,
+  "Planets.Count":  1,
+  "Ships.Count":  1,
+  "States.Count":  1,
+  "Groups.Count":  1,
+  "Places.Count":  0,
+  "Items.Count":  0,
+  "Ethers.Count":  0,
+  "Dialogs.Count":  0,
+  "DialogMessages.Count":  0,
+  "DialogAnswers.Count":  0,
+  "Operations.Count":  2,
+  "Statements.Count":  0,
+  "Loops.Count":  0,
+  "Visual.Objects":  
+  [
+    {
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -40,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Total.Lines":  1,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  0,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  6,
+          "Total.Lines":  79,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ShipInNormalSpace(Player())) {",
+              "    if(StarEnemyThreatLevel(ShipStar(Player())) != 0) {",
+              "        int i = 1;",
+              "        FlagNar = 0;",
+              "        FlagAlk = 0;",
+              "        FlagOr = 0;",
+              "        FlagRos = 0;",
+              "        while(i <= ShipItems(Player())) {",
+              "            if(ItemName(ShipItems(Player(),i)) == 'Наркотики') {",
+              "                FlagNar = 1;",
+              "                exit;",
+              "            }",
+              "            if(ItemName(ShipItems(Player(),i)) == 'Алкоголь') {",
+              "                FlagAlk = 1;",
+              "                exit;",
+              "            }",
+              "            if(ItemName(ShipItems(Player(),i)) == 'Оружие') {",
+              "                FlagOr = 1;",
+              "                exit;",
+              "            }",
+              "            if(ItemName(ShipItems(Player(),i)) == 'Роскошь') {",
+              "                FlagRos = 1;",
+              "                exit;",
+              "            }",
+              "        }",
+              "        if(FlagRos == 1 || FlagAlk == 1 || FlagOr == 1 || FlagNar == 1) {",
+              "            while(ShipType(WarriorFiding) != 'Warrior') {",
+              "                if(schitaem <= 50) WarriorFiding = ShipNearbyShips(Player(),800,0,16);",
+              "                if(schitaem > 50) WarriorFiding = ShipNearbyShips(Player(),1200,0,16);",
+              "                if(schitaem > 200) exit;",
+              "                schitaem = schitaem + 1;",
+              "            }",
+              "            if(ShipGoodsIllegalOnPlanet(Player(),t_Alcohol,ShipStatistic(WarriorFiding,10)) & FlagAlk == 1) {",
+              "                if(ShipType(WarriorFiding) == 'Warrior') {",
+              "                    if(ShipScanerPower(WarriorFiding) > ShipProtectability(Player())) {",
+              "                        Ether(10,'','Внимание! Силы планетарной обороны обнаружили на вашем корабле следы запрещённых к провозу на нашу планету товаров. Рекомендуем немедленно сбросить их в космос во избежание конфликта.');",
+              "                        if(Dist(Player(),ShipStatistic(WarriorFiding,10) <= 400)) {",
+              "                            ChangeGlobalRelationsPlanets(Player(),PlanetToStar(ShipStatistic(WarriorFiding,10)),4,60,31);",
+              "                            ShipSetBad(WarriorFiding,Player());",
+              "                        }",
+              "                    }",
+              "                }",
+              "            }",
+              "            else if(ShipGoodsIllegalOnPlanet(Player(),t_Arms,ShipStatistic(WarriorFiding,10)) & FlagOr == 1) {",
+              "                if(ShipType(WarriorFiding) == 'Warrior') {",
+              "                    if(ShipScanerPower(WarriorFiding) > ShipProtectability(Player())) {",
+              "                        Ether(10,'','Внимание! Силы планетарной обороны обнаружили на вашем корабле следы запрещённых к провозу на нашу планету товаров. Рекомендуем немедленно сбросить их в космос во избежание конфликта.');",
+              "                        if(Dist(Player(),ShipStatistic(WarriorFiding,10) <= 400)) {",
+              "                            ChangeGlobalRelationsPlanets(Player(),PlanetToStar(ShipStatistic(WarriorFiding,10)),4,60,31);",
+              "                            ShipSetBad(WarriorFiding,Player());",
+              "                        }",
+              "                    }",
+              "                }",
+              "            }",
+              "            else if(ShipGoodsIllegalOnPlanet(Player(),t_Luxury,ShipStatistic(WarriorFiding,10)) & FlagRos == 1) {",
+              "                if(ShipType(WarriorFiding) == 'Warrior') {",
+              "                    if(ShipScanerPower(WarriorFiding) > ShipProtectability(Player())) {",
+              "                        Ether(10,'','Внимание! ССилы планетарной обороны обнаружили на вашем корабле следы запрещённых к провозу на нашу планету товаров. Рекомендуем немедленно сбросить их в космос во избежание конфликта.');",
+              "                        if(Dist(Player(),ShipStatistic(WarriorFiding,10) <= 400)) {",
+              "                            ChangeGlobalRelationsPlanets(Player(),PlanetToStar(ShipStatistic(WarriorFiding,10)),4,60,31);",
+              "                            ShipSetBad(WarriorFiding,Player());",
+              "                        }",
+              "                    }",
+              "                }",
+              "            }",
+              "            else if(ShipGoodsIllegalOnPlanet(Player(),t_Narcotics,ShipStatistic(WarriorFiding,10)) & FlagNar == 1) {",
+              "                if(ShipType(WarriorFiding) == 'Warrior') {",
+              "                    if(ShipScanerPower(WarriorFiding) > ShipProtectability(Player())) {",
+              "                        Ether(10,'','Внимание! Силы планетарной обороны обнаружили на вашем корабле следы запрещённых к провозу на нашу планету товаров. Рекомендуем немедленно сбросить их в космос во избежание конфликта.');",
+              "                        if(Dist(Player(),ShipStatistic(WarriorFiding,10) <= 400)) {",
+              "                            ChangeGlobalRelationsPlanets(Player(),PlanetToStar(ShipStatistic(WarriorFiding,10)),4,60,31);",
+              "                            ShipSetBad(WarriorFiding,Player());",
+              "                        }",
+              "                    }",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "}"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "FlagOr",
+          "Pos.x":  -100,
+          "Pos.y":  -240,
+          "Parent":  -1,
+          "#":  7,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "FlagNar",
+          "Pos.x":  -100,
+          "Pos.y":  -210,
+          "Parent":  -1,
+          "#":  8,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "FlagAlk",
+          "Pos.x":  -100,
+          "Pos.y":  -180,
+          "Parent":  -1,
+          "#":  9,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "FlagRos",
+          "Pos.x":  -100,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  10,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "WarriorFiding",
+          "Pos.x":  -100,
+          "Pos.y":  -270,
+          "Parent":  -1,
+          "#":  11,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "schitaem",
+          "Pos.x":  -100,
+          "Pos.y":  -300,
+          "Parent":  -1,
+          "#":  12,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC":  
+  [
+  
+  ]
+}

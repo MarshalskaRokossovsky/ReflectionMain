@@ -1,0 +1,646 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -622,
+  "ViewPos.y":  -502,
+  "ScriptName":  "Mod_RefZazhor",
+  "ScriptFileOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.scr",
+  "ScriptTextOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.txt",
+  "GraphPoint.Count":  29,
+  "GraphLink.Count":  17,
+  "GraphRectText.Count":  0,
+  "Variables.Count":  8,
+  "Stars.Count":  1,
+  "Planets.Count":  1,
+  "Ships.Count":  1,
+  "States.Count":  1,
+  "Groups.Count":  1,
+  "Places.Count":  0,
+  "Items.Count":  0,
+  "Ethers.Count":  0,
+  "Dialogs.Count":  1,
+  "DialogMessages.Count":  3,
+  "DialogAnswers.Count":  5,
+  "Operations.Count":  7,
+  "Statements.Count":  0,
+  "Loops.Count":  0,
+  "Visual.Objects":  
+  [
+    {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  11,
+          "Msg":  "Пожалуй, я бы не отказался от такого времяпрепровождения!",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "exit",
+          "Pos.x":  150,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  12,
+          "Msg":  "Пожалуй, я полетаю ещё...",
+          "AMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  90,
+          "Parent":  -1,
+          "#":  17,
+          "Msg":  "",
+          "AMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  110,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  23,
+          "Msg":  "Различные варианты?",
+          "AMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  110,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  25,
+          "Msg":  "Пожалуй, я бы не отказался от такого времяпрепровождения!",
+          "AMsg.Num":  "4"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  10,
+          "Msg":  "Да, рейнджер. Мы знаем, что участникам рейнджерского движения приходится нелегко. Они всего утомлены дальними перелётами и борьбой с пиратами и доминаторами, тяжбами с планетарными правительствами - несмотря на помощь сети Центров Рейнджеров - и прочим. Поэтому мы предлагаем услуги по организации отдыха на курортах Коалиции. Цены весьма демократические, я вам скажу. Более того - мы готовы предложить разные варианты проведе6ния отдыха - за различные суммы, разумеется.",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  50,
+          "Parent":  -1,
+          "#":  16,
+          "Msg":  "",
+          "DMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  150,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  24,
+          "Msg":  "",
+          "DMsg.Num":  "2"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogHospital",
+          "Pos.x":  70,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  9        
+        }      
+      ],
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -40,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Total.Lines":  1,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  0,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  6,
+          "Total.Lines":  1,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              "ShipAddCustomShipInfo(Player(),'RefTireness');"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -40,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
+          "Total.Lines":  5,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "if(GetTalkShip() == 0) {",
+              "    if(GetShipRuins(Player()) == t_MC) {",
+              "        AddDialogInject('DialogHospital','Для всех рейнджеров можем оформить поездку в лечебный диспансер на планете-курорте по сниженной цене - всего <temp_str> cr. за месяц!','Поездка в диспансер?',1);",
+              "    }",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  0,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  8,
+          "Total.Lines":  68,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "int StFlag = 0;",
+              "int StunFlag = 0;",
+              "int Schit = 0;",
+              "Ustal = Ustal + 2;",
+              "if(HullDamage(Player()) > 0) Ustal = Ustal + 2;",
+              "if(HullDamage(Player()) > 75) Ustal = Ustal + 10;",
+              "if(OrderForsage(Player()) Ustal = Ustal + 5;",
+              "if(ShipHealthFactor(Player(),1) > 0) Ustal = Ustal + 7;",
+              "if(ShipHealthFactor(Player(),2) > 0) Ustal = Ustal + 3;",
+              "if(ShipHealthFactor(Player(),3) > 0) Ustal = Ustal + 10;",
+              "if(ShipHealthFactor(Player(),4) > 0) Ustal = Ustal + 7;",
+              "if(ShipHealthFactor(Player(),5) > 0) Ustal = Ustal + 2;",
+              "if(ShipHealthFactor(Player(),6) > 0) Ustal = Ustal + 25;",
+              "if(ShipHealthFactor(Player(),7) > 0) Ustal = Ustal + 6;",
+              "if(ShipHealthFactor(Player(),8) > 0) Ustal = Ustal + 9;",
+              "if(ShipHealthFactor(Player(),9) > 0) Ustal = Ustal + 2;",
+              "if(ShipHealthFactor(Player(),10) > 0) Ustal = Ustal + 1;",
+              "if(ShipHealthFactor(Player(),11) > 0) Ustal = Ustal + 4;",
+              "if(ShipHealthFactor(Player(),12) > 0) Ustal = Ustal + 3;",
+              "//100% = 50000 очков усталости",
+              "temp_str_BASED = 'Степень усталости: SU';",
+              "if(Ustal > 2500) temp_str_NONBASED = Format(temp_str_BASED,'SU','вы слегка устали');",
+              "if(Ustal > 15000) temp_str_NONBASED = Format(temp_str_BASED,'SU','вы устали');",
+              "if(Ustal > 20000) {",
+              "    temp_str_NONBASED = Format(temp_str_BASED,'SU','вы сильно истощены');",
+              "    if(StFlag == 2) {",
+              "        ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 1);",
+              "        ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) - 1);",
+              "        StFlag = 3;",
+              "    }",
+              "}",
+              "if(Ustal > 27000) {",
+              "    temp_str_NONBASED = Format(temp_str_BASED,'SU','вы в крайнем измождении');",
+              "    if(StFlag == 1) {",
+              "        ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 1);",
+              "        ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) - 1);",
+              "        ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) - 1);",
+              "        StFlag = 2;",
+              "    }",
+              "}",
+              "if(Ustal > 38000) {",
+              "    temp_str_NONBASED = Format(temp_str_BASED,'SU','вы едва ходите');",
+              "    if(StFlag == 0) {",
+              "        ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 1);",
+              "        ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) - 2);",
+              "        ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) - 1);",
+              "        ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) - 1);",
+              "        StFlag = 1;",
+              "    }",
+              "    if(Rnd(1,100) > 95) {",
+              "        ShipAddCustomShipInfo(Player(),'ExpArts_ShipStunned');",
+              "        StunFlag = 1;",
+              "        Schit = Rnd(2,5);",
+              "    }",
+              "    if(StunFlag == 1 & Schit == 0) {",
+              "        ShipDeleteCustomShipInfo(Player(),'ExpArts_ShipStunned');",
+              "        Ether(8,'','Вы вели корабль, когда вдруг на вас накатилась тяжесть месяцев за штурвалом. Глаза закрылись, и вы погрузились в глубокий сон.<br>Наконец вы проснулись. Судя по бортовому компьютеру, прошло несколько дней. Походу, пора поскорее отложить все дела и хорошенько отдохнуть.');",
+              "    }",
+              "}",
+              "if(Ustal < 2500) temp_str_NONBASED = Format(temp_str_BASED,'SU','вы в полном порядке');",
+              "ShipCustomShipInfoDescription(Player(),'RefTireness',temp_str_NONBASED);",
+              "//расчёт стоимости месяца в санаторее",
+              "temp_str = GalaxyMoney(1) + 1100 + Rnd(10,300);",
+              "//откат после пребывания в санаторее",
+              "if(AfterMedicineFlag == 1) {",
+              "    AfterMedicineFlag = 0;",
+              "}",
+              "if(Schit > 1) Schit = Schit - 1;"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  170,
+          "Parent":  -1,
+          "#":  13,
+          "Total.Lines":  7,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ShipMoney(Player()) > paym) {",
+              "    ShipMoney(Player(),ShipMoney(Player()) - paym);",
+              "    StartTextQuest('Sanatoriy','Время нахождения в лечебнице закончилось','Время нахождения в лечебнице закончилось');",
+              "    GotoGov();",
+              "    AfterMedicineFlag = 1;",
+              "}",
+              "else MessageBox('Недостаточно средств на счету!');"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  130,
+          "Parent":  -1,
+          "#":  18,
+          "Total.Lines":  2,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "Sound('Sound.Sell');",
+              "NoComeKlingToStar(ShipStar(Player),10);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  21,
+          "Total.Lines":  3,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "MessageBox('Напоминаем вам, что стоимость месяца в санатории стоит <temp_str> cr.!');",
+              "p = NumberBox('Bm.ItemsUseless.2Usl_Elus_s','На сколько месяцев хотите в санаторий?',1,12,12,'',2);",
+              "paym = temp_str * p;"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "temp_str",
+          "Pos.x":  350,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  14,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Ustal",
+          "Pos.x":  250,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  15,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "temp_str_BASED",
+          "Pos.x":  250,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  19,
+          "Var.Type":  "Unknown",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "temp_str_NONBASED",
+          "Pos.x":  250,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  20,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "p",
+          "Pos.x":  350,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  22,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "AfterMedicineFlag",
+          "Pos.x":  250,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  26,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "VarNew",
+          "Pos.x":  250,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  27,
+          "Var.Type":  "Unknown",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "paym",
+          "Pos.x":  250,
+          "Pos.y":  90,
+          "Parent":  -1,
+          "#":  28,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  17,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  18,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  18,
+      "End":  13,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  11,
+      "End":  21,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  21,
+      "End":  16,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  10,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  23,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  23,
+      "End":  24,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  24,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  24,
+      "End":  25,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  25,
+      "End":  21,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC":  
+  [
+    {
+      "#":  "1",
+      "String":  "Phaeton"    
+    }  
+  ]
+}

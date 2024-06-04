@@ -1,0 +1,646 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -669,
+  "ViewPos.y":  -489,
+  "ScriptName":  "Mod_RefZazhor",
+  "ScriptFileOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.scr",
+  "ScriptTextOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.txt",
+  "GraphPoint.Count":  28,
+  "GraphLink.Count":  19,
+  "GraphRectText.Count":  0,
+  "Variables.Count":  4,
+  "Stars.Count":  1,
+  "Planets.Count":  1,
+  "Ships.Count":  1,
+  "States.Count":  1,
+  "Groups.Count":  1,
+  "Places.Count":  0,
+  "Items.Count":  0,
+  "Ethers.Count":  0,
+  "Dialogs.Count":  1,
+  "DialogMessages.Count":  4,
+  "DialogAnswers.Count":  5,
+  "Operations.Count":  4,
+  "Statements.Count":  5,
+  "Loops.Count":  0,
+  "Visual.Objects":  
+  [
+    {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  60,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  9,
+          "Msg":  "Ладно, надо раздобыть",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  240,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  11,
+          "Msg":  "Нет, сейчас есть более насущные дела!",
+          "AMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  12,
+          "Msg":  "Настало время для Зажора!",
+          "AMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  200,
+          "Pos.y":  90,
+          "Parent":  -1,
+          "#":  15,
+          "Msg":  "Пора снова к штурвалу!",
+          "AMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  130,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  19,
+          "Msg":  "Ладно, надо подождать ещё",
+          "AMsg.Num":  "4"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  60,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  8,
+          "Msg":  "У вас нет провианта для Зажора в достаточном количестве!",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  10,
+          "Msg":  "Большой Зажор - малокский праздник-ритуал, главная цель которого - собственно пир, но сопровождается он многочисленными увеселениями, ввиду чего инопланетчикам не рекомендуют посещать малокские планеты в день Зажора.\r\n\r\nДень Зажора определяется не по календарю, а в соответствии с активностью звезды, чем объясняется кажущееся постоянным нахождение малокских планет в Зажоре.\r\n\r\nОторванные от дома, <clr>рейнджеры-малоки<clrEnd> остаются верны традициям и самостоятельно определяют дни, пригодные для Большого Зажора - т.н. \"сильные\" дни, в которые пища будет полезней для малокского организма.\r\n\r\nУ вас на борту достаточно провианта, сегодня - \"сильный\" день, и вы можете устроить Большой Зажор на борту своего корабля.",
+          "DMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  50,
+          "Parent":  -1,
+          "#":  14,
+          "Msg":  "Вы отправились в трюм и достали часть своих запасов...\r\n\r\nКушанья на любой вкус могла дать малоку современная пишевая промышленность. Ну так зачем отказываться? Вы с радостью набросились на еду.\r\n\r\nЭтот приём пищи будет крайне питательным и полезным для организма!",
+          "DMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  130,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  18,
+          "Msg":  "Вы только недавно устраивали Большой Зажор!",
+          "DMsg.Num":  "3"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "Zazhor",
+          "Pos.x":  100,
+          "Pos.y":  -180,
+          "Parent":  -1,
+          "#":  6        
+        }      
+      ],
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -30,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Total.Lines":  1,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  13,
+          "Total.Lines":  11,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ShipAddCustomShipInfo(Player(),'RefZazhorFlag');",
+              "ShipAddCustomShipInfo(Player(),'RefMainZazhorInfo');",
+              "ShipSpecialBonuses(Player(),bonMass,ShipSpecialBonuses(Player(),bonMass) + 20);",
+              "ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) + 2);",
+              "ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) + 10);",
+              "ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) + 5);",
+              "ShipSpecialBonuses(Player(),bonStimCapacity,ShipSpecialBonuses(Player(),bonStimCapacity) + 1);",
+              "ShipSpecialBonuses(Player(),bonWMissile,ShipSpecialBonuses(Player(),bonWMissile) + 6);",
+              "OneMoreKostyl = 1;",
+              "Timer = 0;",
+              "ShipGoods(Player(),t_Food,-15);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  10,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  20,
+          "Total.Lines":  6,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "AddDialogInject('Zazhor','','А что касательно Зажора?',1);",
+              "if(GoodsCount(Player(),t_Food) <= 14) Posit = 1;",
+              "if(ShipFindCustomShipInfoByType(Player(),'RefZazhorFlag') > -1) Posit = 2;",
+              "if(ShipFindCustomShipInfoByType(Player(),'RefZazhorFlag') == -1) {",
+              "    if(GoodsCount(Player(),t_Food) >= 15) Posit = 3;",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -30,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  23,
+          "Total.Lines":  15,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(OneMoreKostyl == 1) {",
+              "    Timer = Timer + 1;",
+              "    if(Timer == NextStop) {",
+              "        ShipDeleteCustomShipInfo(Player(),'RefZazhorFlag');",
+              "        ShipDeleteCustomShipInfo(Player(),'RefMainZazhorInfo');",
+              "        ShipSpecialBonuses(Player(),bonMass,ShipSpecialBonuses(Player(),bonMass) - 20);",
+              "        ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) - 2);",
+              "        ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) - 10);",
+              "        ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) - 5);",
+              "        ShipSpecialBonuses(Player(),bonStimCapacity,ShipSpecialBonuses(Player(),bonStimCapacity) - 1);",
+              "        ShipSpecialBonuses(Player(),bonWMissile,ShipSpecialBonuses(Player(),bonWMissile) - 6);",
+              "        OneMoreKostyl = 0;",
+              "    }",
+              "}",
+              "if(Timer == 0) NextStop = Rnd(15,50);"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "Statements":      
+      [
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  60,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "Posit == 1"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  16,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "Posit == 3"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  130,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  17,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "Posit == 2"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  21,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "PlayerBridge()==1 || PlayerBridge()==3"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  10,
+          "Pos.y":  -170,
+          "Parent":  -1,
+          "#":  22,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "ShipPilotRace(Player()) == 0"          
+          ]        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "OneMoreKostyl",
+          "Pos.x":  -100,
+          "Pos.y":  80,
+          "Parent":  -1,
+          "#":  24,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Timer",
+          "Pos.x":  -100,
+          "Pos.y":  110,
+          "Parent":  -1,
+          "#":  25,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "NextStop",
+          "Pos.x":  -100,
+          "Pos.y":  140,
+          "Parent":  -1,
+          "#":  26,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Posit",
+          "Pos.x":  -100,
+          "Pos.y":  170,
+          "Parent":  -1,
+          "#":  27,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  8,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  12,
+      "End":  13,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  13,
+      "End":  14,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  14,
+      "End":  15,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  6,
+      "End":  16,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  18,
+      "End":  19,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  21,
+      "End":  20,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  22,
+      "End":  21,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  6,
+      "End":  17,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  7,
+      "End":  8,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  18,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  6,
+      "End":  7,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  10,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  11,
+  "BlockPar.EC":  
+  [
+    {
+      "#":  "10",
+      "String":  "Настало время для Зажора!"    
+    },
+    {
+      "#":  "11",
+      "String":  "Пора снова к штурвалу!"    
+    },
+    {
+      "#":  "12",
+      "String":  "Ладно, надо подождать ещё"    
+    },
+    {
+      "#":  "2",
+      "String":  "Сегодня не сильный день, не время для Зажора!"    
+    },
+    {
+      "#":  "3",
+      "String":  "У вас нет провианта для Зажора в достаточном количестве!"    
+    },
+    {
+      "#":  "4",
+      "String":  "Большой Зажор - малокский праздник-ритуал, главная цель которого - собственно пир, но сопровождается он многочисленными увеселениями, ввиду чего инопланетчикам не рекомендуют посещать малокские планеты в день Зажора.<br><br>День Зажора определяется не по календарю, а в соответствии с активностью звезды, чем объясняется кажущееся постоянным нахождение малокских планет в Зажоре.<br><br>Оторванные от дома, <clr>рейнджеры-малоки<clrEnd> остаются верны традициям и самостоятельно определяют дни, пригодные для Большого Зажора - т.н. \"сильные\" дни, в которые пища будет полезней для малокского организма.<br><br>У вас на борту достаточно провианта, сегодня - \"сильный\" день, и вы можете устроить Большой Зажор на борту своего корабля."    
+    },
+    {
+      "#":  "5",
+      "String":  "Вы отправились в трюм и достали часть своих запасов...<br><br>Кушанья на любой вкус могла дать малоку современная пишевая промышленность. Ну так зачем отказываться? Вы с радостью набросились на еду.<br><br>Этот приём пищи будет крайне питательным и полезным для организма!"    
+    },
+    {
+      "#":  "6",
+      "String":  "Вы только недавно устраивали Большой Зажор!"    
+    },
+    {
+      "#":  "7",
+      "String":  "Ладно, вернусь в сильный день"    
+    },
+    {
+      "#":  "8",
+      "String":  "Ладно, надо раздобыть"    
+    },
+    {
+      "#":  "9",
+      "String":  "Нет, сейчас есть более насущные дела!"    
+    }  
+  ]
+}
