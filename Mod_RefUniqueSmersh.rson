@@ -182,7 +182,7 @@
               "if(ShipRank(Player()) >=5 && !ShipOnSidePirateClan(Player()) && GalaxyDominatorResearchPercent() > 25) {",
               "    if(GetShipRuins(Player())) {",
               "        if(ShipType(GetShipRuins(Player())) == 'SB') {",
-              "            AddDialogInject('SmershBuy','Не хотите взглянуть на результат работы спецотдела Коалиции и специалистов в сфере прикладной доминаторологии? Мы готовы дать доступ вам как отличившемуся бойцу Коалиции','А что это у вас там за доминаторология?',34);",
+              "            AddDialogInject('SmershBuy',\"Не хотите взглянуть на результат работы спецотдела Коалиции и специалистов в сфере прикладной доминаторологии? Мы готовы дать доступ вам как отличившемуся бойцу Коалиции\",\"А что это у вас там за доминаторология?\",34);",
               "        }",
               "    }",
               "}"          
@@ -209,7 +209,7 @@
           "Pos.y":  70,
           "Parent":  -1,
           "#":  16,
-          "Total.Lines":  7,
+          "Total.Lines":  8,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -218,6 +218,7 @@
               "HullSeries(temp_dword,99);",
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
+              "ItemCost(temp_dword,temp_int);",
               "SmershBought = 1;",
               "Sound('Sound.Buy');"          
           ]        
