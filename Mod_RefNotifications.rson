@@ -4,8 +4,8 @@
   "ViewPos.x":  -221,
   "ViewPos.y":  -422,
   "ScriptName":  "Mod_RefNotifications",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.txt",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.txt",
   "GraphPoint.Count":  88,
   "GraphLink.Count":  82,
   "GraphRectText.Count":  0,
@@ -722,12 +722,12 @@
               "    NewsAdd(Format('Текущий день - date. Уведомление отключено.','date',GameDateTxtByTurn(NotifyTurn)) + temp_date);",
               "    Sound('New.Msg');",
               "}",
-              "if(Id(ShipStar(Player())) == NotifSysID) {",
+              "if(Id(ShipStar(Player())) == NotifySysID) {",
               "    if(temp_system == 'No') temp_system = '';",
               "    else temp_system = '<br' + '/>' + temp_system;",
-              "    NewsAdd(Format('Вы находитесь в системе name. Уведомление о посещении этой системы отключено.','name',Name(NotifSysID)) + temp_system);",
+              "    NewsAdd(Format('Вы находитесь в системе name. Уведомление о посещении этой системы отключено.','name',Name(NotifySysID)) + temp_system);",
               "    Sound('New.Msg');",
-              "    NotifSysID = 10000;",
+              "    NotifySysID = 10000;",
               "}",
               "if(ShipIDD != 0) {",
               "    if(ShipInStar(Player(),ShipStar(IdToShip(ShipIDD)))) {",
@@ -814,7 +814,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "NotifSysID = Id(GAnswerData);",
+              "NotifySysID = Id(GAnswerData);",
               "tstr = Name(GAnswerData);"          
           ]        
         },
@@ -1141,7 +1141,7 @@
         },
         {
           "Type":  "TVar",
-          "Name":  "NotifSysID",
+          "Name":  "NotifySysID",
           "Pos.x":  60,
           "Pos.y":  -170,
           "Parent":  -1,
