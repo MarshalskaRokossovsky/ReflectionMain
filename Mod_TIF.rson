@@ -149,11 +149,14 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
+          "Total.Lines":  4,
           "Code.Type":  "Init",
           "Code":          
           [
-              "ShipAddCustomShipInfo(Player(),'FixPBGov','NoShow');"          
+              "ShipAddCustomShipInfo(Player(),'FixPBGov','NoShow');",
+              "",
+              "//Помните хреновину из тёрнкода ниже? Так вот, теперь подобное нужно навесить на игрока",
+              "ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');"          
           ]        
         }      
       ],

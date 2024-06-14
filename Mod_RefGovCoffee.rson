@@ -304,7 +304,7 @@
           "Pos.y":  110,
           "Parent":  -1,
           "#":  13,
-          "Total.Lines":  87,
+          "Total.Lines":  89,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -391,8 +391,10 @@
               "            ShipSpecialBonuses(Player(),bonHook,ShipSpecialBonuses(Player(),bonHook) + 25);",
               "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
               "        }",
-              "        ShipDeleteCustomShipInfo(Player(),'RefCoffeeIllness');",
-              "        CustomEther('BioCured',0,'',\"Вы почувствовали облегчение. Кажется, эта доза кофеина была достаточной. Вопрос - на сколько её хватит?\");",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2)) {",
+              "            ShipDeleteCustomShipInfo(Player(),'RefCoffeeIllness');",
+              "            CustomEther('BioCured',0,'',\"Вы почувствовали облегчение. Кажется, эта доза кофеина была достаточной. Вопрос - на сколько её хватит?\");",
+              "        }",
               "    }",
               "}"          
           ]        
@@ -617,7 +619,7 @@
           "Pos.y":  -50,
           "Parent":  -1,
           "#":  38,
-          "Total.Lines":  72,
+          "Total.Lines":  74,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -628,14 +630,14 @@
               "CoffeeForMania = CoffeeForMania + 1;",
               "if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness')) {",
               "    if((2*ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) + 1) == CoffeeForMania) {",
-              "        if(ShipCustomShipInfoData(0,CurInfo(),2) == 1) {",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 1) {",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) + 1);",
               "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 15);",
               "            ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 30);",
               "        }",
-              "        if(ShipCustomShipInfoData(0,CurInfo(),2) == 2) {",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 2) {",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
@@ -646,7 +648,7 @@
               "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 75);",
               "            ShipSpecialBonuses(Player(),bonZonds,ShipSpecialBonuses(Player(),bonZonds) + 1);",
               "        }",
-              "        if(ShipCustomShipInfoData(0,CurInfo(),2) == 3) {",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 3) {",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) + 1);",
@@ -659,22 +661,7 @@
               "            ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) + 5);",
               "            ShipSpecialBonuses(Player(),bonWSplinter,ShipSpecialBonuses(Player(),bonWSplinter) + 5);",
               "        }",
-              "        if(ShipCustomShipInfoData(0,CurInfo(),2) == 4) {",
-              "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
-              "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
-              "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) + 1);",
-              "            ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) + 1);",
-              "            ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) + 1);",
-              "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 15);",
-              "            ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 20);",
-              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 75);",
-              "            ShipSpecialBonuses(Player(),bonZonds,ShipSpecialBonuses(Player(),bonZonds) + 1);",
-              "            ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) + 5);",
-              "            ShipSpecialBonuses(Player(),bonWSplinter,ShipSpecialBonuses(Player(),bonWSplinter) + 5);",
-              "            ShipSpecialBonuses(Player(),bonHook,ShipSpecialBonuses(Player(),bonHook) + 25);",
-              "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
-              "        }",
-              "        if(ShipCustomShipInfoData(0,CurInfo(),2) == 5) {",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 4) {",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) + 1);",
@@ -689,8 +676,25 @@
               "            ShipSpecialBonuses(Player(),bonHook,ShipSpecialBonuses(Player(),bonHook) + 25);",
               "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
               "        }",
-              "        ShipDeleteCustomShipInfo(Player(),'RefCoffeeIllness');",
-              "        CustomEther('BioCured',0,'',\"Вы почувствовали облегчение. Кажется, эта доза кофеина была достаточной. Вопрос - на сколько её хватит?\");",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 5) {",
+              "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
+              "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
+              "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) + 1);",
+              "            ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) + 1);",
+              "            ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) + 1);",
+              "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 15);",
+              "            ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 20);",
+              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 75);",
+              "            ShipSpecialBonuses(Player(),bonZonds,ShipSpecialBonuses(Player(),bonZonds) + 1);",
+              "            ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) + 5);",
+              "            ShipSpecialBonuses(Player(),bonWSplinter,ShipSpecialBonuses(Player(),bonWSplinter) + 5);",
+              "            ShipSpecialBonuses(Player(),bonHook,ShipSpecialBonuses(Player(),bonHook) + 25);",
+              "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
+              "        }",
+              "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2)) {",
+              "            ShipDeleteCustomShipInfo(Player(),'RefCoffeeIllness');",
+              "            CustomEther('BioCured',0,'',\"Вы почувствовали облегчение. Кажется, эта доза кофеина была достаточной. Вопрос - на сколько её хватит?\");",
+              "        }",
               "    }",
               "}"          
           ]        
@@ -771,7 +775,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "Kostyl == 0"          
+              "!Kostyl"          
           ]        
         },
         {
@@ -785,7 +789,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "Kostyl == 1"          
+              "Kostyl"          
           ]        
         },
         {
