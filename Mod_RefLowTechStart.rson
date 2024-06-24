@@ -6,7 +6,7 @@
   "ScriptName":  "Mod_RefLowTechStart",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefLowTechStart\\DATA\\Script\\Mod_RefLowTechStart.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefLowTechStart\\DATA\\Script\\Mod_RefLowTechStart.txt",
-  "GraphPoint.Count":  7,
+  "GraphPoint.Count":  8,
   "GraphLink.Count":  4,
   "GraphRectText.Count":  0,
   "Variables.Count":  0,
@@ -21,7 +21,7 @@
   "Dialogs.Count":  0,
   "DialogMessages.Count":  0,
   "DialogAnswers.Count":  0,
-  "Operations.Count":  2,
+  "Operations.Count":  3,
   "Statements.Count":  0,
   "Loops.Count":  0,
   "Visual.Objects":  
@@ -82,7 +82,7 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  49,
+          "Total.Lines":  48,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -107,7 +107,6 @@
               "    for(w = 0; w < StarPlanets(star); w = w + 1) {",
               "        planet = StarPlanets(star, w);",
               "        if(PlanetOwner(planet) == None) continue;",
-              "        if(PlanetOwner(planet) != PirateClan) PlanetOwner(planet, PlanetRace(planet));",
               "        UpTech(planet);",
               "        ClearShop(planet);",
               "    }",
@@ -129,11 +128,39 @@
               "    }",
               "}",
               "function UpTech (dword planet) {",
-              "    for(int v = 0; v < 20; v = v + 1) PlanetInventionLevel(planet, v, 7);",
-              "    PlanetCurInventionPoints(planet, PlanetCurInvention(planet), 225);",
+              "    for(int v = 0; v < 20; v = v + 1) PlanetInventionLevel(planet, v, 1);",
+              "    PlanetCurInventionPoints(planet, PlanetCurInvention(planet), 0);",
               "}",
               "function ClearShop (dword object) {",
               "    for(int v = ShopItems(object) - 1; v >= 0; v = v - 1) FreeItem(GetItemFromShop(object, v));",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  30,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  7,
+          "Total.Lines":  15,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(CurTurn() == 300) {",
+              "    int v, w;",
+              "    dword planet, star;",
+              "    //________________________________",
+              "    //________________________________",
+              "    //Тута понижение ГТУ",
+              "    for(v = 0; v < GalaxyStars(); v = v + 1) {",
+              "        star = GalaxyStar(v);",
+              "        for(w = 0; w < StarPlanets(star); w = w + 1) {",
+              "            planet = StarPlanets(star, w);",
+              "            if(PlanetOwner(planet) == None) continue;",
+              "            UpTech(planet);",
+              "        }",
+              "    }",
               "}"          
           ]        
         }      

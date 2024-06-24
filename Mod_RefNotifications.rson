@@ -6,8 +6,8 @@
   "ScriptName":  "Mod_RefNotifications",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNotifications\\DATA\\Script\\Mod_RefNotifications.txt",
-  "GraphPoint.Count":  88,
-  "GraphLink.Count":  82,
+  "GraphPoint.Count":  89,
+  "GraphLink.Count":  83,
   "GraphRectText.Count":  0,
   "Variables.Count":  13,
   "Stars.Count":  1,
@@ -20,7 +20,7 @@
   "Ethers.Count":  0,
   "Dialogs.Count":  4,
   "DialogMessages.Count":  10,
-  "DialogAnswers.Count":  24,
+  "DialogAnswers.Count":  25,
   "Operations.Count":  29,
   "Statements.Count":  3,
   "Loops.Count":  0,
@@ -268,6 +268,16 @@
           "#":  85,
           "Msg":  "Нет",
           "AMsg.Num":  "23"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  630,
+          "Pos.y":  -120,
+          "Parent":  -1,
+          "#":  88,
+          "Msg":  "На главную",
+          "AMsg.Num":  "24"        
         }      
       ],
       "DialogMessages":      
@@ -1783,6 +1793,13 @@
       "End":  64,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  88,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
   "BlockPar.EC.Total.Strings":  28,
@@ -1861,10 +1878,6 @@
       "String":  "На главную"    
     },
     {
-      "#":  "27",
-      "String":  ""    
-    },
-    {
       "#":  "28",
       "String":  "Хотите добавить текстовую метку к данному сообщению?"    
     },
@@ -1875,6 +1888,10 @@
     {
       "#":  "3",
       "String":  "Нет"    
+    },
+    {
+      "#":  "30",
+      "String":  ""    
     },
     {
       "#":  "4",

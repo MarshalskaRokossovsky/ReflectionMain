@@ -6,8 +6,8 @@
   "ScriptName":  "Mod_RefCustomSystemAlarm",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCustomSystemAlarm\\DATA\\Script\\Mod_RefCustomSystemAlarm.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCustomSystemAlarm\\DATA\\Script\\Mod_RefCustomSystemAlarm.txt",
-  "GraphPoint.Count":  50,
-  "GraphLink.Count":  36,
+  "GraphPoint.Count":  51,
+  "GraphLink.Count":  37,
   "GraphRectText.Count":  0,
   "Variables.Count":  11,
   "Stars.Count":  1,
@@ -21,7 +21,7 @@
   "Dialogs.Count":  3,
   "DialogMessages.Count":  5,
   "DialogAnswers.Count":  8,
-  "Operations.Count":  11,
+  "Operations.Count":  12,
   "Statements.Count":  7,
   "Loops.Count":  0,
   "Visual.Objects":  
@@ -343,12 +343,11 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  3,
+          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_dword = GAnswerData;",
-              "temp_dword = GalaxySectors(temp_dword);",
+              "temp_dword = GalaxySectors(GAnswerData);",
               "temp_str_local = Name(temp_dword);"          
           ]        
         },
@@ -378,12 +377,11 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  44,
-          "Total.Lines":  2,
+          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_dword = GAnswerData;",
-              "temp_dword = Name(GalaxySectors(temp_dword));"          
+              "temp_dword = Name(GalaxyStar(GAnswerData));"          
           ]        
         },
         {
@@ -393,23 +391,10 @@
           "Pos.y":  20,
           "Parent":  -1,
           "#":  47,
-          "Total.Lines":  14,
+          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(FlagCount == 0) {",
-              "    IDOne = Id(StarPlanets(temp_dword,1));",
-              "    temp_str1 = temp_str_local;",
-              "}",
-              "if(FlagCount == 1) {",
-              "    IDTwo = Id(StarPlanets(temp_dword,1));",
-              "    temp_str2 = temp_str_local;",
-              "}",
-              "if(FlagCount == 2) {",
-              "    IDThree = Id(StarPlanets(temp_dword,1));",
-              "    temp_str3 = temp_str_local;",
-              "}",
-              "FlagCount = FlagCount + 1;",
               "InjectAnswer('AlarmDialog','Назад',0);"          
           ]        
         },
@@ -514,6 +499,38 @@
               "if(cd1 != 0) cd1 = cd1 - 1;",
               "if(cd2 != 0) cd2 = cd2 - 1;",
               "if(cd3 != 0) cd3 = c4 - 1;"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  500,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  50,
+          "Total.Lines":  19,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(FlagCount == 0) {",
+              "    IDOne = Id(StarPlanets(temp_dword,1));",
+              "}",
+              "if(FlagCount == 1) {",
+              "    IDTwo = Id(StarPlanets(temp_dword,1));",
+              "}",
+              "if(FlagCount == 2) {",
+              "    IDThree = Id(StarPlanets(temp_dword,1));",
+              "}",
+              "if(FlagCount == 0) {",
+              "    temp_str1 = temp_str_local;",
+              "}",
+              "if(FlagCount == 1) {",
+              "    temp_str2 = temp_str_local;",
+              "}",
+              "if(FlagCount == 2) {",
+              "    temp_str3 = temp_str_local;",
+              "}",
+              "FlagCount = FlagCount + 1;"          
           ]        
         }      
       ],
@@ -1041,20 +1058,6 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  45,
-      "End":  47,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  47,
-      "End":  46,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  18,
       "End":  49,
       "Nom":  0,
@@ -1078,6 +1081,27 @@
       "Type":  "TGraphLink",
       "Begin":  49,
       "End":  32,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  45,
+      "End":  47,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  47,
+      "End":  46,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  46,
+      "End":  50,
       "Nom":  0,
       "Arrow":  true    
     }  

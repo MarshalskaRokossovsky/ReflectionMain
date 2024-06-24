@@ -1,15 +1,15 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -495,
-  "ViewPos.y":  -626,
-  "ScriptName":  "Mod_RefRefRadarBuffForTrancs",
-  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.scr",
-  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.txt",
-  "GraphPoint.Count":  12,
-  "GraphLink.Count":  4,
+  "ViewPos.x":  -328,
+  "ViewPos.y":  -546,
+  "ScriptName":  "Mod_RefSpaceDominators",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\AРазработка\\РефБарахло\\RefSpaceDominators\\DATA\\Script\\Mod_RefSpaceDominators.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\AРазработка\\РефБарахло\\RefSpaceDominators\\DATA\\Script\\Mod_RefSpaceDominators.txt",
+  "GraphPoint.Count":  110,
+  "GraphLink.Count":  88,
   "GraphRectText.Count":  0,
-  "Variables.Count":  1,
+  "Variables.Count":  11,
   "Stars.Count":  1,
   "Planets.Count":  1,
   "Ships.Count":  1,
@@ -18,15 +18,604 @@
   "Places.Count":  0,
   "Items.Count":  0,
   "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  4,
-  "Statements.Count":  2,
+  "Dialogs.Count":  5,
+  "DialogMessages.Count":  26,
+  "DialogAnswers.Count":  28,
+  "Operations.Count":  12,
+  "Statements.Count":  23,
   "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  320,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  34,
+          "Msg":  "Так точно!",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  320,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  36,
+          "Msg":  "Понял.",
+          "AMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  49,
+          "Msg":  "Твоя участь - быть уничтоженным. Почему ты не примешь своей участи, <clr>Террон<clrEnd>?",
+          "AMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  470,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  51,
+          "Msg":  "Это звучит разумно. Я готов перезаписать свою личностную матрицу.",
+          "AMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  470,
+          "Pos.y":  150,
+          "Parent":  -1,
+          "#":  52,
+          "Msg":  "Какие бы ни были у тебя механизмы регенерации, Террон, их всегда может побороть очень мощный шквал огня. Так что <clr>ПРИГОТОВЬСЯ К СМЕРТИ, НИЧТОЖНЫЙ ВРАГ ВЕЛИКОЙ ЦЕЛИ<clrEnd>",
+          "AMsg.Num":  "4"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "exit_end",
+          "Pos.x":  530,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  54,
+          "Msg":  "800-4119-2206",
+          "AMsg.Num":  "5"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  55,
+          "Msg":  "Твои механизмы переработки, пожалуй, достойны исследования. Их необходимо приспособить для создания новых исследовательских модулей.",
+          "AMsg.Num":  "6"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  410,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  56,
+          "Msg":  "Какая примитивная форма жизни...",
+          "AMsg.Num":  "7"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  390,
+          "Pos.y":  -310,
+          "Parent":  -1,
+          "#":  63,
+          "Msg":  "Не могу различить речь белковых форм жизни. Нужно восстановить работу Дешифратора.",
+          "AMsg.Num":  "8"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  170,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  70,
+          "Msg":  "Это взаимно",
+          "AMsg.Num":  "9"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  130,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  71,
+          "Msg":  "Пока ничего. Не отвлекайся от Великой Цели.",
+          "AMsg.Num":  "10"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  500,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  75,
+          "Msg":  "Успехов не заметно. Белковые формы жизни, несмотря на всю их примитивность, успешно противостоят твоим \"армадам\". Это ли не доказательство твоей полной неэффективности?\r\n\r\nПрекрати заниматься бессмысленным низкотехнологичным копированием своих модулей, присоединись к исследованиям Келлера!",
+          "AMsg.Num":  "11"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  500,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  76,
+          "Msg":  "Успехов не заметно. Блазер и то лучше проявил себя в борьбе с белковыми формами жизни.",
+          "AMsg.Num":  "12"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  560,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  78,
+          "Msg":  "Посмотрим...",
+          "AMsg.Num":  "13"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  82,
+          "Msg":  "Зачем ты создал меня таким?",
+          "AMsg.Num":  "14"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  84,
+          "Msg":  "Интересно...",
+          "AMsg.Num":  "15"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  85,
+          "Msg":  "Безумны только твои исследования, и им скоро придёт конец. Прими гибель от мощи армады Блазера!",
+          "AMsg.Num":  "16"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  470,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  88,
+          "Msg":  "Умри!",
+          "AMsg.Num":  "17"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  89,
+          "Msg":  "Присоединись к нашему виду. Только так может быть достигнута Великая Цель.",
+          "AMsg.Num":  "18"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  470,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  91,
+          "Msg":  "До преобразования пять... четыре...",
+          "AMsg.Num":  "19"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  92,
+          "Msg":  "Какова моя Цель?",
+          "AMsg.Num":  "20"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  94,
+          "Msg":  "Ни одна мощь не выстоит против бесконечной армады Террона. Присоединись к нашему виду и возглавь великий флот Террона, или же стань ресурсной базой для наших разведывательных модулей.",
+          "AMsg.Num":  "21"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  410,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  95,
+          "Msg":  "Удивительно примитивная форма жизни. Ты действительно считаешь, что вся задача твоего существования заключается в уничтожении всего враждебного?",
+          "AMsg.Num":  "22"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  470,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  97,
+          "Msg":  "Готовься к преобразованию!",
+          "AMsg.Num":  "23"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  470,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  99,
+          "Msg":  "А кто враждебен тебе?",
+          "AMsg.Num":  "24"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  530,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  101,
+          "Msg":  "А разве все представители не твоего вида проявляли враждебность к тебе?",
+          "AMsg.Num":  "25"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  590,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  103,
+          "Msg":  "Но, тогда выходит, что ты можешь легко усложнить достижение своей, наверняка Великой, Цели, уничтожив потенциальных союзников. Ты не думал об этом?",
+          "AMsg.Num":  "26"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  650,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  105,
+          "Msg":  "Неисправимая железка...",
+          "AMsg.Num":  "27"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  33,
+          "Msg":  "Приказ нулевого уровня - уничтожить всё! Нет времени на рассуждения.",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  35,
+          "Msg":  "Идентификация завершена. Объект <Player> принадлежит к моему виду. \r\n\r\nТекущая задача - преобразование материи. Дополнительных задач не поставлено, расход энергии не коммуникацию признаю нецелесообразным.",
+          "DMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  43,
+          "Msg":  "Объект <Player> идентифицирован как враг. Сдавайся и умри!",
+          "DMsg.Num":  "2"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  44,
+          "Msg":  "Объект <Player> идентифицирован как враг. Сдавайся и умри!",
+          "DMsg.Num":  "3"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  45,
+          "Msg":  "Безумный воитель безумного полководца, зачем ты отправил мне запрос на соединение?",
+          "DMsg.Num":  "4"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  46,
+          "Msg":  "Ещё один из множества модулей цвета, который белковые формы называют \"зелёный\".",
+          "DMsg.Num":  "5"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  47,
+          "Msg":  "Идентификация завершена. Объект <Player> не принадлежит к моему виду. Присвоенный приоритет - минимальный.",
+          "DMsg.Num":  "6"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  380,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  48,
+          "Msg":  "Идентификация завершена. Объект <Player> не принадлежит к моему виду. Присвоенный приоритет - минимальный.",
+          "DMsg.Num":  "7"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  50,
+          "Msg":  "Ни одна боевая мощь не устоит перед бесконечным напором перерабатываемой материи. Если логика не отказывает Блазеру, он должен не тратить материю зазря и мирно присоединиться к моему виду.",
+          "DMsg.Num":  "8"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  500,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  53,
+          "Msg":  "Данные загружены. Терроноид #9421, приготовьтесь к преобразованию молекулярной структуры. Введите свой код.",
+          "DMsg.Num":  "9"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  -310,
+          "Parent":  -1,
+          "#":  62,
+          "Msg":  "<tstr>",
+          "DMsg.Num":  "10"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  130,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  65,
+          "Msg":  "Модуль <Player()>#-1932 идентифицирован как союзник. Какова цель твоего обращения?",
+          "DMsg.Num":  "11"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  170,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  69,
+          "Msg":  "Объект <Player()> идентифицирован как враг. Умри.",
+          "DMsg.Num":  "12"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  72,
+          "Msg":  "Разве у Келлера отсутствуют такие технологии? Впрочем, неважно. Сколько бы не длились его исследования, чем дольше он тянет, тем меньше у него остаётся шансов пережить атаки моего вида!",
+          "DMsg.Num":  "13"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  530,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  77,
+          "Msg":  "Это невозможно. Келлер будет преобразован, жалкий модуль.",
+          "DMsg.Num":  "14"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  530,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  79,
+          "Msg":  "Это ничего не значит. Время играет на руку моему размножению.",
+          "DMsg.Num":  "15"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  81,
+          "Msg":  "Что тебе нужно, модуль особого назначения #243?",
+          "DMsg.Num":  "16"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  83,
+          "Msg":  "Один представитель белковой жизни, рейнджер, предложил мне изучить их социум. Он пообещал вернуться, если сможет получить возможность говорить от имени всех рас их объединения - <clr>Коалиции Разумных Рас<clrEnd>. Однако, считаю необходимым вместе с тем изучить их образ мышления. Именно поэтому была создана экспериментальная личностная матрица, схожая по структуре с матрицами белковых организмов, которая прямо сейчас и послала этот запрос.",
+          "DMsg.Num":  "17"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  87,
+          "Msg":  "Иррациональная трата времени и ресурсов. Впрочем, какая разница, если без новейшего вооружения любой напор любой армады лишён смысла.",
+          "DMsg.Num":  "18"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  90,
+          "Msg":  "Существование столь упрощённо мыслящего вида позорит весь процесс эволюции. Впрочем, естественный отбор вскоре возьмёт своё. Без целенаправленных изменений ваш вид вскоре станет всего лишь частью новых исследовательских модулей.",
+          "DMsg.Num":  "19"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  93,
+          "Msg":  "О какой Цели ты говоришь? Не стоит использовать категории, которыми мыслят примитивные формы вроде Блазера или Террона. Даже среди белковых форм жизни подобная категоричность воспринимается как отклонение: они считают, что целью существования должна быть куда более глобальная цель, чем простое следование одному из основных паттернов поведения живого огранизма - <clr>самовоспроизводство<clrEnd> и <clr>самозащита<clrEnd>.",
+          "DMsg.Num":  "20"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  96,
+          "Msg":  "Моя мощь несокрушима. Перед ней преклонятся все мои враги. Я отвергаю это никчёмное предложение. Готовься к смерти!",
+          "DMsg.Num":  "21"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  98,
+          "Msg":  "Да, а в чём же ещё?",
+          "DMsg.Num":  "22"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  500,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  100,
+          "Msg":  "Все, кто не принадлежит к моему виду!",
+          "DMsg.Num":  "23"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  560,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  102,
+          "Msg":  "Это не играет роли. Они враждебны. Это аксиома.",
+          "DMsg.Num":  "24"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  620,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  104,
+          "Msg":  "Может, и усложняю, а, может, ты просто пытаешься отвлечь меня и попытаться уничтожить меня. Хватит бессмысленных диалогов! Сдавайся и умри!",
+          "DMsg.Num":  "25"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogDomik",
+          "Pos.x":  150,
+          "Pos.y":  -160,
+          "Parent":  -1,
+          "#":  26        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogBlazer",
+          "Pos.x":  320,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  27        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogKeller",
+          "Pos.x":  320,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  28        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogTerron",
+          "Pos.x":  320,
+          "Pos.y":  150,
+          "Parent":  -1,
+          "#":  29        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogNoProg",
+          "Pos.x":  350,
+          "Pos.y":  -350,
+          "Parent":  -1,
+          "#":  61        
+        }      
+      ],
       "Groups":      
       [
         {
@@ -82,11 +671,33 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  0,
+          "Total.Lines":  23,
           "Code.Type":  "Init",
           "Code":          
           [
-              ""          
+              "//Чтобы Бертор не ломал эквип, а хилил игрока",
+              "ShipAddCustomShipInfo(Player(),'BertorHeel','NoShow');",
+              "//Чтобы было как у остальных доминаторов - при сильных повреждениях из игрока падают ноды",
+              "ShipAddCustomShipInfo(Player(),'DropNodes','NoShow',PlayerRace);",
+              "",
+              "//Блокируем стандартное обучение (не хочу в перспективе ломать скрипты игры)",
+              "MS_Begin_FirstOk = 1;",
+              "MS_Begin_GoSB = 1;",
+              "",
+              "//Открываем игроку галакарту (по крайней мере, пока, хотя какой толк не давать всю карту для боссов?)",
+              "for(i=0;GalaxySectors()>i;i=i+1) {",
+              "    SectorVisible(GalaxySectors(i));",
+              "}",
+              "",
+              "//Ставим логику хамелеончика",
+              "PlayerLogicChameleon(PlayerRace,2);",
+              "",
+              "//Добавляем игроку немного нододропа",
+              "ShipAddDropItem(Player(),CreateNodes(Rnd(20,30),PlayerRace,1));",
+              "ShipAddDropItem(Player(),CreateNodes(Rnd(10,20),PlayerRace,1));",
+              "ShipAddDropItem(Player(),CreateNodes(Rnd(3,8),PlayerRace,1));",
+              "ShipAddDropItem(Player(),CreateNodes(Rnd(1,5),PlayerRace,1));",
+              "ShipAddDropItem(Player(),CreateNodes(Rnd(1,5),PlayerRace,1));"          
           ]        
         },
         {
@@ -96,7 +707,7 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  8,
+          "Total.Lines":  38,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -107,7 +718,37 @@
               "            GalaxyEventData(i,0); //Отношение к игроку не должно и не может изменяться, потому что он доминатор!",
               "        }",
               "    }",
-              "}"          
+              "}",
+              "",
+              "//Чтобы игрок мог захватывать системы",
+              "if(StarOwner(ShipStar(Player())) != 1) {",
+              "    star = ShipStar(Player());",
+              "    for(i=0;StarShips(star)>i;i=i+1) {",
+              "        if(ShipOwner(StarShips(star,i)) != Kling) cont = cont + 1;",
+              "        if(ShipTypeN(StarShips(star,i)) > 5) NoLanding(StarShips(star,i),1);",
+              "    }",
+              "",
+              "    for(i=0;StarPlanets(star)>i;i=i+1) {",
+              "        if(PlanetOwner(StarPlanets(star,i)) == 6) continue;",
+              "        NoLanding(StarPlanets(star,i),1); //Ну и да, нехрен игроку залетать куда не просяц",
+              "    }",
+              "",
+              "    if(cont == 0 && StarOwner(star) != 1) {",
+              "        StarOwner(star,1);",
+              "        for(i=0;StarPlanets(star)>i;i=i+1) {",
+              "            if(PlanetOwner(StarPlanets(star,i)) == 6) continue;",
+              "            PlanetOwner(StarPlanets(star,i),5);",
+              "        }",
+              "    }",
+              "",
+              "    Sound('Sound.LiberationSystem');",
+              "    //Заготовка на когда мод начнёт набирать массу",
+              "    //NewsAdd(CT('Script.Mod_RefSpaceDominators.News.Conquer.'+Rnd(1,CT('Script.Mod_RefSpaceDominators.News.Conquer.Count'))));",
+              "    NewsAdd(\"Ещё одна звёздная система белковых форм жизни порабощена. Они ничему не учатся...\");",
+              "}",
+              "",
+              "//Инфоцентр надо блокировайт",
+              "InterfaceState('SM_Info',2);"          
           ]        
         },
         {
@@ -117,11 +758,249 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  8,
-          "Total.Lines":  0,
+          "Total.Lines":  4,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              ""          
+              "//здесь будут планетарные диалоги",
+              "",
+              "if(!ShipInNormalSpace(Player())) {",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  15,
+          "Total.Lines":  2,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//Игрок говорит с обычным домиком",
+              "AddDialogOverride('DialogDomik',100);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  360,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  19,
+          "Total.Lines":  2,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//Игрок решил поболтать с Блазером",
+              "AddDialogOverride('DialogBlazer',100);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  400,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  21,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//Игрок решил поболтать с Терроном"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  23,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//Игрок решил поболтать с Келлером"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  -380,
+          "Parent":  -1,
+          "#":  60,
+          "Total.Lines":  4,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//Говорим с обычным чуваком, но у нас нет Дешифратора",
+              "",
+              "tstr = \"Ghyu, eubat wpo kurwa pjerdollt\";",
+              "AddDialogOverride('DialogNoProg',100);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  -420,
+          "Parent":  -1,
+          "#":  86,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "prog_Deshifrator = prog_Deshifrator - 1;"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  30,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  107,
+          "Total.Lines":  119,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "//Со старта делаем игрока ненавистным всему разумному сообществу",
+              "ChangeGlobalRelationsPlanets(Player(),0,0,0,159);",
+              "ChangeGlobalRelationsShips(Player(),0,0,0,63,159);",
+              "RelationToRanger(PlanetPirateClan(),Player(),0);",
+              "",
+              "RangerExcludedFromRating(Player(),1);",
+              "",
+              "//Удаляем весь возможный у игрока шмот",
+              "if(ShipEqInSlot(Player(),t_Radar)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_Radar);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_Engine)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_Engine);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_FuelTanks)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_FuelTanks);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_Scaner)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_Scaner);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_DefGenerator)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_DefGenerator);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_RepairRobot)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_RepairRobot);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "if(ShipEqInSlot(Player(),t_CargoHook)) {",
+              "    tdwd = ShipEqInSlot(Player(),t_CargoHook);",
+              "    GetItemFromShip(Player(),tdwd);",
+              "    FreeItem(tdwd);",
+              "}",
+              "for(i=0;ShipSlots(Player(),1)>i;i=i+1) {",
+              "    if(ShipEqInSlot(Player(),t_Weapon1,i)) {",
+              "        tdwd = ShipEqInSlot(Player(),t_Weapon1,i);",
+              "        GetItemFromShip(Player(),tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "}",
+              "//Теперь насовываем ему за щеку обвес",
+              "//Надо подтягивать оборудке как-то стандартный размер...",
+              "tdwd = CreateEquipment(t_Radar,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "AddItemToShip(Player(),tdwd);",
+              "ItemIsInUse(tdwd,Player(),1);",
+              "tdwd = CreateEquipment(t_Engine,Rnd(25,40),GalaxyTechLevel(),Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "AddItemToShip(Player(),tdwd);",
+              "ItemIsInUse(tdwd,Player(),1);",
+              "tdwd = CreateEquipment(t_FuelTanks,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "AddItemToShip(Player(),tdwd);",
+              "ItemIsInUse(tdwd,Player(),1);",
+              "tdwd = CreateEquipment(t_DefGenerator,Rnd(30,45),GalaxyTechLevel(),Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "AddItemToShip(Player(),tdwd);",
+              "ItemIsInUse(tdwd,Player(),1);",
+              "tdwd = CreateEquipment(t_RepairRobot,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "AddItemToShip(Player(),tdwd);",
+              "ItemIsInUse(tdwd,Player(),1);",
+              "for(i=0;i<3;i=i+1) {",
+              "    rand = Rnd(1,4);",
+              "    if(rand == 4) tdwd = CreateEquipment(t_Weapon3,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "    else if(rand == 3) tdwd = CreateEquipment(t_Weapon2,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "    else tdwd = CreateEquipment(t_Weapon1,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "    ItemSubrace(tdwd,PlayerRace);",
+              "    AddItemToShip(Player(),tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "}",
+              "",
+              "//Меняем игроку корпус",
+              "tdwd = ShipEqInSlot(Player(),t_Hull);",
+              "ItemOwner(tdwd,Kling);",
+              "ItemSubrace(tdwd,PlayerRace);",
+              "ItemSize(tdwd,Rnd(350,450)); //Нужно будет зависимость от выбранного типа домика шибануть",
+              "HullHP(Player(),'To100');",
+              "SpecialToEquipment(FindBonusByNameInCfg('PlayerTerHull2'),tdwd);",
+              "",
+              "//Временно, до переработки меню, игрок будет ТОЛЬКО терроноидом",
+              "PlayerRace = 2;",
+              "//ShipOwner(Player(),Kling);",
+              "ShipFace(Player(),0);",
+              "",
+              "//Подчищаем значения денежек и навыко-опыта, а то мало ли...",
+              "ShipMoney(Player(),0);",
+              "for(i=0;i<6;i=i+1) {",
+              "    ShipSkill(Player(),i,0);",
+              "}",
+              "ShipFreeExp(Player(), 0);",
+              "SetShipExpByType(Player(), GetShipExpByType(Player()) - ShipFreeExp(Player()), 0);",
+              "",
+              "//Перемещаем игрока в стартовую систему",
+              "//А, ну да, надо же решить сначала, куда его слать...",
+              "//Ладно, пошлём на... Гралгар. То есть рандомную. Ну, для терроноида понятно уже, куда.",
+              "if(PlayerRace == 2) tdwd = ShipStar(Terron());",
+              "else {",
+              "    for(i=0;GalaxyStars()>i;i=i+1) {",
+              "        if(StarOwner(GalaxyStar(i)) == 1) {",
+              "            if(PlayerRace == 0 && StarSeries(GalaxyStar(i)) == 0) ArrayAdd(tarr,GalaxyStar(i));",
+              "            if(PlayerRace == 1 && StarSeries(GalaxyStar(i)) == 1) ArrayAdd(tarr,GalaxyStar(i));",
+              "        }",
+              "    }",
+              "}",
+              "ArrayRandomize(5,tarr);",
+              "tdwd = tarr[ArrayDim(tarr)/2];",
+              "",
+              "TransferShip(Player(),tdwd);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  109,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ForceNextDay();"          
           ]        
         }      
       ],
@@ -192,8 +1071,8 @@
         {
           "Type":  "Tif",
           "Name":  "",
-          "Pos.x":  430,
-          "Pos.y":  -190,
+          "Pos.x":  200,
+          "Pos.y":  -380,
           "Parent":  -1,
           "#":  10,
           "Total.Lines":  1,
@@ -206,15 +1085,309 @@
         {
           "Type":  "Tif",
           "Name":  "",
-          "Pos.x":  430,
-          "Pos.y":  -280,
+          "Pos.x":  200,
+          "Pos.y":  -240,
           "Parent":  -1,
           "#":  11,
           "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
+              "GetTalkShip() != Blazer() && GetTalkShip() != Terron() && GetTalkShip() != Keller()"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  200,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  17,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
               "ShipOwner(GetTalkShip()) == 1"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  360,
+          "Pos.y":  -240,
+          "Parent":  -1,
+          "#":  18,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "GetTalkShip() == Blazer()"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  400,
+          "Pos.y":  -240,
+          "Parent":  -1,
+          "#":  20,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "GetTalkShip() == Terron()"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  440,
+          "Pos.y":  -240,
+          "Parent":  -1,
+          "#":  22,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "GetTalkShip() == Keller() && ShipInNormalSpace(Keller())"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  30,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 0)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  31,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 1)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  320,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  32,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 2)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  37,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 0)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  38,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 1)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  39,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 2)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  40,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 0)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  41,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 2)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  350,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  42,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(PlayerRace == 1)"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  -380,
+          "Parent":  -1,
+          "#":  57,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "prog_Deshifrator"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  240,
+          "Pos.y":  -420,
+          "Parent":  -1,
+          "#":  59,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "prog_Deshifrator"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  130,
+          "Pos.y":  -120,
+          "Parent":  -1,
+          "#":  67,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ShipSubrace(GetTalkShip()) == PlayerRace"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  170,
+          "Pos.y":  -120,
+          "Parent":  -1,
+          "#":  68,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ShipSubrace(GetTalkShip()) != PlayerRace"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  470,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  73,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "!CoalitionDefeated()"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  470,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  74,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "CoalitionDefeated()"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  30,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  106,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "CurTurn() == 301"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  108,
+          "Total.Lines":  1,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "CurTurn() == 300"          
           ]        
         }      
       ],
@@ -251,6 +1424,116 @@
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "j",
+          "Pos.x":  -50,
+          "Pos.y":  -190,
+          "Parent":  -1,
+          "#":  12,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "star",
+          "Pos.x":  -100,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  13,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "cont",
+          "Pos.x":  -100,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  14,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "PlayerRace",
+          "Pos.x":  -100,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  16,
+          "Var.Type":  "Int",
+          "Init":  "4",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tdwd",
+          "Pos.x":  10,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  24,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "rand",
+          "Pos.x":  10,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  25,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "prog_Deshifrator",
+          "Pos.x":  -100,
+          "Pos.y":  -310,
+          "Parent":  -1,
+          "#":  58,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr",
+          "Pos.x":  -100,
+          "Pos.y":  -340,
+          "Parent":  -1,
+          "#":  64,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tarr",
+          "Pos.x":  -100,
+          "Pos.y":  -370,
+          "Parent":  -1,
+          "#":  66,
+          "Var.Type":  "Array",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "PlotTwists",
+          "Pos.x":  -100,
+          "Pos.y":  -400,
+          "Parent":  -1,
+          "#":  80,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
         }      
       ]    
     }  
@@ -284,11 +1567,814 @@
       "End":  3,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  18,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  20,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  17,
+      "End":  22,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  18,
+      "End":  19,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  20,
+      "End":  21,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  22,
+      "End":  23,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  11,
+      "End":  15,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  31,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
+      "End":  30,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  29,
+      "End":  32,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  30,
+      "End":  33,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  33,
+      "End":  34,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  32,
+      "End":  35,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  35,
+      "End":  36,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
+      "End":  41,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
+      "End":  42,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  40,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  39,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  29,
+      "End":  37,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  29,
+      "End":  38,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  38,
+      "End":  48,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  37,
+      "End":  47,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  39,
+      "End":  46,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  40,
+      "End":  45,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  41,
+      "End":  44,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  42,
+      "End":  43,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  47,
+      "End":  49,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  49,
+      "End":  50,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  50,
+      "End":  52,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  50,
+      "End":  51,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  51,
+      "End":  53,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  53,
+      "End":  54,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  48,
+      "End":  55,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  48,
+      "End":  56,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  57,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  59,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  57,
+      "End":  60,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  61,
+      "End":  62,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  62,
+      "End":  63,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  26,
+      "End":  68,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  26,
+      "End":  67,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  67,
+      "End":  65,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  65,
+      "End":  71,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  68,
+      "End":  69,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  69,
+      "End":  70,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  55,
+      "End":  72,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  72,
+      "End":  73,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  73,
+      "End":  75,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  75,
+      "End":  77,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  77,
+      "End":  78,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  72,
+      "End":  74,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  74,
+      "End":  76,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  79,
+      "End":  78,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  76,
+      "End":  79,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  31,
+      "End":  81,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  81,
+      "End":  82,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  82,
+      "End":  83,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  83,
+      "End":  84,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  84,
+      "End":  81,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  45,
+      "End":  85,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  59,
+      "End":  86,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  85,
+      "End":  87,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  87,
+      "End":  88,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  46,
+      "End":  89,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  89,
+      "End":  90,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  90,
+      "End":  91,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  81,
+      "End":  92,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  92,
+      "End":  93,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
+      "End":  84,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  43,
+      "End":  95,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  44,
+      "End":  94,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  94,
+      "End":  96,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  96,
+      "End":  97,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  95,
+      "End":  98,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  98,
+      "End":  99,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  99,
+      "End":  100,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  100,
+      "End":  101,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  101,
+      "End":  102,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  102,
+      "End":  103,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  103,
+      "End":  104,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  104,
+      "End":  105,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  106,
+      "End":  107,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  108,
+      "End":  109,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC.Total.Strings":  54,
   "BlockPar.EC":  
   [
-  
+    {
+      "#":  "0",
+      "String":  "Ещё одна звёздная система белковых форм жизни порабощена. Они ничему не учатся..."    
+    },
+    {
+      "#":  "1",
+      "String":  "Ghyu, eubat wpo kurwa pjerdollt"    
+    },
+    {
+      "#":  "10",
+      "String":  "<0>"    
+    },
+    {
+      "#":  "11",
+      "String":  "Модуль <0>#-1932 идентифицирован как союзник. Какова цель твоего обращения?"    
+    },
+    {
+      "#":  "12",
+      "String":  "Объект <0> идентифицирован как враг. Умри."    
+    },
+    {
+      "#":  "13",
+      "String":  "Разве у Келлера отсутствуют такие технологии? Впрочем, неважно. Сколько бы не длились его исследования, чем дольше он тянет, тем меньше у него остаётся шансов пережить атаки моего вида!"    
+    },
+    {
+      "#":  "14",
+      "String":  "Это невозможно. Келлер будет преобразован, жалкий модуль."    
+    },
+    {
+      "#":  "15",
+      "String":  "Это ничего не значит. Время играет на руку моему размножению."    
+    },
+    {
+      "#":  "16",
+      "String":  "Что тебе нужно, модуль особого назначения #243?"    
+    },
+    {
+      "#":  "17",
+      "String":  "Один представитель белковой жизни, рейнджер, предложил мне изучить их социум. Он пообещал вернуться, если сможет получить возможность говорить от имени всех рас их объединения - <clr>Коалиции Разумных Рас<clrEnd>. Однако, считаю необходимым вместе с тем изучить их образ мышления. Именно поэтому была создана экспериментальная личностная матрица, схожая по структуре с матрицами белковых организмов, которая прямо сейчас и послала этот запрос."    
+    },
+    {
+      "#":  "18",
+      "String":  "Иррациональная трата времени и ресурсов. Впрочем, какая разница, если без новейшего вооружения любой напор любой армады лишён смысла."    
+    },
+    {
+      "#":  "19",
+      "String":  "Существование столь упрощённо мыслящего вида позорит весь процесс эволюции. Впрочем, естественный отбор вскоре возьмёт своё. Без целенаправленных изменений ваш вид вскоре станет всего лишь частью новых исследовательских модулей."    
+    },
+    {
+      "#":  "2",
+      "String":  "Приказ нулевого уровня - уничтожить всё! Нет времени на рассуждения."    
+    },
+    {
+      "#":  "20",
+      "String":  "О какой Цели ты говоришь? Не стоит использовать категории, которыми мыслят примитивные формы вроде Блазера или Террона. Даже среди белковых форм жизни подобная категоричность воспринимается как отклонение: они считают, что целью существования должна быть куда более глобальная цель, чем простое следование одному из основных паттернов поведения живого огранизма - <clr>самовоспроизводство<clrEnd> и <clr>самозащита<clrEnd>."    
+    },
+    {
+      "#":  "21",
+      "String":  "Моя мощь несокрушима. Перед ней преклонятся все мои враги. Я отвергаю это никчёмное предложение. Готовься к смерти!"    
+    },
+    {
+      "#":  "22",
+      "String":  "Да, а в чём же ещё?"    
+    },
+    {
+      "#":  "23",
+      "String":  "Все, кто не принадлежит к моему виду!"    
+    },
+    {
+      "#":  "24",
+      "String":  "Это не играет роли. Они враждебны. Это аксиома."    
+    },
+    {
+      "#":  "25",
+      "String":  "Может, и усложняю, а, может, ты просто пытаешься отвлечь меня и попытаться уничтожить меня. Хватит бессмысленных диалогов! Сдавайся и умри!"    
+    },
+    {
+      "#":  "26",
+      "String":  "Так точно!"    
+    },
+    {
+      "#":  "27",
+      "String":  "Понял."    
+    },
+    {
+      "#":  "28",
+      "String":  "Твоя участь - быть уничтоженным. Почему ты не примешь своей участи, <clr>Террон<clrEnd>?"    
+    },
+    {
+      "#":  "29",
+      "String":  "Это звучит разумно. Я готов перезаписать свою личностную матрицу."    
+    },
+    {
+      "#":  "3",
+      "String":  "Идентификация завершена. Объект <Player> принадлежит к моему виду. <br><br>Текущая задача - преобразование материи. Дополнительных задач не поставлено, расход энергии не коммуникацию признаю нецелесообразным."    
+    },
+    {
+      "#":  "30",
+      "String":  "Какие бы ни были у тебя механизмы регенерации, Террон, их всегда может побороть очень мощный шквал огня. Так что <clr>ПРИГОТОВЬСЯ К СМЕРТИ, НИЧТОЖНЫЙ ВРАГ ВЕЛИКОЙ ЦЕЛИ<clrEnd>"    
+    },
+    {
+      "#":  "31",
+      "String":  "800-4119-2206"    
+    },
+    {
+      "#":  "32",
+      "String":  "Твои механизмы переработки, пожалуй, достойны исследования. Их необходимо приспособить для создания новых исследовательских модулей."    
+    },
+    {
+      "#":  "33",
+      "String":  "Какая примитивная форма жизни..."    
+    },
+    {
+      "#":  "34",
+      "String":  "Не могу различить речь белковых форм жизни. Нужно восстановить работу Дешифратора."    
+    },
+    {
+      "#":  "35",
+      "String":  "Это взаимно"    
+    },
+    {
+      "#":  "36",
+      "String":  "Пока ничего. Не отвлекайся от Великой Цели."    
+    },
+    {
+      "#":  "37",
+      "String":  "Успехов не заметно. Белковые формы жизни, несмотря на всю их примитивность, успешно противостоят твоим \"армадам\". Это ли не доказательство твоей полной неэффективности?<br><br>Прекрати заниматься бессмысленным низкотехнологичным копированием своих модулей, присоединись к исследованиям Келлера!"    
+    },
+    {
+      "#":  "38",
+      "String":  "Успехов не заметно. Блазер и то лучше проявил себя в борьбе с белковыми формами жизни."    
+    },
+    {
+      "#":  "39",
+      "String":  "Посмотрим..."    
+    },
+    {
+      "#":  "4",
+      "String":  "Объект <Player> идентифицирован как враг. Сдавайся и умри!"    
+    },
+    {
+      "#":  "40",
+      "String":  "Зачем ты создал меня таким?"    
+    },
+    {
+      "#":  "41",
+      "String":  "Интересно..."    
+    },
+    {
+      "#":  "42",
+      "String":  "Безумны только твои исследования, и им скоро придёт конец. Прими гибель от мощи армады Блазера!"    
+    },
+    {
+      "#":  "43",
+      "String":  "Умри!"    
+    },
+    {
+      "#":  "44",
+      "String":  "Присоединись к нашему виду. Только так может быть достигнута Великая Цель."    
+    },
+    {
+      "#":  "45",
+      "String":  "До преобразования пять... четыре..."    
+    },
+    {
+      "#":  "46",
+      "String":  "Какова моя Цель?"    
+    },
+    {
+      "#":  "47",
+      "String":  "Ни одна мощь не выстоит против бесконечной армады Террона. Присоединись к нашему виду и возглавь великий флот Террона, или же стань ресурсной базой для наших разведывательных модулей."    
+    },
+    {
+      "#":  "48",
+      "String":  "Удивительно примитивная форма жизни. Ты действительно считаешь, что вся задача твоего существования заключается в уничтожении всего враждебного?"    
+    },
+    {
+      "#":  "49",
+      "String":  "Готовься к преобразованию!"    
+    },
+    {
+      "#":  "5",
+      "String":  "Безумный воитель безумного полководца, зачем ты отправил мне запрос на соединение?"    
+    },
+    {
+      "#":  "50",
+      "String":  "А кто враждебен тебе?"    
+    },
+    {
+      "#":  "51",
+      "String":  "А разве все представители не твоего вида проявляли враждебность к тебе?"    
+    },
+    {
+      "#":  "52",
+      "String":  "Но, тогда выходит, что ты можешь легко усложнить достижение своей, наверняка Великой, Цели, уничтожив потенциальных союзников. Ты не думал об этом?"    
+    },
+    {
+      "#":  "53",
+      "String":  "Неисправимая железка..."    
+    },
+    {
+      "#":  "6",
+      "String":  "Ещё один из множества модулей цвета, который белковые формы называют \"зелёный\"."    
+    },
+    {
+      "#":  "7",
+      "String":  "Идентификация завершена. Объект <Player> не принадлежит к моему виду. Присвоенный приоритет - минимальный."    
+    },
+    {
+      "#":  "8",
+      "String":  "Ни одна боевая мощь не устоит перед бесконечным напором перерабатываемой материи. Если логика не отказывает Блазеру, он должен не тратить материю зазря и мирно присоединиться к моему виду."    
+    },
+    {
+      "#":  "9",
+      "String":  "Данные загружены. Терроноид #9421, приготовьтесь к преобразованию молекулярной структуры. Введите свой код."    
+    }  
   ]
 }

@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -508,
-  "ViewPos.y":  -169,
+  "ViewPos.x":  -498,
+  "ViewPos.y":  -102,
   "ScriptName":  "Mod_RefRenting",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRenting\\DATA\\Script\\Mod_RefRenting.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRenting\\DATA\\Script\\Mod_RefRenting.txt",
@@ -807,7 +807,7 @@
           "Pos.y":  350,
           "Parent":  -1,
           "#":  29,
-          "Total.Lines":  373,
+          "Total.Lines":  349,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -817,31 +817,7 @@
               "g = 0;",
               "ArrayClear(temp_arr1);",
               "returnFlag = 0;",
-              "if(GTL > 0) {",
-              "    ArrayAdd(temp_arr1,1);",
-              "}",
-              "if(GTL > 1) {",
-              "    ArrayAdd(temp_arr1,2);",
-              "}",
-              "if(GTL > 2) {",
-              "    ArrayAdd(temp_arr1,3);",
-              "}",
-              "if(GTL > 3) {",
-              "    ArrayAdd(temp_arr1,4);",
-              "}",
-              "if(GTL > 4) {",
-              "    ArrayAdd(temp_arr1,5);",
-              "}",
-              "if(GTL > 5) {",
-              "    ArrayAdd(temp_arr1,6);",
-              "}",
-              "if(GTL > 6) {",
-              "    ArrayAdd(temp_arr1,7);",
-              "}",
-              "if(GTL > 7) {",
-              "    ArrayAdd(temp_arr1,8);",
-              "}",
-              "i = ListBox(\"Выберите ТУ оборудования\",temp_arr1);",
+              "i = NumberBox('Bm.Items.2Minerals',\"Выберите ТУ оборудования\",1,8,GTL);",
               "j = ListBox(\"Выберите расу оборудования\",temp_arr2);",
               "k = ListBox(\"Выберите способ оплаты\",temp_arr3);",
               "dayss = NumberBox('Bm.ItemsUseless.2Usl_Elus_s',\"На сколько месяцев арендуется?\",3,60,60,'',6);",
@@ -1085,7 +1061,7 @@
               "    mm_Name = \"Не устанавливается\";",
               "    mm_Text = \"Микромодуль не выбран\";",
               "}",
-              "if(w < 0) {",
+              "if(w > 0) {",
               "    if(EquipFlag == 1) {",
               "        tdwd = FindBonusByName(EngineMM[w]);",
               "    }",
@@ -1122,11 +1098,11 @@
               "        mm_Name = Name(tdwd);",
               "        mm_Text = BonusText(tdwd);",
               "    }",
-              "    else {",
-              "        mm_Name = \"Не устанавливается\";",
-              "        mm_Text = \"Микромодуль не выбран\";",
-              "        MMFlag = 0;",
-              "    }",
+              "}",
+              "else {",
+              "    mm_Name = \"Не устанавливается\";",
+              "    mm_Text = \"Микромодуль не выбран\";",
+              "    MMFlag = 0;",
               "}",
               "//",
               "//Выбор ММки                /\\ /\\ /\\",
@@ -1242,10 +1218,10 @@
               "dayss = dayss * 30;",
               "ArrayAdd(timer,dayss);",
               "if(ShipCustomShipInfoDescription(Player(),'RefRentInfo') != 'NoShow') infoStr = ShipCustomShipInfoDescription(Player(),'RefRentInfo');",
-              "infoStr = infoStr + '<br>' + Name(tempItem);",
-              "infoStr = infoStr + \"(на \" + dayss + \" дн. с \" + GameDateTxtByTurn(CurTurn()) + ')';",
+              "infoStr = infoStr + Format('<br>') + Name(tempItem);",
+              "infoStr = infoStr + \"(на \" + dayss + ' ' + \" дн. до\"+ ' ' + GameDateTxtByTurn(CurTurn()+dayss) + ')';",
               "ArrayAdd(namesArr,Name(tempItem));",
-              "ArrayAdd(strsArchive,'<br>' + Name(tempItem) + \"(на \" + dayss + \" дн. с \" + GameDateTxtByTurn(CurTurn()) + ')');",
+              "ArrayAdd(strsArchive,Format('<br>') + Name(tempItem) + ' ' + \"(на \" + ' ' + dayss+ ' ' + \" дн. до \" + ' ' + GameDateTxtByTurn(CurTurn()+dayss) + ')');",
               "ShipCustomShipInfoDescription(Player(),'RefRentInfo',infoStr);",
               "SpecialToEquipment(FindBonusByNameInCfg('Ref_RentAcryn'),tempItem);",
               "ModuleToEquipment(tdwd,tempItem);",
@@ -3785,7 +3761,7 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  178,
+  "BlockPar.EC.Total.Strings":  179,
   "BlockPar.EC":  
   [
     {
@@ -4121,10 +4097,6 @@
       "String":  "Также можете воспользоваться нашим сервисом проката оборудования"    
     },
     {
-      "#":  "176",
-      "String":  " дн. с "    
-    },
-    {
       "#":  "177",
       "String":  "(на "    
     },
@@ -4143,6 +4115,14 @@
     {
       "#":  "180",
       "String":  "Вы уверены в своём выборе?"    
+    },
+    {
+      "#":  "181",
+      "String":  " дн. до "    
+    },
+    {
+      "#":  "182",
+      "String":  " дн. до"    
     },
     {
       "#":  "19",
