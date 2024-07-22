@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefPartialTMUse",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefPartialTMUse\\DATA\\Script\\Mod_RefPartialTMUse.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefPartialTMUse\\DATA\\Script\\Mod_RefPartialTMUse.txt",
-  "GraphPoint.Count":  42,
-  "GraphLink.Count":  28,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  8,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  3,
-  "DialogMessages.Count":  5,
-  "DialogAnswers.Count":  7,
-  "Operations.Count":  11,
-  "Statements.Count":  3,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -221,7 +203,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -235,12 +216,11 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  8,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
               "if(ShipArts(Player()) > 0) {",
-              "    for(i=0;ShipArts(Player()) > i;i=i+1){",
+              "    for(i=ShipArts(Player());0 > i;i=i-1){",
               "        if(ItemType(ShipArts(Player(),i)) == t_ArtefactTransmitter) {",
               "            AddDialogInject('TMUse','',\"Активация трансфакторных маяков\",3);",
               "            break;",
@@ -256,7 +236,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  11,
-          "Total.Lines":  14,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -283,7 +262,6 @@
           "Pos.y":  -50,
           "Parent":  -1,
           "#":  13,
-          "Total.Lines":  11,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -307,7 +285,6 @@
           "Pos.y":  70,
           "Parent":  -1,
           "#":  21,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -321,7 +298,6 @@
           "Pos.y":  150,
           "Parent":  -1,
           "#":  23,
-          "Total.Lines":  8,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -342,7 +318,6 @@
           "Pos.y":  110,
           "Parent":  -1,
           "#":  27,
-          "Total.Lines":  7,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -362,7 +337,6 @@
           "Pos.y":  190,
           "Parent":  -1,
           "#":  30,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -376,7 +350,6 @@
           "Pos.y":  30,
           "Parent":  -1,
           "#":  31,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -390,7 +363,6 @@
           "Pos.y":  70,
           "Parent":  -1,
           "#":  32,
-          "Total.Lines":  6,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -409,7 +381,6 @@
           "Pos.y":  110,
           "Parent":  -1,
           "#":  35,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -488,7 +459,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -502,7 +472,6 @@
           "Pos.y":  30,
           "Parent":  -1,
           "#":  38,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -516,7 +485,6 @@
           "Pos.y":  30,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [

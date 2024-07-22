@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefNPCSponsorship",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNPCSponsorship\\DATA\\Script\\Mod_RefNPCSponsorship.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNPCSponsorship\\DATA\\Script\\Mod_RefNPCSponsorship.txt",
-  "GraphPoint.Count":  11,
-  "GraphLink.Count":  4,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  3,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  3,
-  "Statements.Count":  0,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -68,7 +50,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -82,7 +63,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  6,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -101,7 +81,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  9,
-          "Total.Lines":  19,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -109,8 +88,8 @@
               "    for(i=GalaxyEvents()-1; i>=0; i=i-1) {",
               "        if(GalaxyEventDate(i) < CurTurn()) break;",
               "        if(GalaxyEventType(i)=='RuinsCreated') { //в галактике наварили базу",
-              "            if(GalaxyEventData(0) == 10) {",
-              "                ShipAddCustomShipInfo(IdToShip(GalaxyEventData(1)),'Sponsorship','NoShow');",
+              "            if(GalaxyEventData(i,0) == 10) {",
+              "                ShipAddCustomShipInfo(IdToShip(GalaxyEventData(i,1)),'Sponsorship','NoShow');",
               "            }",
               "        }",
               "    }",

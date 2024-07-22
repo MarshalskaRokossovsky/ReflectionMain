@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefCustomSystemAlarm",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCustomSystemAlarm\\DATA\\Script\\Mod_RefCustomSystemAlarm.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCustomSystemAlarm\\DATA\\Script\\Mod_RefCustomSystemAlarm.txt",
-  "GraphPoint.Count":  51,
-  "GraphLink.Count":  37,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  11,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  3,
-  "DialogMessages.Count":  5,
-  "DialogAnswers.Count":  8,
-  "Operations.Count":  12,
-  "Statements.Count":  7,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -231,7 +213,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -245,7 +226,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  11,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -269,13 +249,28 @@
           "Pos.y":  90,
           "Parent":  -1,
           "#":  27,
-          "Total.Lines":  3,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_str1 = 'Не выбрана';",
-              "IDOne = 0;",
-              "FlagCount = FlagCount - 1;"          
+              "if(FlagCount == 1) {",
+              "    temp_str1 = 'Не выбрана';",
+              "    IDOne = 0;",
+              "    FlagCount = FlagCount - 1;",
+              "}",
+              "if(FlagCount == 2) {",
+              "    temp_str1 = temp_str2;",
+              "    IDOne = IDThree;",
+              "    FlagCount = FlagCount - 1;",
+              "    IDTwo = 0;",
+              "    temp_str3 = 'Не выбрана';",
+              "}",
+              "if(FlagCount == 3) {",
+              "    temp_str1 = temp_str3;",
+              "    IDOne = IDThree;",
+              "    FlagCount = FlagCount - 1;",
+              "    IDThree = 0;",
+              "    temp_str3 = 'Не выбрана';",
+              "}"          
           ]        
         },
         {
@@ -285,7 +280,6 @@
           "Pos.y":  90,
           "Parent":  -1,
           "#":  28,
-          "Total.Lines":  12,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -310,7 +304,6 @@
           "Pos.y":  90,
           "Parent":  -1,
           "#":  29,
-          "Total.Lines":  3,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -326,12 +319,12 @@
           "Pos.y":  190,
           "Parent":  -1,
           "#":  32,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "for(i = 0;GalaxySectors() >= i;i = i + 1) {",
-              "    InjectAnswer('DialogSector',Name(GalaxySectors(i)),i);",
+              "for(i = 0;GalaxySectors() > i;i = i + 1) {",
+              "    if(!SectorVisible(GalaxySectors(i))) continue;",
+              "    InjectAnswer('DialogSector',Name(GalaxySectors(i)),GalaxySectors(i));",
               "}",
               "InjectAnswer('AlarmDialog','Назад',0);"          
           ]        
@@ -343,11 +336,10 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_dword = GalaxySectors(GAnswerData);",
+              "temp_dword = GAnswerData;",
               "temp_str_local = Name(temp_dword);"          
           ]        
         },
@@ -358,11 +350,10 @@
           "Pos.y":  20,
           "Parent":  -1,
           "#":  43,
-          "Total.Lines":  6,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "for(i = 0;ConStars(temp_dword) >= i;i = i + 1) {",
+              "for(i = 1;ConStars(temp_dword) > i;i = i + 1) {",
               "    if(ConStar(temp_dword,i) != ShipStatistic(Player(),10)) {",
               "        InjectAnswer('DialogSystems',Name(ConStar(temp_dword,i)),ConStar(temp_dword,i));",
               "    }",
@@ -377,11 +368,11 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  44,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_dword = Name(GalaxyStar(GAnswerData));"          
+              "temp_dword = GAnswerData;",
+              "temp_str_local = Name(GAnswerData);"          
           ]        
         },
         {
@@ -391,7 +382,6 @@
           "Pos.y":  20,
           "Parent":  -1,
           "#":  47,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -405,7 +395,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  48,
-          "Total.Lines":  90,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -498,7 +487,7 @@
               "}",
               "if(cd1 != 0) cd1 = cd1 - 1;",
               "if(cd2 != 0) cd2 = cd2 - 1;",
-              "if(cd3 != 0) cd3 = c4 - 1;"          
+              "if(cd3 != 0) cd3 = cd3 - 1;"          
           ]        
         },
         {
@@ -508,7 +497,6 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  50,
-          "Total.Lines":  19,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -605,7 +593,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -619,7 +606,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  15,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -633,7 +619,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  17,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -647,11 +632,10 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  19,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "FlagCount == 2"          
+              "FlagCount >= 2"          
           ]        
         },
         {
@@ -661,7 +645,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  21,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -675,7 +658,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  23,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -689,7 +671,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  25,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [

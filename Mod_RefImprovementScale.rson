@@ -3,9 +3,9 @@
   "FileVersion":  8,
   "ViewPos.x":  -683,
   "ViewPos.y":  -639,
-  "ScriptName":  "Mod_RefKillingPBFix",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefKillingPBFix\\DATA\\Script\\Mod_RefKillingPBFix.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefKillingPBFix\\DATA\\Script\\Mod_RefKillingPBFix.txt",
+  "ScriptName":  "Mod_RefImprovementScale",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefImprovementScale\\DATA\\Script\\Mod_RefImprovementScale.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefImprovementScale\\DATA\\Script\\Mod_RefImprovementScale.txt",
   "Visual.Objects":  
   [
     {
@@ -63,32 +63,20 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Code.Type":  "Turn",
+          "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(!ShipIsTakeoff(Player())) {",
-              "    for(i=GalaxyEvents()-1; i>=0; i=i-1) {",
-              "        if(GalaxyEventDate(i) < CurTurn()) break;",
-              "        if(GalaxyEventType(i)=='PlayerKillsShip' || GalaxyEventType(i)=='PlayerTranclucatorKillsShip') { //игрок снёс ПБ?!",
-              "            if(!ShipOnSidePirateClan(Player())) {",
-              "                if(GalaxyEventData(i,0) == 7) {",
-              "                    HelpingCD = Rnd(4,7);",
-              "                    tdwd = GalaxyEventData(i,1);",
-              "                    ShipRankPoints(Player(),ShipRankPoints(Player()) + 9);",
-              "                }",
-              "                if(GalaxyEventData(i,0) == 12) {",
-              "                    ShipRankPoints(Player(),ShipRankPoints(Player()) + 15);",
-              "                }",
-              "            }",
-              "        }",
+              "if(GetShipRuins(Player())) {",
+              "    if(ShipType(GetShipRuins(Player())) == 'SB') {",
+              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) >= 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 100) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) < 250) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 7 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 8 && GalaxyDiffLevels(2) >= 500) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
               "    }",
-              "}",
-              "if(HelpingCD != 0) HelpingCD = HelpingCD - 1;",
-              "if(HelpingCD == 0 && tdwd > 0) {",
-              "    NewsAdd(Format(\"Рейнджер! Недавно вы устранили пиратский притон в системе system. Мы не могли оставить этот вопрос в стороне и немедленно занялись связью с местными правительствами. Теперь вы сможете спокойно пользоваться всеми услугами, предоставляемыми рейнджерам на планетах этой системы и сектора вообще.<br>Политотдел КВСМК.\",'system',Name(GalaxyStar(tdwd-1))));",
-              "    Sound('Sound.NewMsg');",
-              "    ChangeGlobalRelationsPlanets(Player(),StarToCon(GalaxyStar(tdwd-1)),1,60,159);",
-              "    tdwd = 0;",
               "}"          
           ]        
         }      
@@ -175,42 +163,6 @@
           "EUnique":  "",
           "EMsg":  ""        
         }      
-      ],
-      "Variables":      
-      [
-        {
-          "Type":  "TVar",
-          "Name":  "i",
-          "Pos.x":  -90,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  7,
-          "Var.Type":  "Int",
-          "Init":  "",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "tdwd",
-          "Pos.x":  -90,
-          "Pos.y":  -170,
-          "Parent":  -1,
-          "#":  8,
-          "Var.Type":  "Dword",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "HelpingCD",
-          "Pos.x":  -90,
-          "Pos.y":  -200,
-          "Parent":  -1,
-          "#":  9,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        }      
       ]    
     }  
   ],
@@ -245,12 +197,9 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC.Total.Strings":  0,
   "BlockPar.EC":  
   [
-    {
-      "#":  "0",
-      "String":  "Рейнджер! Недавно вы устранили пиратский притон в системе system. Мы не могли оставить этот вопрос в стороне и немедленно занялись связью с местными правительствами. Теперь вы сможете спокойно пользоваться всеми услугами, предоставляемыми рейнджерам на планетах этой системы и сектора вообще.<br>Политотдел КВСМК."    
-    }  
+  
   ]
 }

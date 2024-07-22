@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefUniqueSmersh",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.txt",
-  "GraphPoint.Count":  27,
-  "GraphLink.Count":  17,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  3,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  3,
-  "DialogMessages.Count":  2,
-  "DialogAnswers.Count":  4,
-  "Operations.Count":  7,
-  "Statements.Count":  3,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -161,7 +143,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -175,7 +156,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  7,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -195,7 +175,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  9,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -209,7 +188,6 @@
           "Pos.y":  70,
           "Parent":  -1,
           "#":  16,
-          "Total.Lines":  8,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -219,7 +197,6 @@
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
               "ItemCost(temp_dword,temp_int);",
-              "SmershBought = 1;",
               "Sound('Sound.Buy');"          
           ]        
         },
@@ -230,7 +207,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  20,
-          "Total.Lines":  12,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -255,14 +231,15 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  24,
-          "Total.Lines":  5,
           "Code.Type":  "Turn",
           "Code":          
           [
+              "temp_dword = HullHP(Player());",
               "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),ShipEqInSlot(Player(),t_Hull));",
-              "Chameleon(Player(),'Ship.Akrin.RefSmershMi');",
+              "Chameleon(Player());",
               "Sound('Sound.ButtonInfoEnter');",
+              "HullHP(Player(),temp_dword);",
               "DAnswer('main');"          
           ]        
         },
@@ -273,14 +250,15 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  25,
-          "Total.Lines":  5,
           "Code.Type":  "Turn",
           "Code":          
           [
+              "temp_dword = HullHP(Player());",
               "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershEn'),ShipEqInSlot(Player(),t_Hull));",
-              "Chameleon(Player(),'Ship.Akrin.RefSmershEn');",
+              "Chameleon(Player());",
               "Sound('Sound.ButtonInfoEnter');",
+              "HullHP(Player(),temp_dword);",
               "DAnswer('main');"          
           ]        
         }      
@@ -356,7 +334,6 @@
           "Pos.y":  -10,
           "Parent":  -1,
           "#":  11,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -370,7 +347,6 @@
           "Pos.y":  -10,
           "Parent":  -1,
           "#":  12,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -384,7 +360,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  19,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -573,7 +548,7 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  10,
+  "BlockPar.EC.Total.Strings":  12,
   "BlockPar.EC":  
   [
     {
@@ -587,6 +562,14 @@
     {
       "#":  "11",
       "String":  "Спасибо!"    
+    },
+    {
+      "#":  "12",
+      "String":  "А что это у вас там за доминаторология?"    
+    },
+    {
+      "#":  "13",
+      "String":  "Не хотите взглянуть на результат работы спецотдела Коалиции и специалистов в сфере прикладной доминаторологии? Мы готовы дать доступ вам как отличившемуся бойцу Коалиции"    
     },
     {
       "#":  "2",

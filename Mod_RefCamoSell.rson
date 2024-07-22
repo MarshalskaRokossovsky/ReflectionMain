@@ -3,27 +3,9 @@
   "FileVersion":  8,
   "ViewPos.x":  -683,
   "ViewPos.y":  -635,
-  "ScriptName":  "Mod_RefExpHullsAbilities",
-  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefCamoSelling\\DATA\\Script\\Mod_RefCamoSelling.scr",
-  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefCamoSelling\\DATA\\Script\\Mod_RefCamoSelling.txt",
-  "GraphPoint.Count":  24,
-  "GraphLink.Count":  21,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  1,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  1,
-  "DialogMessages.Count":  2,
-  "DialogAnswers.Count":  5,
-  "Operations.Count":  5,
-  "Statements.Count":  5,
-  "Loops.Count":  0,
+  "ScriptName":  "Mod_RefCamoSell",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCamoSell\\DATA\\Script\\Mod_RefCamoSell.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefCamoSell\\DATA\\Script\\Mod_RefCamoSell.txt",
   "Visual.Objects":  
   [
     {
@@ -89,7 +71,7 @@
           "Pos.y":  -120,
           "Parent":  -1,
           "#":  10,
-          "Msg":  "После разгрома доминаторов у многих пилотов остались неизрасходованные камуфлирующие устройства. В рамках мер по переводу подконтрольных Коалиции территорий на мирные \"рельсы\" Галактический Совет организовывает выкуп камуфляжей - по <clr>30.000<clrEnd> cr. за единицу!",
+          "Msg":  "После разгрома доминаторов у многих пилотов остались неизрасходованные камуфлирующие устройства. В рамках мер по переводу подконтрольных территорий галактики на мирные \"рельсы\" <tstr> организовывает выкуп камуфляжей - по <clr>30.000<clrEnd> cr. за единицу!",
           "DMsg.Num":  "0"        
         },
         {
@@ -109,7 +91,7 @@
           "Type":  "TDialog",
           "Name":  "CamoSell",
           "Pos.x":  120,
-          "Pos.y":  -170,
+          "Pos.y":  -200,
           "Parent":  -1,
           "#":  9        
         }      
@@ -155,7 +137,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -169,14 +150,13 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  8,
-          "Total.Lines":  7,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
               "if(GetTalkShip() == 0) {",
               "    if(GetShipRuins(Player()) != 0) {",
               "        if(ShipType(GetShipRuins(Player())) == 'WB' || ShipType(GetShipRuins(Player())) == 'CB') {",
-              "            AddDialogInject('CamoSell','','Продажа камуфляжей',10);",
+              "            AddDialogInject('CamoSell','',\"Продажа камуфляжей\",10);",
               "        }",
               "    }",
               "}"          
@@ -189,7 +169,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  18,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -204,7 +183,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  19,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -219,12 +197,25 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  20,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
               "ShipMoney(Player(),ShipMoney(Player()) + PlayerChameleonCharges(2) * 30000);",
               "PlayerChameleonCharges(2,0);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  120,
+          "Pos.y":  -160,
+          "Parent":  -1,
+          "#":  24,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ShipType(GetShipRuins(Player())) == 'WB') tstr = \"Галактический Совет\";",
+              "else tstr = \"Верховный Барон\";"          
           ]        
         }      
       ],
@@ -299,7 +290,6 @@
           "Pos.y":  -170,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -313,7 +303,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -327,7 +316,6 @@
           "Pos.y":  -80,
           "Parent":  -1,
           "#":  11,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -341,7 +329,6 @@
           "Pos.y":  -80,
           "Parent":  -1,
           "#":  12,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -355,7 +342,6 @@
           "Pos.y":  -80,
           "Parent":  -1,
           "#":  13,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -395,6 +381,17 @@
           "#":  23,
           "Var.Type":  "Int",
           "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr",
+          "Pos.x":  -100,
+          "Pos.y":  -160,
+          "Parent":  -1,
+          "#":  25,
+          "Var.Type":  "Str",
+          "Init":  "",
           "Global":  false        
         }      
       ]    
@@ -441,13 +438,6 @@
       "Type":  "TGraphLink",
       "Begin":  7,
       "End":  8,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  9,
-      "End":  10,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -548,14 +538,36 @@
       "End":  22,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  24,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  24,
+      "End":  10,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  7,
+  "BlockPar.EC.Total.Strings":  10,
   "BlockPar.EC":  
   [
     {
+      "#":  "10",
+      "String":  "Верховный Барон"    
+    },
+    {
+      "#":  "11",
+      "String":  "Галактический Совет"    
+    },
+    {
       "#":  "2",
-      "String":  "После разгрома доминаторов у многих пилотов остались неизрасходованные камуфлирующие устройства. В рамках мер по переводу подконтрольных Коалиции территорий на мирные \"рельсы\" Галактический Совет организовывает выкуп камуфляжей - по <clr>30.000<clrEnd> cr. за единицу!"    
+      "String":  "После разгрома доминаторов у многих пилотов остались неизрасходованные камуфлирующие устройства. В рамках мер по переводу подконтрольных территорий галактики на мирные \"рельсы\" <0> организовывает выкуп камуфляжей - по <clr>30.000<clrEnd> cr. за единицу!"    
     },
     {
       "#":  "3",
@@ -580,6 +592,10 @@
     {
       "#":  "8",
       "String":  "И вам спасибо"    
+    },
+    {
+      "#":  "9",
+      "String":  "Продажа камуфляжей"    
     }  
   ]
 }

@@ -1,29 +1,11 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -217,
-  "ViewPos.y":  69,
+  "ViewPos.x":  -477,
+  "ViewPos.y":  -3,
   "ScriptName":  "mod_RefNews",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
-  "GraphPoint.Count":  124,
-  "GraphLink.Count":  16,
-  "GraphRectText.Count":  1,
-  "Variables.Count":  93,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  15,
-  "Statements.Count":  11,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -68,7 +50,6 @@
           "Pos.y":  170,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  204,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -285,7 +266,6 @@
           "Pos.y":  120,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -299,7 +279,6 @@
           "Pos.y":  150,
           "Parent":  -1,
           "#":  13,
-          "Total.Lines":  21,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -333,7 +312,6 @@
           "Pos.y":  310,
           "Parent":  -1,
           "#":  28,
-          "Total.Lines":  286,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -360,12 +338,15 @@
               "                //SFT(Name(choosed_star));",
               "                //SFT(choosed_planet);",
               "                //SFT(Name(choosed_planet));",
-              "                while(PlanetOwner(choosed_planet)==6) {",
+              "                while(PlanetOwner(choosed_planet) > 4) {",
               "                    choosed_planet = StarPlanets(choosed_star,Rnd(0,i-1));",
               "                    TryAgainPlanets = TryAgainPlanets+1;",
               "                    if(TryAgainPlanets==30) break; //если перебрали всё, а не нашли заселёнок",
               "                }",
-              "                if(TryAgainPlanets==30) continue;",
+              "                if(TryAgainPlanets==30) {",
+              "                    UntilNextWar = 60;",
+              "                    break;",
+              "                }",
               "                if(choosed_planet == LastPlanet) continue;",
               "                WarPlanetID = Id(choosed_planet); //выбрали планету, которой не повезло",
               "            }",
@@ -632,7 +613,6 @@
           "Pos.y":  520,
           "Parent":  -1,
           "#":  29,
-          "Total.Lines":  60,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -705,7 +685,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  30,
-          "Total.Lines":  5,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -713,7 +692,41 @@
               "//if(CurTurn() > 700) {",
               "//Bdup Bdup kontrabandistov ne budet t.k. Marshal naelsya i spit",
               "//I voobshe ya AltStart pilyu",
-              "//}"          
+              "//}",
+              "",
+              "//Теперь тут будет поиск события \"ушатать бертора\"",
+              "if(!DomiksDefeated()) {",
+              "    if(!ShipIsTakeoff(Player())) {",
+              "        for(i=GalaxyEvents()-1; i>=0; i=i-1) {",
+              "            if(GalaxyEventDate(i) < CurTurn()) break;",
+              "            if(GalaxyEventType(i)=='PlayerKillsShip') { //игрок убил кого-то!",
+              "                if(GalaxyEventData(i,3) != Kling) continue; //Это домик!",
+              "                if(GalaxyEventData(i,5) != 6) continue; //Это бертор!",
+              "    ",
+              "                if(TitleCD < 1) {",
+              "                    BertorsKilled = BertorsKilled + 1;",
+              "                    KillsCD = 150;",
+              "                    if(BertorsKilled >= 5) {",
+              "                        KillsCD = 0;",
+              "                        BertorsKilled = 0;",
+              "                        TitleCD = 400;",
+              "                        NewsAdd(Format(\"Достижения рейнджера name в борьбе с крайне опасными стратегическими кораблями доминаторов - Берторами - не остались в стороне от Галактического Совета. За проявленную доблесть рейнджер был приставлен к новой награде, а среди коллег его уже зовут Убийцей Берторов!\",'name',ShortName(Player())));",
+              "                        AddPlanetNews(Format(\"Достижения рейнджера name в борьбе с крайне опасными стратегическими кораблями доминаторов - Берторами - не остались в стороне от Галактического Совета. За проявленную доблесть рейнджер был приставлен к новой награде, а среди коллег его уже зовут Убийцей Берторов!\",'name',ShortName(Player())));",
+              "                        SetName(Player(),ShortName(Player())+\" Убийца Берторов\");",
+              "                        GiveReward(Player(),People,0);",
+              "                        Sound('Sound.NewMsg');",
+              "                    }",
+              "                }",
+              "                else {",
+              "                    TitleCD = 600;",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "    ",
+              "    if(TitleCD > 0) TitleCD = TitleCD - 1;",
+              "    if(KillsCD > 0) KillsCD = KillsCD - 1;",
+              "}"          
           ]        
         },
         {
@@ -723,7 +736,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  31,
-          "Total.Lines":  40,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -776,7 +788,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  33,
-          "Total.Lines":  25,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -814,7 +825,6 @@
           "Pos.y":  420,
           "Parent":  -1,
           "#":  85,
-          "Total.Lines":  3,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -830,7 +840,6 @@
           "Pos.y":  560,
           "Parent":  -1,
           "#":  87,
-          "Total.Lines":  17,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -860,7 +869,6 @@
           "Pos.y":  320,
           "Parent":  -1,
           "#":  88,
-          "Total.Lines":  146,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1019,7 +1027,6 @@
           "Pos.y":  580,
           "Parent":  -1,
           "#":  89,
-          "Total.Lines":  63,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1095,7 +1102,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  104,
-          "Total.Lines":  56,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1164,7 +1170,6 @@
           "Pos.y":  800,
           "Parent":  -1,
           "#":  114,
-          "Total.Lines":  6,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1183,7 +1188,6 @@
           "Pos.y":  800,
           "Parent":  -1,
           "#":  116,
-          "Total.Lines":  105,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1366,7 +1370,6 @@
           "Pos.y":  120,
           "Parent":  -1,
           "#":  27,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1380,7 +1383,6 @@
           "Pos.y":  260,
           "Parent":  -1,
           "#":  71,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1394,7 +1396,6 @@
           "Pos.y":  470,
           "Parent":  -1,
           "#":  72,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1408,7 +1409,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  73,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1422,7 +1422,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  74,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1436,7 +1435,6 @@
           "Pos.y":  300,
           "Parent":  -1,
           "#":  84,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1450,7 +1448,6 @@
           "Pos.y":  560,
           "Parent":  -1,
           "#":  86,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1464,7 +1461,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  105,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1478,7 +1474,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  106,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1492,7 +1487,6 @@
           "Pos.y":  710,
           "Parent":  -1,
           "#":  107,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1506,7 +1500,6 @@
           "Pos.y":  360,
           "Parent":  -1,
           "#":  108,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2559,6 +2552,50 @@
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr",
+          "Pos.x":  320,
+          "Pos.y":  670,
+          "Parent":  -1,
+          "#":  124,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "BertorsKilled",
+          "Pos.x":  320,
+          "Pos.y":  700,
+          "Parent":  -1,
+          "#":  125,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "KillsCD",
+          "Pos.x":  320,
+          "Pos.y":  730,
+          "Parent":  -1,
+          "#":  126,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "TitleCD",
+          "Pos.x":  320,
+          "Pos.y":  760,
+          "Parent":  -1,
+          "#":  127,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
         }      
       ]    
     }  
@@ -2704,9 +2741,16 @@
       "fsUnderline":  false    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC.Total.Strings":  2,
   "BlockPar.EC":  
   [
-  
+    {
+      "#":  "0",
+      "String":  " Убийца Берторов"    
+    },
+    {
+      "#":  "1",
+      "String":  "Достижения рейнджера name в борьбе с крайне опасными стратегическими кораблями доминаторов - Берторами - не остались в стороне от Галактического Совета. За проявленную доблесть рейнджер был приставлен к новой награде, а среди коллег его уже зовут Убийцей Берторов!"    
+    }  
   ]
 }

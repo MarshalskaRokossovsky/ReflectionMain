@@ -1,29 +1,11 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -789,
-  "ViewPos.y":  -678,
+  "ViewPos.x":  -524,
+  "ViewPos.y":  -560,
   "ScriptName":  "Mod_RefExpHullsAbilities",
-  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.scr",
-  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.txt",
-  "GraphPoint.Count":  22,
-  "GraphLink.Count":  9,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  4,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  4,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  8,
-  "Statements.Count":  1,
-  "Loops.Count":  0,
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.txt",
   "Visual.Objects":  
   [
     {
@@ -103,7 +85,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -117,7 +98,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  2,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -132,11 +112,10 @@
           "Pos.y":  -180,
           "Parent":  -1,
           "#":  8,
-          "Total.Lines":  22,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "//if(HullSpecial(Player()) != -1) {",
+              "if(~HullSpecial(Player())) {",
               "    if(HullSpecial(Player()) == FindBonusByCustomTag('Meteor') || HullSpecial(Player()) == FindBonusByCustomTag('SuperHullSB')) {",
               "        if(MetFlag==0) {",
               "            temp_str=\"Отключен\";",
@@ -157,7 +136,7 @@
               "            AddDialogInject('BastDialogOn',\"Режим контрбатарейного огня: <temp_str>\",\"Отключить режим контрбатарейного огня\",13);",
               "        }",
               "    }",
-              "//}"          
+              "}"          
           ]        
         },
         {
@@ -167,7 +146,6 @@
           "Pos.y":  -180,
           "Parent":  -1,
           "#":  15,
-          "Total.Lines":  14,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -184,7 +162,10 @@
               "ShipSpecialBonuses(Player(),bonRadar,-10000);",
               "ShipAddCustomShipInfo(Player(),'RefMeteorDef');",
               "NoTalkToShip(Player(),1);",
-              "ShipVisibility(Player(),-1,0.0);"          
+              "ShipVisibility(Player(),-1,0.0);",
+              "PlayerLogicChameleon(0,2);",
+              "PlayerLogicChameleon(1,2);",
+              "PlayerLogicChameleon(2,2);"          
           ]        
         },
         {
@@ -194,7 +175,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  16,
-          "Total.Lines":  14,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -211,7 +191,10 @@
               "ShipSpecialBonuses(Player(),bonRadar,10000);",
               "if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
               "NoTalkToShip(Player(),0);",
-              "ShipVisibility(Player(),-1,255.0);"          
+              "ShipVisibility(Player(),-1,255.0);",
+              "PlayerLogicChameleon(0,0);",
+              "PlayerLogicChameleon(1,0);",
+              "PlayerLogicChameleon(2,0);"          
           ]        
         },
         {
@@ -221,7 +204,6 @@
           "Pos.y":  -70,
           "Parent":  -1,
           "#":  17,
-          "Total.Lines":  19,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -253,7 +235,6 @@
           "Pos.y":  -30,
           "Parent":  -1,
           "#":  18,
-          "Total.Lines":  9,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -275,7 +256,6 @@
           "Pos.y":  -180,
           "Parent":  -1,
           "#":  21,
-          "Total.Lines":  29,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -294,7 +274,9 @@
               "            if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
               "            ShipVisibility(Player(),-1,255.0);",
               "            NoTalkToShip(Player(),0);",
-              "            PlayerLogicChameleon(StarSeries(ShipStar(Player())),2);",
+              "            PlayerLogicChameleon(0,0);",
+              "            PlayerLogicChameleon(1,0);",
+              "            PlayerLogicChameleon(2,0);",
               "        }",
               "    }",
               "    if(HullSpecial(Player()) != FindBonusByCustomTag('Bastion') || HullSpecial(Player()) != FindBonusByCustomTag('SuperHullWB')) {",
@@ -382,7 +364,6 @@
           "Pos.y":  -220,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
