@@ -79,7 +79,7 @@
       [
         {
           "Type":  "TDialog",
-          "Name":  "CamoSell",
+          "Name":  "RelationsFix",
           "Pos.x":  120,
           "Pos.y":  -170,
           "Parent":  -1,
@@ -162,10 +162,25 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "money = CountBox('Bm.Items.2Minerals',\"Сколько денег хотите перечислить в общак?\",1,100,GalaxyMoney(1,3));",
-              "ShipMoney(Player(),ShipMoney(Player)-(money*GalaxyMoney(1,3)));",
+              "money = 0;",
+              "while(1) {",
+              "    money = CountBox('Bm.Items.2Minerals',\"Сколько денег хотите перечислить в общак?\",1,100,GalaxyMoney(1,3),1,round(ShipMoney(Player())/GalaxyMoney(1,3)),round(ShipMoney(Player())/GalaxyMoney(1,3)),ShipMoney(Player()));",
+              "    //SFT(money);",
+              "    if(money*GalaxyMoney(1,3) > ShipMoney(Player())) MessageBox(\"Эгей! Да у тебя столько деньжонок и нету. Подумай лучше, дружок\");",
+              "    else break;",
+              "",
+              "    if(money < 1) break;",
+              "}",
+              "//SFT(money*GalaxyMoney(1,3));",
+              "ShipMoney(Player(),ShipMoney(Player())-(money*GalaxyMoney(1,3)));",
               "RelationToRanger(PlanetPirateClan(),Player(),RelationToRanger(PlanetPirateClan(),Player())+money);",
               "ChangeGlobalRelationsShips(Player(),0,2,money,1+2+4+8+16+32,128);",
+              "",
+              "if(money > 30) ChangeGlobalRelationsPlanets(Player(),0,3,10,31);",
+              "if(money > 50) ChangeGlobalRelationsPlanets(Player(),0,3,10,31);",
+              "if(money > 70) ChangeGlobalRelationsPlanets(Player(),0,3,15,31);",
+              "if(money > 90) ChangeGlobalRelationsPlanets(Player(),0,3,20,31);",
+              "",
               "Sound('Sound.Buy');"          
           ]        
         }      
@@ -345,13 +360,6 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  9,
-      "End":  11,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  11,
       "End":  14,
       "Nom":  0,
@@ -370,9 +378,16 @@
       "End":  16,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  8,
+  "BlockPar.EC.Total.Strings":  9,
   "BlockPar.EC":  
   [
     {
@@ -398,6 +413,10 @@
     {
       "#":  "15",
       "String":  "И вам без хворей жить"    
+    },
+    {
+      "#":  "16",
+      "String":  "Эгей! Да у тебя столько деньжонок и нету. Подумай лучше, дружок"    
     },
     {
       "#":  "2",

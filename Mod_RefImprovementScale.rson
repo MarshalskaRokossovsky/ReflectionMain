@@ -68,14 +68,14 @@
           [
               "if(GetShipRuins(Player())) {",
               "    if(ShipType(GetShipRuins(Player())) == 'SB') {",
-              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
-              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
-              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) >= 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkAverage'),1);",
-              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 100) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
-              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
-              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) < 250) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
-              "        if(GalaxyTechLevel() < 7 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
-              "        if(GalaxyTechLevel() < 8 && GalaxyDiffLevels(2) >= 500) AddDialogBlock(CT('FormRuins.SB.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) >= 400) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkAverage'),1);",
+              "        if(GalaxyTechLevel() < 4 && GalaxyDiffLevels(2) < 100) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 5 && GalaxyDiffLevels(2) < 200) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 6 && GalaxyDiffLevels(2) < 250) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 7 && GalaxyDiffLevels(2) < 400) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkMax'),1);",
+              "        if(GalaxyTechLevel() < 8 && GalaxyDiffLevels(2) >= 500) AddDialogBlock(CT('FormRuins.SB.Improvement.PlayerOkMax'),1);",
               "    }",
               "}"          
           ]        

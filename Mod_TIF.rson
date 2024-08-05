@@ -126,7 +126,7 @@
               "if(!ShipFindCustomShipInfoByType(Player(),'FixPBGov')) ShipAddCustomShipInfo(Player(),'FixPBGov','NoShow');",
               "",
               "//Помните хреновину из тёрнкода ниже? Так вот, теперь подобное нужно навесить на игрока",
-              "if(!ShipFindCustomShipInfoByType(Player(),'FixHulls')) ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');",
+              "/*if(!ShipFindCustomShipInfoByType(Player(),'FixHulls')) ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');*/",
               "",
               "if(CurrentMods('ShusRangers\\ShuNukes') && !ShipFindCustomShipInfoByType(Player(),'FixShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');"          
           ]        

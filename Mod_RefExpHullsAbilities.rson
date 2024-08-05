@@ -115,7 +115,7 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(~HullSpecial(Player())) {",
+              "if(HullSpecial(Player()) > 1) {",
               "    if(HullSpecial(Player()) == FindBonusByCustomTag('Meteor') || HullSpecial(Player()) == FindBonusByCustomTag('SuperHullSB')) {",
               "        if(MetFlag==0) {",
               "            temp_str=\"Отключен\";",
@@ -126,7 +126,7 @@
               "            AddDialogInject('MetDialogOn',\"Режим невидимости: <temp_str>\",\"Отключить режим невидимости\",13);",
               "        }",
               "    }",
-              "    if(HullSpecial(Player()) == FindBonusByCustomTag('Bastion') || HullSpecial(Player()) == FindBonusByCustomTag('SuperHullWB')) {",
+              "    else if(HullSpecial(Player()) == FindBonusByCustomTag('Bastion') || HullSpecial(Player()) == FindBonusByCustomTag('SuperHullWB')) {",
               "        if(BastFlag==0) {",
               "            temp_str=\"Отключен\";",
               "            AddDialogInject('BastDialogOff',\"Режим контрбатарейного огня: <temp_str>\",\"Включить режим контрбатарейного огня\",13);",

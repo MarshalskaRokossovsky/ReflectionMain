@@ -130,7 +130,7 @@
               "            tShip=tempArr[i];    //Выбираем корабль",
               "            if(IsPlayer(tShip)) continue;",
               "            tStr=ShipType(tShip);",
-              "            if(tStr == 'Pirate') {",
+              "            if(tStr == 'Pirate' && ShipOwner(tShip) == Gaal) {",
               "                if(GetShipPlanet(tShip)) tPlan = GetShipPlanet(tShip);",
               "                OrderLock(tShip,1);",
               "                ShipDestroy(tShip);",
@@ -164,7 +164,7 @@
           [
               "for(i=0;GalaxyStars()>i;i=i+1) {",
               "    for(j=0;StarShips(GalaxyStar(i))>j;j=j+1) {",
-              "        if(ShipType(StarShips(GalaxyStar(i),j)) == 'Pirate') {",
+              "        if(ShipType(StarShips(GalaxyStar(i),j)) == 'Pirate' && ShipOwner(StarShips(GalaxyStar(i),j)) == Gaal) {",
               "            OrderLock(StarShips(GalaxyStar(i),j),1);",
               "            ShipDestroy(StarShips(GalaxyStar(i),j));",
               "        }",

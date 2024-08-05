@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefDroidRegimes",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefDroidRegimes\\DATA\\Script\\Mod_RefDroidRegimes.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefDroidRegimes\\DATA\\Script\\Mod_RefDroidRegimes.txt",
-  "GraphPoint.Count":  44,
-  "GraphLink.Count":  32,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  7,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  1,
-  "DialogMessages.Count":  6,
-  "DialogAnswers.Count":  11,
-  "Operations.Count":  8,
-  "Statements.Count":  6,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -255,7 +237,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -269,7 +250,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  23,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -305,7 +285,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  14,
-          "Total.Lines":  40,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -358,7 +337,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  15,
-          "Total.Lines":  52,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -423,7 +401,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  16,
-          "Total.Lines":  45,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -481,7 +458,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  18,
-          "Total.Lines":  53,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -547,7 +523,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  20,
-          "Total.Lines":  77,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -637,7 +612,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  22,
-          "Total.Lines":  155,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -672,23 +646,23 @@
               "                ItemDurability(tdroid,SavedDur);",
               "                ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + SavedDebuff);",
               "                DRFlag = 0;",
-              "                MessageBox(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "                SFT('DR-8');",
-              "                SFT(DRFlag);",
+              "                NewsAdd(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "                //SFT('DR-8');",
+              "                //SFT(DRFlag);",
               "            }",
               "            if(DRFlag == 2) {",
               "                ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - KostylOtAbuzov);",
               "                DRFlag = 0;",
-              "                MessageBox(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "                SFT('DR-7');",
-              "                SFT(DRFlag);",
+              "                NewsAdd(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "                //SFT('DR-7');",
+              "                //SFT(DRFlag);",
               "            }",
               "            if(DRFlag == 3) {",
               "                ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - KostylOtAbuzov - 80);",
               "                DRFlag = 0;",
-              "                MessageBox(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "                SFT('DR-6');",
-              "                SFT(DRFlag);",
+              "                NewsAdd(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "                //SFT('DR-6');",
+              "                //SFT(DRFlag);",
               "            }",
               "            if(DRFlag == 4) {",
               "                if(temp_inta < 15) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 3);",
@@ -702,9 +676,9 @@
               "                else if(temp_inta > 90) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 28);",
               "                else if(temp_inta > 100) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 40);",
               "                DRFlag = 0;",
-              "                MessageBox(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "                SFT('DR-5');",
-              "                SFT(DRFlag);",
+              "                NewsAdd(\"Ты решил поменять дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "                //SFT('DR-5');",
+              "                //SFT(DRFlag);",
               "            }",
               "        }",
               "        else {",
@@ -734,23 +708,23 @@
               "        if(DRFlag == 1) {",
               "            ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + SavedDebuff);",
               "            DRFlag = 0;",
-              "            MessageBox(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "            SFT('DR-4');",
-              "            SFT(DRFlag);",
+              "            NewsAdd(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "            //SFT('DR-4');",
+              "            //SFT(DRFlag);",
               "        }",
               "        if(DRFlag == 2) {",
               "            ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - KostylOtAbuzov);",
               "            DRFlag = 0;",
-              "            MessageBox(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "            SFT('DR-3');",
-              "            SFT(DRFlag);",
+              "            NewsAdd(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "            //SFT('DR-3');",
+              "            //SFT(DRFlag);",
               "        }",
               "        if(DRFlag == 3) {",
               "            ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - KostylOtAbuzov - 80);",
               "            DRFlag = 0;",
-              "            MessageBox(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "            SFT('DR-2');",
-              "            SFT(DRFlag);",
+              "            NewsAdd(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "            //SFT('DR-2');",
+              "            //SFT(DRFlag);",
               "        }",
               "        if(DRFlag == 4) {",
               "            if(temp_inta < 15) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 3);",
@@ -764,9 +738,9 @@
               "            else if(temp_inta > 90) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 28);",
               "            else if(temp_inta > 100) ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 40);",
               "            DRFlag = 0;",
-              "            MessageBox(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
-              "            SFT('DR-1');",
-              "            SFT(DRFlag);",
+              "            NewsAdd(\"Ты решил убрать дроида при включённом режиме, а? Заабузить решил, да? А ну иди сюда, ублюдок, говно собачье, я тебя сейчас сам заабузю!\");",
+              "            //SFT('DR-1');",
+              "            //SFT(DRFlag);",
               "        }",
               "    }",
               "    if(!ShipInNormalSpace(Player())) {",
@@ -870,7 +844,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -884,7 +857,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  37,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -898,7 +870,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  38,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -912,7 +883,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -926,7 +896,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  40,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -940,7 +909,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  41,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [

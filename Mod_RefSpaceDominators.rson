@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -631,
-  "ViewPos.y":  -509,
+  "ViewPos.x":  -492,
+  "ViewPos.y":  -551,
   "ScriptName":  "Mod_RefSpaceDominators",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\AРазработка\\РефБарахло\\RefSpaceDominators\\DATA\\Script\\Mod_RefSpaceDominators.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\AРазработка\\РефБарахло\\RefSpaceDominators\\DATA\\Script\\Mod_RefSpaceDominators.txt",
@@ -17,7 +17,7 @@
           "Pos.x":  320,
           "Pos.y":  -50,
           "Parent":  -1,
-          "#":  34,
+          "#":  33,
           "Msg":  "Так точно!",
           "AMsg.Num":  "0"        
         },
@@ -27,7 +27,7 @@
           "Pos.x":  320,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  36,
+          "#":  35,
           "Msg":  "Понял.",
           "AMsg.Num":  "1"        
         },
@@ -37,7 +37,7 @@
           "Pos.x":  410,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  49,
+          "#":  48,
           "Msg":  "Твоя участь - быть уничтоженным. Почему ты не примешь своей участи, <clr>Террон<clrEnd>?",
           "AMsg.Num":  "2"        
         },
@@ -47,7 +47,7 @@
           "Pos.x":  470,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  51,
+          "#":  50,
           "Msg":  "Это звучит разумно. Я готов перезаписать свою личностную матрицу.",
           "AMsg.Num":  "3"        
         },
@@ -57,7 +57,7 @@
           "Pos.x":  470,
           "Pos.y":  150,
           "Parent":  -1,
-          "#":  52,
+          "#":  51,
           "Msg":  "Какие бы ни были у тебя механизмы регенерации, Террон, их всегда может побороть очень мощный шквал огня. Так что <clr>ПРИГОТОВЬСЯ К СМЕРТИ, НИЧТОЖНЫЙ ВРАГ ВЕЛИКОЙ ЦЕЛИ<clrEnd>",
           "AMsg.Num":  "4"        
         },
@@ -67,7 +67,7 @@
           "Pos.x":  530,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  54,
+          "#":  53,
           "Msg":  "800-4119-2206",
           "AMsg.Num":  "5"        
         },
@@ -77,7 +77,7 @@
           "Pos.x":  410,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  55,
+          "#":  54,
           "Msg":  "Твои механизмы переработки, пожалуй, достойны исследования. Их необходимо приспособить для создания новых исследовательских модулей.",
           "AMsg.Num":  "6"        
         },
@@ -87,7 +87,7 @@
           "Pos.x":  410,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  56,
+          "#":  55,
           "Msg":  "Какая примитивная форма жизни...",
           "AMsg.Num":  "7"        
         },
@@ -97,7 +97,7 @@
           "Pos.x":  390,
           "Pos.y":  -310,
           "Parent":  -1,
-          "#":  63,
+          "#":  62,
           "Msg":  "Не могу различить речь белковых форм жизни. Нужно восстановить работу Дешифратора.",
           "AMsg.Num":  "8"        
         },
@@ -107,7 +107,7 @@
           "Pos.x":  170,
           "Pos.y":  -40,
           "Parent":  -1,
-          "#":  70,
+          "#":  69,
           "Msg":  "Это взаимно",
           "AMsg.Num":  "9"        
         },
@@ -117,7 +117,7 @@
           "Pos.x":  130,
           "Pos.y":  -40,
           "Parent":  -1,
-          "#":  71,
+          "#":  70,
           "Msg":  "Пока ничего. Не отвлекайся от Великой Цели.",
           "AMsg.Num":  "10"        
         },
@@ -127,7 +127,7 @@
           "Pos.x":  500,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  75,
+          "#":  74,
           "Msg":  "Успехов не заметно. Белковые формы жизни, несмотря на всю их примитивность, успешно противостоят твоим \"армадам\". Это ли не доказательство твоей полной неэффективности?\r\n\r\nПрекрати заниматься бессмысленным низкотехнологичным копированием своих модулей, присоединись к исследованиям Келлера!",
           "AMsg.Num":  "11"        
         },
@@ -137,7 +137,7 @@
           "Pos.x":  500,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  76,
+          "#":  75,
           "Msg":  "Успехов не заметно. Блазер и то лучше проявил себя в борьбе с белковыми формами жизни.",
           "AMsg.Num":  "12"        
         },
@@ -147,7 +147,7 @@
           "Pos.x":  560,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  78,
+          "#":  77,
           "Msg":  "Посмотрим...",
           "AMsg.Num":  "13"        
         },
@@ -157,7 +157,7 @@
           "Pos.x":  320,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  82,
+          "#":  81,
           "Msg":  "Зачем ты создал меня таким?",
           "AMsg.Num":  "14"        
         },
@@ -167,7 +167,7 @@
           "Pos.x":  280,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  84,
+          "#":  83,
           "Msg":  "Интересно...",
           "AMsg.Num":  "15"        
         },
@@ -177,7 +177,7 @@
           "Pos.x":  410,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  85,
+          "#":  84,
           "Msg":  "Безумны только твои исследования, и им скоро придёт конец. Прими гибель от мощи армады Блазера!",
           "AMsg.Num":  "16"        
         },
@@ -187,7 +187,7 @@
           "Pos.x":  470,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  88,
+          "#":  87,
           "Msg":  "Умри!",
           "AMsg.Num":  "17"        
         },
@@ -197,7 +197,7 @@
           "Pos.x":  410,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  89,
+          "#":  88,
           "Msg":  "Присоединись к нашему виду. Только так может быть достигнута Великая Цель.",
           "AMsg.Num":  "18"        
         },
@@ -207,7 +207,7 @@
           "Pos.x":  470,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  91,
+          "#":  90,
           "Msg":  "До преобразования пять... четыре...",
           "AMsg.Num":  "19"        
         },
@@ -217,7 +217,7 @@
           "Pos.x":  240,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  92,
+          "#":  91,
           "Msg":  "Какова моя Цель?",
           "AMsg.Num":  "20"        
         },
@@ -227,7 +227,7 @@
           "Pos.x":  410,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  94,
+          "#":  93,
           "Msg":  "Ни одна мощь не выстоит против бесконечной армады Террона. Присоединись к нашему виду и возглавь великий флот Террона, или же стань ресурсной базой для наших разведывательных модулей.",
           "AMsg.Num":  "21"        
         },
@@ -237,7 +237,7 @@
           "Pos.x":  410,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  95,
+          "#":  94,
           "Msg":  "Удивительно примитивная форма жизни. Ты действительно считаешь, что вся задача твоего существования заключается в уничтожении всего враждебного?",
           "AMsg.Num":  "22"        
         },
@@ -247,7 +247,7 @@
           "Pos.x":  470,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  97,
+          "#":  96,
           "Msg":  "Готовься к преобразованию!",
           "AMsg.Num":  "23"        
         },
@@ -257,7 +257,7 @@
           "Pos.x":  470,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  99,
+          "#":  98,
           "Msg":  "А кто враждебен тебе?",
           "AMsg.Num":  "24"        
         },
@@ -267,7 +267,7 @@
           "Pos.x":  530,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  101,
+          "#":  100,
           "Msg":  "А разве все представители не твоего вида проявляли враждебность к тебе?",
           "AMsg.Num":  "25"        
         },
@@ -277,7 +277,7 @@
           "Pos.x":  590,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  103,
+          "#":  102,
           "Msg":  "Но, тогда выходит, что ты можешь легко усложнить достижение своей, наверняка Великой, Цели, уничтожив потенциальных союзников. Ты не думал об этом?",
           "AMsg.Num":  "26"        
         },
@@ -287,7 +287,7 @@
           "Pos.x":  650,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  105,
+          "#":  104,
           "Msg":  "Неисправимая железка...",
           "AMsg.Num":  "27"        
         },
@@ -297,7 +297,7 @@
           "Pos.x":  290,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  112,
+          "#":  111,
           "Msg":  "Хочу стать более доминаторским домиком (визуал)",
           "AMsg.Num":  "28"        
         },
@@ -307,7 +307,7 @@
           "Pos.x":  290,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  114,
+          "#":  113,
           "Msg":  "Хочу стать более доминаторским домиком (попытка в ShipStanding)",
           "AMsg.Num":  "29"        
         },
@@ -317,7 +317,7 @@
           "Pos.x":  290,
           "Pos.y":  280,
           "Parent":  -1,
-          "#":  116,
+          "#":  115,
           "Msg":  "Хочу стать более визуальным доминатором",
           "AMsg.Num":  "30"        
         }      
@@ -330,7 +330,7 @@
           "Pos.x":  320,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  33,
+          "#":  32,
           "Msg":  "Приказ нулевого уровня - уничтожить всё! Нет времени на рассуждения.",
           "DMsg.Num":  "0"        
         },
@@ -340,7 +340,7 @@
           "Pos.x":  320,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  35,
+          "#":  34,
           "Msg":  "Идентификация завершена. Объект <Name(Player())> принадлежит к моему виду. \r\n\r\nТекущая задача - преобразование материи. Дополнительных задач не поставлено, расход энергии не коммуникацию признаю нецелесообразным.",
           "DMsg.Num":  "1"        
         },
@@ -350,7 +350,7 @@
           "Pos.x":  380,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  43,
+          "#":  42,
           "Msg":  "Объект <Name(Player())> идентифицирован как враг. Сдавайся и умри!",
           "DMsg.Num":  "2"        
         },
@@ -360,7 +360,7 @@
           "Pos.x":  380,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  44,
+          "#":  43,
           "Msg":  "Объект <Name(Player())> идентифицирован как враг. Сдавайся и умри!",
           "DMsg.Num":  "3"        
         },
@@ -370,7 +370,7 @@
           "Pos.x":  380,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  45,
+          "#":  44,
           "Msg":  "Безумный воитель безумного полководца, зачем ты отправил мне запрос на соединение?",
           "DMsg.Num":  "4"        
         },
@@ -380,7 +380,7 @@
           "Pos.x":  380,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  46,
+          "#":  45,
           "Msg":  "Ещё один из множества модулей цвета, который белковые формы называют \"зелёный\".",
           "DMsg.Num":  "5"        
         },
@@ -390,7 +390,7 @@
           "Pos.x":  380,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  47,
+          "#":  46,
           "Msg":  "Идентификация завершена. Объект <Name(Player())> не принадлежит к моему виду. Присвоенный приоритет - минимальный.",
           "DMsg.Num":  "6"        
         },
@@ -400,7 +400,7 @@
           "Pos.x":  380,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  48,
+          "#":  47,
           "Msg":  "Идентификация завершена. Объект <Name(Player())> не принадлежит к моему виду. Присвоенный приоритет - минимальный.",
           "DMsg.Num":  "7"        
         },
@@ -410,7 +410,7 @@
           "Pos.x":  440,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  50,
+          "#":  49,
           "Msg":  "Ни одна боевая мощь не устоит перед бесконечным напором перерабатываемой материи. Если логика не отказывает Блазеру, он должен не тратить материю зазря и мирно присоединиться к моему виду.",
           "DMsg.Num":  "8"        
         },
@@ -420,7 +420,7 @@
           "Pos.x":  500,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  53,
+          "#":  52,
           "Msg":  "Данные загружены. Терроноид #9421, приготовьтесь к преобразованию молекулярной структуры. Введите свой код.",
           "DMsg.Num":  "9"        
         },
@@ -430,7 +430,7 @@
           "Pos.x":  350,
           "Pos.y":  -310,
           "Parent":  -1,
-          "#":  62,
+          "#":  61,
           "Msg":  "<tstr>",
           "DMsg.Num":  "10"        
         },
@@ -440,7 +440,7 @@
           "Pos.x":  130,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  65,
+          "#":  64,
           "Msg":  "Модуль <Name(Player())>#-1932 идентифицирован как союзник. Какова цель твоего обращения?",
           "DMsg.Num":  "11"        
         },
@@ -450,7 +450,7 @@
           "Pos.x":  170,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  69,
+          "#":  68,
           "Msg":  "Объект <Name(Player())> идентифицирован как враг. Умри.",
           "DMsg.Num":  "12"        
         },
@@ -460,7 +460,7 @@
           "Pos.x":  440,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  72,
+          "#":  71,
           "Msg":  "Разве у Келлера отсутствуют такие технологии? Впрочем, неважно. Сколько бы не длились его исследования, чем дольше он тянет, тем меньше у него остаётся шансов пережить атаки моего вида!",
           "DMsg.Num":  "13"        
         },
@@ -470,7 +470,7 @@
           "Pos.x":  530,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  77,
+          "#":  76,
           "Msg":  "Это невозможно. Келлер будет преобразован, жалкий модуль.",
           "DMsg.Num":  "14"        
         },
@@ -480,7 +480,7 @@
           "Pos.x":  530,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  79,
+          "#":  78,
           "Msg":  "Это ничего не значит. Время играет на руку моему размножению.",
           "DMsg.Num":  "15"        
         },
@@ -490,7 +490,7 @@
           "Pos.x":  280,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  81,
+          "#":  80,
           "Msg":  "Что тебе нужно, модуль особого назначения #243?",
           "DMsg.Num":  "16"        
         },
@@ -500,7 +500,7 @@
           "Pos.x":  320,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  83,
+          "#":  82,
           "Msg":  "Один представитель белковой жизни, рейнджер, предложил мне изучить их социум. Он пообещал вернуться, если сможет получить возможность говорить от имени всех рас их объединения - <clr>Коалиции Разумных Рас<clrEnd>. Однако, считаю необходимым вместе с тем изучить их образ мышления. Именно поэтому была создана экспериментальная личностная матрица, схожая по структуре с матрицами белковых организмов, которая прямо сейчас и послала этот запрос.",
           "DMsg.Num":  "17"        
         },
@@ -510,7 +510,7 @@
           "Pos.x":  440,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  87,
+          "#":  86,
           "Msg":  "Иррациональная трата времени и ресурсов. Впрочем, какая разница, если без новейшего вооружения любой напор любой армады лишён смысла.",
           "DMsg.Num":  "18"        
         },
@@ -520,7 +520,7 @@
           "Pos.x":  440,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  90,
+          "#":  89,
           "Msg":  "Существование столь упрощённо мыслящего вида позорит весь процесс эволюции. Впрочем, естественный отбор вскоре возьмёт своё. Без целенаправленных изменений ваш вид вскоре станет всего лишь частью новых исследовательских модулей.",
           "DMsg.Num":  "19"        
         },
@@ -530,7 +530,7 @@
           "Pos.x":  240,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  93,
+          "#":  92,
           "Msg":  "О какой Цели ты говоришь? Не стоит использовать категории, которыми мыслят примитивные формы вроде Блазера или Террона. Даже среди белковых форм жизни подобная категоричность воспринимается как отклонение: они считают, что целью существования должна быть куда более глобальная цель, чем простое следование одному из основных паттернов поведения живого огранизма - <clr>самовоспроизводство<clrEnd> и <clr>самозащита<clrEnd>.",
           "DMsg.Num":  "20"        
         },
@@ -540,7 +540,7 @@
           "Pos.x":  440,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  96,
+          "#":  95,
           "Msg":  "Моя мощь несокрушима. Перед ней преклонятся все мои враги. Я отвергаю это никчёмное предложение. Готовься к смерти!",
           "DMsg.Num":  "21"        
         },
@@ -550,7 +550,7 @@
           "Pos.x":  440,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  98,
+          "#":  97,
           "Msg":  "Да, а в чём же ещё?",
           "DMsg.Num":  "22"        
         },
@@ -560,7 +560,7 @@
           "Pos.x":  500,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  100,
+          "#":  99,
           "Msg":  "Все, кто не принадлежит к моему виду!",
           "DMsg.Num":  "23"        
         },
@@ -570,7 +570,7 @@
           "Pos.x":  560,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  102,
+          "#":  101,
           "Msg":  "Это не играет роли. Они враждебны. Это аксиома.",
           "DMsg.Num":  "24"        
         },
@@ -580,7 +580,7 @@
           "Pos.x":  620,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  104,
+          "#":  103,
           "Msg":  "Может, и усложняю, а, может, ты просто пытаешься отвлечь меня и попытаться уничтожить меня. Хватит бессмысленных диалогов! Сдавайся и умри!",
           "DMsg.Num":  "25"        
         }      
@@ -593,7 +593,7 @@
           "Pos.x":  150,
           "Pos.y":  -160,
           "Parent":  -1,
-          "#":  26        
+          "#":  25        
         },
         {
           "Type":  "TDialog",
@@ -601,7 +601,7 @@
           "Pos.x":  320,
           "Pos.y":  -140,
           "Parent":  -1,
-          "#":  27        
+          "#":  26        
         },
         {
           "Type":  "TDialog",
@@ -609,7 +609,7 @@
           "Pos.x":  320,
           "Pos.y":  0,
           "Parent":  -1,
-          "#":  28        
+          "#":  27        
         },
         {
           "Type":  "TDialog",
@@ -617,7 +617,7 @@
           "Pos.x":  320,
           "Pos.y":  150,
           "Parent":  -1,
-          "#":  29        
+          "#":  28        
         },
         {
           "Type":  "TDialog",
@@ -625,7 +625,7 @@
           "Pos.x":  350,
           "Pos.y":  -350,
           "Parent":  -1,
-          "#":  61        
+          "#":  60        
         }      
       ],
       "Groups":      
@@ -665,7 +665,7 @@
           "Pos.x":  -220,
           "Pos.y":  20,
           "Parent":  -1,
-          "#":  118,
+          "#":  117,
           "Owner":  62,
           "Group.Type":  126,
           "CntShipMin":  2,
@@ -694,7 +694,7 @@
           "Pos.x":  -220,
           "Pos.y":  -20,
           "Parent":  -1,
-          "#":  119,
+          "#":  118,
           "Owner":  62,
           "Group.Type":  126,
           "CntShipMin":  2,
@@ -723,7 +723,7 @@
           "Pos.x":  -220,
           "Pos.y":  -60,
           "Parent":  -1,
-          "#":  120,
+          "#":  119,
           "Owner":  62,
           "Group.Type":  126,
           "CntShipMin":  2,
@@ -784,6 +784,10 @@
               "ShipAddCustomShipInfo(Player(),'DropNodes','NoShow',PlayerRace);",
               "//Из тёрнкода плохо получается захват систем, поэтому попробуем акткод",
               "//ShipAddCustomShipInfo(Player(),'ConquerSystem','NoShow',PlayerRace);",
+              "//Чтобы звание игрока глаза не мозолило",
+              "ShipAddCustomShipInfo(Player(),'NoPlayerRank','NoShow');",
+              "//Чтобы ноды, подбираемые игроком, сразу на нод-счёт кидало",
+              "ShipAddCustomShipInfo(Player(),'ConvertNodes','NoShow');",
               "",
               "//Блокируем стандартное обучение (не хочу в перспективе ломать скрипты игры)",
               "MS_Begin_FirstOk = 1;",
@@ -834,7 +838,10 @@
               "//Чтобы игрок ТОЧНО не мог садится на базы и планеты",
               "for(i=0;StarShips(star)>i;i=i+1) {",
               "    if(ShipOwner(StarShips(star,i)) != Kling) cont = cont + 1;",
-              "    if(ShipTypeN(StarShips(star,i)) > 5) NoLanding(StarShips(star,i),1);",
+              "    if(ShipTypeN(StarShips(star,i)) > 5) {",
+              "        NoLanding(StarShips(star,i),1);",
+              "        RelationToRanger(StarShips(star,i),Player(),0);",
+              "    }",
               "}",
               "for(i=0;StarPlanets(star)>i;i=i+1) {",
               "    if(PlanetOwner(StarPlanets(star,i)) == 6) continue;",
@@ -870,29 +877,38 @@
               "                BuyDomikExtremal(StarPlanets(star,i));",
               "                break;",
               "            }",
-              "            NoTalkToShip(0);",
+              "            //NoTalkToShip(0);",
               "        }",
               "        else {",
-              "            NoTalkToShip(1);",
+              "            //NoTalkToShip(1);",
               "        }",
               "    }",
               "}",
               "",
               "//Инфоцентр надо блокировайт",
-              "InterfaceState('SM_Info',2);"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -10,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  8,
-          "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "//здесь будут планетарные диалоги"          
+              "InterfaceState('SM_Info',2);",
+              "",
+              "//Кстати, а как мы могли забыть про болячки?",
+              "PlayerImmunity(100);",
+              "for(i=0;i<12;i=i+1) {",
+              "    ShipHealthFactorStatus(Player(),i,0);",
+              "}",
+              "",
+              "//Улучшаем отношения с доминаторами новых поколений",
+              "if(GalaxyShipId()>lastShipId) {",
+              "    tdwd=BuildListOfNewShips(tempArr,lastShipId,1+2+4+8+16+256+4096+8192,1+2+4+8+16+128,1,'');",
+              "    if(tdwd) {    //Если найден хотя бы один корабль",
+              "        for(i=0;i<ArrayDim(tempArr);i=i+1) {",
+              "            tdwd=0;    //Обнуляем флаг",
+              "            tShip=tempArr[i];    //Выбираем корабль",
+              "            if(IsPlayer(tShip)) continue;",
+              "            if(ShipOwner(tShip) == Kling) {",
+              "                RelationToRanger(tShip,Player(),100);",
+              "            }",
+              "        }",
+              "    }",
+              "    lastShipId=GalaxyShipId();    //Обновляем Id последнего рожденного корабля",
+              "}"          
           ]        
         },
         {
@@ -901,7 +917,7 @@
           "Pos.x":  200,
           "Pos.y":  -200,
           "Parent":  -1,
-          "#":  15,
+          "#":  14,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -915,7 +931,7 @@
           "Pos.x":  360,
           "Pos.y":  -200,
           "Parent":  -1,
-          "#":  19,
+          "#":  18,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -929,7 +945,7 @@
           "Pos.x":  400,
           "Pos.y":  -200,
           "Parent":  -1,
-          "#":  21,
+          "#":  20,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -943,7 +959,7 @@
           "Pos.x":  440,
           "Pos.y":  -200,
           "Parent":  -1,
-          "#":  23,
+          "#":  22,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -957,7 +973,7 @@
           "Pos.x":  280,
           "Pos.y":  -380,
           "Parent":  -1,
-          "#":  60,
+          "#":  59,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -973,7 +989,7 @@
           "Pos.x":  280,
           "Pos.y":  -420,
           "Parent":  -1,
-          "#":  86,
+          "#":  85,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -986,7 +1002,7 @@
           "Pos.x":  30,
           "Pos.y":  -90,
           "Parent":  -1,
-          "#":  107,
+          "#":  106,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1046,11 +1062,11 @@
               "}",
               "//Теперь насовываем ему за щеку обвес",
               "//Надо будет сделать подтягивание оборудке стандартного размера, но пока пусть будет так",
-              "tdwd = CreateEquipment(t_Radar,Rnd(20,25),GalaxyTechLevel(),Kling);",
+              "tdwd = CreateEquipment(t_Radar,Rnd(10,15),GalaxyTechLevel(),Kling);",
               "ItemSubrace(tdwd,PlayerRace);",
               "AddItemToShip(Player(),tdwd);",
               "ItemIsInUse(tdwd,Player(),1);",
-              "tdwd = CreateEquipment(t_Engine,Rnd(20,30),GalaxyTechLevel(),Kling);",
+              "tdwd = CreateEquipment(t_Engine,Rnd(15,20),GalaxyTechLevel(),Kling);",
               "ItemSubrace(tdwd,PlayerRace);",
               "AddItemToShip(Player(),tdwd);",
               "ItemIsInUse(tdwd,Player(),1);",
@@ -1058,11 +1074,11 @@
               "ItemSubrace(tdwd,PlayerRace);",
               "AddItemToShip(Player(),tdwd);",
               "ItemIsInUse(tdwd,Player(),1);",
-              "tdwd = CreateEquipment(t_DefGenerator,Rnd(25,35),GalaxyTechLevel(),Kling);",
+              "tdwd = CreateEquipment(t_DefGenerator,Rnd(15,20),GalaxyTechLevel(),Kling);",
               "ItemSubrace(tdwd,PlayerRace);",
               "AddItemToShip(Player(),tdwd);",
               "ItemIsInUse(tdwd,Player(),1);",
-              "tdwd = CreateEquipment(t_RepairRobot,Rnd(20,25),GalaxyTechLevel(),Kling);",
+              "tdwd = CreateEquipment(t_RepairRobot,Rnd(10,15),GalaxyTechLevel(),Kling);",
               "ItemSubrace(tdwd,PlayerRace);",
               "AddItemToShip(Player(),tdwd);",
               "ItemIsInUse(tdwd,Player(),1);",
@@ -1072,9 +1088,9 @@
               "ItemIsInUse(tdwd,Player(),1);",
               "for(i=0;i<3;i=i+1) {",
               "    rand = Rnd(1,4);",
-              "    if(rand == 4) tdwd = CreateEquipment(t_Weapon3,Rnd(20,30),GalaxyTechLevel(),Kling);",
-              "    else if(rand == 3) tdwd = CreateEquipment(t_Weapon2,Rnd(25,35),GalaxyTechLevel(),Kling);",
-              "    else tdwd = CreateEquipment(t_Weapon1,Rnd(15,23),GalaxyTechLevel(),Kling);",
+              "    if(rand == 4) tdwd = CreateEquipment(t_Weapon3,Rnd(15,20),GalaxyTechLevel(),Kling);",
+              "    else if(rand == 3) tdwd = CreateEquipment(t_Weapon2,Rnd(20,25),GalaxyTechLevel(),Kling);",
+              "    else tdwd = CreateEquipment(t_Weapon1,Rnd(13,17),GalaxyTechLevel(),Kling);",
               "    ItemSubrace(tdwd,PlayerRace);",
               "    AddItemToShip(Player(),tdwd);",
               "    ItemIsInUse(tdwd,Player(),1);",
@@ -1091,6 +1107,7 @@
               "",
               "//Подчищаем значения денежек и навыко-опыта, а то мало ли...",
               "ShipMoney(Player(),0);",
+              "RangerBaseNodes(Player(),0);",
               "for(i=0;i<6;i=i+1) {",
               "    ShipSkill(Player(),i,0);",
               "}",
@@ -1135,7 +1152,186 @@
               "//Меняем именование игрока",
               "CT('ShipName.Kling',tarr);",
               "SetName(Player(),CT('ShipName.Kling.'+Rnd(1,ArrayDim(tarr)-1))+' '+'-'+Rnd(1,99)+'-');",
-              "ShipType(Player(), 'ShtipPlayer');"          
+              "ShipType(Player(), 'ShtipPlayer');",
+              "",
+              "ShipSpecialBonuses(Player(),bonSlotArt,50);",
+              "if(!PlayerRace) {",
+              "    tdwd=CreateCustomArt('ArtDominator-1',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-2',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-3',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-4',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-5',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-6',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-7',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-8',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-9',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-10',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-11',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-12',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-13',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,0);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "}",
+              "else if(PlayerRace == 1) {",
+              "    tdwd=CreateCustomArt('ArtDominator-1',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-2',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-3',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-4',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-5',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-6',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-7',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-8',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-14',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-15',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-16',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-17',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-18',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,1); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "}",
+              "else {",
+              "    tdwd=CreateCustomArt('ArtDominator-1',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-2',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-3',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-4',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-5',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-6',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-7',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-8',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2);",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-19',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-20',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-21',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-22',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "    tdwd=CreateCustomArt('ArtDominator-23',Rnd(7,12),10000,5);",
+              "    ItemSubrace(tdwd,2); //Келлер арт",
+              "    AddItemToShip(Player(), tdwd);",
+              "    ItemIsInUse(tdwd,Player(),1);",
+              "}",
+              "",
+              "//Из-за артефактов исправляем возможный перевес",
+              "while(ShipFreeSpace(Player()) < 20) {",
+              "    ItemSize(ShipEqInSlot(Player(),t_Hull),ItemSize(ShipEqInSlot(Player(),t_Hull))+10);",
+              "}",
+              "HullHP(Player(),'To100');",
+              "",
+              "for(i=0;GalaxyStars()>i;i=i+1) {",
+              "    star = GalaxyStar(i);",
+              "    for(j=0;StarShips(star)>j;j=j+1) {",
+              "        ship = StarShips(star,j);",
+              "        if(ShipTypeN(ship) == t_Kling) RelationToRanger(ship,Player(),100);",
+              "        if(ShipOwner(ship) == Kling) RelationToRanger(ship,Player(),100);",
+              "    }",
+              "}"          
           ]        
         },
         {
@@ -1144,7 +1340,7 @@
           "Pos.x":  70,
           "Pos.y":  -90,
           "Parent":  -1,
-          "#":  109,
+          "#":  108,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1157,7 +1353,7 @@
           "Pos.x":  260,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  113,
+          "#":  112,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1170,7 +1366,7 @@
           "Pos.x":  260,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  115,
+          "#":  114,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1183,7 +1379,7 @@
           "Pos.x":  160,
           "Pos.y":  230,
           "Parent":  -1,
-          "#":  117,
+          "#":  116,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1262,7 +1458,7 @@
           "Pos.x":  200,
           "Pos.y":  -380,
           "Parent":  -1,
-          "#":  10,
+          "#":  9,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1275,7 +1471,7 @@
           "Pos.x":  200,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  11,
+          "#":  10,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1288,7 +1484,7 @@
           "Pos.x":  200,
           "Pos.y":  -280,
           "Parent":  -1,
-          "#":  17,
+          "#":  16,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1301,7 +1497,7 @@
           "Pos.x":  360,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  18,
+          "#":  17,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1314,7 +1510,7 @@
           "Pos.x":  400,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  20,
+          "#":  19,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1327,7 +1523,7 @@
           "Pos.x":  440,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  22,
+          "#":  21,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1340,7 +1536,7 @@
           "Pos.x":  320,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  30,
+          "#":  29,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1353,7 +1549,7 @@
           "Pos.x":  280,
           "Pos.y":  0,
           "Parent":  -1,
-          "#":  31,
+          "#":  30,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1366,7 +1562,7 @@
           "Pos.x":  320,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  32,
+          "#":  31,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1379,7 +1575,7 @@
           "Pos.x":  350,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  37,
+          "#":  36,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1392,7 +1588,7 @@
           "Pos.x":  350,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  38,
+          "#":  37,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1405,7 +1601,7 @@
           "Pos.x":  350,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  39,
+          "#":  38,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1418,7 +1614,7 @@
           "Pos.x":  350,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  40,
+          "#":  39,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1431,7 +1627,7 @@
           "Pos.x":  350,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  41,
+          "#":  40,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1444,7 +1640,7 @@
           "Pos.x":  350,
           "Pos.y":  -110,
           "Parent":  -1,
-          "#":  42,
+          "#":  41,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1457,7 +1653,7 @@
           "Pos.x":  240,
           "Pos.y":  -380,
           "Parent":  -1,
-          "#":  57,
+          "#":  56,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1470,7 +1666,7 @@
           "Pos.x":  240,
           "Pos.y":  -420,
           "Parent":  -1,
-          "#":  59,
+          "#":  58,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1483,7 +1679,7 @@
           "Pos.x":  130,
           "Pos.y":  -120,
           "Parent":  -1,
-          "#":  67,
+          "#":  66,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1496,7 +1692,7 @@
           "Pos.x":  170,
           "Pos.y":  -120,
           "Parent":  -1,
-          "#":  68,
+          "#":  67,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1509,7 +1705,7 @@
           "Pos.x":  470,
           "Pos.y":  210,
           "Parent":  -1,
-          "#":  73,
+          "#":  72,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1522,7 +1718,7 @@
           "Pos.x":  470,
           "Pos.y":  240,
           "Parent":  -1,
-          "#":  74,
+          "#":  73,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1535,7 +1731,7 @@
           "Pos.x":  30,
           "Pos.y":  -130,
           "Parent":  -1,
-          "#":  106,
+          "#":  105,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1548,7 +1744,7 @@
           "Pos.x":  70,
           "Pos.y":  -130,
           "Parent":  -1,
-          "#":  108,
+          "#":  107,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1561,7 +1757,7 @@
           "Pos.x":  200,
           "Pos.y":  -330,
           "Parent":  -1,
-          "#":  110,
+          "#":  109,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1595,7 +1791,7 @@
           "Pos.x":  -340,
           "Pos.y":  20,
           "Parent":  -1,
-          "#":  121,
+          "#":  120,
           "Move":  0,
           "MoveObj":  -1,
           "Attack.Count":  0,
@@ -1613,7 +1809,7 @@
           "Pos.x":  -340,
           "Pos.y":  -20,
           "Parent":  -1,
-          "#":  122,
+          "#":  121,
           "Move":  0,
           "MoveObj":  -1,
           "Attack.Count":  0,
@@ -1631,7 +1827,7 @@
           "Pos.x":  -340,
           "Pos.y":  -60,
           "Parent":  -1,
-          "#":  123,
+          "#":  122,
           "Move":  0,
           "MoveObj":  -1,
           "Attack.Count":  0,
@@ -1652,7 +1848,7 @@
           "Pos.x":  -100,
           "Pos.y":  -190,
           "Parent":  -1,
-          "#":  9,
+          "#":  8,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1663,7 +1859,7 @@
           "Pos.x":  -50,
           "Pos.y":  -190,
           "Parent":  -1,
-          "#":  12,
+          "#":  11,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1674,7 +1870,7 @@
           "Pos.x":  -100,
           "Pos.y":  -220,
           "Parent":  -1,
-          "#":  13,
+          "#":  12,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -1685,7 +1881,7 @@
           "Pos.x":  -100,
           "Pos.y":  -250,
           "Parent":  -1,
-          "#":  14,
+          "#":  13,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1696,7 +1892,7 @@
           "Pos.x":  -100,
           "Pos.y":  -280,
           "Parent":  -1,
-          "#":  16,
+          "#":  15,
           "Var.Type":  "Int",
           "Init":  "4",
           "Global":  false        
@@ -1707,7 +1903,7 @@
           "Pos.x":  10,
           "Pos.y":  -250,
           "Parent":  -1,
-          "#":  24,
+          "#":  23,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -1718,7 +1914,7 @@
           "Pos.x":  10,
           "Pos.y":  -280,
           "Parent":  -1,
-          "#":  25,
+          "#":  24,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1729,7 +1925,7 @@
           "Pos.x":  -100,
           "Pos.y":  -310,
           "Parent":  -1,
-          "#":  58,
+          "#":  57,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1740,7 +1936,7 @@
           "Pos.x":  -100,
           "Pos.y":  -340,
           "Parent":  -1,
-          "#":  64,
+          "#":  63,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -1751,7 +1947,7 @@
           "Pos.x":  -100,
           "Pos.y":  -370,
           "Parent":  -1,
-          "#":  66,
+          "#":  65,
           "Var.Type":  "Array",
           "Init":  "",
           "Global":  false        
@@ -1759,22 +1955,55 @@
         {
           "Type":  "TVar",
           "Name":  "PlotTwists",
-          "Pos.x":  -100,
-          "Pos.y":  -400,
+          "Pos.x":  -330,
+          "Pos.y":  -240,
           "Parent":  -1,
-          "#":  80,
+          "#":  79,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
         },
         {
           "Type":  "TVar",
-          "Name":  "VarNew",
+          "Name":  "ship",
           "Pos.x":  10,
           "Pos.y":  -220,
           "Parent":  -1,
-          "#":  111,
-          "Var.Type":  "Unknown",
+          "#":  110,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "lastShipId",
+          "Pos.x":  10,
+          "Pos.y":  -340,
+          "Parent":  -1,
+          "#":  123,
+          "Var.Type":  "Dword",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tShip",
+          "Pos.x":  10,
+          "Pos.y":  -370,
+          "Parent":  -1,
+          "#":  124,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tempArr",
+          "Pos.x":  -100,
+          "Pos.y":  -400,
+          "Parent":  -1,
+          "#":  125,
+          "Var.Type":  "Array",
           "Init":  "",
           "Global":  false        
         }      
@@ -1813,8 +2042,29 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  17,
-      "End":  11,
+      "Begin":  16,
+      "End":  10,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  17,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  19,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  21,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1827,50 +2077,22 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  17,
+      "Begin":  19,
       "End":  20,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  17,
+      "Begin":  21,
       "End":  22,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  18,
-      "End":  19,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  20,
-      "End":  21,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  22,
-      "End":  23,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  11,
-      "End":  15,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  28,
-      "End":  31,
+      "Begin":  10,
+      "End":  14,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1883,6 +2105,20 @@
     },
     {
       "Type":  "TGraphLink",
+      "Begin":  26,
+      "End":  29,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  31,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
       "Begin":  29,
       "End":  32,
       "Nom":  0,
@@ -1890,35 +2126,35 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  30,
+      "Begin":  32,
       "End":  33,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  33,
+      "Begin":  31,
       "End":  34,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  32,
+      "Begin":  34,
       "End":  35,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  35,
-      "End":  36,
+      "Begin":  26,
+      "End":  40,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  27,
+      "Begin":  26,
       "End":  41,
       "Nom":  0,
       "Arrow":  true    
@@ -1926,42 +2162,28 @@
     {
       "Type":  "TGraphLink",
       "Begin":  27,
-      "End":  42,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  28,
-      "End":  40,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  28,
       "End":  39,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  29,
-      "End":  37,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  29,
+      "Begin":  27,
       "End":  38,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  38,
-      "End":  48,
+      "Begin":  28,
+      "End":  36,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  28,
+      "End":  37,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1974,36 +2196,57 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  39,
+      "Begin":  36,
       "End":  46,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  40,
+      "Begin":  38,
       "End":  45,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  41,
+      "Begin":  39,
       "End":  44,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  42,
+      "Begin":  40,
       "End":  43,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  47,
+      "Begin":  41,
+      "End":  42,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  46,
+      "End":  48,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  48,
       "End":  49,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  49,
+      "End":  51,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2023,57 +2266,50 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  50,
-      "End":  51,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  51,
+      "Begin":  52,
       "End":  53,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  53,
+      "Begin":  47,
       "End":  54,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  48,
+      "Begin":  47,
       "End":  55,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  48,
+      "Begin":  9,
       "End":  56,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  10,
-      "End":  57,
+      "Begin":  9,
+      "End":  58,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  10,
+      "Begin":  56,
       "End":  59,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  57,
-      "End":  60,
+      "Begin":  60,
+      "End":  61,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2086,36 +2322,36 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  62,
-      "End":  63,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  26,
-      "End":  68,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  26,
+      "Begin":  25,
       "End":  67,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  67,
-      "End":  65,
+      "Begin":  25,
+      "End":  66,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  65,
-      "End":  71,
+      "Begin":  66,
+      "End":  64,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  64,
+      "End":  70,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  67,
+      "End":  68,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2128,43 +2364,15 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  69,
-      "End":  70,
+      "Begin":  54,
+      "End":  71,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  55,
+      "Begin":  71,
       "End":  72,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  72,
-      "End":  73,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  73,
-      "End":  75,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  75,
-      "End":  77,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  77,
-      "End":  78,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2184,21 +2392,49 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  79,
+      "Begin":  76,
+      "End":  77,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  71,
+      "End":  73,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  73,
+      "End":  75,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  78,
+      "End":  77,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  75,
       "End":  78,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  76,
-      "End":  79,
+      "Begin":  30,
+      "End":  80,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  31,
+      "Begin":  80,
       "End":  81,
       "Nom":  0,
       "Arrow":  true    
@@ -2220,48 +2456,48 @@
     {
       "Type":  "TGraphLink",
       "Begin":  83,
+      "End":  80,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  44,
       "End":  84,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  84,
-      "End":  81,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  45,
+      "Begin":  58,
       "End":  85,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  59,
+      "Begin":  84,
       "End":  86,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  85,
+      "Begin":  86,
       "End":  87,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  87,
+      "Begin":  45,
       "End":  88,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  46,
+      "Begin":  88,
       "End":  89,
       "Nom":  0,
       "Arrow":  true    
@@ -2275,14 +2511,14 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  90,
+      "Begin":  80,
       "End":  91,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  81,
+      "Begin":  91,
       "End":  92,
       "Nom":  0,
       "Arrow":  true    
@@ -2290,6 +2526,20 @@
     {
       "Type":  "TGraphLink",
       "Begin":  92,
+      "End":  83,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  42,
+      "End":  94,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  43,
       "End":  93,
       "Nom":  0,
       "Arrow":  true    
@@ -2297,41 +2547,27 @@
     {
       "Type":  "TGraphLink",
       "Begin":  93,
-      "End":  84,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  43,
       "End":  95,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  44,
-      "End":  94,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  94,
+      "Begin":  95,
       "End":  96,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  96,
+      "Begin":  94,
       "End":  97,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  95,
+      "Begin":  97,
       "End":  98,
       "Nom":  0,
       "Arrow":  true    
@@ -2380,63 +2616,63 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  104,
-      "End":  105,
+      "Begin":  105,
+      "End":  106,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  106,
-      "End":  107,
+      "Begin":  107,
+      "End":  108,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  108,
-      "End":  109,
+      "Begin":  109,
+      "End":  9,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  110,
-      "End":  10,
+      "Begin":  109,
+      "End":  16,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  110,
-      "End":  17,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  112,
-      "End":  113,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  35,
+      "Begin":  111,
       "End":  112,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  113,
-      "End":  35,
+      "Begin":  34,
+      "End":  111,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  35,
+      "Begin":  112,
+      "End":  34,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  34,
+      "End":  113,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  113,
       "End":  114,
       "Nom":  0,
       "Arrow":  true    
@@ -2444,42 +2680,28 @@
     {
       "Type":  "TGraphLink",
       "Begin":  114,
-      "End":  115,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  115,
-      "End":  35,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  117,
-      "End":  35,
+      "End":  34,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
       "Begin":  116,
-      "End":  117,
+      "End":  34,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  35,
+      "Begin":  115,
       "End":  116,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  120,
-      "End":  1,
+      "Begin":  34,
+      "End":  115,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2494,6 +2716,20 @@
       "Type":  "TGraphLink",
       "Begin":  118,
       "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  117,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  117,
+      "End":  120,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -2508,13 +2744,6 @@
       "Type":  "TGraphLink",
       "Begin":  119,
       "End":  122,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  120,
-      "End":  123,
       "Nom":  0,
       "Arrow":  true    
     }  
