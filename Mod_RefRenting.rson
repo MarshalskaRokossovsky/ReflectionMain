@@ -1,29 +1,11 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -498,
-  "ViewPos.y":  -102,
+  "ViewPos.x":  -457,
+  "ViewPos.y":  -226,
   "ScriptName":  "Mod_RefRenting",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRenting\\DATA\\Script\\Mod_RefRenting.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRenting\\DATA\\Script\\Mod_RefRenting.txt",
-  "GraphPoint.Count":  174,
-  "GraphLink.Count":  119,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  63,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  1,
-  "DialogMessages.Count":  20,
-  "DialogAnswers.Count":  39,
-  "Operations.Count":  24,
-  "Statements.Count":  22,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -675,7 +657,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -689,7 +670,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  7,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -709,7 +689,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  22,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -723,7 +702,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  23,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -737,7 +715,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  24,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -751,7 +728,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  25,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -765,7 +741,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  26,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -779,7 +754,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  27,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -793,7 +767,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  28,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -807,7 +780,6 @@
           "Pos.y":  350,
           "Parent":  -1,
           "#":  29,
-          "Total.Lines":  349,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1047,10 +1019,10 @@
               "            if(f == 15 || f == 4) {",
               "                w = ListBox(\"Выберите микромодуль из списка\",MissileMM);",
               "            } //ракетное",
-              "            if(f == 14 || f == 12 || f == 11 || f == 10 || f == 8 || f == 6 || f == 5 || f == 3 || f == 2 || f == 1) {",
+              "            if(f == 14 || f == 12 || f == 11 || f == 10 || f == 8 || f == 6 || f == 5 || f == 3 || f == 1) {",
               "                w = ListBox(\"Выберите микромодуль из списка\",EnergyMM);",
               "            } //энерго",
-              "            if(f == 13 || f == 9 || f == 7 || f == 4) {",
+              "            if(f == 13 || f == 9 || f == 7 || f == 2) {",
               "                w = ListBox(\"Выберите микромодуль из списка\",SplinterMM);",
               "            } //осколка",
               "        }",
@@ -1062,42 +1034,70 @@
               "    mm_Text = \"Микромодуль не выбран\";",
               "}",
               "if(w > 0) {",
+              "    SFT('RefRenting1 '+w);",
+              "    SFT('RefRenting2 '+EngineMM[w]);",
+              "    SFT('RefRenting2 '+EngineMM[23]);",
+              "    SFT('RefRenting3 '+ArrayDim(EngineMM));",
+              "    SFT('RefRenting4 '+FindBonusByName(EngineMM[w]));",
               "    if(EquipFlag == 1) {",
               "        tdwd = FindBonusByName(EngineMM[w]);",
+              "        mm_Name = EngineMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(EngineMM[w]));",
               "    }",
               "    if(EquipFlag == 2) {",
               "        tdwd = FindBonusByName(FuelMM[w]);",
+              "        mm_Name = FuelMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(FuelMM[w]));",
               "    }",
               "    if(EquipFlag == 3) {",
               "        tdwd = FindBonusByName(DroidMM[w]);",
+              "        mm_Name = DroidMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(DroidMM[w]));",
               "    }",
               "    if(EquipFlag == 4) {",
               "        tdwd = FindBonusByName(ZahvatMM[w]);",
+              "        mm_Name = ZahvatMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(ZahvatMM[w]));",
               "    }",
               "    if(EquipFlag == 5) {",
               "        tdwd = FindBonusByName(ShieldMM[w]);",
+              "        mm_Name = ShieldMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(ShieldMM[w]));",
               "    }",
               "    if(EquipFlag == 6) {",
               "        tdwd = FindBonusByName(RadarMM[w]);",
+              "        mm_Name = RadarMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(RadarMM[w]));",
               "    }",
               "    if(EquipFlag == 7) {",
               "        tdwd = FindBonusByName(ScanerMM[w]);",
+              "        mm_Name = ScanerMM[w];",
+              "        mm_Text = BonusText(FindBonusByName(ScanerMM[w]));",
               "    }",
               "    if(EquipFlag == 8) {",
               "        if(f == 15 || f == 4) {",
               "            tdwd = FindBonusByName(MissileMM[w]);",
+              "            mm_Name = MissileMM[w];",
+              "            mm_Text = BonusText(FindBonusByName(MissileMM[w]));",
               "        } //ракетное",
-              "        if(f == 14 || f == 12 || f == 11 || f == 10 || f == 8 || f == 6 || f == 5 || f == 3 || f == 2 || f == 1) {",
+              "        if(f == 14 || f == 12 || f == 11 || f == 10 || f == 8 || f == 6 || f == 5 || f == 3 || f == 1) {",
               "            tdwd = FindBonusByName(EnergyMM[w]);",
+              "            mm_Name = EnergyMM[w];",
+              "            mm_Text = BonusText(FindBonusByName(EnergyMM[w]));",
               "        } //энерго",
-              "        if(f == 13 || f == 9 || f == 7 || f == 4) {",
+              "        if(f == 13 || f == 9 || f == 7 || f == 2) {",
               "            tdwd = FindBonusByName(SplinterMM[w]);",
+              "            mm_Name = SplinterMM[w];",
+              "            mm_Text = BonusText(FindBonusByName(SplinterMM[w]));",
               "        } //осколка",
               "    }",
-              "    if(tdwd > 0) {",
-              "        mm_Name = Name(tdwd);",
-              "        mm_Text = BonusText(tdwd);",
-              "    }",
+              "    //if(tdwd > 0) {",
+              "    //    SFT('RefRenting1 '+w);",
+              "    //    SFT('RefRenting2 '+tdwd);",
+              "    //    SFT('RefRenting3 '+f);",
+              "    //    mm_Name = Name(tdwd);",
+              "    //    mm_Text = BonusText(tdwd);",
+              "    //}",
               "}",
               "else {",
               "    mm_Name = \"Не устанавливается\";",
@@ -1169,7 +1169,6 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  32,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1183,7 +1182,6 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  40,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1200,7 +1198,6 @@
           "Pos.y":  550,
           "Parent":  -1,
           "#":  41,
-          "Total.Lines":  33,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1246,7 +1243,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  45,
-          "Total.Lines":  110,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1369,7 +1365,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  61,
-          "Total.Lines":  243,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -1625,7 +1620,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  75,
-          "Total.Lines":  3,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1641,7 +1635,6 @@
           "Pos.y":  180,
           "Parent":  -1,
           "#":  83,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1655,7 +1648,6 @@
           "Pos.y":  420,
           "Parent":  -1,
           "#":  85,
-          "Total.Lines":  28,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1696,7 +1688,6 @@
           "Pos.y":  420,
           "Parent":  -1,
           "#":  86,
-          "Total.Lines":  33,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1742,7 +1733,6 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  99,
-          "Total.Lines":  13,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1768,7 +1758,6 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  100,
-          "Total.Lines":  13,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1794,7 +1783,6 @@
           "Pos.y":  550,
           "Parent":  -1,
           "#":  144,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1811,7 +1799,6 @@
           "Pos.y":  310,
           "Parent":  -1,
           "#":  156,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1825,7 +1812,6 @@
           "Pos.y":  310,
           "Parent":  -1,
           "#":  157,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1904,7 +1890,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  46,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1918,7 +1903,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  47,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1932,7 +1916,6 @@
           "Pos.y":  -20,
           "Parent":  -1,
           "#":  53,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1946,7 +1929,6 @@
           "Pos.y":  -20,
           "Parent":  -1,
           "#":  54,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1960,7 +1942,6 @@
           "Pos.y":  140,
           "Parent":  -1,
           "#":  57,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1974,7 +1955,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  62,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1988,7 +1968,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  64,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2002,7 +1981,6 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  69,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2016,7 +1994,6 @@
           "Pos.y":  260,
           "Parent":  -1,
           "#":  106,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2030,7 +2007,6 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  107,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2044,7 +2020,6 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  108,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2058,7 +2033,6 @@
           "Pos.y":  260,
           "Parent":  -1,
           "#":  111,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2072,7 +2046,6 @@
           "Pos.y":  300,
           "Parent":  -1,
           "#":  114,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2086,7 +2059,6 @@
           "Pos.y":  340,
           "Parent":  -1,
           "#":  117,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2100,7 +2072,6 @@
           "Pos.y":  340,
           "Parent":  -1,
           "#":  118,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2114,7 +2085,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  134,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2128,7 +2098,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  135,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2142,7 +2111,6 @@
           "Pos.y":  470,
           "Parent":  -1,
           "#":  137,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2156,7 +2124,6 @@
           "Pos.y":  470,
           "Parent":  -1,
           "#":  138,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2170,7 +2137,6 @@
           "Pos.y":  470,
           "Parent":  -1,
           "#":  140,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2184,7 +2150,6 @@
           "Pos.y":  390,
           "Parent":  -1,
           "#":  147,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -2198,7 +2163,6 @@
           "Pos.y":  350,
           "Parent":  -1,
           "#":  148,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [

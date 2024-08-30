@@ -6,24 +6,6 @@
   "ScriptName":  "Mod_RefLowTechStart",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefLowTechStart\\DATA\\Script\\Mod_RefLowTechStart.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefLowTechStart\\DATA\\Script\\Mod_RefLowTechStart.txt",
-  "GraphPoint.Count":  8,
-  "GraphLink.Count":  4,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  0,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  3,
-  "Statements.Count":  0,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -68,7 +50,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -82,7 +63,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  48,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -143,7 +123,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  15,
           "Code.Type":  "Turn",
           "Code":          
           [
