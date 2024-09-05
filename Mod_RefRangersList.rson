@@ -1,29 +1,11 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -429,
-  "ViewPos.y":  -380,
+  "ViewPos.x":  -266,
+  "ViewPos.y":  -323,
   "ScriptName":  "Mod_RefRangersList",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRangersList\\DATA\\Script\\Mod_RefRangersList.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefRangersList\\DATA\\Script\\Mod_RefRangersList.txt",
-  "GraphPoint.Count":  88,
-  "GraphLink.Count":  71,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  11,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  12,
-  "DialogMessages.Count":  13,
-  "DialogAnswers.Count":  15,
-  "Operations.Count":  11,
-  "Statements.Count":  21,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -178,6 +160,26 @@
           "#":  86,
           "Msg":  "Жаль...",
           "AMsg.Num":  "14"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "",
+          "Pos.x":  1070,
+          "Pos.y":  290,
+          "Parent":  -1,
+          "#":  88,
+          "Msg":  "Знаешь, конечно, контракт есть контракт, но если я оплачу неустойку?",
+          "AMsg.Num":  "15"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  1190,
+          "Pos.y":  290,
+          "Parent":  -1,
+          "#":  91,
+          "Msg":  "Нет, пожалуй, не сейчас",
+          "AMsg.Num":  "16"        
         }      
       ],
       "DialogMessages":      
@@ -279,7 +281,7 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  57,
-          "Msg":  "Ну, если так хочешь, можем попробовать с тобой договориться.\r\n\r\nНачальная ставка - <money> cr.\r\nВремя найма - <Month> мес.\r\n\r\nЧто думаешь?",
+          "Msg":  "Ну, если так хочешь, можем попробовать с тобой договориться.\r\n\r\nНачальная ставка - <money> cr.\r\nДополнительные выплаты - <extramoney> cr.\r\nВремя найма - <Month> мес.\r\n\r\nЧто думаешь?",
           "DMsg.Num":  "9"        
         },
         {
@@ -311,6 +313,16 @@
           "#":  85,
           "Msg":  "Увы, я уже нанят рейнджером <Name(ShipIsPartner(tship))>",
           "DMsg.Num":  "12"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  1150,
+          "Pos.y":  290,
+          "Parent":  -1,
+          "#":  90,
+          "Msg":  "Ну... Если ты готов уплатить <extramoney> cr., то мы можем обсудить наш контракт.",
+          "DMsg.Num":  "13"        
         }      
       ],
       "Dialogs":      
@@ -410,6 +422,14 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  87        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "SRC2",
+          "Pos.x":  840,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  93        
         }      
       ],
       "Groups":      
@@ -453,7 +473,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -467,7 +486,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -481,7 +499,6 @@
           "Pos.y":  10,
           "Parent":  -1,
           "#":  14,
-          "Total.Lines":  66,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -560,7 +577,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  20,
-          "Total.Lines":  19,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -592,12 +608,12 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  61,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
               "Month = 16;",
-              "money = GalaxyMoney(4,4) + (CostIncrease * GalaxyMoney(3,4));"          
+              "money = GalaxyMoney(4,4) + (CostIncrease * GalaxyMoney(3,4));",
+              "extramoney = 0;"          
           ]        
         },
         {
@@ -607,7 +623,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  65,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -624,7 +639,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  67,
-          "Total.Lines":  9,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -646,7 +660,6 @@
           "Pos.y":  -80,
           "Parent":  -1,
           "#":  70,
-          "Total.Lines":  3,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -662,7 +675,6 @@
           "Pos.y":  150,
           "Parent":  -1,
           "#":  77,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -676,7 +688,6 @@
           "Pos.y":  240,
           "Parent":  -1,
           "#":  80,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -690,7 +701,6 @@
           "Pos.y":  -170,
           "Parent":  -1,
           "#":  82,
-          "Total.Lines":  16,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -710,6 +720,33 @@
               "        }",
               "    }",
               "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  1150,
+          "Pos.y":  330,
+          "Parent":  -1,
+          "#":  92,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ShipMoney(Player()) >= extramoney) AddDialogInject('SRC2','',\"Согласен. Начнём заключать контракт\",2,100);",
+              "else AddDialogBlock(\"Согласен. Начнём заключать контракт\",1);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  1110,
+          "Pos.y":  290,
+          "Parent":  -1,
+          "#":  94,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "extramoney = GalaxyMoney(4,4) * 2;"          
           ]        
         }      
       ],
@@ -784,7 +821,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -798,7 +834,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  33,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -812,7 +847,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  34,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -826,7 +860,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  35,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -840,7 +873,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  36,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -854,7 +886,6 @@
           "Pos.y":  -120,
           "Parent":  -1,
           "#":  37,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -868,7 +899,6 @@
           "Pos.y":  -120,
           "Parent":  -1,
           "#":  38,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -882,7 +912,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -896,7 +925,6 @@
           "Pos.y":  -190,
           "Parent":  -1,
           "#":  40,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -910,7 +938,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  42,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -924,7 +951,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  43,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -938,7 +964,6 @@
           "Pos.y":  130,
           "Parent":  -1,
           "#":  44,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -952,7 +977,6 @@
           "Pos.y":  130,
           "Parent":  -1,
           "#":  45,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -966,7 +990,6 @@
           "Pos.y":  190,
           "Parent":  -1,
           "#":  52,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -980,7 +1003,6 @@
           "Pos.y":  190,
           "Parent":  -1,
           "#":  53,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -994,7 +1016,6 @@
           "Pos.y":  0,
           "Parent":  -1,
           "#":  68,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1008,7 +1029,6 @@
           "Pos.y":  -120,
           "Parent":  -1,
           "#":  69,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1022,11 +1042,10 @@
           "Pos.y":  -160,
           "Parent":  -1,
           "#":  72,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "money <= ShipMoney(Player())"          
+              "(money+extramoney) <= ShipMoney(Player())"          
           ]        
         },
         {
@@ -1036,11 +1055,10 @@
           "Pos.y":  -160,
           "Parent":  -1,
           "#":  73,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "money > ShipMoney(Player())"          
+              "(money+extramoney) > ShipMoney(Player())"          
           ]        
         },
         {
@@ -1050,7 +1068,6 @@
           "Pos.y":  250,
           "Parent":  -1,
           "#":  83,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1064,7 +1081,6 @@
           "Pos.y":  250,
           "Parent":  -1,
           "#":  84,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1212,6 +1228,17 @@
           "Pos.y":  -40,
           "Parent":  -1,
           "#":  76,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "extramoney",
+          "Pos.x":  430,
+          "Pos.y":  90,
+          "Parent":  -1,
+          "#":  89,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1717,9 +1744,58 @@
       "End":  85,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  85,
+      "End":  88,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  90,
+      "End":  92,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  90,
+      "End":  91,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
+      "End":  53,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
+      "End":  52,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  88,
+      "End":  94,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  94,
+      "End":  90,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  46,
+  "BlockPar.EC.Total.Strings":  50,
   "BlockPar.EC":  
   [
     {
@@ -1887,8 +1963,24 @@
       "String":  "Пилоты, которых вы можете нанять в данный момент времени:"    
     },
     {
+      "#":  "47",
+      "String":  "Согласен. Начнём заключать контракт"    
+    },
+    {
+      "#":  "48",
+      "String":  "Ну... Если ты готов уплатить <0> cr., то мы можем обсудить наш контракт."    
+    },
+    {
+      "#":  "49",
+      "String":  "Знаешь, конечно, контракт есть контракт, но если я оплачу неустойку?"    
+    },
+    {
       "#":  "5",
       "String":  "Увы, <Player>, наши взгляды на мир слишком сильно разнятся. Я не могу принять этот контракт."    
+    },
+    {
+      "#":  "50",
+      "String":  "Нет, пожалуй, не сейчас"    
     },
     {
       "#":  "6",
@@ -1904,7 +1996,7 @@
     },
     {
       "#":  "9",
-      "String":  "Ну, если так хочешь, можем попробовать с тобой договориться.<br><br>Начальная ставка - <0> cr.<br>Время найма - <1> мес.<br><br>Что думаешь?"    
+      "String":  "Ну, если так хочешь, можем попробовать с тобой договориться.<br><br>Начальная ставка - <0> cr.<br>Дополнительные выплаты - <1> cr.<br>Время найма - <2> мес.<br><br>Что думаешь?"    
     }  
   ]
 }
