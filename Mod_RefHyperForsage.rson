@@ -17,7 +17,7 @@
           "Pos.x":  70,
           "Pos.y":  -40,
           "Parent":  -1,
-          "#":  10        
+          "#":  9        
         },
         {
           "Type":  "TDialog",
@@ -25,7 +25,7 @@
           "Pos.x":  120,
           "Pos.y":  0,
           "Parent":  -1,
-          "#":  11        
+          "#":  10        
         }      
       ],
       "Groups":      
@@ -85,7 +85,7 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(HFFlag==0)",
+              "if(!ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3))",
               "{",
               "    temp_str=\"Отключен\";",
               "    AddDialogInject('RefForsageOn',\"Гипер-форсаж: <temp_str>\",\"Включить гипер-форсаж\",13);",
@@ -103,14 +103,13 @@
           "Pos.x":  70,
           "Pos.y":  40,
           "Parent":  -1,
-          "#":  12,
+          "#":  11,
           "Code.Type":  "Turn",
           "Code":          
           [
               "if(ShipInNormalSpace(Player())) {",
               "    if(ItemDurability(ShipEqInSlot(Player(),t_Engine)) > 60) {",
               "        Sound('Sound.ForsageOn');",
-              "        HFFlag=1;",
               "        JumpSave = GetEquipmentStats(ShipEqInSlot(Player(),t_Engine),1);",
               "        if(JumpSave < 200) JumpBon = 35;",
               "        if(JumpSave < 70) JumpBon = 29;",
@@ -119,10 +118,13 @@
               "        if(JumpSave < 30) JumpBon = 12;",
               "        if(JumpSave < 20) JumpBon = 6;",
               "        ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) + JumpBon);",
+              "        ShipCustomShipInfoData(Player(),'RefHyperMainInfo',1,JumpBon);",
+              "        ShipCustomShipInfoData(Player(),'RefHyperMainInfo',2,JumpSave);",
+              "        ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3,1); //Вместо HFFlag",
               "    }",
-              "    else MessageBox('Двигатель слишком сильно повреждён для использования гипер-форсажа');",
+              "    else MessageBox(CT('Script.Mod_RefHyperForsage.TooDamaged'));",
               "}",
-              "else MessageBox('Гипер-форсаж можно активировать только в открытом космосе!');",
+              "else MessageBox(CT('Script.Mod_RefHyperForsage.OnlyInSpace'));",
               "Sound('Sound.ButtonInfoEnter');",
               "DAnswer('main');"          
           ]        
@@ -133,7 +135,7 @@
           "Pos.x":  120,
           "Pos.y":  40,
           "Parent":  -1,
-          "#":  13,
+          "#":  12,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -141,8 +143,8 @@
               "Sound('Sound.ButtonInfoEnter');",
               "Sound('Sound.ForsageOff');",
               "if(InHyp == 0) {",
-              "    HFFlag=0;",
-              "    ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - JumpBon);",
+              "    ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3,0);",
+              "    ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - ShipCustomShipInfoData(Player(),'RefHyperMainInfo',1));",
               "}"          
           ]        
         },
@@ -150,48 +152,64 @@
           "Type":  "Top",
           "Name":  "",
           "Pos.x":  -30,
-          "Pos.y":  -140,
+          "Pos.y":  -130,
           "Parent":  -1,
-          "#":  14,
+          "#":  13,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(HFFlag == 1) {",
-              "    if(ShipInHyperSpace(Player())) InHyp = 1;",
-              "    if(ShipInHole(Player())) InHyp = 0;",
-              "    if(InHyp == 0) {",
+              "if(ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3)) {",
+              "    //Игрок где-то",
+              "    if(ShipInHyperSpace(Player()) && !ShipInHole(Player())) InHyp = 1;",
+              "    if(!ShipInHyperSpace(Player())) {",
               "        if(ItemDurability(ShipEqInSlot(Player(),t_Engine)) < 50) {",
-              "            HFFlag = 0;",
-              "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - JumpBon);",
+              "            ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3,0);",
+              "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - ShipCustomShipInfoData(Player(),'RefHyperMainInfo',1));",
               "            Sound('Sound.ForsageOff');",
-              "            CustomEther('CantUse',8,'','Двигатель слишком сильно повредился, использование гипер-форсажа невозможно!');",
+              "            CustomEther('CantUse',8,'',\"Двигатель слишком сильно повредился, использование гипер-форсажа невозможно!\");",
               "        }",
               "    }",
-              "    if(InHyp == 1) {",
+              "    //Игрок летит в гипере",
+              "    if(InHyp) {",
               "        if(ShipInNormalSpace(Player())) {",
               "            InHyp = 0;",
-              "            HFFlag = 0;",
-              "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - JumpBon);",
+              "            ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3,0);",
+              "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - ShipCustomShipInfoData(Player(),'RefHyperMainInfo',1));",
               "            if(EqModule(ShipEqInSlot(Player(),t_Engine)) != -1) {",
               "                if(CT('MicroModuls.'+BonusNumInCfg(EqModule(ShipEqInSlot(Player(),t_Engine)))+'.Fragility') > 0) {",
               "                    ItemDurability(ShipEqInSlot(Player(),t_Engine),-1);",
-              "                    Ether(8,'','Двигатель критически повредился при перерасходе его ресурса гипер-форсажем');",
+              "                    Ether(8,'',\"Двигатель критически повредился при перерасходе его ресурса гипер-форсажем\");",
               "                }",
               "            }",
               "            else {",
               "                ItemDurability(ShipEqInSlot(Player(),t_Engine),-1);",
-              "                Ether(8,'','Двигатель критически повредился при перерасходе его ресурса гипер-форсажем');",
+              "                Ether(8,'',\"Двигатель критически повредился при перерасходе его ресурса гипер-форсажем\");",
               "            }",
               "            Sound('Sound.ForsageOff');",
               "        }",
               "    }",
-              "    if(GetEquipmentStats(ShipEqInSlot(Player(),t_Engine),1) != JumpSave) {",
-              "        HFFlag = 0;",
-              "        ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - JumpBon);",
-              "        NewsAdd('Ввиду смены двигателя режим гипер-форсажа отключён и готов к повторной активации');",
+              "    if(GetEquipmentStats(ShipEqInSlot(Player(),t_Engine),1) != ShipCustomShipInfoData(Player(),'RefHyperMainInfo',2)) {",
+              "        ShipCustomShipInfoData(Player(),'RefHyperMainInfo',3,0);",
+              "        ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - ShipCustomShipInfoData(Player(),'RefHyperMainInfo',1));",
+              "        NewsAdd(\"Ввиду смены двигателя режим гипер-форсажа отключён и готов к повторной активации\");",
               "        Sound('Sound.ForsageOff');",
               "    }",
-              "}"          
+              "}",
+              "",
+              "if(ShipFindCustomShipInfoByType(Player(),'RefHyperMainInfo')<1) ShipAddCustomShipInfo(Player(),'RefHyperMainInfo','NoShow');"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  10,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  17,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              "ShipAddCustomShipInfo(Player(),'RefHyperMainInfo','NoShow');"          
           ]        
         }      
       ],
@@ -263,7 +281,7 @@
           "Type":  "Tif",
           "Name":  "",
           "Pos.x":  10,
-          "Pos.y":  -140,
+          "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
           "Code.Type":  "DialogBegin",
@@ -298,22 +316,11 @@
       [
         {
           "Type":  "TVar",
-          "Name":  "HFFlag",
-          "Pos.x":  100,
-          "Pos.y":  -150,
-          "Parent":  -1,
-          "#":  8,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
           "Name":  "temp_str",
           "Pos.x":  100,
           "Pos.y":  -120,
           "Parent":  -1,
-          "#":  9,
+          "#":  8,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -324,7 +331,7 @@
           "Pos.x":  100,
           "Pos.y":  -90,
           "Parent":  -1,
-          "#":  15,
+          "#":  14,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -333,9 +340,9 @@
           "Type":  "TVar",
           "Name":  "InHyp",
           "Pos.x":  100,
-          "Pos.y":  -180,
+          "Pos.y":  -150,
           "Parent":  -1,
-          "#":  16,
+          "#":  15,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -344,9 +351,9 @@
           "Type":  "TVar",
           "Name":  "JumpSave",
           "Pos.x":  100,
-          "Pos.y":  -210,
+          "Pos.y":  -180,
           "Parent":  -1,
-          "#":  17,
+          "#":  16,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -393,20 +400,20 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  11,
-      "End":  13,
+      "Begin":  10,
+      "End":  12,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  10,
-      "End":  12,
+      "Begin":  9,
+      "End":  11,
       "Nom":  0,
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  5,
+  "BlockPar.EC.Total.Strings":  8,
   "BlockPar.EC":  
   [
     {
@@ -428,6 +435,18 @@
     {
       "#":  "6",
       "String":  "Отключен"    
+    },
+    {
+      "#":  "7",
+      "String":  "Ввиду смены двигателя режим гипер-форсажа отключён и готов к повторной активации"    
+    },
+    {
+      "#":  "8",
+      "String":  "Двигатель критически повредился при перерасходе его ресурса гипер-форсажем"    
+    },
+    {
+      "#":  "9",
+      "String":  "Двигатель слишком сильно повредился, использование гипер-форсажа невозможно!"    
     }  
   ]
 }

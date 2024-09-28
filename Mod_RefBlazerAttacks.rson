@@ -1335,6 +1335,19 @@
           [
               "TalkFlag == 2"          
           ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  107,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "GroupCount(BlazerGroup)"          
+          ]        
         }      
       ],
       "States":      
@@ -2157,6 +2170,13 @@
       "Type":  "TGraphLink",
       "Begin":  20,
       "End":  105,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  107,
+      "End":  7,
       "Nom":  0,
       "Arrow":  true    
     }  

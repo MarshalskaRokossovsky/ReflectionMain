@@ -192,7 +192,7 @@
           "Code":          
           [
               "ShipMoney(Player(),ShipMoney(Player()) - temp_int);",
-              "temp_dword = CreateHull(1,1250,GalaxyTechLevel(),Fei);",
+              "temp_dword = CreateHull(1,350+GalaxyTechLevel()*200,GalaxyTechLevel(),Fei);",
               "HullSeries(temp_dword,99);",
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",

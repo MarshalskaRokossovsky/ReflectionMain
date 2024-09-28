@@ -3,9 +3,9 @@
   "FileVersion":  8,
   "ViewPos.x":  -653,
   "ViewPos.y":  -554,
-  "ScriptName":  "Mod_RefWBAttackRework",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefWBAttacksRework\\DATA\\Script\\Mod_RefWBAttackRework.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefWBAttacksRework\\DATA\\Script\\Mod_RefWBAttackRework.txt",
+  "ScriptName":  "Mod_RefWBAttacksRework",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefWBAttacksRework\\DATA\\Script\\Mod_RefWBAttacksRework.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefWBAttacksRework\\DATA\\Script\\Mod_RefWBAttacksRework.txt",
   "Visual.Objects":  
   [
     {
@@ -650,7 +650,7 @@
           "TakeItem":  -1,
           "TakeAllItem":  false,
           "OnTalk":  "",
-          "OnActCode":  "[t_OnTakingDamage,t_OnTakingDamageEn,t_OnTakingDamageSp,t_OnTakingDamageMi]\r\nWBActCode();",
+          "OnActCode":  "[t_OnTakingDamage,t_OnTakingDamageEn,t_OnTakingDamageSp,t_OnTakingDamageMi|]\r\nWBActCode();",
           "EType":  1,
           "EUnique":  "",
           "EMsg":  ""        

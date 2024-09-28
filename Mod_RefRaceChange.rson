@@ -75,6 +75,7 @@
               "    }",
               "}",
               "if(Counting != 0) {",
+              "    Counting = Counting + 1;",
               "    if(Counting > 1000) {",
               "        if(Rnd(Counting,1000000) > 950000) {",
               "            Counting = 0;",
@@ -90,7 +91,6 @@
               "            Sound('Sound.NewMsg');",
               "        }",
               "    }",
-              "    Counting = Counting + 1;",
               "}"          
           ]        
         }      
@@ -226,7 +226,7 @@
           "Parent":  -1,
           "#":  9,
           "Var.Type":  "Int",
-          "Init":  "",
+          "Init":  "0",
           "Global":  false        
         }      
       ]    

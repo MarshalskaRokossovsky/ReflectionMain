@@ -3,9 +3,9 @@
   "FileVersion":  8,
   "ViewPos.x":  -688,
   "ViewPos.y":  -643,
-  "ScriptName":  "Mod_RefTechnologiesDowngrade",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefTechnologiesDowngrade\\DATA\\Script\\Mod_RefTechnologiesDowngrade.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefTechnologiesDowngrade\\DATA\\Script\\Mod_RefTechnologiesDowngrade.txt",
+  "ScriptName":  "Mod_RefForsageHarder",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefForsageHarder\\DATA\\Script\\Mod_RefForsageHarder.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefForsageHarder\\DATA\\Script\\Mod_RefForsageHarder.txt",
   "Visual.Objects":  
   [
     {
@@ -59,59 +59,14 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  -50,
-          "Pos.y":  -130,
+          "Pos.x":  -10,
+          "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "for(i=0;GalaxyStars()>i;i=i+1) {",
-              "    if(StarOwner(GalaxyStar(i)) == 1) DowngradeSys(GalaxyStar(i));",
-              "    else if(StarOwner(GalaxyStar(i)) == 2) {",
-              "        if(Rnd(1,15) == 15) DowngradeSys(GalaxyStar(i));",
-              "    }",
-              "}"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -10,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  7,
           "Code.Type":  "Init",
           "Code":          
           [
-              "function DowngradeSys(dword sys) {",
-              "    int k;",
-              "    int con;",
-              "    int t;",
-              "    int v;",
-              "    dword plan;",
-              "",
-              "    for(k=0;k<StarPlanets(sys);k=k+1) {",
-              "        plan = StarPlanets(sys,k);",
-              "        if(PlanetOwner(plan) == 6) continue;",
-              "        if(Rnd(1,5) != 5) PlanetCurInventionPoints(plan,PlanetCurInvention(plan),0);",
-              "        else PlanetCurInventionPoints(plan,PlanetCurInvention(plan),max(PlanetCurInventionPoints(plan,PlanetCurInvention(plan)) - Rnd(20,40),0));",
-              "",
-              "        if(Rnd(1,30) == 30) {",
-              "            con = 0;",
-              "            while(1) {",
-              "                t = Rnd(0,19);",
-              "                v = v + 1;",
-              "                if(v > 100) break;",
-              "                if(PlanetInventionLevel(plan,t) > 1) {",
-              "                    PlanetInventionLevel(plan,t,PlanetInventionLevel(plan,t) - 1);",
-              "                    break;",
-              "                }",
-              "                else continue;",
-              "            }",
-              "        }",
-              "    }",
-              "}"          
+              "ShipAddCustomShipInfo(Player(),'RefForsageHarder','NoShow');"          
           ]        
         }      
       ],
@@ -196,20 +151,6 @@
           "EType":  1,
           "EUnique":  "",
           "EMsg":  ""        
-        }      
-      ],
-      "Variables":      
-      [
-        {
-          "Type":  "TVar",
-          "Name":  "i",
-          "Pos.x":  -40,
-          "Pos.y":  -170,
-          "Parent":  -1,
-          "#":  8,
-          "Var.Type":  "Int",
-          "Init":  "",
-          "Global":  false        
         }      
       ]    
     }  

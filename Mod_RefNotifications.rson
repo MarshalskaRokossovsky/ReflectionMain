@@ -308,7 +308,7 @@
           "Type":  "TDialogMsg",
           "Name":  "",
           "Pos.x":  550,
-          "Pos.y":  280,
+          "Pos.y":  330,
           "Parent":  -1,
           "#":  57,
           "Msg":  "Выберите систему:",
@@ -507,7 +507,7 @@
           "Type":  "TDialog",
           "Name":  "SystemChoose",
           "Pos.x":  550,
-          "Pos.y":  240,
+          "Pos.y":  250,
           "Parent":  -1,
           "#":  56        
         },
@@ -515,7 +515,7 @@
           "Type":  "TDialog",
           "Name":  "EndChoose",
           "Pos.x":  470,
-          "Pos.y":  200,
+          "Pos.y":  210,
           "Parent":  -1,
           "#":  59        
         }      
@@ -590,8 +590,9 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(CurTurn() > 366) tint = 3300 + (CurTurn() % 365);",
+              "if(CurTurn() > 300) tint = 3300 + round((CurTurn()-300) / 365);",
               "else tint = 3300;",
+              "tyear = 0;",
               "tyear = CountBox('Bm.Items.2Minerals',\"Выберите год\",tint,4000);",
               "NotifyTurn = (tyear - 3300) * 365;"          
           ]        
@@ -607,9 +608,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 0;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -636,9 +637,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 59;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -652,8 +653,8 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 90;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);"          
           ]        
         },
         {
@@ -667,9 +668,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 120;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -683,8 +684,8 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 151;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);"          
           ]        
         },
         {
@@ -698,9 +699,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 181;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -714,9 +715,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 212;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -730,8 +731,8 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 243;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);"          
           ]        
         },
         {
@@ -745,9 +746,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 273;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -761,8 +762,8 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 304;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);"          
           ]        
         },
         {
@@ -776,9 +777,9 @@
           "Code":          
           [
               "NotifyTurn = NotifyTurn + 334;",
-              "AddDialogInject('DayNexty','','29',29);",
-              "AddDialogInject('DayNexty','','30',30);",
-              "AddDialogInject('DayNexty','','31',31);"          
+              "InjectAnswer('DayNexty','29',29);",
+              "InjectAnswer('DayNexty','30',30);",
+              "InjectAnswer('DayNexty','31',31);"          
           ]        
         },
         {
@@ -794,9 +795,9 @@
               "if(NotifyTurn == 0 && ShipIDD == 0 && NotifySysID == 10000) tstr = \"На данный момент уведомления не активированы\";",
               "else {",
               "    tstr = '';",
-              "    if(NotifyTurn > 0) tstr = tstr + Format(\"Выставлено упоминание в дату date\",'date',GameDateTxtByTurn(NotifyTurn)) + '<br'+ '/>';",
-              "    if(ShipIDD > 0) tstr = tstr + Format(\"Выставлено упоминание о появлении корабля ship\",'ship',Name(IdToShip(ShipIDD))) + '<br'+ '/>';",
-              "    if(NotifySysID > 0) tstr = tstr + Format(\"Выставлено упоминание о посещении системы звезды sys\",'sys',Name(NotifySysID)) + '<br'+ '/>';",
+              "    if(NotifyTurn > 0) tstr = tstr + Format(\"Выставлено упоминание в дату date\",'date',GameDateTxtByTurn(NotifyTurn)) + CT('FormInfo.br');",
+              "    if(ShipIDD > 0) tstr = tstr + Format(\"Выставлено упоминание о появлении корабля ship\",'ship',Name(IdToShip(ShipIDD))) + CT('FormInfo.br');",
+              "    if(NotifySysID > 0) tstr = tstr + Format(\"Выставлено упоминание о посещении системы звезды sys\",'sys',Name(GalaxyStar(NotifySysID-1))) + CT('FormInfo.br');",
               "}"          
           ]        
         },
@@ -812,24 +813,24 @@
           [
               "if(CurTurn() == NotifyTurn && CurTurn() != 0) {",
               "    NotifyTurn = 0;",
-              "    if(temp_date == 'No') temp_date = '';",
-              "    else temp_date = '<br' + '/>' + temp_date;",
-              "    NewsAdd(Format(\"Текущий день - date. Уведомление отключено.\",'date',GameDateTxtByTurn(NotifyTurn)) + temp_date);",
-              "    Sound('New.Msg');",
+              "    if(text_date == 'No') text_date = '';",
+              "    else text_date = '<br' + '/>' + text_date;",
+              "    NewsAdd(Format(\"Текущий день - date. Уведомление отключено.\",'date',GameDateTxtByTurn(NotifyTurn)) + text_date);",
+              "    Sound('Sound.NewMsg');",
               "}",
               "if(Id(ShipStar(Player())) == NotifySysID) {",
-              "    if(temp_system == 'No') temp_system = '';",
-              "    else temp_system = '<br' + '/>' + temp_system;",
-              "    NewsAdd(Format(\"Вы находитесь в системе name. Уведомление о посещении этой системы отключено.\",'name',Name(NotifySysID)) + temp_system);",
-              "    Sound('New.Msg');",
+              "    if(text_system == 'No') text_system = '';",
+              "    else text_system = '<br' + '/>' + text_system;",
+              "    NewsAdd(Format(\"Вы находитесь в системе name. Уведомление о посещении этой системы отключено.\",'name',Name(GalaxyStar(NotifySysID-1))) + text_system);",
+              "    Sound('Sound.NewMsg');",
               "    NotifySysID = 10000;",
               "}",
               "if(ShipIDD != 0) {",
               "    if(ShipInStar(Player(),ShipStar(IdToShip(ShipIDD)))) {",
-              "        if(temp_person == 'No') temp_person = '';",
-              "        else temp_person = '<br' + '/>' + temp_person;",
-              "        NewsAdd(Format(\"Корабль name находится в текущей системе. Уведомление об обнаружении его отключено.\",'name',Name(IdToShip(ShipIDD))) + temp_person);",
-              "        Sound('New.Msg');",
+              "        if(text_system == 'No') text_system = '';",
+              "        else text_system = '<br' + '/>' + text_system;",
+              "        NewsAdd(Format(\"Корабль name находится в текущей системе. Уведомление об обнаружении его отключено.\",'name',Name(IdToShip(ShipIDD))) + text_system);",
+              "        Sound('Sound.NewMsg');",
               "        ShipIDD = 0;",
               "    }",
               "}"          
@@ -846,7 +847,7 @@
           "Code":          
           [
               "for(i=0;i<28;i=i+1) {",
-              "    AddDialogInject('DayNexty','','<i>',i);",
+              "    InjectAnswer('DayNexty','<i>',i);",
               "}"          
           ]        
         },
@@ -875,7 +876,7 @@
           "Code":          
           [
               "for(i=0;GalaxySectors()>i;i=i+1) {",
-              "    AddDialogInject('SystemChoose','',Name(GalaxySectors(i)),i,GalaxySectors(i));",
+              "    InjectAnswer('SystemChoose',Name(GalaxySectors(i)),GalaxySectors(i));",
               "}"          
           ]        
         },
@@ -883,14 +884,14 @@
           "Type":  "Top",
           "Name":  "",
           "Pos.x":  550,
-          "Pos.y":  320,
+          "Pos.y":  370,
           "Parent":  -1,
           "#":  58,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "for(i=0;ConStars(GAnswerData)>i;i=i+1) {",
-              "    AddDialogInject('EndChoose','',Name(ConStar(GAnswerData)),i,ConStar(GAnswerData));",
+              "for(i=0;ConStars(tdwd)>i;i=i+1) {",
+              "    InjectAnswer('EndChoose',Name(ConStar(tdwd,i)),ConStar(tdwd,i));",
               "}"          
           ]        
         },
@@ -898,7 +899,7 @@
           "Type":  "Top",
           "Name":  "",
           "Pos.x":  470,
-          "Pos.y":  240,
+          "Pos.y":  250,
           "Parent":  -1,
           "#":  62,
           "Code.Type":  "Turn",
@@ -1013,6 +1014,19 @@
           [
               "text_person = 'No';"          
           ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  550,
+          "Pos.y":  290,
+          "Parent":  -1,
+          "#":  101,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "tdwd = GAnswerData;"          
+          ]        
         }      
       ],
       "Planets":      
@@ -1116,6 +1130,32 @@
           "Code":          
           [
               "tdwd == 0"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  70,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  102,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "tyear >= 3000"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  130,
+          "Pos.y":  -40,
+          "Parent":  -1,
+          "#":  103,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "tyear < 3000"          
           ]        
         }      
       ],
@@ -1355,13 +1395,6 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  15,
-      "End":  13,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  13,
       "End":  20,
       "Nom":  0,
@@ -1567,13 +1600,6 @@
       "Type":  "TGraphLink",
       "Begin":  51,
       "End":  55,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  56,
-      "End":  57,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1952,6 +1978,62 @@
       "Type":  "TGraphLink",
       "Begin":  100,
       "End":  40,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  56,
+      "End":  101,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  101,
+      "End":  57,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  51,
+      "End":  88,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  57,
+      "End":  88,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  102,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  103,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  102,
+      "End":  13,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  103,
+      "End":  9,
       "Nom":  0,
       "Arrow":  true    
     }  

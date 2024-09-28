@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -280,
-  "ViewPos.y":  37,
+  "ViewPos.x":  -151,
+  "ViewPos.y":  -140,
   "ScriptName":  "mod_RefNews",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
@@ -278,7 +278,7 @@
           "Pos.x":  210,
           "Pos.y":  150,
           "Parent":  -1,
-          "#":  13,
+          "#":  12,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -311,7 +311,7 @@
           "Pos.x":  240,
           "Pos.y":  310,
           "Parent":  -1,
-          "#":  28,
+          "#":  27,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -630,7 +630,7 @@
           "Pos.x":  240,
           "Pos.y":  520,
           "Parent":  -1,
-          "#":  29,
+          "#":  28,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -639,7 +639,7 @@
               "    if(WaitingForConsilium == 0) {",
               "        j = GalaxyStars();",
               "        TryAgain = 0;",
-              "        while(PlanetForConsillium == 0) {",
+              "        while(PlanetForConsilliumID == 0) {",
               "            choosed_star = GalaxyStar(Rnd(0,j-1)); //выбираем рандомную звёздов",
               "            TryAgain = TryAgain + 1;",
               "            if(TryAgain==300) {",
@@ -702,7 +702,7 @@
           "Pos.x":  240,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  30,
+          "#":  29,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -753,7 +753,7 @@
           "Pos.x":  600,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  31,
+          "#":  30,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -805,7 +805,7 @@
           "Pos.x":  860,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  33,
+          "#":  32,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -839,25 +839,10 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  810,
-          "Pos.y":  420,
-          "Parent":  -1,
-          "#":  85,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "//Ивент \"Холодная война\"",
-              "//if(ColdWarCD == 0) {",
-              "//}"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
           "Pos.x":  860,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  87,
+          "#":  83,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -886,7 +871,7 @@
           "Pos.x":  1290,
           "Pos.y":  320,
           "Parent":  -1,
-          "#":  88,
+          "#":  84,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1044,7 +1029,7 @@
           "Pos.x":  1080,
           "Pos.y":  580,
           "Parent":  -1,
-          "#":  89,
+          "#":  85,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1119,7 +1104,7 @@
           "Pos.x":  1130,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  104,
+          "#":  100,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1187,7 +1172,7 @@
           "Pos.x":  240,
           "Pos.y":  800,
           "Parent":  -1,
-          "#":  114,
+          "#":  108,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1205,7 +1190,7 @@
           "Pos.x":  540,
           "Pos.y":  800,
           "Parent":  -1,
-          "#":  116,
+          "#":  110,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1315,6 +1300,57 @@
               "}",
               "if(RangersMedalsCD != 0) RangersMedalsCD = RangersMedalsCD - 1;"          
           ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  820,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  123,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "//События спавна крутого шмота",
+              "if(EqCD) EqCD = EqCD - 1;",
+              "else {",
+              "    int hhh = 0;",
+              "    if(Rnd(1,5) == 5) {",
+              "        InvPlan = FindPlanetByAdvancement(Rnd(10,30));",
+              "        hhh = 1;",
+              "    }",
+              "    else {",
+              "        InvPlan = FindPlanetByAdvancement(Rnd(80,100));",
+              "    }",
+              "",
+              "    unknown terra = newarray(1);",
+              "    ArrayDelete(terra,0);",
+              "    unknown venus = newarray(1);",
+              "    ArrayDelete(venus,0);",
+              "",
+              "    for(i=1;i<19;i=i+1) {",
+              "        ArrayAdd(terra,PlanetInventionLevel(InvPlan,i));",
+              "        ArrayAdd(venus,i);",
+              "    }",
+              "",
+              "    ArraySort(terra,venus);",
+              "",
+              "    if(!hhh) equip = CreateEquipment(42+venus[ArrayDim(venus)-1],Rnd(30,50),PlanetInventionLevel(InvPlan,venus[ArrayDim(venus)-1]),PlanetOwner(InvPlan));",
+              "    else equip = CreateEquipment(42+venus[ArrayDim(venus)-1],Rnd(30,50),GalaxyTechLevel(),PlanetOwner(InvPlan));",
+              "",
+              "    AddItemToShop(InvPlan,equip);",
+              "",
+              "    if(hhh) {",
+              "        PlanetInventionLevel(InvPlan,venus[ArrayDim(venus)-1],min(PlanetInventionLevel(InvPlan,venus[ArrayDim(venus)-1])+1,8));",
+              "        AddPlanetNews(Format(CT('EquipCreateNews.Stupid'+Rnd(1,CT('EquipCreateNews.StupidCount'))),'plane',Name(InvPlan),'eqy',Name(equip)),84);",
+              "        EqCD = Rnd(50,80);",
+              "    }",
+              "    else {",
+              "        AddPlanetNews(Format(CT('EquipCreateNews.Clever'+Rnd(1,CT('EquipCreateNews.CleverCount'))),'plane',Name(InvPlan),'eqy',Name(equip),'lvl',ItemLevel(equip)),84);",
+              "        EqCD = Rnd(30,50);",
+              "    }",
+              "}"          
+          ]        
         }      
       ],
       "Planets":      
@@ -1387,7 +1423,7 @@
           "Pos.x":  240,
           "Pos.y":  120,
           "Parent":  -1,
-          "#":  27,
+          "#":  26,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1400,7 +1436,7 @@
           "Pos.x":  240,
           "Pos.y":  260,
           "Parent":  -1,
-          "#":  71,
+          "#":  69,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1413,7 +1449,7 @@
           "Pos.x":  240,
           "Pos.y":  470,
           "Parent":  -1,
-          "#":  72,
+          "#":  70,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1426,7 +1462,7 @@
           "Pos.x":  540,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  73,
+          "#":  71,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1439,20 +1475,7 @@
           "Pos.x":  800,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  74,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "ControlledSystems(0) > 0"          
-          ]        
-        },
-        {
-          "Type":  "Tif",
-          "Name":  "",
-          "Pos.x":  810,
-          "Pos.y":  300,
-          "Parent":  -1,
-          "#":  84,
+          "#":  72,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1465,7 +1488,7 @@
           "Pos.x":  800,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  86,
+          "#":  82,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1478,7 +1501,7 @@
           "Pos.x":  1080,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  105,
+          "#":  101,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1491,7 +1514,7 @@
           "Pos.x":  980,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  106,
+          "#":  102,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1504,7 +1527,7 @@
           "Pos.x":  1030,
           "Pos.y":  710,
           "Parent":  -1,
-          "#":  107,
+          "#":  103,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1514,14 +1537,14 @@
         {
           "Type":  "Tif",
           "Name":  "",
-          "Pos.x":  810,
-          "Pos.y":  360,
+          "Pos.x":  820,
+          "Pos.y":  190,
           "Parent":  -1,
-          "#":  108,
+          "#":  122,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "CurTurn() > 2000"          
+              "ControlledSystems(0)+ControlledSystems(2)>2"          
           ]        
         }      
       ],
@@ -1594,22 +1617,11 @@
         },
         {
           "Type":  "TVar",
-          "Name":  "ForCounting",
-          "Pos.x":  860,
-          "Pos.y":  160,
-          "Parent":  -1,
-          "#":  11,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
           "Name":  "blacklist",
           "Pos.x":  300,
           "Pos.y":  160,
           "Parent":  -1,
-          "#":  12,
+          "#":  11,
           "Var.Type":  "Array",
           "Init":  "",
           "Global":  false        
@@ -1620,7 +1632,7 @@
           "Pos.x":  300,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  14,
+          "#":  13,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1631,7 +1643,7 @@
           "Pos.x":  380,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  15,
+          "#":  14,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1642,7 +1654,7 @@
           "Pos.x":  430,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  16,
+          "#":  15,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -1653,7 +1665,7 @@
           "Pos.x":  430,
           "Pos.y":  80,
           "Parent":  -1,
-          "#":  17,
+          "#":  16,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -1664,7 +1676,7 @@
           "Pos.x":  430,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  18,
+          "#":  17,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1675,7 +1687,7 @@
           "Pos.x":  430,
           "Pos.y":  120,
           "Parent":  -1,
-          "#":  19,
+          "#":  18,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1686,7 +1698,7 @@
           "Pos.x":  430,
           "Pos.y":  140,
           "Parent":  -1,
-          "#":  20,
+          "#":  19,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1697,7 +1709,7 @@
           "Pos.x":  430,
           "Pos.y":  160,
           "Parent":  -1,
-          "#":  21,
+          "#":  20,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1708,7 +1720,7 @@
           "Pos.x":  430,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  22,
+          "#":  21,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1719,7 +1731,7 @@
           "Pos.x":  300,
           "Pos.y":  200,
           "Parent":  -1,
-          "#":  23,
+          "#":  22,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1730,7 +1742,7 @@
           "Pos.x":  300,
           "Pos.y":  220,
           "Parent":  -1,
-          "#":  24,
+          "#":  23,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1741,7 +1753,7 @@
           "Pos.x":  380,
           "Pos.y":  80,
           "Parent":  -1,
-          "#":  25,
+          "#":  24,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1752,7 +1764,7 @@
           "Pos.x":  380,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  26,
+          "#":  25,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -1763,7 +1775,7 @@
           "Pos.x":  580,
           "Pos.y":  680,
           "Parent":  -1,
-          "#":  32,
+          "#":  31,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1774,7 +1786,7 @@
           "Pos.x":  430,
           "Pos.y":  200,
           "Parent":  -1,
-          "#":  34,
+          "#":  33,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1785,7 +1797,7 @@
           "Pos.x":  840,
           "Pos.y":  680,
           "Parent":  -1,
-          "#":  35,
+          "#":  34,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1796,7 +1808,7 @@
           "Pos.x":  840,
           "Pos.y":  660,
           "Parent":  -1,
-          "#":  36,
+          "#":  35,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1807,7 +1819,7 @@
           "Pos.x":  840,
           "Pos.y":  640,
           "Parent":  -1,
-          "#":  37,
+          "#":  36,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1818,19 +1830,8 @@
           "Pos.x":  840,
           "Pos.y":  620,
           "Parent":  -1,
-          "#":  38,
+          "#":  37,
           "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "PlanetForConsillium",
-          "Pos.x":  860,
-          "Pos.y":  140,
-          "Parent":  -1,
-          "#":  39,
-          "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
         },
@@ -1840,7 +1841,7 @@
           "Pos.x":  290,
           "Pos.y":  500,
           "Parent":  -1,
-          "#":  40,
+          "#":  38,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1851,7 +1852,7 @@
           "Pos.x":  290,
           "Pos.y":  520,
           "Parent":  -1,
-          "#":  41,
+          "#":  39,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1862,7 +1863,7 @@
           "Pos.x":  290,
           "Pos.y":  540,
           "Parent":  -1,
-          "#":  42,
+          "#":  40,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -1873,7 +1874,7 @@
           "Pos.x":  290,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  43,
+          "#":  41,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1884,7 +1885,7 @@
           "Pos.x":  480,
           "Pos.y":  480,
           "Parent":  -1,
-          "#":  44,
+          "#":  42,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1895,7 +1896,7 @@
           "Pos.x":  480,
           "Pos.y":  500,
           "Parent":  -1,
-          "#":  45,
+          "#":  43,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1906,7 +1907,7 @@
           "Pos.x":  480,
           "Pos.y":  520,
           "Parent":  -1,
-          "#":  46,
+          "#":  44,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1917,7 +1918,7 @@
           "Pos.x":  480,
           "Pos.y":  540,
           "Parent":  -1,
-          "#":  47,
+          "#":  45,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1928,7 +1929,7 @@
           "Pos.x":  300,
           "Pos.y":  300,
           "Parent":  -1,
-          "#":  48,
+          "#":  46,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1939,7 +1940,7 @@
           "Pos.x":  300,
           "Pos.y":  320,
           "Parent":  -1,
-          "#":  49,
+          "#":  47,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1950,7 +1951,7 @@
           "Pos.x":  300,
           "Pos.y":  340,
           "Parent":  -1,
-          "#":  50,
+          "#":  48,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1961,7 +1962,7 @@
           "Pos.x":  450,
           "Pos.y":  300,
           "Parent":  -1,
-          "#":  51,
+          "#":  49,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1972,7 +1973,7 @@
           "Pos.x":  450,
           "Pos.y":  320,
           "Parent":  -1,
-          "#":  52,
+          "#":  50,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1983,7 +1984,7 @@
           "Pos.x":  590,
           "Pos.y":  310,
           "Parent":  -1,
-          "#":  53,
+          "#":  51,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1994,7 +1995,7 @@
           "Pos.x":  590,
           "Pos.y":  330,
           "Parent":  -1,
-          "#":  54,
+          "#":  52,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2005,7 +2006,7 @@
           "Pos.x":  300,
           "Pos.y":  360,
           "Parent":  -1,
-          "#":  55,
+          "#":  53,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2016,7 +2017,7 @@
           "Pos.x":  300,
           "Pos.y":  380,
           "Parent":  -1,
-          "#":  56,
+          "#":  54,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2027,7 +2028,7 @@
           "Pos.x":  300,
           "Pos.y":  400,
           "Parent":  -1,
-          "#":  57,
+          "#":  55,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2038,7 +2039,7 @@
           "Pos.x":  450,
           "Pos.y":  340,
           "Parent":  -1,
-          "#":  58,
+          "#":  56,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2049,7 +2050,7 @@
           "Pos.x":  450,
           "Pos.y":  360,
           "Parent":  -1,
-          "#":  59,
+          "#":  57,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2060,7 +2061,7 @@
           "Pos.x":  360,
           "Pos.y":  400,
           "Parent":  -1,
-          "#":  60,
+          "#":  58,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2071,7 +2072,7 @@
           "Pos.x":  450,
           "Pos.y":  380,
           "Parent":  -1,
-          "#":  61,
+          "#":  59,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2082,7 +2083,7 @@
           "Pos.x":  450,
           "Pos.y":  400,
           "Parent":  -1,
-          "#":  62,
+          "#":  60,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2093,7 +2094,7 @@
           "Pos.x":  580,
           "Pos.y":  660,
           "Parent":  -1,
-          "#":  63,
+          "#":  61,
           "Var.Type":  "Int",
           "Init":  "100",
           "Global":  false        
@@ -2104,7 +2105,7 @@
           "Pos.x":  580,
           "Pos.y":  640,
           "Parent":  -1,
-          "#":  64,
+          "#":  62,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2115,7 +2116,7 @@
           "Pos.x":  640,
           "Pos.y":  680,
           "Parent":  -1,
-          "#":  65,
+          "#":  63,
           "Var.Type":  "Str",
           "Init":  "0",
           "Global":  false        
@@ -2126,7 +2127,7 @@
           "Pos.x":  580,
           "Pos.y":  620,
           "Parent":  -1,
-          "#":  66,
+          "#":  64,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2137,7 +2138,7 @@
           "Pos.x":  640,
           "Pos.y":  660,
           "Parent":  -1,
-          "#":  67,
+          "#":  65,
           "Var.Type":  "Str",
           "Init":  "0",
           "Global":  false        
@@ -2148,7 +2149,7 @@
           "Pos.x":  640,
           "Pos.y":  640,
           "Parent":  -1,
-          "#":  68,
+          "#":  66,
           "Var.Type":  "Str",
           "Init":  "0",
           "Global":  false        
@@ -2159,7 +2160,7 @@
           "Pos.x":  580,
           "Pos.y":  600,
           "Parent":  -1,
-          "#":  69,
+          "#":  67,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2170,7 +2171,7 @@
           "Pos.x":  660,
           "Pos.y":  620,
           "Parent":  -1,
-          "#":  70,
+          "#":  68,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2181,7 +2182,7 @@
           "Pos.x":  660,
           "Pos.y":  600,
           "Parent":  -1,
-          "#":  75,
+          "#":  73,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2192,7 +2193,7 @@
           "Pos.x":  480,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  76,
+          "#":  74,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -2203,7 +2204,7 @@
           "Pos.x":  300,
           "Pos.y":  280,
           "Parent":  -1,
-          "#":  77,
+          "#":  75,
           "Var.Type":  "Dword",
           "Init":  "0",
           "Global":  false        
@@ -2214,7 +2215,7 @@
           "Pos.x":  590,
           "Pos.y":  60,
           "Parent":  -1,
-          "#":  78,
+          "#":  76,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2225,7 +2226,7 @@
           "Pos.x":  590,
           "Pos.y":  80,
           "Parent":  -1,
-          "#":  79,
+          "#":  77,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2236,7 +2237,7 @@
           "Pos.x":  590,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  80,
+          "#":  78,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2247,7 +2248,7 @@
           "Pos.x":  590,
           "Pos.y":  120,
           "Parent":  -1,
-          "#":  81,
+          "#":  79,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2258,7 +2259,7 @@
           "Pos.x":  590,
           "Pos.y":  140,
           "Parent":  -1,
-          "#":  82,
+          "#":  80,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2269,7 +2270,7 @@
           "Pos.x":  590,
           "Pos.y":  160,
           "Parent":  -1,
-          "#":  83,
+          "#":  81,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2280,7 +2281,7 @@
           "Pos.x":  1310,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  90,
+          "#":  86,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2291,7 +2292,7 @@
           "Pos.x":  1130,
           "Pos.y":  560,
           "Parent":  -1,
-          "#":  91,
+          "#":  87,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2302,7 +2303,7 @@
           "Pos.x":  1130,
           "Pos.y":  590,
           "Parent":  -1,
-          "#":  92,
+          "#":  88,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2313,7 +2314,7 @@
           "Pos.x":  1130,
           "Pos.y":  620,
           "Parent":  -1,
-          "#":  93,
+          "#":  89,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2324,7 +2325,7 @@
           "Pos.x":  1130,
           "Pos.y":  650,
           "Parent":  -1,
-          "#":  94,
+          "#":  90,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2335,7 +2336,7 @@
           "Pos.x":  1310,
           "Pos.y":  650,
           "Parent":  -1,
-          "#":  95,
+          "#":  91,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2346,7 +2347,7 @@
           "Pos.x":  1310,
           "Pos.y":  590,
           "Parent":  -1,
-          "#":  96,
+          "#":  92,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2357,7 +2358,7 @@
           "Pos.x":  1310,
           "Pos.y":  620,
           "Parent":  -1,
-          "#":  97,
+          "#":  93,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -2368,7 +2369,7 @@
           "Pos.x":  1340,
           "Pos.y":  260,
           "Parent":  -1,
-          "#":  98,
+          "#":  94,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2379,7 +2380,7 @@
           "Pos.x":  1340,
           "Pos.y":  290,
           "Parent":  -1,
-          "#":  99,
+          "#":  95,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2390,7 +2391,7 @@
           "Pos.x":  1340,
           "Pos.y":  320,
           "Parent":  -1,
-          "#":  100,
+          "#":  96,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2401,7 +2402,7 @@
           "Pos.x":  1340,
           "Pos.y":  350,
           "Parent":  -1,
-          "#":  101,
+          "#":  97,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2412,7 +2413,7 @@
           "Pos.x":  1340,
           "Pos.y":  380,
           "Parent":  -1,
-          "#":  102,
+          "#":  98,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -2423,20 +2424,9 @@
           "Pos.x":  1510,
           "Pos.y":  260,
           "Parent":  -1,
-          "#":  103,
+          "#":  99,
           "Var.Type":  "Int",
           "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "ColdWarCD",
-          "Pos.x":  880,
-          "Pos.y":  260,
-          "Parent":  -1,
-          "#":  109,
-          "Var.Type":  "Int",
-          "Init":  "",
           "Global":  false        
         },
         {
@@ -2445,7 +2435,7 @@
           "Pos.x":  1510,
           "Pos.y":  290,
           "Parent":  -1,
-          "#":  110,
+          "#":  104,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -2456,7 +2446,7 @@
           "Pos.x":  1510,
           "Pos.y":  320,
           "Parent":  -1,
-          "#":  111,
+          "#":  105,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -2467,7 +2457,7 @@
           "Pos.x":  1510,
           "Pos.y":  350,
           "Parent":  -1,
-          "#":  112,
+          "#":  106,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2478,7 +2468,7 @@
           "Pos.x":  590,
           "Pos.y":  180,
           "Parent":  -1,
-          "#":  113,
+          "#":  107,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2489,7 +2479,7 @@
           "Pos.x":  250,
           "Pos.y":  850,
           "Parent":  -1,
-          "#":  115,
+          "#":  109,
           "Var.Type":  "Unknown",
           "Init":  "",
           "Global":  false        
@@ -2500,7 +2490,7 @@
           "Pos.x":  540,
           "Pos.y":  850,
           "Parent":  -1,
-          "#":  117,
+          "#":  111,
           "Var.Type":  "Unknown",
           "Init":  "",
           "Global":  false        
@@ -2511,7 +2501,7 @@
           "Pos.x":  540,
           "Pos.y":  880,
           "Parent":  -1,
-          "#":  118,
+          "#":  112,
           "Var.Type":  "Unknown",
           "Init":  "",
           "Global":  false        
@@ -2522,7 +2512,7 @@
           "Pos.x":  540,
           "Pos.y":  910,
           "Parent":  -1,
-          "#":  119,
+          "#":  113,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -2533,7 +2523,7 @@
           "Pos.x":  540,
           "Pos.y":  940,
           "Parent":  -1,
-          "#":  120,
+          "#":  114,
           "Var.Type":  "Unknown",
           "Init":  "",
           "Global":  false        
@@ -2544,7 +2534,7 @@
           "Pos.x":  670,
           "Pos.y":  850,
           "Parent":  -1,
-          "#":  121,
+          "#":  115,
           "Var.Type":  "Int",
           "Init":  "40",
           "Global":  false        
@@ -2555,7 +2545,7 @@
           "Pos.x":  250,
           "Pos.y":  880,
           "Parent":  -1,
-          "#":  122,
+          "#":  116,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2566,7 +2556,7 @@
           "Pos.x":  430,
           "Pos.y":  220,
           "Parent":  -1,
-          "#":  123,
+          "#":  117,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -2577,7 +2567,7 @@
           "Pos.x":  320,
           "Pos.y":  670,
           "Parent":  -1,
-          "#":  124,
+          "#":  118,
           "Var.Type":  "Str",
           "Init":  "",
           "Global":  false        
@@ -2588,7 +2578,7 @@
           "Pos.x":  320,
           "Pos.y":  700,
           "Parent":  -1,
-          "#":  125,
+          "#":  119,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2599,7 +2589,7 @@
           "Pos.x":  320,
           "Pos.y":  730,
           "Parent":  -1,
-          "#":  126,
+          "#":  120,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -2610,9 +2600,42 @@
           "Pos.x":  320,
           "Pos.y":  760,
           "Parent":  -1,
-          "#":  127,
+          "#":  121,
           "Var.Type":  "Int",
           "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "EqCD",
+          "Pos.x":  880,
+          "Pos.y":  180,
+          "Parent":  -1,
+          "#":  124,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "InvPlan",
+          "Pos.x":  880,
+          "Pos.y":  210,
+          "Parent":  -1,
+          "#":  125,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "equip",
+          "Pos.x":  880,
+          "Pos.y":  240,
+          "Parent":  -1,
+          "#":  126,
+          "Var.Type":  "Dword",
+          "Init":  "",
           "Global":  false        
         }      
       ]    
@@ -2650,113 +2673,80 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  27,
+      "Begin":  26,
       "End":  5,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  71,
+      "Begin":  69,
+      "End":  27,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  70,
       "End":  28,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
+      "Begin":  71,
+      "End":  30,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
       "Begin":  72,
-      "End":  29,
+      "End":  32,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  73,
-      "End":  31,
+      "Begin":  101,
+      "End":  100,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  74,
-      "End":  33,
+      "Begin":  103,
+      "End":  101,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  105,
-      "End":  104,
+      "Begin":  102,
+      "End":  103,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  107,
-      "End":  105,
+      "Begin":  82,
+      "End":  83,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  106,
-      "End":  107,
+      "Begin":  71,
+      "End":  110,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  86,
-      "End":  87,
+      "Begin":  122,
+      "End":  123,
       "Nom":  0,
       "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  84,
-      "End":  108,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  108,
-      "End":  85,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  73,
-      "End":  116,
-      "Nom":  0,
-      "Arrow":  true    
-    }  
-  ],
-  "Rect.Text":  
-  [
-    {
-      "Type":  "TGraphRectText",
-      "Rect.Left":  798,
-      "Rect.Top":  61,
-      "Rect.Right":  1074,
-      "Rect.Bottom":  118,
-      "FStyle":  0,
-      "FColor":  10710818,
-      "BStyle":  0,
-      "BColor":  14474460,
-      "BSize":  1,
-      "BCoef":  "0.300000011920929",
-      "AlignX":  0,
-      "AlignY":  0,
-      "AlignRect":  false,
-      "Text":  "надо удалить при обнове",
-      "Color":  16777215,
-      "Font":  "Arial",
-      "FontSize":  10,
-      "fsBold":  false,
-      "fsItalic":  false,
-      "fsUnderline":  false    
     }  
   ],
   "BlockPar.EC.Total.Strings":  0,
