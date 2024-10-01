@@ -1,32 +1,25 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -227,
-  "ViewPos.y":  -241,
-  "ScriptName":  "Mod_RefPhaeton",
-  "ScriptFileOut":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefPhaeton\\DATA\\Script\\Mod_RefPhaeton.scr",
-  "ScriptTextOut":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefPhaeton\\DATA\\Script\\Mod_RefPhaeton.txt",
-  "GraphPoint.Count":  10,
-  "GraphLink.Count":  4,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  3,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  2,
-  "Statements.Count":  0,
-  "Loops.Count":  0,
+  "ViewPos.x":  -688,
+  "ViewPos.y":  -643,
+  "ScriptName":  "Mod_RefRefRadarBuffForTrancs",
+  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.scr",
+  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.txt",
   "Visual.Objects":  
   [
     {
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "DialogNew",
+          "Pos.x":  140,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  9        
+        }      
+      ],
       "Groups":      
       [
         {
@@ -64,11 +57,10 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  10,
-          "Pos.y":  -70,
+          "Pos.x":  -50,
+          "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -78,31 +70,40 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  40,
-          "Pos.y":  -70,
+          "Pos.x":  -10,
+          "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  17,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "//"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "//Заготовки наград",
-              "TimeForPolis = PlayerMedPolicy();",
-              "TimeForPolis = TimeForPolis + 90;",
-              "PlayerMedPolicy(TimeForPolis);",
-              "//Награждение продлением полиса",
-              "PlayerDebt(0);",
-              "//Награждение списанием долга",
-              "ForDebt = PlayerDebt();",
-              "DebtVMinus = GalaxyTechLevel() * 7500",
-              "if(ForDebt > DebtVMinus) {",
-              "    ForDebt = ForDebt - DebtVMinus;",
-              "    PlayerDebt(ForDebt);",
-              "}",
-              "else PlayerDebt(0);",
-              "//Награждение списанием части долга - а если меньше суммы списания, то долг аннулируется",
-              "PlayerDebtDate",
-              "//Награждение откладыванием даты возврата кредита"          
+              ""          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  8,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              ""          
           ]        
         }      
       ],
@@ -188,42 +189,6 @@
           "EUnique":  "",
           "EMsg":  ""        
         }      
-      ],
-      "Variables":      
-      [
-        {
-          "Type":  "TVar",
-          "Name":  "ForDebt",
-          "Pos.x":  0,
-          "Pos.y":  -30,
-          "Parent":  -1,
-          "#":  7,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "DebtVMinus",
-          "Pos.x":  0,
-          "Pos.y":  -10,
-          "Parent":  -1,
-          "#":  8,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "TimeForPolis",
-          "Pos.x":  0,
-          "Pos.y":  10,
-          "Parent":  -1,
-          "#":  9,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        }      
       ]    
     }  
   ],
@@ -258,12 +223,9 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC.Total.Strings":  0,
   "BlockPar.EC":  
   [
-    {
-      "#":  "1",
-      "String":  "Phaeton"    
-    }  
+  
   ]
 }

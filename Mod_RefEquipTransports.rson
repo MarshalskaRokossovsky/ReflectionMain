@@ -95,7 +95,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(CntTransp < round(ControlledSystems(0)/3)) {",
+              "if(GroupCount(GroupTransports) < round(ControlledSystems(0)/3)) {",
               "    while(1) {",
               "        int g;",
               "        g = 0;",
@@ -108,7 +108,6 @@
               "                    t_plan = FindNextPlan(t_ship,StarPlanets(t_star,t));",
               "                    EquipBuy(t_ship,StarPlanets(t_star,t),t_plan);",
               "                    SetData(Id(t_plan),0,t_ship);",
-              "                    CntTransp = CntTransp + 1;",
               "                    g = 1;",
               "                    break;",
               "                }",
@@ -149,6 +148,7 @@
               "        //Чтобы транспортник не вешал себе невесть чего",
               "        if(!ShipEqInSlot(cur_ship,i)) continue;",
               "        ItemExtraSpecialsAddByType(ShipEqInSlot(cur_ship,i),FindBonusByNameInCfg('RefHybridValue'));",
+              "        NoDropItem(ShipEqInSlot(cur_ship,i));",
               "    }",
               "",
               "    result = cur_ship;",
@@ -386,22 +386,11 @@
       [
         {
           "Type":  "TVar",
-          "Name":  "CntTransp",
-          "Pos.x":  -90,
-          "Pos.y":  -190,
-          "Parent":  -1,
-          "#":  11,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
           "Name":  "t_star",
           "Pos.x":  -90,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  12,
+          "#":  11,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -412,7 +401,7 @@
           "Pos.x":  -90,
           "Pos.y":  -280,
           "Parent":  -1,
-          "#":  13,
+          "#":  12,
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
@@ -423,7 +412,7 @@
           "Pos.x":  -90,
           "Pos.y":  -220,
           "Parent":  -1,
-          "#":  14,
+          "#":  13,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        
@@ -434,7 +423,7 @@
           "Pos.x":  -90,
           "Pos.y":  -260,
           "Parent":  -1,
-          "#":  15,
+          "#":  14,
           "Var.Type":  "Dword",
           "Init":  "",
           "Global":  false        

@@ -1,15 +1,15 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -876,
-  "ViewPos.y":  -418,
-  "ScriptName":  "Mod_RefZazhor",
-  "ScriptFileOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.scr",
-  "ScriptTextOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.txt",
-  "GraphPoint.Count":  20,
-  "GraphLink.Count":  11,
+  "ViewPos.x":  -683,
+  "ViewPos.y":  -639,
+  "ScriptName":  "ROFL_Svideteli",
+  "ScriptFileOut":  "D:\\SteamLibrary\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Morphyanka\\ROFL_Svideteli\\DATA\\Script\\ROFL_Svideteli.scr",
+  "ScriptTextOut":  "D:\\SteamLibrary\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Morphyanka\\ROFL_Svideteli\\DATA\\Script\\ROFL_Svideteli.txt",
+  "GraphPoint.Count":  13,
+  "GraphLink.Count":  8,
   "GraphRectText.Count":  0,
-  "Variables.Count":  3,
+  "Variables.Count":  0,
   "Stars.Count":  1,
   "Planets.Count":  1,
   "Ships.Count":  1,
@@ -18,10 +18,10 @@
   "Places.Count":  0,
   "Items.Count":  0,
   "Ethers.Count":  0,
-  "Dialogs.Count":  1,
+  "Dialogs.Count":  2,
   "DialogMessages.Count":  2,
-  "DialogAnswers.Count":  3,
-  "Operations.Count":  6,
+  "DialogAnswers.Count":  2,
+  "Operations.Count":  2,
   "Statements.Count":  0,
   "Loops.Count":  0,
   "Visual.Objects":  
@@ -31,33 +31,23 @@
       [
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
-          "Pos.x":  90,
-          "Pos.y":  -80,
+          "Name":  "restart",
+          "Pos.x":  100,
+          "Pos.y":  -40,
           "Parent":  -1,
-          "#":  10,
-          "Msg":  "Пожалуй, не время для пива",
+          "#":  9,
+          "Msg":  "Лядно",
           "AMsg.Num":  "0"        
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "",
-          "Pos.x":  50,
+          "Name":  "restart",
+          "Pos.x":  210,
           "Pos.y":  -40,
           "Parent":  -1,
-          "#":  14,
-          "Msg":  "Пожалуй, попробую...",
+          "#":  12,
+          "Msg":  "Сам иди нахуй, пидр!",
           "AMsg.Num":  "1"        
-        },
-        {
-          "Type":  "TDialogAnswer",
-          "Name":  "exit",
-          "Pos.x":  50,
-          "Pos.y":  80,
-          "Parent":  -1,
-          "#":  19,
-          "Msg":  "Понял.",
-          "AMsg.Num":  "2"        
         }      
       ],
       "DialogMessages":      
@@ -65,21 +55,21 @@
         {
           "Type":  "TDialogMsg",
           "Name":  "",
-          "Pos.x":  50,
+          "Pos.x":  100,
           "Pos.y":  -80,
           "Parent":  -1,
-          "#":  9,
-          "Msg":  "Да, верно. Согласно исследованию доктора Лия Маркина, легендарное пиво \"Махпелла Дарк\" в определённых концентрациях, разнящихся в зависимости от расы пациента, могут улучшить его мозговую деятельность и уменьшить последствия хронической усталости, присущей участникам рейнджерского корпуса.\r\n\r\nОдна порция <clr>\"Махпеллы Дарк\"<clrEnd> будет стоить вам... <temp_str> cr.!",
+          "#":  8,
+          "Msg":  "Нет, нетю",
           "DMsg.Num":  "0"        
         },
         {
           "Type":  "TDialogMsg",
           "Name":  "",
-          "Pos.x":  50,
-          "Pos.y":  40,
+          "Pos.x":  210,
+          "Pos.y":  -80,
           "Parent":  -1,
-          "#":  12,
-          "Msg":  "Ну, вот и всё!\r\n\r\nВы всегда можете посетить любой центр нашей сети для прохождения пивотерапии!",
+          "#":  11,
+          "Msg":  "Ты чот подозрительный тип, пшел нахуй",
           "DMsg.Num":  "1"        
         }      
       ],
@@ -87,11 +77,19 @@
       [
         {
           "Type":  "TDialog",
-          "Name":  "RefMahpMC",
-          "Pos.x":  50,
-          "Pos.y":  -160,
+          "Name":  "Svideteli",
+          "Pos.x":  100,
+          "Pos.y":  -120,
           "Parent":  -1,
-          "#":  8        
+          "#":  7        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "Nahui",
+          "Pos.x":  210,
+          "Pos.y":  -120,
+          "Parent":  -1,
+          "#":  10        
         }      
       ],
       "Groups":      
@@ -149,74 +147,20 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  1,
-          "Code.Type":  "Init",
-          "Code":          
-          [
-              "ShipAddCustomShipInfo(Player(),'RefMahpThrowingInfo');"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -10,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  7,
-          "Total.Lines":  5,
+          "Total.Lines":  10,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(GetTalkShip() == 0) {",
-              "    if(GetShipRuins(Player()) == t_MC) {",
-              "        AddDialogInject('RefMahpMC','И ещё - у нас с недавних можно пройти курс пивотерапии - новейшего метода лечения, чья эффективность была доказана профессором И. Лием Маркиным.','Пивотерапия?!',1);",
+              "if(ShipInNormalSpace(Player())) {",
+              "    if(ShipType(GetTalkShip()) == 'Diplomat') {",
+              "        if(RelationToRanger(GetTalkShip(),Player()) > 79) {",
+              "            AddDialogInject('Svideteli','',\"Нет ли новых известий об Общине?\",20);",
+              "        }",
+              "        else {",
+              "            AddDialogInject('Nahui','',\"Нет ли новых известий об Общине?\",20);",
+              "        }",
               "    }",
               "}"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  50,
-          "Pos.y":  0,
-          "Parent":  -1,
-          "#":  11,
-          "Total.Lines":  3,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "if(ShipMoney(Player() > Mon) {",
-              "}",
-              "else MessageBox('Недостаточно средств на счету');"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  50,
-          "Pos.y":  -120,
-          "Parent":  -1,
-          "#":  13,
-          "Total.Lines":  2,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "temp_str = GalaxyDiffLevels / 50 * GalaxyTechLevel * 120 + Rnd(20,150);",
-              "Mon = GalaxyDiffLevels / 50 * GalaxyTechLevel * 120 + Rnd(20,150);"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -50,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  16,
-          "Total.Lines":  1,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "if(Days > 0) Days = Days - 1;"          
           ]        
         }      
       ],
@@ -302,42 +246,6 @@
           "EUnique":  "",
           "EMsg":  ""        
         }      
-      ],
-      "Variables":      
-      [
-        {
-          "Type":  "TVar",
-          "Name":  "temp_str",
-          "Pos.x":  -80,
-          "Pos.y":  70,
-          "Parent":  -1,
-          "#":  15,
-          "Var.Type":  "Str",
-          "Init":  "",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "Days",
-          "Pos.x":  -80,
-          "Pos.y":  100,
-          "Parent":  -1,
-          "#":  17,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "Mon",
-          "Pos.x":  -80,
-          "Pos.y":  130,
-          "Parent":  -1,
-          "#":  18,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        }      
       ]    
     }  
   ],
@@ -373,8 +281,22 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  9,
-      "End":  10,
+      "Begin":  7,
+      "End":  8,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  8,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  11,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -384,49 +306,30 @@
       "End":  12,
       "Nom":  0,
       "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  8,
-      "End":  13,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  13,
-      "End":  9,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  9,
-      "End":  14,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  14,
-      "End":  11,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  12,
-      "End":  19,
-      "Nom":  0,
-      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC.Total.Strings":  5,
   "BlockPar.EC":  
   [
     {
+      "#":  "0",
+      "String":  "Нет ли новых известий об Общине?"    
+    },
+    {
       "#":  "1",
-      "String":  "Phaeton"    
+      "String":  "Нет, нетю"    
+    },
+    {
+      "#":  "2",
+      "String":  "Ты чот подозрительный тип, пшел нахуй"    
+    },
+    {
+      "#":  "3",
+      "String":  "Лядно"    
+    },
+    {
+      "#":  "4",
+      "String":  "Сам иди нахуй, пидр!"    
     }  
   ]
 }

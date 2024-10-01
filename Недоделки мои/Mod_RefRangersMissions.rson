@@ -13,19 +13,11 @@
       [
         {
           "Type":  "TDialog",
-          "Name":  "TC_MM",
+          "Name":  "DialogNew",
           "Pos.x":  140,
           "Pos.y":  -150,
           "Parent":  -1,
           "#":  9        
-        },
-        {
-          "Type":  "TDialog",
-          "Name":  "PB_MM",
-          "Pos.x":  300,
-          "Pos.y":  -150,
-          "Parent":  -1,
-          "#":  10        
         }      
       ],
       "Groups":      
@@ -85,15 +77,7 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(GetShipRuins(Player())) {",
-              "    if(ShipType(GetShipRuins(Player())) == 'TC') {",
-              "        AddDialogInject('TC_MM',\"\",\"\",40);",
-              "    }",
-              "",
-              "    if(ShipType(GetShipRuins(Player())) == 'PB') {",
-              "        AddDialogInject('PB_MM',\"\",\"\",40);",
-              "    }",
-              "}"          
+              "//"          
           ]        
         },
         {

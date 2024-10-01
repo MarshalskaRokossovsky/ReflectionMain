@@ -1,33 +1,32 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -688,
-  "ViewPos.y":  -643,
+  "ViewPos.x":  -683,
+  "ViewPos.y":  -639,
   "ScriptName":  "Mod_RefRefRadarBuffForTrancs",
   "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.scr",
   "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.txt",
+  "GraphPoint.Count":  7,
+  "GraphLink.Count":  4,
+  "GraphRectText.Count":  0,
+  "Variables.Count":  0,
+  "Stars.Count":  1,
+  "Planets.Count":  1,
+  "Ships.Count":  1,
+  "States.Count":  1,
+  "Groups.Count":  1,
+  "Places.Count":  0,
+  "Items.Count":  0,
+  "Ethers.Count":  0,
+  "Dialogs.Count":  0,
+  "DialogMessages.Count":  0,
+  "DialogAnswers.Count":  0,
+  "Operations.Count":  2,
+  "Statements.Count":  0,
+  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
-      "Dialogs":      
-      [
-        {
-          "Type":  "TDialog",
-          "Name":  "TC_MM",
-          "Pos.x":  140,
-          "Pos.y":  -150,
-          "Parent":  -1,
-          "#":  9        
-        },
-        {
-          "Type":  "TDialog",
-          "Name":  "PB_MM",
-          "Pos.x":  300,
-          "Pos.y":  -150,
-          "Parent":  -1,
-          "#":  10        
-        }      
-      ],
       "Groups":      
       [
         {
@@ -69,6 +68,7 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
+          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -82,41 +82,8 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
+          "Total.Lines":  0,
           "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "if(GetShipRuins(Player())) {",
-              "    if(ShipType(GetShipRuins(Player())) == 'TC') {",
-              "        AddDialogInject('TC_MM',\"\",\"\",40);",
-              "    }",
-              "",
-              "    if(ShipType(GetShipRuins(Player())) == 'PB') {",
-              "        AddDialogInject('PB_MM',\"\",\"\",40);",
-              "    }",
-              "}"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -50,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  7,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              ""          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -10,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  8,
-          "Code.Type":  "Init",
           "Code":          
           [
               ""          

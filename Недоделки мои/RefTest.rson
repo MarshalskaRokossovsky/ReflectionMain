@@ -1,15 +1,15 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -683,
-  "ViewPos.y":  -635,
-  "ScriptName":  "Mod_RefExpHullsAbilities",
-  "ScriptFileOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.scr",
-  "ScriptTextOut":  "M:\\AРазработка\\RefZazhor\\DATA\\Script\\Mod_RefZazhor.txt",
-  "GraphPoint.Count":  6,
-  "GraphLink.Count":  4,
+  "ViewPos.x":  -806,
+  "ViewPos.y":  -517,
+  "ScriptName":  "Mod_RefPhaeton",
+  "ScriptFileOut":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefPhaeton\\DATA\\Script\\Mod_RefPhaeton.scr",
+  "ScriptTextOut":  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefPhaeton\\DATA\\Script\\Mod_RefPhaeton.txt",
+  "GraphPoint.Count":  12,
+  "GraphLink.Count":  6,
   "GraphRectText.Count":  0,
-  "Variables.Count":  0,
+  "Variables.Count":  2,
   "Stars.Count":  1,
   "Planets.Count":  1,
   "Ships.Count":  1,
@@ -18,15 +18,52 @@
   "Places.Count":  0,
   "Items.Count":  0,
   "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  1,
+  "Dialogs.Count":  1,
+  "DialogMessages.Count":  1,
+  "DialogAnswers.Count":  1,
+  "Operations.Count":  2,
   "Statements.Count":  0,
   "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "exit",
+          "Pos.x":  120,
+          "Pos.y":  -10,
+          "Parent":  -1,
+          "#":  9,
+          "Msg":  "Да нет, ничего...",
+          "AMsg.Num":  "0"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  120,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  8,
+          "Msg":  "Моя родная планета - <Native>. А что?",
+          "DMsg.Num":  "0"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "NativePlanetDialog",
+          "Pos.x":  120,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  7        
+        }      
+      ],
       "Groups":      
       [
         {
@@ -64,8 +101,8 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  -40,
-          "Pos.y":  -90,
+          "Pos.x":  0,
+          "Pos.y":  -50,
           "Parent":  -1,
           "#":  5,
           "Total.Lines":  1,
@@ -73,6 +110,20 @@
           "Code":          
           [
               "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  30,
+          "Pos.y":  -50,
+          "Parent":  -1,
+          "#":  6,
+          "Total.Lines":  1,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "if(GetTalkShip()) AddDialogInject(NativePlanetDialog,'','А можно узнать, откуда ты?',1);"          
           ]        
         }      
       ],
@@ -158,6 +209,31 @@
           "EUnique":  "",
           "EMsg":  ""        
         }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "Ship",
+          "Pos.x":  0,
+          "Pos.y":  -10,
+          "Parent":  -1,
+          "#":  10,
+          "Var.Type":  "Dword",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Native",
+          "Pos.x":  0,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  11,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        }      
       ]    
     }  
   ],
@@ -188,6 +264,20 @@
       "Type":  "TGraphLink",
       "Begin":  4,
       "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  7,
+      "End":  8,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  8,
+      "End":  9,
       "Nom":  0,
       "Arrow":  true    
     }  
