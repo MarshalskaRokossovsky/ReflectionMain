@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -151,
-  "ViewPos.y":  -140,
+  "ViewPos.x":  -266,
+  "ViewPos.y":  -4,
   "ScriptName":  "mod_RefNews",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
@@ -1346,7 +1346,7 @@
               "        EqCD = Rnd(50,80);",
               "    }",
               "    else {",
-              "        AddPlanetNews(Format(CT('EquipCreateNews.Clever'+Rnd(1,CT('EquipCreateNews.CleverCount'))),'plane',Name(InvPlan),'eqy',Name(equip),'lvl',ItemLevel(equip)),84);",
+              "        AddPlanetNews(Format(CT('EquipCreateNews.Clever'+Rnd(1,CT('EquipCreateNews.CleverCount'))),'plane',Name(InvPlan),'eqy',Name(equip),'level',ItemLevel(equip)),84);",
               "        EqCD = Rnd(30,50);",
               "    }",
               "}"          

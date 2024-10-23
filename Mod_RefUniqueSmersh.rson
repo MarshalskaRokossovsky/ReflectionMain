@@ -134,6 +134,24 @@
           "Ruins":  ""        
         }      
       ],
+      "Items":      
+      [
+        {
+          "Type":  "TItem",
+          "Name":  "Shershen",
+          "Pos.x":  -100,
+          "Pos.y":  90,
+          "Parent":  -1,
+          "#":  27,
+          "Class":  5,
+          "Item.Type":  0,
+          "Size":  10,
+          "Level":  1,
+          "Radius":  150,
+          "Owner":  6,
+          "Useless":  ""        
+        }      
+      ],
       "Operations":      
       [
         {
@@ -197,7 +215,9 @@
               "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
               "ItemCost(temp_dword,temp_int);",
-              "Sound('Sound.Buy');"          
+              "Sound('Sound.Buy');",
+              "LinkItemToScript(temp_dword,Shershen);",
+              "ItemOnActCode(temp_dword,'[t_OnDealingDamage,t_OnStep|0]'+GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnActCode'));"          
           ]        
         },
         {

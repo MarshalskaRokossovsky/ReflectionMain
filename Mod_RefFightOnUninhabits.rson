@@ -1,25 +1,14 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -688,
-  "ViewPos.y":  -643,
-  "ScriptName":  "Mod_RefRefRadarBuffForTrancs",
-  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.scr",
-  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.txt",
+  "ViewPos.x":  -674,
+  "ViewPos.y":  -496,
+  "ScriptName":  "Mod_RefFightOnUninhabits",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefFightOnUninhabits\\DATA\\Script\\Mod_RefFightOnUninhabits.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefFightOnUninhabits\\DATA\\Script\\Mod_RefFightOnUninhabits.txt",
   "Visual.Objects":  
   [
     {
-      "Dialogs":      
-      [
-        {
-          "Type":  "TDialog",
-          "Name":  "DialogNew",
-          "Pos.x":  140,
-          "Pos.y":  -150,
-          "Parent":  -1,
-          "#":  9        
-        }      
-      ],
       "Groups":      
       [
         {
@@ -74,36 +63,53 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "//"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -50,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  7,
           "Code.Type":  "Turn",
           "Code":          
           [
-              ""          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  -10,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  8,
-          "Code.Type":  "Init",
-          "Code":          
-          [
-              ""          
+              "if(GetShipPlanet(Player())) {",
+              "    if(ShipEqInSlot(Player(),t_Scaner) && ShipEqInSlot(Player(),t_Radar)) {",
+              "        dword plan = GetShipPlanet(Player());",
+              "        if(PlanetOwner(plan) == 6) {",
+              "            if(!AskFlag) {",
+              "                NewsAdd('Научные изыскания Маршала detected. Сообщите ему о том, что вывело это сообщение. Вывод: '+ArrayFind(UsedPlan,Id(plan)));",
+              "                if(RndObject(1,100,plan) > 70 + 15 * ArrayFind(UsedPlan,Id(plan))) {",
+              "                    if(MessageBoxYesNo(\"Во время посадки сенсоры обнаружили подозрительную активность на планете. Сканер сообщает о скоплении доминаторов на местности. Желаете вступить в бой с ними?\")) {",
+              "                        AskFlag = 1;",
+              "                        if(!ArrayFind(UsedPlan,Id(plan))) ArrayAdd(UsedPlan,Id(plan));",
+              "                        rand = RndObject(501,500+CT('RobotsMap.RefDomCount'),plan);",
+              "                        StartRobots(CT('RobotsMap.'+rand+'.Map'),CT('RobotsMap.'+rand+'.RobotsStart'),CT('RobotsMap.'+rand+'.RobotsWin'),CT('RobotsMap.'+rand+'.RobotsLoss'),Name(plan),'621');",
+              "                        FormChange('Planet');",
+              "                    }",
+              "                    else {",
+              "                        AskFlag = 1;",
+              "                    }",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "}",
+              "",
+              "if(GRobotStatus == 2) {",
+              "    AddItemToShip(Player(),CreateNodes(RndObject(10,40,GetShipPlanet(Player())),StarSeries(PlanetToStar(GetShipPlanet(Player())))));",
+              "    if(RndObject(1,3,GetShipPlanet(Player())) == 3) {",
+              "        dword item = CreateEquipment(RndObject(t_FuelTanks,t_DefGenerator,GetShipPlanet(Player())),RndObject(15+round(GalaxyDiffLevels(4)/25),25+round(GalaxyDiffLevels(4)/10),GetShipPlanet(Player())),GalaxyTechLevel(),Kling);",
+              "        ItemSubrace(item,StarSeries(PlanetToStar(GetShipPlanet(Player()))));",
+              "        AddItemToShip(Player(),item);",
+              "    }",
+              "    if(RndObject(1,10,GetShipPlanet(Player())) == 10) {",
+              "        item = CreateEquipment(RndObject(t_FuelTanks,t_Weapon8,GetShipPlanet(Player())),RndObject(15+round(GalaxyDiffLevels(4)/25),25+round(GalaxyDiffLevels(4)/10),GetShipPlanet(Player())),GalaxyTechLevel(),Kling);",
+              "        ItemSubrace(item,StarSeries(PlanetToStar(GetShipPlanet(Player()))));",
+              "        AddItemToShip(Player(),item);",
+              "    }",
+              "    if(RndObject(1,20,GetShipPlanet(Player())) == 20) {",
+              "        item = CreateEquipment(RndObject(t_FuelTanks,t_Weapon15,GetShipPlanet(Player())),RndObject(15+round(GalaxyDiffLevels(4)/25),25+round(GalaxyDiffLevels(4)/10),GetShipPlanet(Player())),GalaxyTechLevel(),Kling);",
+              "        ItemSubrace(item,StarSeries(PlanetToStar(GetShipPlanet(Player()))));",
+              "        AddItemToShip(Player(),item);",
+              "    }",
+              "",
+              "    NewsAdd(\"Остатки поля боя всегда богаты на трофеи. Вы собрали всё, что осталось от доминаторов, и погрузили на свой корабль\");",
+              "    Sound('Sound.NewMsg');",
+              "}"          
           ]        
         }      
       ],
@@ -189,6 +195,42 @@
           "EUnique":  "",
           "EMsg":  ""        
         }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "UsedPlan",
+          "Pos.x":  -70,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
+          "Var.Type":  "Array",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "AskFlag",
+          "Pos.x":  -70,
+          "Pos.y":  -160,
+          "Parent":  -1,
+          "#":  8,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "rand",
+          "Pos.x":  -70,
+          "Pos.y":  -190,
+          "Parent":  -1,
+          "#":  9,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        }      
       ]    
     }  
   ],
@@ -223,9 +265,16 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC.Total.Strings":  2,
   "BlockPar.EC":  
   [
-  
+    {
+      "#":  "0",
+      "String":  "Остатки поля боя всегда богаты на трофеи. Вы собрали всё, что осталось от доминаторов, и погрузили на свой корабль"    
+    },
+    {
+      "#":  "1",
+      "String":  "Во время посадки сенсоры обнаружили подозрительную активность на планете. Сканер сообщает о скоплении доминаторов на местности. Желаете вступить в бой с ними?"    
+    }  
   ]
 }

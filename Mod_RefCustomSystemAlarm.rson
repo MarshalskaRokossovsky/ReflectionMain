@@ -353,8 +353,9 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "for(i = 1;ConStars(temp_dword) > i;i = i + 1) {",
+              "for(i = 0;ConStars(temp_dword) > i;i = i + 1) {",
               "    if(ConStar(temp_dword,i) != ShipStatistic(Player(),10)) {",
+              "        if(StarEnemyThreatLevel(ConStar(temp_dword,i),1) > 1) continue;",
               "        InjectAnswer('DialogSystems',Name(ConStar(temp_dword,i)),ConStar(temp_dword,i));",
               "    }",
               "}",

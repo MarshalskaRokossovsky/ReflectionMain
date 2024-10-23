@@ -1,0 +1,451 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -686,
+  "ViewPos.y":  -516,
+  "ScriptName":  "Mod_RefRefRadarBuffForTrancs",
+  "ScriptFileOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.scr",
+  "ScriptTextOut":  "M:\\ReflectionFixes\\Mods\\Reflection\\RefRadarBuffForTrancs\\DATA\\Script\\Mod_RefRefRadarBuffForTrancs.txt",
+  "Visual.Objects":  
+  [
+    {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  140,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  12,
+          "Msg":  "Вот так-то!",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  180,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  14,
+          "Msg":  "Ну-ну, посмотрим, \"храбрец\"",
+          "AMsg.Num":  "1"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  11,
+          "Msg":  "Ладно-ладно, извините...\r\n\r\nВиноват, больше такого не повторится.",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  180,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  13,
+          "Msg":  "Это ты сейчас кое-чего не понял. Я - твой партнёр, а не раб. Наш контракт окончен. <clr>Точка<clrEnd>\r\n\r\nА вот наш разговор ещё не окончен. Точнее, он продолжится с орудийной палубы...",
+          "DMsg.Num":  "1"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "dContractSuccess",
+          "Pos.x":  140,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  9        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "dContractFail",
+          "Pos.x":  180,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  10        
+        }      
+      ],
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  6,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "if(TalkByAI()) {",
+              "    if(ShipFindCustomShipInfoByType(Player(),'RefIllness10')) {",
+              "        if(GetTalkType() == 4 || GetTalkType() == 5) {",
+              "            //Разрыв контракта",
+              "            if(RndObject(1,100,GetTalkShip()) > 90 - ShipSkill(Player(),'LeadershipCur') * 5)) {",
+              "                AddDialogInject('dContractSuccess','',\"Ты, видимо, не понял. Я - ТВОЙ КОМАНДИР, и это приказ НЕ ОБСУЖДАЕТСЯ. Какое ты вообще имеешь право обсуждать приказы НАЧАЛЬСТВА?!\",99);",
+              "            }",
+              "            else {",
+              "                AddDialogInject('dContractFail','',\"Ты, видимо, не понял. Я - ТВОЙ КОМАНДИР, и это приказ НЕ ОБСУЖДАЕТСЯ. Какое ты вообще имеешь право обсуждать приказы НАЧАЛЬСТВА?!\",99);",
+              "            }",
+              "        }",
+              "    }",
+              "}",
+              "",
+              "if(GetTalkShip()) {",
+              "    if(ShipFindCustomShipInfoByType(Player(),'RefIllness3')) {",
+              "        if(ShipPilotRace(Player()) == 0) {",
+              "            if(RndObject(1,100,GetTalkShip()) > 60) {",
+              "                Sound('Sound.NewMsg');",
+              "                ShipMoney(Player(),max(ShipMoney(Player()) - GalaxyMoney(2,3),0));",
+              "                ShipMoney(GetTalkShip(),ShipMoney(GetTalkShip()) + GalaxyMoney(2,3));",
+              "                NewsAdd(Format(\"Этот малец совсем на мели, наверное. Надо подкинуть ему деньжат! mon cr. ему наверняка не повредят, в связи с чем именно столько ему вы и перевели.\",'mon',GalaxyMoney(2,3)));",
+              "            }",
+              "        }",
+              "    }",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(CurTurn() % 3 == 0) {",
+              "    if(ShipFindCustomShipInfoByType(Player(),'RefIllness3')) {",
+              "        if(ShipPilotRace(Player()) == 2) {",
+              "            ",
+              "        }",
+              "    }",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  8,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              "function KlissanLeprosyInflict()",
+              "{",
+              "    //[t_OnWeaponShot2,t_OnDeath|]",
+              "    if(ScriptItemActionType(t_OnWeaponShot2))",
+              "    {",
+              "        dword target = ScriptItemActObject1();",
+              "        if(ObjectType(target) != 5) exit;",
+              "        int tint = ShipTypeN(target);",
+              "        if(tint == t_Kling || tint > t_Warrior) exit;",
+              "        //int tint = ShipOwner(target);",
+              "        //if(tint > Gaal && tint != PirateClan) exit;",
+              "        if(ShipInScript(target, 0))",
+              "        {",
+              "            if(ShipCustomFaction(target) == 'Klissan') exit;",
+              "        }",
+              "        if(~ShipFindCustomShipInfoByType(target, 'ShuKlissan_KlissanLeprosy')) exit;",
+              "",
+              "        if(IsPlayer(target))",
+              "        {",
+              "            if(!ShipPilotRace(target)) int chance = 18;",
+              "            else chance = 35;",
+              "            chance = round(PortionInDiapason(PlayerImmunity(), 0, 100, 2.5, 0.8) * chance);",
+              "            int player = 1;",
+              "        }",
+              "        else",
+              "        {",
+              "            if(!ShipPilotRace(target)) chance = 18;",
+              "            else chance = 35;",
+              "            player = 0;",
+              "        }",
+              "        if(RndObject(1, 1000, ScriptItemActShip()) > chance) exit;",
+              "",
+              "        if(player)",
+              "        {",
+              "            //Проверяем наличие прививки от \"Клисанской проказы\"",
+              "            int vaccination = ShipFindCustomShipInfoByType(Player(), 'EvoMC_Vaccination');",
+              "            if(~vaccination)",
+              "            {",
+              "                if(ShipCustomShipInfoTextData(Player(), vaccination, 1) == 'KlissanLeprosy') exit;",
+              "                else if(ShipCustomShipInfoTextData(Player(), vaccination, 2) == 'KlissanLeprosy') exit;",
+              "                else if(ShipCustomShipInfoTextData(Player(), vaccination, 3) == 'KlissanLeprosy') exit;",
+              "            }",
+              "            if(ShipCustomShipInfoData(Player(),'ShuKlissan_LeprosyStop',1) < 100) {",
+              "                ShipCustomShipInfoData(Player(),'ShuKlissan_LeprosyStop',1,ShipCustomShipInfoData(Player(),'ShuKlissan_LeprosyStop',1) + Rnd(2,4));",
+              "                exit;",
+              "            }",
+              "",
+              "            if(CurrentMods('Expansion\\ExpImplants')) GlobalImplantsEnduranceBonus = GlobalImplantsEnduranceBonus - 4; //Штраф/бонус к выносливости для биомодулей из ExpImplants",
+              "            NewsAdd(CT('Illness.Illness.KlissanLeprosy.Start'));",
+              "        }",
+              "",
+              "        ShipSpecialBonuses(target, bonSkill1, ShipSpecialBonuses(target, bonSkill1) - 2);",
+              "        ShipSpecialBonuses(target, bonSkill2, ShipSpecialBonuses(target, bonSkill2) - 2);",
+              "        ShipSpecialBonuses(target, bonSkill3, ShipSpecialBonuses(target, bonSkill3) - 2);",
+              "        ShipSpecialBonuses(target, bonSkill4, ShipSpecialBonuses(target, bonSkill4) - 4);",
+              "        ShipSpecialBonuses(target, bonSkill5, ShipSpecialBonuses(target, bonSkill5) - 6);",
+              "        ShipSpecialBonuses(target, bonSkill6, ShipSpecialBonuses(target, bonSkill6) - 3);",
+              "",
+              "        //Вешаем на корабль болезнь и ход её окончания",
+              "        ShipAddCustomShipInfo(target, 'ShuKlissan_KlissanLeprosy', CT('Illness.Illness.KlissanLeprosy.Text'), CurTurn() + round(PortionInDiapason(GalaxyDiffLevels(7), 50, 500, 0.9, 2.5) * chance));",
+              "    }",
+              "    else //if(ScriptItemActionType(t_OnDeath))",
+              "    {",
+              "        //Чтобы наложение болезни не могли юзать не клисане",
+              "        ReleaseItemFromScript(CurItem());",
+              "    }",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  15,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "ShipSetPartner(GetTalkShip(),Player(),RndObject(80,200,GetTalkShip()));"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  180,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  16,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "RelationToRanger(GetTalkShip(),Player(),0);",
+              "ShipSetBad(GetTalkShip(),Player());"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  15,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  15,
+      "End":  11,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  11,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  16,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  16,
+      "End":  13,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  13,
+      "End":  14,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC":  
+  [
+  
+  ]
+}

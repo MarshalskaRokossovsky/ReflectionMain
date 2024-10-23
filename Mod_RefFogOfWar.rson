@@ -67,6 +67,7 @@
           "Code":          
           [
               "for(i=0;GalaxySectors()>i;i=i+1) {",
+              "    if(GalaxySectors(i) == StarToCon(PlanetToStar(PlanetPirateClan()))) continue;",
               "    if(StarToCon(ShipStar(Player())) == GalaxySectors(i)) SectorVisible(GalaxySectors(i),1);",
               "    else if(ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GalaxySectors(i),1);",
               "    else SectorVisible(GalaxySectors(i),0);",
