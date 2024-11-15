@@ -4,26 +4,8 @@
   "ViewPos.x":  -729,
   "ViewPos.y":  -571,
   "ScriptName":  "Mod_RefBridgeMaps",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.txt",
-  "GraphPoint.Count":  43,
-  "GraphLink.Count":  31,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  12,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  1,
-  "DialogMessages.Count":  6,
-  "DialogAnswers.Count":  9,
-  "Operations.Count":  6,
-  "Statements.Count":  4,
-  "Loops.Count":  0,
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.txt",
   "Visual.Objects":  
   [
     {
@@ -235,7 +217,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -249,7 +230,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  4,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -266,7 +246,6 @@
           "Pos.y":  10,
           "Parent":  -1,
           "#":  13,
-          "Total.Lines":  24,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -292,7 +271,7 @@
               "        else AddDialogBlock('Да, пересылайте!',0);",
               "    }",
               "}",
-              "SFT(NoFlagy);",
+              "//SFT(NoFlagy);",
               "StartFlag = 1;"          
           ]        
         },
@@ -303,7 +282,6 @@
           "Pos.y":  10,
           "Parent":  -1,
           "#":  16,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -320,7 +298,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  31,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -335,7 +312,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  41,
-          "Total.Lines":  10,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -423,7 +399,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  1,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -437,7 +412,6 @@
           "Pos.y":  10,
           "Parent":  -1,
           "#":  35,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -451,7 +425,6 @@
           "Pos.y":  110,
           "Parent":  -1,
           "#":  36,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -465,7 +438,6 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  37,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [

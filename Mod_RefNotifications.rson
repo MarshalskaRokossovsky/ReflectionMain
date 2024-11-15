@@ -602,9 +602,9 @@
           [
               "if(CurTurn() > 300) tint = 3300 + round((CurTurn()-300) / 365);",
               "else tint = 3300;",
-              "tyear = 0;",
+              "tyear = 3300;",
               "tyear = CountBox('Bm.Items.2Minerals',\"Выберите год\",tint,4000);",
-              "NotifyTurn = (tyear - 3300) * 365;"          
+              "NotifyTurn = (tyear - 3300) * 365 + 300;"          
           ]        
         },
         {
@@ -856,7 +856,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "for(i=0;i<28;i=i+1) {",
+              "for(i=0;i<29;i=i+1) {",
               "    InjectAnswer('DayNexty','<i>',i);",
               "}"          
           ]        

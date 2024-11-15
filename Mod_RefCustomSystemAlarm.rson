@@ -230,16 +230,16 @@
           "Code":          
           [
               "if(FlagCount == 0) {",
-              "    temp_str_main = 'Отключены';",
+              "    temp_str_main = \"<clr>Отключены<clrEnd>\";",
               "}",
               "if(FlagCount == 1) {",
-              "    temp_str_main = 'Система ' + temp_str1;",
+              "    temp_str_main = \"Система\"+' ' + temp_str1;",
               "}",
               "if(FlagCount == 2) {",
-              "    temp_str_main = 'Cистемы ' + temp_str1 + ' и ' + temp_str2;",
+              "    temp_str_main = \"Cистемы\"+' ' + temp_str1 + ' '+\"и\"+' ' + temp_str2;",
               "}",
-              "if(FlagCount == 3) temp_str_main = 'Системы ' + temp_str1 + ', ' + temp_str2 + ' и ' + temp_str3;",
-              "AddDialogInject('AlarmDialog',\"Уведомления об атаках: \" + temp_str_main,\"Управление оповещениями об атаке систем\",19);"          
+              "if(FlagCount == 3) temp_str_main = \"Системы\"+' ' + temp_str1 + ', ' + temp_str2 + ' '+\"и\"+' ' + temp_str3;",
+              "AddDialogInject('AlarmDialog',\"Уведомления об атаках:\"+' ' + temp_str_main,\"Управление оповещениями об атаке систем\",19);"          
           ]        
         },
         {
@@ -253,7 +253,7 @@
           "Code":          
           [
               "if(FlagCount == 1) {",
-              "    temp_str1 = 'Не выбрана';",
+              "    temp_str1 = \"Не выбрана\";",
               "    IDOne = 0;",
               "    FlagCount = FlagCount - 1;",
               "}",
@@ -262,14 +262,14 @@
               "    IDOne = IDThree;",
               "    FlagCount = FlagCount - 1;",
               "    IDTwo = 0;",
-              "    temp_str3 = 'Не выбрана';",
+              "    temp_str3 = \"Не выбрана\";",
               "}",
               "if(FlagCount == 3) {",
               "    temp_str1 = temp_str3;",
               "    IDOne = IDThree;",
               "    FlagCount = FlagCount - 1;",
               "    IDThree = 0;",
-              "    temp_str3 = 'Не выбрана';",
+              "    temp_str3 = \"Не выбрана\";",
               "}"          
           ]        
         },
@@ -284,7 +284,7 @@
           "Code":          
           [
               "if(FlagCount == 2) {",
-              "    temp_str2 = 'Не выбрана';",
+              "    temp_str2 = \"Не выбрана\";",
               "    IDTwo = 0;",
               "    FlagCount = FlagCount - 1;",
               "}",
@@ -293,7 +293,7 @@
               "    IDTwo = IDThree;",
               "    FlagCount = FlagCount - 1;",
               "    IDThree = 0;",
-              "    temp_str3 = 'Не выбрана';",
+              "    temp_str3 = \"Не выбрана\";",
               "}"          
           ]        
         },
@@ -307,7 +307,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_str3 = 'Не выбрана';",
+              "temp_str3 = \"Не выбрана\";",
               "IDThree = 0;",
               "FlagCount = FlagCount - 1;"          
           ]        
@@ -326,7 +326,7 @@
               "    if(!SectorVisible(GalaxySectors(i))) continue;",
               "    InjectAnswer('DialogSector',Name(GalaxySectors(i)),GalaxySectors(i));",
               "}",
-              "InjectAnswer('AlarmDialog','Назад',0);"          
+              "InjectAnswer('AlarmDialog',\"Назад\",0);"          
           ]        
         },
         {
@@ -359,7 +359,7 @@
               "        InjectAnswer('DialogSystems',Name(ConStar(temp_dword,i)),ConStar(temp_dword,i));",
               "    }",
               "}",
-              "InjectAnswer('AlarmDialog','Назад',0);"          
+              "InjectAnswer('AlarmDialog',\"Назад\",0);"          
           ]        
         },
         {
@@ -386,7 +386,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "InjectAnswer('AlarmDialog','Назад',0);"          
+              "InjectAnswer('AlarmDialog',\"Назад\",0);"          
           ]        
         },
         {
@@ -409,7 +409,7 @@
               "        if(StarEnemyThreatLevel(PlanetToStar(IdToPlanet(IDOne))) == 3) {",
               "            CustomEther('Galaxy_Alert',0,'',\"Внимание!!! Система <temp_str1> была захвачена. Слежение за системой прекращено\");",
               "            IDOne = 0;",
-              "            temp_str1 = 'Не выбрана';",
+              "            temp_str1 = \"Не выбрана\";",
               "            FlagCount = FlagCount - 1;",
               "        }",
               "    }",
@@ -438,7 +438,7 @@
               "            temp_str2 = temp_str3;",
               "            if(IDTwo == IDOne) {",
               "                IDTwo = 0;",
-              "                temp_str2 = 'Не выбрана';",
+              "                temp_str2 = \"Не выбрана\";",
               "            }",
               "            FlagCount = FlagCount - 1;",
               "        }",
@@ -468,7 +468,7 @@
               "            temp_str2 = temp_str3;",
               "            if(IDTwo == IDOne) {",
               "                IDTwo = 0;",
-              "                temp_str2 = 'Не выбрана';",
+              "                temp_str2 = \"Не выбрана\";",
               "            }",
               "            FlagCount = FlagCount - 1;",
               "        }",
@@ -481,7 +481,7 @@
               "        if(StarEnemyThreatLevel(PlanetToStar(IdToPlanet(IDThree))) == 3) {",
               "            CustomEther('Galaxy_Alert',0,'',\"Внимание!!! Система <temp_str3> была захвачена. Слежение за системой прекращено\");",
               "            IDThree = 0;",
-              "            temp_str3 = 'Не выбрана';",
+              "            temp_str3 = \"Не выбрана\";",
               "            FlagCount = FlagCount - 1;",
               "        }",
               "    }",
@@ -1088,7 +1088,7 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  15,
+  "BlockPar.EC.Total.Strings":  22,
   "BlockPar.EC":  
   [
     {
@@ -1120,8 +1120,40 @@
       "String":  "Выберите сектор для поиска нужной вам звезды:"    
     },
     {
+      "#":  "18",
+      "String":  "Не выбрана"    
+    },
+    {
+      "#":  "19",
+      "String":  "Уведомления об атаках:"    
+    },
+    {
       "#":  "2",
       "String":  "Внимание!!! Система <0> была захвачена. Слежение за системой прекращено"    
+    },
+    {
+      "#":  "20",
+      "String":  "и"    
+    },
+    {
+      "#":  "21",
+      "String":  "Системы"    
+    },
+    {
+      "#":  "22",
+      "String":  "Cистемы"    
+    },
+    {
+      "#":  "23",
+      "String":  "Система"    
+    },
+    {
+      "#":  "24",
+      "String":  "<clr>Отключены<clrEnd>"    
+    },
+    {
+      "#":  "25",
+      "String":  "Назад"    
     },
     {
       "#":  "3",
@@ -1130,10 +1162,6 @@
     {
       "#":  "4",
       "String":  "Управление оповещениями об атаке систем"    
-    },
-    {
-      "#":  "5",
-      "String":  "Уведомления об атаках: "    
     },
     {
       "#":  "6",

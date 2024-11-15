@@ -86,6 +86,15 @@
               "    }",
               "}",
               "",
+              "//Объявляем глобальный массив для упрощения жизни себе и будущим поколениям!",
+              "if(GetShipPlanet(Player())) {",
+              "    if(PlanetOwner(GetShipPlanet(Player())) == None) {",
+              "        if(ArrayFind(GPlanetsVisited, Id(GetShipPlanet(Player()))) == -1) {",
+              "            ArrayAdd(GPlanetsVisited, Id(GetShipPlanet(Player())));",
+              "        }",
+              "    }",
+              "}",
+              "",
               "//Иногда появляются корпуса с лютым количеством hitpoints. И лютой ценой. На этот случай - вот этот цикл.",
               "/*if(GetShipPlanet(Player()) != 0 || GetShipRuins(Player()) != 0) {",
               "    if(GetShipPlanet(Player()) != 0) place = GetShipPlanet(Player());",
@@ -344,6 +353,17 @@
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GPlanetsVisited",
+          "Pos.x":  60,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  18,
+          "Var.Type":  "Array",
+          "Init":  "",
+          "Global":  true        
         }      
       ]    
     }  

@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -530,
-  "ViewPos.y":  -399,
+  "ViewPos.x":  -883,
+  "ViewPos.y":  -473,
   "ScriptName":  "Mod_RefBlazerAttacks",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefBlazerAttacks\\DATA\\Script\\Mod_RefBlazerAttacks.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefBlazerAttacks\\DATA\\Script\\Mod_RefBlazerAttacks.txt",
@@ -195,9 +195,9 @@
           "Type":  "TDialogAnswer",
           "Name":  "exit",
           "Pos.x":  920,
-          "Pos.y":  -410,
+          "Pos.y":  -370,
           "Parent":  -1,
-          "#":  69,
+          "#":  68,
           "Msg":  "Отличная у тебя логика, железяка. Пока.",
           "AMsg.Num":  "18"        
         },
@@ -207,7 +207,7 @@
           "Pos.x":  880,
           "Pos.y":  -130,
           "Parent":  -1,
-          "#":  70,
+          "#":  69,
           "Msg":  "У меня есть новая боевая программа, которая позволит тебе быстрее добиться эффективной победы! Приготовься к загрузке, Блазер.",
           "AMsg.Num":  "19"        
         },
@@ -217,7 +217,7 @@
           "Pos.x":  880,
           "Pos.y":  -210,
           "Parent":  -1,
-          "#":  72,
+          "#":  71,
           "Msg":  "Гарантируй, что не убьешь меня ни сейчас, ни потом.",
           "AMsg.Num":  "20"        
         },
@@ -227,7 +227,7 @@
           "Pos.x":  840,
           "Pos.y":  -210,
           "Parent":  -1,
-          "#":  73,
+          "#":  72,
           "Msg":  "Ничего. Это подарок из уважения к великому воину - непобедимому Блазеру!",
           "AMsg.Num":  "21"        
         },
@@ -237,7 +237,7 @@
           "Pos.x":  800,
           "Pos.y":  -250,
           "Parent":  -1,
-          "#":  75,
+          "#":  74,
           "Msg":  "Умри сам, тупая железяка!",
           "AMsg.Num":  "22"        
         },
@@ -247,7 +247,7 @@
           "Pos.x":  880,
           "Pos.y":  -290,
           "Parent":  -1,
-          "#":  77,
+          "#":  76,
           "Msg":  "Но если я тебе помогаю, значит, я уже не враг?",
           "AMsg.Num":  "23"        
         },
@@ -257,7 +257,7 @@
           "Pos.x":  880,
           "Pos.y":  -370,
           "Parent":  -1,
-          "#":  79,
+          "#":  78,
           "Msg":  "Запуск программы \"Логическое отрицание\".",
           "AMsg.Num":  "24"        
         },
@@ -267,7 +267,7 @@
           "Pos.x":  820,
           "Pos.y":  -450,
           "Parent":  -1,
-          "#":  81,
+          "#":  80,
           "Msg":  "Вот и отлично. Прощай, Блазер, ты был отличный воин, жаль только, что двинулся немного. Но я тут ни при чем, дружище!",
           "AMsg.Num":  "25"        
         },
@@ -277,19 +277,9 @@
           "Pos.x":  880,
           "Pos.y":  -450,
           "Parent":  -1,
-          "#":  82,
+          "#":  81,
           "Msg":  "Остановись, это логическая ошибка! Ты неверно загрузил программу.",
           "AMsg.Num":  "26"        
-        },
-        {
-          "Type":  "TDialogAnswer",
-          "Name":  "",
-          "Pos.x":  880,
-          "Pos.y":  -530,
-          "Parent":  -1,
-          "#":  85,
-          "Msg":  "Теперь ты защитник системы <Name(ShipStar(GroupToShip(GroupBlazer)))>. Для получения инструкций следуй на ближайшую планету.",
-          "AMsg.Num":  "27"        
         },
         {
           "Type":  "TDialogAnswer",
@@ -297,9 +287,9 @@
           "Pos.x":  960,
           "Pos.y":  -610,
           "Parent":  -1,
-          "#":  90,
+          "#":  87,
           "Msg":  "Давай, давай, садись. Сейчас тебе требуется хороший ремонт. Там о тебе позаботится.<br>И кстати, отдай приказ нулевого уровня на самоуничтожение всем своим кораблям.",
-          "AMsg.Num":  "28"        
+          "AMsg.Num":  "27"        
         },
         {
           "Type":  "TDialogAnswer",
@@ -307,9 +297,9 @@
           "Pos.x":  960,
           "Pos.y":  -570,
           "Parent":  -1,
-          "#":  91,
+          "#":  88,
           "Msg":  "Давай, давай, садись. Сейчас тебе требуется хороший ремонт. Межзвездная Коалиция о тебе позаботится.<br>И кстати, отдай приказ нулевого уровня на самоуничтожение всем своим кораблям.",
-          "AMsg.Num":  "29"        
+          "AMsg.Num":  "28"        
         },
         {
           "Type":  "TDialogAnswer",
@@ -317,9 +307,9 @@
           "Pos.x":  840,
           "Pos.y":  -130,
           "Parent":  -1,
-          "#":  96,
+          "#":  93,
           "Msg":  "У меня есть новая боевая программа, которая позволит тебе быстрее добиться эффективной победы! Приготовься к загрузке, Блазер.",
-          "AMsg.Num":  "30"        
+          "AMsg.Num":  "29"        
         },
         {
           "Type":  "TDialogAnswer",
@@ -327,8 +317,18 @@
           "Pos.x":  750,
           "Pos.y":  -170,
           "Parent":  -1,
-          "#":  99,
+          "#":  96,
           "Msg":  "Сам умри, жестянка!",
+          "AMsg.Num":  "30"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "exit",
+          "Pos.x":  850,
+          "Pos.y":  -490,
+          "Parent":  -1,
+          "#":  105,
+          "Msg":  "Да чтоб тебя...",
           "AMsg.Num":  "31"        
         }      
       ],
@@ -498,9 +498,9 @@
           "Type":  "TDialogMsg",
           "Name":  "",
           "Pos.x":  920,
-          "Pos.y":  -370,
+          "Pos.y":  -330,
           "Parent":  -1,
-          "#":  68,
+          "#":  67,
           "Msg":  "Я не доверяю врагам, но не вижу изъяна в твоей логике. Поэтому лети и возвращайся скорей. Но помни, что ты будешь уничтожен в любом случае, <Player>.",
           "DMsg.Num":  "16"        
         },
@@ -510,7 +510,7 @@
           "Pos.x":  880,
           "Pos.y":  -170,
           "Parent":  -1,
-          "#":  71,
+          "#":  70,
           "Msg":  "Загружай... стоп! А что ты хочешь взамен?",
           "DMsg.Num":  "17"        
         },
@@ -520,7 +520,7 @@
           "Pos.x":  800,
           "Pos.y":  -210,
           "Parent":  -1,
-          "#":  74,
+          "#":  73,
           "Msg":  "Я понял, враг - ты хочешь подстроить мне ловушку. Умри немедленно, <Player>!",
           "DMsg.Num":  "18"        
         },
@@ -530,7 +530,7 @@
           "Pos.x":  880,
           "Pos.y":  -250,
           "Parent":  -1,
-          "#":  76,
+          "#":  75,
           "Msg":  "Это невозможно. Ты враг.",
           "DMsg.Num":  "19"        
         },
@@ -540,7 +540,7 @@
           "Pos.x":  880,
           "Pos.y":  -330,
           "Parent":  -1,
-          "#":  78,
+          "#":  77,
           "Msg":  "Это звучит логично. Загружай свою программу.",
           "DMsg.Num":  "20"        
         },
@@ -550,7 +550,7 @@
           "Pos.x":  880,
           "Pos.y":  -410,
           "Parent":  -1,
-          "#":  80,
+          "#":  79,
           "Msg":  "РЕЙНДЖЕР <Player> - СОЮЗНИК.<br>НАЙДЕН НОВЫЙ ВРАГ. ДОМИНАТОР - ОСНОВАТЕЛЬ БЛАЗЕР. УНИЧТОЖИТЬ.<br>...<br>ВКЛЮЧЕНА СИСТЕМА САМОУНИЧТОЖЕНИЯ.",
           "DMsg.Num":  "21"        
         },
@@ -560,8 +560,8 @@
           "Pos.x":  880,
           "Pos.y":  -490,
           "Parent":  -1,
-          "#":  84,
-          "Msg":  "Логическая ошибка в программе. Система заблокирована. Рейнджер <Player>, мне нужны инструкции.",
+          "#":  83,
+          "Msg":  "Логическая ошибка в программе. Система заблокирована. Рейнджер <Player>, мне нужны инструкции.\r\n......\r\n......\r\nДоступ рейнджеру <Player> запрещён. Главный командующий отдал приказ на самоуничтожение. Выполняю.",
           "DMsg.Num":  "22"        
         },
         {
@@ -570,7 +570,7 @@
           "Pos.x":  880,
           "Pos.y":  -610,
           "Parent":  -1,
-          "#":  87,
+          "#":  84,
           "Msg":  "Задача выполняется. Совершаю посадку на планету <Name(IdToPlanet(MS_Blazer_Landing))>.",
           "DMsg.Num":  "23"        
         },
@@ -580,7 +580,7 @@
           "Pos.x":  840,
           "Pos.y":  -170,
           "Parent":  -1,
-          "#":  98,
+          "#":  95,
           "Msg":  "Ты - враг, пытавшийся меня обмануть. Сдавайся и умри!",
           "DMsg.Num":  "24"        
         }      
@@ -712,6 +712,135 @@
           "Code":          
           [
               "//Функции для спавна свиты Блазера",
+              "function SpawnBlazer(star) {",
+              "    int cnty,i;",
+              "    dword t_plan;",
+              "    dword ship;",
+              "",
+              "    //Командир-Блазер - псевдо-Блазер, атакующий другие системы.",
+              "    if(GroupCount(BlazerGroup)) exit; //если остался жив после предыдущей атаки",
+              "",
+              "    //Ищем планету для доминаторских утех с процессом спавна",
+              "    for(i=0;StarPlanets(star)>i;i=i+1) {",
+              "        if(PlanetOwner(StarPlanets(star,i)) == 6) continue;",
+              "        t_plan = StarPlanets(star,i);",
+              "        break;",
+              "    }",
+              "",
+              "    //Начинаем спавнить",
+              "    ship = BuyDomikExtremal(t_plan,1);",
+              "    ShipJoin(BlazerGroup,ship);",
+              "",
+              "    //Зачищаем командиру шмот",
+              "    if(ShipEqInSlot(ship,t_Radar)) {",
+              "        tdwd = ShipEqInSlot(ship,t_Radar);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_Engine)) {",
+              "        tdwd = ShipEqInSlot(ship,t_Engine);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_FuelTanks)) {",
+              "        tdwd = ShipEqInSlot(ship,t_FuelTanks);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_Scaner)) {",
+              "        tdwd = ShipEqInSlot(ship,t_Scaner);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_DefGenerator)) {",
+              "        tdwd = ShipEqInSlot(ship,t_DefGenerator);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_RepairRobot)) {",
+              "        tdwd = ShipEqInSlot(ship,t_RepairRobot);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_CargoHook)) {",
+              "        tdwd = ShipEqInSlot(ship,t_CargoHook);",
+              "        GetItemFromShip(ship,tdwd);",
+              "        FreeItem(tdwd);",
+              "    }",
+              "    for(i=0;ShipSlots(ship,1)>i;i=i+1) {",
+              "        if(ShipEqInSlot(ship,t_Weapon1,i)) {",
+              "            tdwd = ShipEqInSlot(ship,t_Weapon1,i);",
+              "            GetItemFromShip(ship,tdwd);",
+              "            FreeItem(tdwd);",
+              "        }",
+              "    }",
+              "    //Теперь насовываем ему за щеку обвес",
+              "    if(ShipEqInSlot(Blazer(),t_Radar)) {",
+              "        item = ShipEqInSlot(Blazer(),t_Radar);",
+              "        tdwd = CreateEquipment(t_Radar,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(Blazer(),t_Engine)) {",
+              "        item = ShipEqInSlot(Blazer(),t_Engine);",
+              "        tdwd = CreateEquipment(t_Engine,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(ship,t_FuelTanks)) {",
+              "        item = ShipEqInSlot(ship,t_FuelTanks);",
+              "        tdwd = CreateEquipment(t_FuelTanks,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(Blazer(),t_DefGenerator)) {",
+              "        item = ShipEqInSlot(Blazer(),t_DefGenerator);",
+              "        tdwd = CreateEquipment(t_DefGenerator,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(Blazer(),t_RepairRobot)) {",
+              "        item = ShipEqInSlot(Blazer(),t_RepairRobot);",
+              "        tdwd = CreateEquipment(t_RepairRobot,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(Blazer(),t_Scaner)) {",
+              "        item = ShipEqInSlot(Blazer(),t_Scaner);",
+              "        tdwd = CreateEquipment(t_Scaner,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    if(ShipEqInSlot(Blazer(),t_CargoHook)) {",
+              "        item = ShipEqInSlot(Blazer(),t_CargoHook);",
+              "        tdwd = CreateEquipment(t_CargoHook,ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "    for(i=0;i<ShipSlots(Blazer(),1);i=i+1) {",
+              "        item = ShipEqInSlot(Blazer(),t_Weapon1,1);",
+              "        if(ItemType(item) != t_CustomWeapon) tdwd = CreateEquipment(ItemType(item),ItemSize(item),ItemLevel(item),Kling);",
+              "        else tdwd = CreateCustomWeapon(CustomWeaponType(item),ItemSize(item),ItemLevel(item),Kling);",
+              "        ItemSubrace(tdwd,0);",
+              "        AddItemToShip(ship,tdwd);",
+              "        if(EqSpecial(item) > 0) SpecialToEquipment(EqSpecial(item),tdwd);",
+              "    }",
+              "",
+              "    ArrangeItems(ship);",
+              "    ",
+              "    //Меняем игроку корпус",
+              "    tdwd = ShipEqInSlot(ship,t_Hull);",
+              "    ItemSize(tdwd,ItemSize(ShipEqInSlot(Blazer(),t_Hull))); //Нужно будет зависимость от выбранного типа домика шибануть",
+              "    HullHP(ship,'To100');",
+              "    Chameleon(ship,'Data.SE.Ruins.Blazer');",
+              "    SetName(ship,\"Блазер\");",
+              "}",
               "function SpawnHeavyFleet(star) {",
               "    int cnty,i;",
               "    dword t_plan;",
@@ -794,7 +923,7 @@
               "    int i;",
               "",
               "    for(i=0;GalaxyStars()>i;i=i+1) {",
-              "        if(StarToCon(StarNearbyStars(ShipStar(Blazer()),i)) == StarToCon(ShipStatistic(Player(),10)) && CurTurn() < 1800) continue;",
+              "        if(StarToCon(StarNearbyStars(ShipStar(Blazer()),i)) == StarToCon(ShipStatistic(Player(),10)) && CurTurn() < 6000) continue;",
               "        if(StarOwner(StarNearbyStars(ShipStar(Blazer()),i)) == 1 && StarSeries(StarNearbyStars(ShipStar(Blazer()),i)) == 0) continue;",
               "        if(Rnd(1,2) == 2) tstar = StarNearbyStars(ShipStar(Blazer()),i);",
               "        else continue;",
@@ -802,8 +931,7 @@
               "    }",
               "",
               "    result = tstar;",
-              "}",
-              "if(ShipFindCustomShipInfoByType(Blazer(),'ShipTempImmortalInfo') != -1) ShipDeleteCustomShipInfo(Blazer(),'ShipTempImmortalInfo');"          
+              "}"          
           ]        
         },
         {
@@ -817,7 +945,7 @@
           "Code":          
           [
               "//Отправляем Блазера в группу",
-              "if(ShipGroup(Blazer()) != BlazerGroup) ShipJoin(BlazerGroup,Blazer());",
+              "//if(ShipGroup(Blazer()) != BlazerGroup) ShipJoin(BlazerGroup,Blazer());",
               "",
               "if(AttackCD == 0 && !DomiksDefeated(1) && AttackStage == 0) {",
               "    //Блазер живой? Значит, идём искать систему!",
@@ -827,6 +955,7 @@
               "        AttackStage = 1;",
               "        SpawnFastFleet(CurStar);",
               "        SpawnHeavyFleet(CurStar);",
+              "        SpawnBlazer(CurStar);",
               "    }",
               "}",
               "if(AttackCD != 0) AttackCD = AttackCD - 1;"          
@@ -848,44 +977,16 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  920,
-          "Pos.y":  -330,
-          "Parent":  -1,
-          "#":  67,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "MS_Blazer_Promise = 1;"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
           "Pos.x":  820,
           "Pos.y":  -490,
           "Parent":  -1,
-          "#":  83,
+          "#":  82,
           "Code.Type":  "Turn",
           "Code":          
           [
-              "BlazerSelfDestruction();",
+              "//BlazerSelfDestruction();",
               "ShipDestroy(GroupToShip(GroupBlazer));",
               "ShipDestroyType(1);"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  880,
-          "Pos.y":  -570,
-          "Parent":  -1,
-          "#":  86,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "MS_Blazer_Landing = Id(NearCivilPlanet(GroupToShip(GroupBlazer)));",
-              "OrderLanding(GroupToShip(GroupBlazer), NearCivilPlanet(GroupToShip(GroupBlazer)), 1);",
-              "BlazerLanding(MS_Blazer_Landing);"          
           ]        
         },
         {
@@ -894,7 +995,7 @@
           "Pos.x":  1030,
           "Pos.y":  -570,
           "Parent":  -1,
-          "#":  92,
+          "#":  89,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -907,7 +1008,7 @@
           "Pos.x":  1030,
           "Pos.y":  -610,
           "Parent":  -1,
-          "#":  93,
+          "#":  90,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -920,7 +1021,7 @@
           "Pos.x":  800,
           "Pos.y":  -290,
           "Parent":  -1,
-          "#":  95,
+          "#":  92,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -933,7 +1034,7 @@
           "Pos.x":  420,
           "Pos.y":  -50,
           "Parent":  -1,
-          "#":  100,
+          "#":  97,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -941,10 +1042,10 @@
               "",
               "if(ShipInNormalSpace(Player())) {",
               "    if(GetShipRuins(Player()) == 0) {",
-              "        if(Dist(Player(),Blazer()) > 500) {",
+              "        if(Dist(Player(),GroupToShip(GroupBlazer)) > 500) {",
               "            TalkFlag = 1;",
               "        }",
-              "        if(StarOwner(ShipStar(Blazer())) == 1) {",
+              "        if(StarOwner(ShipStar(GroupToShip(GroupBlazer))) == 1) {",
               "            TalkFlag = 2;",
               "        }",
               "    }",
@@ -957,7 +1058,7 @@
           "Pos.x":  40,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  105,
+          "#":  102,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -968,14 +1069,12 @@
               "    else {",
               "        if(StarOwner(ShipStar(CurShip)) != 1 && StarSeries(ShipStar(CurShip)) && !StarBattle(ShipStar(CurShip))) {",
               "            if(HullDamage(CurShip) > 70) {",
-              "                ShipSpecialBonuses(CurShip,bonFuel,0);",
               "                AttackStage = 0;",
               "                AttackCD = Rnd(400,600);",
               "            }",
-              "            else ShipSpecialBonuses(CurShip,bonFuel,-1000);",
+              "            else ShipSpecialBonuses(CurShip,bonFuel,-50000);",
               "        }",
               "        else {",
-              "            ShipSpecialBonuses(CurShip,bonFuel,0);",
               "            AttackStage = 0;",
               "            AttackCD = Rnd(180,300);",
               "        }",
@@ -989,7 +1088,7 @@
           "Pos.x":  160,
           "Pos.y":  100,
           "Parent":  -1,
-          "#":  106,
+          "#":  103,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1264,7 +1363,7 @@
           "Pos.x":  920,
           "Pos.y":  -610,
           "Parent":  -1,
-          "#":  88,
+          "#":  85,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1277,7 +1376,7 @@
           "Pos.x":  920,
           "Pos.y":  -570,
           "Parent":  -1,
-          "#":  89,
+          "#":  86,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1290,7 +1389,7 @@
           "Pos.x":  840,
           "Pos.y":  -90,
           "Parent":  -1,
-          "#":  97,
+          "#":  94,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1303,7 +1402,7 @@
           "Pos.x":  460,
           "Pos.y":  30,
           "Parent":  -1,
-          "#":  101,
+          "#":  98,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1316,7 +1415,7 @@
           "Pos.x":  460,
           "Pos.y":  -50,
           "Parent":  -1,
-          "#":  102,
+          "#":  99,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1329,7 +1428,7 @@
           "Pos.x":  460,
           "Pos.y":  70,
           "Parent":  -1,
-          "#":  104,
+          "#":  101,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1342,7 +1441,7 @@
           "Pos.x":  -10,
           "Pos.y":  -130,
           "Parent":  -1,
-          "#":  107,
+          "#":  104,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1377,7 +1476,7 @@
           "Pos.y":  60,
           "Parent":  -1,
           "#":  20,
-          "Move":  0,
+          "Move":  5,
           "MoveObj":  -1,
           "Attack.Count":  0,
           "TakeItem":  -1,
@@ -1470,7 +1569,7 @@
           "Pos.x":  30,
           "Pos.y":  -240,
           "Parent":  -1,
-          "#":  94,
+          "#":  91,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1481,7 +1580,7 @@
           "Pos.x":  30,
           "Pos.y":  -270,
           "Parent":  -1,
-          "#":  103,
+          "#":  100,
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
@@ -1867,22 +1966,8 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  66,
-      "End":  67,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  67,
       "End":  68,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  68,
-      "End":  69,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1896,6 +1981,13 @@
     {
       "Type":  "TGraphLink",
       "Begin":  59,
+      "End":  69,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  69,
       "End":  70,
       "Nom":  0,
       "Arrow":  true    
@@ -1909,14 +2001,14 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  71,
+      "Begin":  70,
       "End":  72,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  71,
+      "Begin":  72,
       "End":  73,
       "Nom":  0,
       "Arrow":  true    
@@ -1930,14 +2022,14 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  74,
+      "Begin":  71,
       "End":  75,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  72,
+      "Begin":  75,
       "End":  76,
       "Nom":  0,
       "Arrow":  true    
@@ -1973,6 +2065,13 @@
     {
       "Type":  "TGraphLink",
       "Begin":  80,
+      "End":  82,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  79,
       "End":  81,
       "Nom":  0,
       "Arrow":  true    
@@ -1986,20 +2085,6 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  80,
-      "End":  82,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  82,
-      "End":  84,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  84,
       "End":  85,
       "Nom":  0,
@@ -2007,14 +2092,21 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  85,
+      "Begin":  84,
       "End":  86,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  87,
+      "Begin":  85,
+      "End":  87,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  86,
       "End":  88,
       "Nom":  0,
       "Arrow":  true    
@@ -2022,55 +2114,55 @@
     {
       "Type":  "TGraphLink",
       "Begin":  87,
-      "End":  89,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  86,
-      "End":  87,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  88,
       "End":  90,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  89,
-      "End":  91,
+      "Begin":  88,
+      "End":  89,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  90,
-      "End":  93,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  91,
+      "Begin":  74,
       "End":  92,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  75,
+      "Begin":  58,
+      "End":  94,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  94,
+      "End":  93,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
       "End":  95,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  58,
+      "Begin":  95,
+      "End":  96,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  27,
       "End":  97,
       "Nom":  0,
       "Arrow":  true    
@@ -2078,83 +2170,55 @@
     {
       "Type":  "TGraphLink",
       "Begin":  97,
-      "End":  96,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  96,
       "End":  98,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  98,
+      "Begin":  97,
       "End":  99,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  27,
-      "End":  100,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  100,
-      "End":  101,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  100,
-      "End":  102,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  102,
+      "Begin":  99,
       "End":  36,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  102,
+      "Begin":  99,
       "End":  31,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  102,
+      "Begin":  99,
       "End":  28,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  100,
-      "End":  104,
+      "Begin":  97,
+      "End":  101,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  101,
+      "Begin":  98,
       "End":  15,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  104,
+      "Begin":  101,
       "End":  13,
       "Nom":  0,
       "Arrow":  true    
@@ -2162,26 +2226,47 @@
     {
       "Type":  "TGraphLink",
       "Begin":  21,
-      "End":  106,
+      "End":  103,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
       "Begin":  20,
+      "End":  102,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  104,
+      "End":  7,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  83,
       "End":  105,
       "Nom":  0,
       "Arrow":  true    
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  107,
-      "End":  7,
+      "Begin":  105,
+      "End":  82,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  66,
+      "End":  67,
       "Nom":  0,
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  54,
+  "BlockPar.EC.Total.Strings":  55,
   "BlockPar.EC":  
   [
     {
@@ -2254,7 +2339,7 @@
     },
     {
       "#":  "24",
-      "String":  "Логическая ошибка в программе. Система заблокирована. Рейнджер <Player>, мне нужны инструкции."    
+      "String":  "Логическая ошибка в программе. Система заблокирована. Рейнджер <Player>, мне нужны инструкции.<br>......<br>......<br>Доступ рейнджеру <Player> запрещён. Главный командующий отдал приказ на самоуничтожение. Выполняю."    
     },
     {
       "#":  "25",
@@ -2373,16 +2458,20 @@
       "String":  "Остановись, это логическая ошибка! Ты неверно загрузил программу."    
     },
     {
-      "#":  "51",
-      "String":  "Теперь ты защитник системы <0>. Для получения инструкций следуй на ближайшую планету."    
-    },
-    {
       "#":  "52",
       "String":  "Давай, давай, садись. Сейчас тебе требуется хороший ремонт. Там о тебе позаботится.<br>И кстати, отдай приказ нулевого уровня на самоуничтожение всем своим кораблям."    
     },
     {
       "#":  "53",
       "String":  "Сам умри, жестянка!"    
+    },
+    {
+      "#":  "54",
+      "String":  "Блазер"    
+    },
+    {
+      "#":  "55",
+      "String":  "Да чтоб тебя..."    
     },
     {
       "#":  "6",

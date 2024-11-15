@@ -1,33 +1,14 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -683,
-  "ViewPos.y":  -639,
-  "ScriptName":  "Mod_RefMoreBeautifulDrop",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefMoreBeautifulDrop\\DATA\\Script\\Mod_RefMoreBeautifulDrop.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefMoreBeautifulDrop\\DATA\\Script\\Mod_RefMoreBeautifulDrop.txt",
+  "ViewPos.x":  -688,
+  "ViewPos.y":  -643,
+  "ScriptName":  "Mod_RefSaveKilledCount",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefSaveKilledCount\\DATA\\Script\\Mod_RefSaveKilledCount.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefSaveKilledCount\\DATA\\Script\\Mod_RefSaveKilledCount.txt",
   "Visual.Objects":  
   [
     {
-      "Dialogs":      
-      [
-        {
-          "Type":  "TDialog",
-          "Name":  "DropOn",
-          "Pos.x":  50,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  7        
-        },
-        {
-          "Type":  "TDialog",
-          "Name":  "DropOff",
-          "Pos.x":  90,
-          "Pos.y":  -110,
-          "Parent":  -1,
-          "#":  8        
-        }      
-      ],
       "Groups":      
       [
         {
@@ -78,53 +59,70 @@
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  0,
+          "Pos.x":  30,
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Code.Type":  "DialogBegin",
+          "Code.Type":  "Turn",
           "Code":          
           [
-              "if(DropFlag==0)",
-              "{",
-              "    temp_str=\"Обычный\";",
-              "    AddDialogInject('DropOn',\"Сброс предметов из трюма: <temp_str>\",\"Сделать сброс более плавным, как у NPC\",17);",
+              "//Навешиаем игроку инфу, что он тут наубивал",
+              "if(ShipInNormalSpace(Player())) {",
+              "    if(StarOwner(ShipStar(Player()))) {",
+              "        if(ShipOrder(Player()) == 3 || ShipOrder(Player()) == 4 || ShipOrder(Player()) == 7) {",
+              "            if(ShipOrderData1(Player()) < 2) {",
+              "                MainArrayAdd(ShipStar(Player()), ShipKillFactionInCurSystem(Player(),2), DomikKilledInCurSystem(Player()), ShipKillFactionInCurSystem(Player(),-1), ShipKillFactionInCurSystem(Player(),0));",
+              "            }",
+              "        }",
+              "    }",
               "}",
-              "if(DropFlag==1)",
-              "{",
-              "    temp_str=\"Как у NPC\";",
-              "    AddDialogInject('DropOff',\"Сброс предметов из трюма: <temp_str>\",\"Вернуть сброс к обычному состоянию\",17);",
+              "",
+              "//При влёте из гипера в какую-то систему - выдаём игроку убитых",
+              "if(ShipInHyperSpace(Player()) || ShipOrder(Player()) == 7) InHyp = 1;",
+              "",
+              "if(ArrayDim(MainArray)>1) {",
+              "    if(ShipInNormalSpace(Player()) && InHyp) {",
+              "        InHyp = 0;",
+              "        if(ArrayFind(MainArray,Name(ShipStar(Player())))) {",
+              "            ShipKillFactionInCurSystem(Player(),-1,MainArray[ArrayFind(MainArray,Name(ShipStar(Player()))),'OthersCnt']);",
+              "            ShipKillFactionInCurSystem(Player(),0,MainArray[ArrayFind(MainArray,Name(ShipStar(Player()))),'CoalCnt']);",
+              "            ShipKillFactionInCurSystem(Player(),1,MainArray[ArrayFind(MainArray,Name(ShipStar(Player()))),'DomiksCnt']);",
+              "            ShipKillFactionInCurSystem(Player(),2,MainArray[ArrayFind(MainArray,Name(ShipStar(Player()))),'PiratesCnt']);",
+              "    ",
+              "            ArrayDelete(MainArray,Name(ShipStar(Player())));",
+              "        }",
+              "    }",
+              "}",
+              "",
+              "//Перебираем куладауны убитых",
+              "for(i=1;(ArrayDim(MainArray)-1)>i;i=i+1) {",
+              "    MainArray[i,'Days'] = MainArray[i,'Days'] - 1;",
+              "    if(!MainArray[i,'Days']) ArrayDelete(MainArray,i);",
               "}"          
           ]        
         },
         {
           "Type":  "Top",
           "Name":  "",
-          "Pos.x":  50,
+          "Pos.x":  -10,
           "Pos.y":  -90,
           "Parent":  -1,
-          "#":  9,
-          "Code.Type":  "Turn",
+          "#":  7,
+          "Code.Type":  "Init",
           "Code":          
           [
-              "ShipAddCustomShipInfo(Player(),'RefDroppingInfo','NoShow');",
-              "DAnswer('main');",
-              "DropFlag = 1;"          
-          ]        
-        },
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  90,
-          "Pos.y":  -60,
-          "Parent":  -1,
-          "#":  10,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "ShipDeleteCustomShipInfo(Player(),'RefDroppingInfo');",
-              "DAnswer('main');",
-              "DropFlag = 0;"          
+              "function MainArrayAdd(dword star, int pirates, domiks, others, coal) {",
+              "    unknown t_array;",
+              "    t_array = newarray(1);",
+              "",
+              "    ArrayDelete(t_array, 0);",
+              "    ArrayAdd(t_array, pirates, 'PiratesCnt');",
+              "    ArrayAdd(t_array, domiks, 'DomiksCnt');",
+              "    ArrayAdd(t_array, others, 'OthersCnt');",
+              "    ArrayAdd(t_array, coal, 'CoalCnt');",
+              "    ArrayAdd(t_array, 31, 'Days');",
+              "    ArrayAdd(MainArray, t_array, Name(star));",
+              "}"          
           ]        
         }      
       ],
@@ -190,22 +188,6 @@
           "NoComeKling":  false        
         }      
       ],
-      "Statements":      
-      [
-        {
-          "Type":  "Tif",
-          "Name":  "",
-          "Pos.x":  0,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  11,
-          "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "PlayerBridge()==12"          
-          ]        
-        }      
-      ],
       "States":      
       [
         {
@@ -231,23 +213,34 @@
       [
         {
           "Type":  "TVar",
-          "Name":  "DropFlag",
-          "Pos.x":  -60,
-          "Pos.y":  -180,
+          "Name":  "MainArray",
+          "Pos.x":  -90,
+          "Pos.y":  -150,
           "Parent":  -1,
-          "#":  12,
-          "Var.Type":  "Int",
-          "Init":  "0",
+          "#":  8,
+          "Var.Type":  "Array",
+          "Init":  "",
           "Global":  false        
         },
         {
           "Type":  "TVar",
-          "Name":  "temp_str",
-          "Pos.x":  -60,
-          "Pos.y":  -210,
+          "Name":  "InHyp",
+          "Pos.x":  -90,
+          "Pos.y":  -180,
           "Parent":  -1,
-          "#":  13,
-          "Var.Type":  "Str",
+          "#":  9,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "i",
+          "Pos.x":  10,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  10,
+          "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
         }      
@@ -283,51 +276,11 @@
       "End":  3,
       "Nom":  0,
       "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  8,
-      "End":  10,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  7,
-      "End":  9,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  11,
-      "End":  6,
-      "Nom":  0,
-      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  5,
+  "BlockPar.EC.Total.Strings":  0,
   "BlockPar.EC":  
   [
-    {
-      "#":  "0",
-      "String":  "Вернуть сброс к обычному состоянию"    
-    },
-    {
-      "#":  "2",
-      "String":  "Как у NPC"    
-    },
-    {
-      "#":  "3",
-      "String":  "Сделать сброс более плавным, как у NPC"    
-    },
-    {
-      "#":  "4",
-      "String":  "Сброс предметов из трюма: <0>"    
-    },
-    {
-      "#":  "5",
-      "String":  "Обычный"    
-    }  
+  
   ]
 }

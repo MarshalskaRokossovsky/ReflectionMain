@@ -230,13 +230,13 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(HullSpecial(Player()) == FindBonusByCustomTag('RefSmershMi') || HullSpecial(Player()) == FindBonusByCustomTag('RefSmershEn')) {",
-              "    if(HullSpecial(Player()) == FindBonusByCustomTag('RefSmershMi'))",
+              "if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Missile') || HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Energy') && HullSpecial(Player()) > 0) {",
+              "    if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Missile'))",
               "    {",
               "        temp_str=\"ракетный\";",
               "        AddDialogInject('SwitchOnMi',\"Тип усиления: <temp_str>\",\"Переключить Шершень на энергетический тип\",17);",
               "    }",
-              "    if(HullSpecial(Player()) == FindBonusByCustomTag('RefSmershEn'))",
+              "    if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Energy'))",
               "    {",
               "        temp_str=\"энергетическо-осколочный\";",
               "        AddDialogInject('SwitchOnEn',\"Тип усиления: <temp_str>\",\"Переключить Шершень на ракетный тип\",17);",
@@ -256,7 +256,7 @@
           [
               "temp_dword = HullHP(Player());",
               "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
-              "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),ShipEqInSlot(Player(),t_Hull));",
+              "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Missile'),ShipEqInSlot(Player(),t_Hull));",
               "Chameleon(Player());",
               "Sound('Sound.ButtonInfoEnter');",
               "HullHP(Player(),temp_dword);",
@@ -275,7 +275,7 @@
           [
               "temp_dword = HullHP(Player());",
               "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
-              "SpecialToEquipment(FindBonusByCustomTag('RefSmershEn'),ShipEqInSlot(Player(),t_Hull));",
+              "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Energy'),ShipEqInSlot(Player(),t_Hull));",
               "Chameleon(Player());",
               "Sound('Sound.ButtonInfoEnter');",
               "HullHP(Player(),temp_dword);",

@@ -272,7 +272,7 @@
               "if(GetShipRuins(Player())) {",
               "    if(!PlayerBridge()) {",
               "        if(ShipType(GetShipRuins(Player())) == 'TC') {",
-              "            InjectAnswer('DialogCore',\"Я хочу установить энергоядро\",3);",
+              "            AddDialogInject('DialogCore','',\"Я хочу установить энергоядро\",10);",
               "        }",
               "",
               "        if(ShipType(GetShipRuins(Player())) == 'TC' || ShipType(GetShipRuins(Player())) == 'SB') {",
@@ -284,7 +284,7 @@
               "                //Считаем количество батарей на борту",
               "                tint1 = tint1 + 1;",
               "            }",
-              "            if(tint1) InjectAnswer('DialogBattery',\"Я хочу пополнить заряд энергоблока...\");",
+              "            if(tint1) AddDialogInject('DialogBattery','',\"Я хочу пополнить заряд энергоблока...\",5);",
               "        }",
               "    }",
               "}"          
@@ -353,8 +353,8 @@
           "Code":          
           [
               "ShipAddCustomShipInfo(Player(),'RefEnergyInfo');",
-              "ShipAddCustomShipInfo(Player(),'RefEnergyBuffInfo');",
-              "ShipAddCustomShipInfo(Player(),'RefEnergyTretonInfo','NoShow');",
+              "ShipAddCustomShipInfo(Player(),'RefEnergyBuffInfo','NoShow');",
+              "//ShipAddCustomShipInfo(Player(),'RefEnergyTretonInfo','NoShow');",
               "",
               "//Первичный перебор Гагалактики",
               "for(i=0;GalaxyStars()>i;i=i+1) {",
