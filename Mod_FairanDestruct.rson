@@ -67,7 +67,7 @@
           "Code":          
           [
               "ShipAddCustomShipInfo(Player(),'Destractor','NoShow');",
-              "/*for(i = 0; i <= GalaxyStars(); i = i + 1)",
+              "for(i = 0; i <= GalaxyStars(); i = i + 1)",
               "{",
               "    dword cur_star = GalaxyStar(i);",
               "    for(j = 0; j < StarShips(cur_star); j = j + 1)",
@@ -75,8 +75,7 @@
               "        ShipAddCustomShipInfo(StarShips(cur_star,j),'Destractor','NoShow');",
               "",
               "    }",
-              "}*/",
-              "int RScript_huinya;"          
+              "}"          
           ]        
         },
         {

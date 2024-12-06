@@ -1006,9 +1006,17 @@
               "    }",
               "    else {",
               "        //Спавним Шу",
-              "        PlanetRace(planet,1);",
+              "        //Планета, видимо, иначе не понимает",
+              "        PlanetRace(planet,Peleng);",
+              "        PlanetRace(planet,Peleng);",
+              "        PlanetRace(planet,Peleng);",
               "        shudial = 0;",
               "        ship = BuyWarrior(planet,2000);",
+              "        //На всякий случай заставляем эту мразь принять исла... Пеленгство своё",
+              "        if(ShipPilotRace(ship) != 1) {",
+              "            ShipPilotRace(ship,1);",
+              "            ShipOwner(ship,7);",
+              "        }",
               "        //Заставляем закупится корабль",
               "        for(i=0;i<8;i = i +1) {",
               "            ShipRefit(ship);",
@@ -1399,6 +1407,19 @@
               "SetRelationGroup(PiratesWave1,PlayerGroup,3);",
               "SetRelationGroup(PiratesWave2,PlayerGroup,3);",
               "SetRelationGroup(PiratesWave3,PlayerGroup,3);"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  820,
+          "Pos.y":  940,
+          "Parent":  -1,
+          "#":  122,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "NoTalkToShip(CurShip,1);"          
           ]        
         }      
       ],
@@ -2867,6 +2888,20 @@
       "Type":  "TGraphLink",
       "Begin":  121,
       "End":  52,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  29,
+      "End":  122,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  48,
+      "End":  122,
       "Nom":  0,
       "Arrow":  true    
     }  

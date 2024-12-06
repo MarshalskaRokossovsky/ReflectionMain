@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -454,
-  "ViewPos.y":  -566,
+  "ViewPos.x":  -517,
+  "ViewPos.y":  -485,
   "ScriptName":  "Mod_RefGovCoffee",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefGovCoffee\\DATA\\Script\\Mod_RefGovCoffee.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefGovCoffee\\DATA\\Script\\Mod_RefGovCoffee.txt",
@@ -190,7 +190,7 @@
         {
           "Type":  "TDialog",
           "Name":  "DialogCoffee",
-          "Pos.x":  180,
+          "Pos.x":  170,
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7        
@@ -287,6 +287,12 @@
           "Code.Type":  "Turn",
           "Code":          
           [
+              "ShipAddCustomShipInfo(Player(),'RefCoffeeFlag');",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',1,30);",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2,0);",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',3,1);",
+              "",
+              "//Дать ли игроку доп бафф?",
               "ForRace = ShipPilotRace(Player());",
               "if(Name(GetShipPlanet(Player())) == 'Земля') ForPlanet = 2;",
               "if(Name(GetShipPlanet(Player())) == 'Рамгатру') ForPlanet = 0;",
@@ -294,17 +300,15 @@
               "if(Name(GetShipPlanet(Player())) == 'Эйпентак') ForPlanet = 3;",
               "if(Name(GetShipPlanet(Player())) == 'Рахиш') ForPlanet = 1;",
               "if(ForPlanet == ForRace) {",
-              "    ShipAddCustomShipInfo(Player(),'RefCoffeeFlag');",
-              "    ShipAddCustomShipInfo(Player(),'RefGoodCoffeeFlag');",
+              "    ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2,1);",
               "}",
               "else {",
-              "    ShipAddCustomShipInfo(Player(),'RefCoffeeFlag');",
-              "    if (GetShipPlanet(Player()) == GetShipHomePlanet(Player())) ShipAddCustomShipInfo(Player(),'RefGoodCoffeeFlag');",
+              "    if(GetShipPlanet(Player()) == GetShipHomePlanet(Player())) ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2,1);",
               "}",
               "ShipAddCustomShipInfo(Player(),'RefMainCoffeeInfo');",
-              "Kostyl = 1;",
               "ShipMoney(Player(), ShipMoney(Player()) - 125);",
               "ManiaCount = ManiaCount + Rnd(25,40);",
+              "",
               "if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness')) ManiaCount = ManiaCount + Rnd(30,60);",
               "CoffeeForMania = CoffeeForMania + 1;",
               "if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness')) {",
@@ -388,113 +392,116 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(Kostyl == 1) {",
-              "    if(timer5 == 0) {",
-              "        if(ShipPilotRace(Player()) == 0) {",
+              "if(~ShipFindCustomShipInfoByType(Player(),'RefCoffeeFlag')) {",
+              "    race = ShipPilotRace(Player());",
+              "    if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',3)) {",
+              "        if(!race) {",
               "            //малоки",
               "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) + 1);",
               "            ShipSpecialBonuses(Player(),bonScan,ShipSpecialBonuses(Player(),bonScan) + 2);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonScan,ShipSpecialBonuses(Player(),bonScan) + 2);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 1) {",
+              "        if(race == 1) {",
               "            //пеленги",
               "            ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) + 1);",
               "            ShipSpecialBonuses(Player(),bonDef,ShipSpecialBonuses(Player(),bonDef) + 2);",
               "            ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 3);",
-              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - 125);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - 25);",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonDef,ShipSpecialBonuses(Player(),bonDef) + 1);",
               "                ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) + 2);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 2) {",
+              "        if(race == 2) {",
               "            //люди",
               "            ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) + 2);",
               "            ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) + 5);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) + 3);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 3) {",
+              "        if(race == 3) {",
               "            //фьяни",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 25);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 10);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 4) {",
+              "        if(race == 4) {",
               "            //гаальцы",
               "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) + 1);",
               "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) + 3);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) + 2);",
               "            }",
               "        }",
+              "",
+              "        ShipCustomShipInfoData(Player(),'RefCoffeeFlag',3,0);",
               "    }",
-              "    timer5 = timer5 + 1;",
-              "    if(timer5 == 30) {",
-              "        if(ShipPilotRace(Player()) == 0) {",
+              "",
+              "    if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',1)) ShipCustomShipInfoData(Player(),'RefCoffeeFlag',1,ShipCustomShipInfoData(Player(),'RefCoffeeFlag',1)-1);",
+              "    else {",
+              "        if(!race) {",
               "            //малоки",
               "            ShipSpecialBonuses(Player(),bonSkill3,ShipSpecialBonuses(Player(),bonSkill3) - 1);",
               "            ShipSpecialBonuses(Player(),bonScan,ShipSpecialBonuses(Player(),bonScan) - 2);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonScan,ShipSpecialBonuses(Player(),bonScan) - 2);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 1) {",
+              "        if(race == 1) {",
               "            //пеленги",
               "            ShipSpecialBonuses(Player(),bonSkill5,ShipSpecialBonuses(Player(),bonSkill5) - 1);",
               "            ShipSpecialBonuses(Player(),bonDef,ShipSpecialBonuses(Player(),bonDef) - 2);",
               "            ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - 3);",
-              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 125);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 25);",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonDef,ShipSpecialBonuses(Player(),bonDef) - 1);",
               "                ShipSpecialBonuses(Player(),bonDroid,ShipSpecialBonuses(Player(),bonDroid) - 2);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 2) {",
+              "        if(race == 2) {",
               "            //люди",
               "            ShipSpecialBonuses(Player(),bonSkill6,ShipSpecialBonuses(Player(),bonSkill6) - 2);",
               "            ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) - 5);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonWEnergy,ShipSpecialBonuses(Player(),bonWEnergy) - 3);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 3) {",
+              "        if(race == 3) {",
               "            //фьяни",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 1);",
               "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) - 25);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) - 10);",
               "            }",
               "        }",
-              "        if(ShipPilotRace(Player()) == 4) {",
+              "        if(race == 4) {",
               "            //гаальцы",
               "            ShipSpecialBonuses(Player(),bonSkill4,ShipSpecialBonuses(Player(),bonSkill4) - 1);",
               "            ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - 3);",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) {",
+              "            if(ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2)) {",
               "                ShipSpecialBonuses(Player(),bonJump,ShipSpecialBonuses(Player(),bonJump) - 2);",
               "            }",
               "        }",
               "        ShipDeleteCustomShipInfo(Player(),'RefCoffeeFlag');",
               "        ShipDeleteCustomShipInfo(Player(),'RefMainCoffeeInfo');",
               "        NewsAdd(\"Вы проснулись, но что-то было не так... Не прежней энергии в ваших действиях. Походу, действие кофе закончилось.\");",
-              "        if(ShipFindCustomShipInfoByType(Player(),'RefGoodCoffeeFlag') != -1) ShipDeleteCustomShipInfo(Player(),'RefGoodCoffeeFlag');",
-              "        timer5 = 0;",
-              "        Kostyl = 0;",
               "    }",
               "}",
+              "//Обнуляем напитые кружки",
               "if(ShipIsTakeoff(Player())) {",
               "    CoffeeForMania = 0;",
               "}",
+              "//Кофезависимость момент",
               "if(!ShipFindCustomShipInfoByType(Player(),'RefMainCoffeeInfo')) {",
               "    if(ManiaCount > 400) {",
               "        ShipAddCustomShipInfo(Player(),'RefCoffeeIllness');",
               "    }",
-              "    if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness') && ManiaCount == 0) {",
+              "    if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness') && !ManiaCount) {",
               "        if(ShipCustomShipInfoData(Player(),'RefCoffeeIllness',2) == 1) {",
               "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 1);",
               "            ShipSpecialBonuses(Player(),bonSkill2,ShipSpecialBonuses(Player(),bonSkill2) + 1);",
@@ -607,7 +614,10 @@
           "Code":          
           [
               "ShipAddCustomShipInfo(Player(),'RefCoffeeFlag');",
-              "Kostyl = 1;",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',1,30);",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2,0);",
+              "ShipCustomShipInfoData(Player(),'RefCoffeeFlag',3,1);",
+              "",
               "ManiaCount = ManiaCount + Rnd(25,40);",
               "if(ShipFindCustomShipInfoByType(Player(),'RefCoffeeIllness')) ManiaCount = ManiaCount + Rnd(30,60);",
               "CoffeeForMania = CoffeeForMania + 1;",
@@ -757,7 +767,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "!Kostyl"          
+              "ShipFindCustomShipInfoByType(Player(),'RefCoffeeFlag') == -1"          
           ]        
         },
         {
@@ -770,7 +780,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "Kostyl"          
+              "~ShipFindCustomShipInfoByType(Player(),'RefCoffeeFlag')"          
           ]        
         },
         {
@@ -910,6 +920,17 @@
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "race",
+          "Pos.x":  -100,
+          "Pos.y":  -260,
+          "Parent":  -1,
+          "#":  42,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
         }      
       ]    
     }  
@@ -1002,22 +1023,8 @@
     },
     {
       "Type":  "TGraphLink",
-      "Begin":  18,
-      "End":  8,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
       "Begin":  7,
       "End":  19,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  19,
-      "End":  20,
       "Nom":  0,
       "Arrow":  true    
     },
@@ -1125,9 +1132,23 @@
       "End":  39,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  18,
+      "End":  8,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  19,
+      "End":  20,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  30,
+  "BlockPar.EC.Total.Strings":  35,
   "BlockPar.EC":  
   [
     {
@@ -1183,10 +1204,6 @@
       "String":  "Кстати, кофе у нас есть, если он вам нужен. А то многие спрашивают."    
     },
     {
-      "#":  "22",
-      "String":  "Вот вам, рейнджерам, хорошо. Летаете себе по космосу. Военные защищают нас, худо-бедно, от доминаторов. Выполняете задания от чиновников, торгуете, деньги получаете. А сколько на обеспечение вас представителей всех рас трудится! Ужасно представить даже..."    
-    },
-    {
       "#":  "23",
       "String":  "Коалиция, конечно, принесла нам много хорошего. Но и при Клане нам неплохо. Никаких ограничений, полная свобода... Правда, все очень держатся за свои должности. Не знаете, почему?"    
     },
@@ -1225,6 +1242,30 @@
     {
       "#":  "31",
       "String":  "Вы почувствовали облегчение. Кажется, эта доза кофеина была достаточной. Вопрос - на сколько её хватит?"    
+    },
+    {
+      "#":  "32",
+      "String":  "Вот вам, рейнджерам, хорошо. Летаете себе по космосу. Военные защищают вас, худо-бедно, от доминаторов. Выполняете задания от чиновников, торгуете, деньги получаете. А сколько на обеспечение вас представителей всех рас трудится! Ужасно представить даже..."    
+    },
+    {
+      "#":  "33",
+      "String":  "Достижения социализма - равенство всех граждан перед законом, равенство всех граждан в правах, равенство возможностей всех граждан. Мы рады, что многие планеты галактики подхватили этот порыв."    
+    },
+    {
+      "#":  "34",
+      "String":  "Парламент, демократия - светила развития нашего общества. Только так граждане могут изъявлять себя, своё видение на устройство и функционирование органов нашей планеты. Мы не можем себе представить, как можно жить без этого!"    
+    },
+    {
+      "#":  "35",
+      "String":  "Культура формирования лидеров с самого рождения, специально предназначенных для служения своему Отечеству, есть наилучшая модель общества. В благодарность за великие труды владыки получают в своё пользование дворцы и сады, и... Что в этом такого?"    
+    },
+    {
+      "#":  "36",
+      "String":  "Наш Верховный Наикомандующий - мудрейший лидер! При его правлении на планете стало безопаснее жить, из космического пространства были изгнаны все пираты, а качество жизни граждан стало в разы выше! Как мы можем слушать клевету инопланетчиков, говорящих о том, что наш лидер - негодяй и тиран?!"    
+    },
+    {
+      "#":  "37",
+      "String":  "Анархия - самый естественный вариант устройства общества, рейнджер. Никакого угнетения и эксплуатации гражданина гражданином. Все самоорганизуются, все блага распределяются между всему, кому потребно. Настоящий рай!"    
     },
     {
       "#":  "4",

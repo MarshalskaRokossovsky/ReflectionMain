@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -593,
-  "ViewPos.y":  -479,
+  "ViewPos.x":  -797,
+  "ViewPos.y":  -566,
   "ScriptName":  "Mod_RefUniqueSmersh",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.txt",
@@ -196,7 +196,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "temp_int = round(round((110 - GalaxyDominatorResearchPercent())*5500) + GalaxyDiffLevels()*1000 + Rnd(3000,9000));"          
+              "temp_int = (round(round((110 - GalaxyDominatorResearchPercent())*5500) + GalaxyDiffLevels()*1000 + Rnd(3000,9000)))*Bought;"          
           ]        
         },
         {
@@ -210,13 +210,14 @@
           "Code":          
           [
               "ShipMoney(Player(),ShipMoney(Player()) - temp_int);",
-              "temp_dword = CreateHull(1,350+GalaxyTechLevel()*200,GalaxyTechLevel(),Fei);",
-              "HullSeries(temp_dword,99);",
-              "SpecialToEquipment(FindBonusByCustomTag('RefSmershMi'),temp_dword);",
+              "temp_dword = CreateHull(1,350+GalaxyTechLevel()*200,GalaxyTechLevel(),Fei,-1);",
+              "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Missile'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
               "ItemCost(temp_dword,temp_int);",
               "Sound('Sound.Buy');",
               "LinkItemToScript(temp_dword,Shershen);",
+              "Bought = Bought + 0.2;",
+              "ItemOnUseCode(temp_dword,GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnUseCode'));",
               "ItemOnActCode(temp_dword,'[t_OnDealingDamage,t_OnStep|0]'+GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnActCode'));"          
           ]        
         },
@@ -234,12 +235,12 @@
               "    if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Missile'))",
               "    {",
               "        temp_str=\"ракетный\";",
-              "        AddDialogInject('SwitchOnMi',\"Тип усиления: <temp_str>\",\"Переключить Шершень на энергетический тип\",17);",
+              "        AddDialogInject('SwitchOnEn',\"Тип усиления: <temp_str>\",\"Переключить Шершень на энергетический тип\",17);",
               "    }",
               "    if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Energy'))",
               "    {",
               "        temp_str=\"энергетическо-осколочный\";",
-              "        AddDialogInject('SwitchOnEn',\"Тип усиления: <temp_str>\",\"Переключить Шершень на ракетный тип\",17);",
+              "        AddDialogInject('SwitchOnMi',\"Тип усиления: <temp_str>\",\"Переключить Шершень на ракетный тип\",17);",
               "    }",
               "}"          
           ]        
@@ -255,9 +256,7 @@
           "Code":          
           [
               "temp_dword = HullHP(Player());",
-              "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
-              "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Missile'),ShipEqInSlot(Player(),t_Hull));",
-              "Chameleon(Player());",
+              "SwitchToMirrorImage(Player(),FindBonusByNameInCfg('RefUniqueSmersh_Missile'));",
               "Sound('Sound.ButtonInfoEnter');",
               "HullHP(Player(),temp_dword);",
               "DAnswer('main');"          
@@ -274,9 +273,7 @@
           "Code":          
           [
               "temp_dword = HullHP(Player());",
-              "SpecialToEquipment(-1,ShipEqInSlot(Player(),t_Hull));",
-              "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Energy'),ShipEqInSlot(Player(),t_Hull));",
-              "Chameleon(Player());",
+              "SwitchToMirrorImage(Player(),FindBonusByNameInCfg('RefUniqueSmersh_Energy'));",
               "Sound('Sound.ButtonInfoEnter');",
               "HullHP(Player(),temp_dword);",
               "DAnswer('main');"          
@@ -441,6 +438,17 @@
           "#":  21,
           "Var.Type":  "Str",
           "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Bought",
+          "Pos.x":  -100,
+          "Pos.y":  -230,
+          "Parent":  -1,
+          "#":  28,
+          "Var.Type":  "Float",
+          "Init":  "1",
           "Global":  false        
         }      
       ]    

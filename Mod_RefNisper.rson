@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -368,
-  "ViewPos.y":  45,
+  "ViewPos.x":  1794,
+  "ViewPos.y":  -266,
   "ScriptName":  "Mod_RefNisper",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
@@ -1113,7 +1113,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "",
+          "Name":  "restart",
           "Pos.x":  3340,
           "Pos.y":  -60,
           "Parent":  -1,
@@ -1173,7 +1173,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "",
+          "Name":  "restart",
           "Pos.x":  3620,
           "Pos.y":  -100,
           "Parent":  -1,
@@ -1708,7 +1708,7 @@
           "Pos.y":  690,
           "Parent":  -1,
           "#":  871,
-          "Msg":  "",
+          "Msg":  "Пойду, посмотрю, что там вы запустите!",
           "AMsg.Num":  "169"        
         },
         {
@@ -4010,6 +4010,35 @@
           "StrengthMin":  "0",
           "StrengthMax":  "0",
           "Ruins":  ""        
+        },
+        {
+          "Type":  "TGroup",
+          "Name":  "freeGroup",
+          "Pos.x":  440,
+          "Pos.y":  1320,
+          "Parent":  -1,
+          "#":  916,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  0,
+          "CntShipMax":  0,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  false,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
         }      
       ],
       "Items":      
@@ -5645,11 +5674,11 @@
               "}",
               "",
               "function ConstructionTime(type) {",
-              "    if(type == 1) result = 25;",
-              "    if(type == 2) result = 50;",
-              "    if(type == 3) result = 100;",
+              "    if(type == 1) result = 50;",
+              "    if(type == 2) result = 75;",
+              "    if(type == 3) result = 200;",
               "    if(type == 4) result = 350;",
-              "    if(type == 5) result = 500;",
+              "    if(type == 5) result = 450;",
               "    if(type == 6) result = 1000;",
               "}"          
           ]        
@@ -5738,7 +5767,6 @@
               "",
               "function SpawnDomShipyard(dword sys) {",
               "    dword ourDB = BuildCustomRuins(sys, 'NisperShipyard', 2);",
-              "    DBId = Id(ourDB);",
               "    if(BlockExist('ShipInfo.AddInfo.CustomInfos.ExpBasesAutoUpgradeInfo')) ShipAddCustomShipInfo(ourDB, 'ExpBasesAutoUpgradeInfo', 'NoShow');",
               "    ShipOwner(ourDB, 0);",
               "    ShipPilotRace(ourDB, 0);",
@@ -5748,7 +5776,7 @@
               "    ShipJoin(ShipyardsGroup, ourDB);",
               "    ShipCustomFaction(ourDB, 'SubFaction.Nisper');",
               "    SetName(ourDB,CT('ShipName.SubFaction.NisperShipyard.'+Rnd(1,CT('ShipName.SubFaction.NisperShipyard.Count'))));",
-              "    Chameleon(ourDB, 'Ruins.ZelShipyard');",
+              "    Chameleon(ourDB, 'Ruins.NisperShipyard');",
               "",
               "    if(BlockExist('Script.Mod_EvoDreadnought')){",
               "        dword DBHull=ShipItems(ourDB,0);",
@@ -6761,6 +6789,8 @@
               "    }",
               "}",
               "",
+              "playerShip = Player();",
+              "",
               "/*if(bank >= expenses) {",
               "    bank = bank - expenses;",
               "    days = days + 1;",
@@ -6774,10 +6804,10 @@
               "}*/",
               "",
               "daysAtt = daysAtt + ((10.0 + 1.0 * GroupCount(domiks) - 1.0 * GroupCount(domiks) * (bonusGlobal == 3) * 0.33) * 0.2) / ((1.0 + 0.3 * ControlledSystems(0)) * (1.0 + 1.0 * GalaxyDiffLevels() / 1000));",
-              "if(ShipFindCustomShipInfoByType(Player(), 'Beacon') != -1) {",
+              "if(ShipFindCustomShipInfoByType(playerShip, 'Beacon') != -1) {",
               "    daysAtt = 0;",
-              "    targetStar = GalaxyStar(ShipCustomShipInfoData(Player(), 'Beacon', 1));",
-              "    ShipDeleteCustomShipInfo(Player(), 'Beacon');",
+              "    targetStar = GalaxyStar(ShipCustomShipInfoData(playerShip, 'Beacon', 1));",
+              "    ShipDeleteCustomShipInfo(playerShip, 'Beacon');",
               "    StartAttackSystem(targetStar);",
               "}",
               "else if(daysAtt >= 120 + 30 * (bonusGlobal == 1)) {",
@@ -6820,7 +6850,6 @@
               "    }",
               "}",
               "",
-              "playerShip = Player();",
               "if(ShipInNormalSpace(playerShip) && Id(ShipItems(playerShip, 0)) == bertorHullId) {",
               "    star = ShipStar(playerShip);",
               "    cShips = StarShips(star);",
@@ -6895,7 +6924,13 @@
               "    }",
               "    isStartedDomiks = 0;",
               "    CustomEther('NisperEther', 7, '', \"База Доминаторов уничтожена. Все корабли доминаторов Коалиции, включая Ниспера, получили приказ немедленного самоуничтожения во избежание сбоя в программе.\");",
-              "}"          
+              "}",
+              "",
+              "//Глобалка с автообновлением для других модов",
+              "if(~IdToShip(bossId)) {",
+              "    Nisper = IdToShip(bossId);",
+              "}",
+              "else Nisper = 0;"          
           ]        
         },
         {
@@ -7557,7 +7592,7 @@
               "if(ShipInHole(Player())) {",
               "    if(!GABStatus) {",
               "        if(!ABStarted) {",
-              "                if(Id(ShipOrderObj(Player())) == idMissionHole) {",
+              "            if(Id(ShipOrderObj(Player())) == idMissionHole) {",
               "                dom = CreateABShip('Ship.X.' + Rnd(0, 2), 0, 150, 110);",
               "                ABShipModifiers(dom,'speed', 100);",
               "                dom = CreateABShip('Ship.X.' + Rnd(0, 2), 0, 120, 120);",
@@ -8285,7 +8320,7 @@
               "    if(QuestFlag) {",
               "        if(planet == IdToPlanet(QuestPlanId)) {",
               "            if(ItemIn(QuestItem,Player())) {",
-              "                AddDialogOverride('d1MisSuccess');",
+              "                AddDialogOverride('d1MisSuccess',99);",
               "            }",
               "        }",
               "    }",
@@ -9700,7 +9735,8 @@
               "reward=CreateEquipment(t_FuelTanks, 25, min(8,GalaxyTechLevel()+1), 5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_NisperFuelTank'),reward);",
-              "AddItemToStorage(IdToShip(DBId),reward);"          
+              "AddItemToStorage(IdToShip(DBId),reward);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -9752,7 +9788,8 @@
               "reward=CreateEquipment(t_Weapon18, 30, min(8,GalaxyTechLevel()+1), 5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_NisperLirekon'),reward);",
-              "AddItemToStorage(IdToShip(DBId),reward);"          
+              "AddItemToStorage(IdToShip(DBId),reward);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -9777,7 +9814,8 @@
               "reward=CreateHull(6, 600, min(8,GalaxyTechLevel()+1), 5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_Nisper3Player'),reward);",
-              "AddItemToStorage(IdToShip(DBId),reward);"          
+              "AddItemToStorage(IdToShip(DBId),reward);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -9802,7 +9840,8 @@
               "reward=CreateMM(FindBonusByNameInCfg('ZelDomiks_Updaiter'));",
               "ItemOwner(reward,5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
-              "AddItemToStorage(IdToShip(DBId),reward);"          
+              "AddItemToStorage(IdToShip(DBId),reward);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -9851,7 +9890,8 @@
               "",
               "reward=CreateCustomArt('ZelDomiks_Art_Defender',35,45000,5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
-              "AddItemToStorage(IdToShip(DBId),reward);"          
+              "AddItemToStorage(IdToShip(DBId),reward);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -9990,7 +10030,8 @@
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_Nisper6Player'),reward);",
               "bertorHullId=Id(reward);",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "ShipAddCustomShipInfo(Player(), 'ZelDomiks_BertorsAura', 'NoShow', 1, 0);"          
+              "ShipAddCustomShipInfo(Player(), 'ZelDomiks_BertorsAura', 'NoShow', 1, 0);",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -10010,7 +10051,8 @@
               "needRen=1;",
               "completeEther=0;",
               "completeTask=0;",
-              "EtherNisperUpgrade();"          
+              "EtherNisperUpgrade();",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -10030,7 +10072,8 @@
               "needRen=1;",
               "completeEther=0;",
               "completeTask=0;",
-              "EtherNisperUpgrade();"          
+              "EtherNisperUpgrade();",
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
           ]        
         },
         {
@@ -10690,13 +10733,16 @@
               "}",
               "",
               "if(isStartedDomiks) {",
-              "    for(j=0;j<5;j=j+1) {",
-              "        if(ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,2) >= ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,3)) {",
-              "            SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,1), 0, CurShip);",
+              "    for(j=1;j<6;j=j+1) {",
+              "        tstr = 'RefNisper_Dock'+j;",
+              "        if(ShipCustomShipInfoData(CurShip,tstr,2) >= ShipCustomShipInfoData(CurShip,tstr,3) && ShipCustomShipInfoData(CurShip,tstr,2) > 0) {",
+              "            SFT('Dock number '+j+', spawning type '+ShipCustomShipInfoData(CurShip,tstr,1)+', because of Data 2 is '+ShipCustomShipInfoData(CurShip,tstr,2)+', and Data 3 is '+ShipCustomShipInfoData(CurShip,tstr,3));",
+              "            SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,tstr,1), 0, CurShip);",
               "            i = GiveTypeDomik(curDomLevel);",
-              "            ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,1,i);",
-              "            ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,2,0);",
-              "            ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,3,ConstructionTime(i));",
+              "            //if(ConstructionTime(i) < 1) NewsAdd('Fuck! No time for spawning nisperoid!');",
+              "            ShipCustomShipInfoData(CurShip,tstr,1,i);",
+              "            ShipCustomShipInfoData(CurShip,tstr,2,0);",
+              "            ShipCustomShipInfoData(CurShip,tstr,3,ConstructionTime(i));",
               "        }",
               "    }",
               "}"          
@@ -10721,14 +10767,16 @@
               "    SetData(GetData(1) - 1,1);",
               "}",
               "",
-              "for(j=0;j<3;j=j+1) {",
-              "    if(ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,2) >= ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,3)) {",
-              "        SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,1), 0, CurShip);",
-              "        i = GiveTypeDomik(curDomLevel);",
-              "        ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,1,i);",
-              "        ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,2,0);",
-              "        ShipCustomShipInfoData(CurShip,'RefNisper_Dock'+j,3,ConstructionTime(i));",
-              "    }",
+              "for(j=1;j<4;j=j+1) {",
+              "        tstr = 'RefNisper_Dock'+j;",
+              "        if(ShipCustomShipInfoData(CurShip,tstr,2) >= ShipCustomShipInfoData(CurShip,tstr,3) && ShipCustomShipInfoData(CurShip,tstr,2) > 0) {",
+              "            SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,tstr,1), 0, CurShip);",
+              "            i = GiveTypeDomik(curDomLevel);",
+              "            if(ConstructionTime(i) < 1) NewsAdd('Fuck! No time for spawning nisperoid!');",
+              "            ShipCustomShipInfoData(CurShip,tstr,1,i);",
+              "            ShipCustomShipInfoData(CurShip,tstr,2,0);",
+              "            ShipCustomShipInfoData(CurShip,tstr,3,ConstructionTime(i));",
+              "        }",
               "}"          
           ]        
         },
@@ -10754,7 +10802,7 @@
               "if(isStartedDomiks==1) {",
               "    if(domLevel > 2) {",
               "        if(findsubstr(GameDateTxtByTurn(CurTurn),\"1 января\")) {",
-              "            bankPlayer = bankPlayer + 150000 * max((500 - GalaxyDiffLevels())/100,1) * GalaxyTechLevel();",
+              "            bankPlayer = bankPlayer + 35000 * max((500 - GalaxyDiffLevels())/100,1) * GalaxyTechLevel();",
               "            itemsForResearch = itemsForResearch + Rnd(50,100);",
               "        }",
               "",
@@ -10785,6 +10833,8 @@
               "                        }",
               "                    }",
               "                    for(j=0;ConStars(star)>j;j=j+1) {",
+              "                        if(StarOwner(ConStar(star,j))) continue;",
+              "                        if(StarBattle(StarOwner(ConStar(star,j)))) continue;",
               "                        ArrayAdd(tarr,ConStar(star,j));",
               "                        l = l + 1;",
               "                    }",
@@ -10813,7 +10863,7 @@
               "    }",
               "}",
               "",
-              "if(GABStatus) CustomEther('NisperEther',4,'');"          
+              "if(GABStatus) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -11039,8 +11089,8 @@
           [
               "tstr = '';",
               "for(i=0;GroupCount(ShipyardsGroup)>i;i=i+1) {",
-              "    ship = GroupShip(ShipyardsGroup,i);",
-              "    tstr = tstr + '==============='+CT('FormInfo.br')+Name(ship)+CT('FormInfo.br')+\"Сектор\"+' '+Name(StarToCon(ShipStar(ship)))+' '+\", система\"+' '+Name(ShipStar(ship))+CT('FormInfo.br')+\"Структура:\"+HullHP(ship)+'/'+ItemSize(ShipEqInSlot(ship,t_Hull))+CT('FormInfo.br')+CT('FormInfo.br');",
+              "    thisShip = GroupShip(ShipyardsGroup,i);",
+              "    tstr = tstr + '==============='+CT('FormInfo.br')+Name(thisShip)+CT('FormInfo.br')+\"Сектор\"+' '+Name(StarToCon(ShipStar(thisShip)))+' '+\", система\"+' '+Name(ShipStar(thisShip))+CT('FormInfo.br')+\"Структура:\"+HullHP(thisShip)+'/'+ItemSize(ShipEqInSlot(thisShip,t_Hull))+CT('FormInfo.br')+CT('FormInfo.br');",
               "}"          
           ]        
         },
@@ -11079,7 +11129,7 @@
               "QuestFlag = 0;",
               "QuestDays = 0;",
               "dword item = QuestItem;",
-              "ReleaseItemFromScript(item);",
+              "//ReleaseItemFromScript(item);",
               "FreeItem(GetItemFromShip(Player(),item));",
               "",
               "Sound('Sound.QuestOk');",
@@ -14224,6 +14274,24 @@
           "EType":  1,
           "EUnique":  "",
           "EMsg":  ""        
+        },
+        {
+          "Type":  "TState",
+          "Name":  "State678",
+          "Pos.x":  440,
+          "Pos.y":  1280,
+          "Parent":  -1,
+          "#":  915,
+          "Move":  5,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
         }      
       ],
       "Variables":      
@@ -15602,6 +15670,17 @@
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "Nisper",
+          "Pos.x":  450,
+          "Pos.y":  160,
+          "Parent":  -1,
+          "#":  917,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  true        
         }      
       ]    
     }  
@@ -21025,6 +21104,20 @@
       "End":  631,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  916,
+      "End":  2,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  916,
+      "End":  915,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
   "Rect.Text":  
@@ -21375,7 +21468,7 @@
       "fsUnderline":  false    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  393,
+  "BlockPar.EC.Total.Strings":  394,
   "BlockPar.EC":  
   [
     {
@@ -22849,6 +22942,10 @@
     {
       "#":  "574",
       "String":  "И то верно. Пойду подумаю - на орудийной палубе моего верного корабля."    
+    },
+    {
+      "#":  "575",
+      "String":  "Пойду, посмотрю, что там вы запустите!"    
     },
     {
       "#":  "58",

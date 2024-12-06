@@ -219,12 +219,18 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(ShipArts(Player()) > 0) {",
+              "if(ShipArts(Player())) {",
               "    for(i=ShipArts(Player());0 > i;i=i-1){",
               "        if(ItemType(ShipArts(Player(),i)) == t_ArtefactTransmitter) {",
               "            AddDialogInject('TMUse','',\"Активация трансфакторных маяков\",3);",
               "            break;",
               "        }",
+              "    }",
+              "}",
+              "for(i=ShipItems(Player());0 > i;i=i-1){",
+              "    if(ItemType(ShipItems(Player(),i)) == t_ArtefactTransmitter) {",
+              "        AddDialogInject('TMUse','',\"Активация трансфакторных маяков\",3);",
+              "        break;",
               "    }",
               "}"          
           ]        
@@ -251,6 +257,20 @@
               "        if(ItemOwner(ShipArts(Player(),i)) == 7) race = 'пиратский';",
               "        tstr = Format(\"Трансфакторный маяк (wt т., race, заряд pw)\",'wt',ItemSize(ShipArts(Player(),i)),'race',race,'pw',ItemCharge(ShipArts(Player(),i)));",
               "        InjectAnswer('TMUsage',tstr,ShipArts(Player(),i));",
+              "    }",
+              "}",
+              "for(i=ShipItems(Player());0 > i;i=i-1){",
+              "    if(ItemType(ShipItems(Player(),i)) == t_ArtefactTransmitter) {",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 0) race = 'малокский';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 1) race = 'пеленгский';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 2) race = 'человеческий';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 3) race = 'фэянский';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 4) race = 'гаальский';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 5) race = 'доминаторский';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 6) race = 'неизвестного производителя';",
+              "        if(ItemOwner(ShipItems(Player(),i)) == 7) race = 'пиратский';",
+              "        tstr = Format(\"Трансфакторный маяк (wt т., race, заряд pw)\",'wt',ItemSize(ShipItems(Player(),i)),'race',race,'pw',ItemCharge(ShipItems(Player(),i)));",
+              "        InjectAnswer('TMUsage',tstr,ShipItems(Player(),i));",
               "    }",
               "}"          
           ]        
@@ -307,6 +327,13 @@
               "    if(ItemType(ShipArts(Player(),i)) == t_ArtefactTransmitter) {",
               "        tstr = Format(\"Трансфакторный маяк (wt т., заряд pw)\",'wt',ItemSize(ShipArts(Player(),i)),'pw',ItemCharge(ShipArts(Player(),i)));",
               "        InjectAnswer('TMUse',tstr,ShipArts(Player(),i));",
+              "    }",
+              "}",
+              "for(i=0;ShipItems(Player()) > i;i=i+1){",
+              "    if(ShipItems(Player(),i) == tdwd) continue;",
+              "    if(ItemType(ShipItems(Player(),i)) == t_ArtefactTransmitter) {",
+              "        tstr = Format(\"Трансфакторный маяк (wt т., заряд pw)\",'wt',ItemSize(ShipItems(Player(),i)),'pw',ItemCharge(ShipItems(Player(),i)));",
+              "        InjectAnswer('TMUse',tstr,ShipItems(Player(),i));",
               "    }",
               "}"          
           ]        

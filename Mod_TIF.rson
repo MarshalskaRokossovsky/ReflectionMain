@@ -137,7 +137,16 @@
               "//Помните хреновину из тёрнкода ниже? Так вот, теперь подобное нужно навесить на игрока",
               "/*if(!ShipFindCustomShipInfoByType(Player(),'FixHulls')) ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');*/",
               "",
-              "if(CurrentMods('ShusRangers\\ShuNukes') && !ShipFindCustomShipInfoByType(Player(),'FixShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');"          
+              "if(CurrentMods('ShusRangers\\ShuNukes') && !ShipFindCustomShipInfoByType(Player(),'FixShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');",
+              "",
+              "//Обновляем глобалки для квестов",
+              "GQuestVarExt_PlayerAttack = ShipSkill(Player(),'AccuracyCur');",
+              "GQuestVarExt_PlayerManeurity = ShipSkill(Player(),'MobilityCur');",
+              "GQuestVarExt_PlayerTechnics = ShipSkill(Player(),'TechnicalCur');",
+              "GQuestVarExt_PlayerTrade = ShipSkill(Player(),'TraderCur');",
+              "GQuestVarExt_PlayerCharm = ShipSkill(Player(),'CharmCur');",
+              "GQuestVarExt_PlayerLeadership = ShipSkill(Player(),'LeadershipCur');",
+              "GQuestVarExt_PlayerRace = ShipPilotRace(Player());"          
           ]        
         },
         {
@@ -362,6 +371,83 @@
           "Parent":  -1,
           "#":  18,
           "Var.Type":  "Array",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerAttack",
+          "Pos.x":  80,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  19,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerManeurity",
+          "Pos.x":  80,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  20,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerTechnics",
+          "Pos.x":  80,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  21,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerTrade",
+          "Pos.x":  320,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  22,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerCharm",
+          "Pos.x":  320,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  23,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerLeadership",
+          "Pos.x":  320,
+          "Pos.y":  -80,
+          "Parent":  -1,
+          "#":  24,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GQuestVarExt_PlayerRace",
+          "Pos.x":  80,
+          "Pos.y":  -20,
+          "Parent":  -1,
+          "#":  25,
+          "Var.Type":  "Int",
           "Init":  "",
           "Global":  true        
         }      
