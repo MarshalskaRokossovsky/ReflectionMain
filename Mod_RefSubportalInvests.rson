@@ -13,7 +13,7 @@
       [
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
+          "Name":  "restart",
           "Pos.x":  180,
           "Pos.y":  -110,
           "Parent":  -1,
@@ -43,7 +43,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "restart",
+          "Name":  "",
           "Pos.x":  180,
           "Pos.y":  -30,
           "Parent":  -1,
@@ -73,7 +73,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
+          "Name":  "restart",
           "Pos.x":  240,
           "Pos.y":  -290,
           "Parent":  -1,
@@ -83,7 +83,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
+          "Name":  "restart",
           "Pos.x":  400,
           "Pos.y":  10,
           "Parent":  -1,
@@ -93,7 +93,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
+          "Name":  "restart",
           "Pos.x":  540,
           "Pos.y":  10,
           "Parent":  -1,
@@ -103,7 +103,7 @@
         },
         {
           "Type":  "TDialogAnswer",
-          "Name":  "exit",
+          "Name":  "restart",
           "Pos.x":  500,
           "Pos.y":  10,
           "Parent":  -1,
@@ -120,6 +120,16 @@
           "#":  49,
           "Msg":  "Хочу улучшить ещё один Субпортал",
           "AMsg.Num":  "10"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  260,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  53,
+          "Msg":  "",
+          "AMsg.Num":  "11"        
         }      
       ],
       "DialogMessages":      
@@ -1075,6 +1085,13 @@
       "Type":  "TGraphLink",
       "Begin":  50,
       "End":  47,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  20,
+      "End":  53,
       "Nom":  0,
       "Arrow":  true    
     }  

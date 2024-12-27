@@ -605,7 +605,7 @@
               "                    if(rand == 1) tstr = Format(\"Я получил приказ с планеты plan уничтожить вас, player. Молитесь своему богу или молите о пощаде.\",'player',Name(Player()),'plan',Name(IdToPlanet(GeorgiaID)),'name',Name(GetTalkShip()));",
               "                }",
               "",
-              "                if(~PlayerChameleonCurType(Player())) {",
+              "                if(~PlayerChameleonCurType()) {",
               "                    rand = RndObject(1,3,GetTalkShip());",
               "                    if(rand == 1) tstr = Format(\"Что за?.. Отставить хачапури! Контакты с врагом запрещены! Приготовься к убийственным как кинжал выстрелам из пушек грузинского флота.\",'player',Name(Player()),'plan',Name(IdToPlanet(GeorgiaID)),'name',Name(GetTalkShip()));",
               "                    if(rand == 2) tstr = Format(\"Пресвятой Георг! Клянусь всей чачей на верфи моей планеты, доминатор разговаривает?! Ну что же, больше поводов пустить его на шампуры.\",'player',Name(Player()),'plan',Name(IdToPlanet(GeorgiaID)),'name',Name(GetTalkShip()));",
@@ -613,7 +613,7 @@
               "",
               "                }",
               "",
-              "                AddDialogInject('DialogHeil',tstr,\"Слава Сакартвело!\",99,1);",
+              "                DText(tstr);",
               "                if(ShipTypeN(GetTalkShip()) == t_Warrior) {",
               "                    if(ShipSubType(GetTalkShip())) AddDialogInject('DialogHachapuri','',\"Я слышал, что на вашей планете лучшее хачапури в Галактике!\",99);",
               "                }",
@@ -696,6 +696,27 @@
               "        ArrayAdd(temp_array,StarPlanets(GalaxyStar(i),j));",
               "    }",
               "}",
+              "",
+              "if(ArrayDim(temp_array) > 1) {",
+              "    ArrayDelete(temp_array,'Fix');",
+              "    ArrayRandomize(50,temp_array);",
+              "",
+              "    LastPlanetID = Id(temp_array[min(round(ArrayDim(temp_array)/2),1)]);",
+              "}",
+              "else {",
+              "    for(i=0;GalaxyStars()>i;i=i+1) {",
+              "        //Если планета не нашлась, запускаем упрощённый поиск",
+              "        if(StarOwner(GalaxyStar(i)) == 1) continue;",
+              "        //if(round(sqrt(Dist2Star(ShipStar(Player()), GalaxyStar(i)))) < 15) continue;",
+              "        if(round(sqrt(Dist2Star(ShipStar(Player()), GalaxyStar(i)))) > 70) continue;",
+              "        if(StarToCon(GalaxyStar(i)) == StarToCon(PlanetToStar(PlanetPirateClan()))) continue;",
+              "        for(j=0;StarPlanets(GalaxyStar(i))>j;j=j+1) {",
+              "            if(PlanetOwner(StarPlanets(GalaxyStar(i),j)) != 4) continue;",
+              "            ArrayAdd(temp_array,StarPlanets(GalaxyStar(i),j));",
+              "        }",
+              "    }",
+              "}",
+              "",
               "",
               "if(ArrayDim(temp_array) > 1) {",
               "    ArrayDelete(temp_array,'Fix');",
@@ -1322,7 +1343,7 @@
       "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  62,
+  "BlockPar.EC.Total.Strings":  61,
   "BlockPar.EC":  
   [
     {
@@ -1396,10 +1417,6 @@
     {
       "#":  "24",
       "String":  "Я слышал, что на вашей планете лучшее хачапури в Галактике!"    
-    },
-    {
-      "#":  "25",
-      "String":  "Слава Сакартвело!"    
     },
     {
       "#":  "26",

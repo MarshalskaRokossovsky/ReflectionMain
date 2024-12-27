@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  1794,
-  "ViewPos.y":  -266,
+  "ViewPos.x":  1768,
+  "ViewPos.y":  -129,
   "ScriptName":  "Mod_RefNisper",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
@@ -9736,7 +9736,7 @@
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_NisperFuelTank'),reward);",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -9789,7 +9789,7 @@
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_NisperLirekon'),reward);",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -9815,7 +9815,7 @@
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_Nisper3Player'),reward);",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -9841,7 +9841,7 @@
               "ItemOwner(reward,5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -9891,7 +9891,7 @@
               "reward=CreateCustomArt('ZelDomiks_Art_Defender',35,45000,5);",
               "EqCustomFaction(reward,'SubFaction.Nisper');",
               "AddItemToStorage(IdToShip(DBId),reward);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -10031,7 +10031,7 @@
               "bertorHullId=Id(reward);",
               "AddItemToStorage(IdToShip(DBId),reward);",
               "ShipAddCustomShipInfo(Player(), 'ZelDomiks_BertorsAura', 'NoShow', 1, 0);",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -10052,7 +10052,7 @@
               "completeEther=0;",
               "completeTask=0;",
               "EtherNisperUpgrade();",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "//if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -10073,7 +10073,7 @@
               "completeEther=0;",
               "completeTask=0;",
               "EtherNisperUpgrade();",
-              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest');"          
+              "if(~EtherState('ZelDomiksQuest')) CustomEther('NisperEther',4,'ZelDomiksQuest','');"          
           ]        
         },
         {
@@ -10736,7 +10736,7 @@
               "    for(j=1;j<6;j=j+1) {",
               "        tstr = 'RefNisper_Dock'+j;",
               "        if(ShipCustomShipInfoData(CurShip,tstr,2) >= ShipCustomShipInfoData(CurShip,tstr,3) && ShipCustomShipInfoData(CurShip,tstr,2) > 0) {",
-              "            SFT('Dock number '+j+', spawning type '+ShipCustomShipInfoData(CurShip,tstr,1)+', because of Data 2 is '+ShipCustomShipInfoData(CurShip,tstr,2)+', and Data 3 is '+ShipCustomShipInfoData(CurShip,tstr,3));",
+              "            //SFT('Dock number '+j+', spawning type '+ShipCustomShipInfoData(CurShip,tstr,1)+', because of Data 2 is '+ShipCustomShipInfoData(CurShip,tstr,2)+', and Data 3 is '+ShipCustomShipInfoData(CurShip,tstr,3));",
               "            SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,tstr,1), 0, CurShip);",
               "            i = GiveTypeDomik(curDomLevel);",
               "            //if(ConstructionTime(i) < 1) NewsAdd('Fuck! No time for spawning nisperoid!');",
@@ -10772,7 +10772,7 @@
               "        if(ShipCustomShipInfoData(CurShip,tstr,2) >= ShipCustomShipInfoData(CurShip,tstr,3) && ShipCustomShipInfoData(CurShip,tstr,2) > 0) {",
               "            SpawnDomOnShipyard(ShipCustomShipInfoData(CurShip,tstr,1), 0, CurShip);",
               "            i = GiveTypeDomik(curDomLevel);",
-              "            if(ConstructionTime(i) < 1) NewsAdd('Fuck! No time for spawning nisperoid!');",
+              "            if(ConstructionTime(i) < 1) NewsAdd('Fuck! No time for spawning nisperoid! Shipyard '+Name(CurShip)+' does not know what to do!');",
               "            ShipCustomShipInfoData(CurShip,tstr,1,i);",
               "            ShipCustomShipInfoData(CurShip,tstr,2,0);",
               "            ShipCustomShipInfoData(CurShip,tstr,3,ConstructionTime(i));",

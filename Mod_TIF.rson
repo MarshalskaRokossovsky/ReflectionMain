@@ -164,7 +164,13 @@
               "//Помните хреновину из тёрнкода ниже? Так вот, теперь подобное нужно навесить на игрока",
               "ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');",
               "",
-              "if(CurrentMods('ShusRangers\\ShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');"          
+              "if(CurrentMods('ShusRangers\\ShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');",
+              "",
+              "//Запоминаем!",
+              "GTortugatz = PlanetToStar(PlanetPirateClan());",
+              "GSecretSector = StarToCon(GTortugatz);",
+              "if(ConStar(GSecretSector,0) != GTortugatz) GNifigatz = ConStar(GSecretSector,0);",
+              "else GNifigatz = ConStar(GSecretSector,1);"          
           ]        
         }      
       ],
@@ -450,6 +456,39 @@
           "Var.Type":  "Int",
           "Init":  "",
           "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GTortugatz",
+          "Pos.x":  80,
+          "Pos.y":  40,
+          "Parent":  -1,
+          "#":  26,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GNifigatz",
+          "Pos.x":  80,
+          "Pos.y":  70,
+          "Parent":  -1,
+          "#":  27,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  true        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "GSecretSector",
+          "Pos.x":  80,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  28,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
         }      
       ]    
     }  

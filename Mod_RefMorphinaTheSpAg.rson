@@ -1,29 +1,11 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -559,
-  "ViewPos.y":  -403,
+  "ViewPos.x":  -561,
+  "ViewPos.y":  -571,
   "ScriptName":  "Mod_RefMorphinaTheSpAg",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.txt",
-  "GraphPoint.Count":  90,
-  "GraphLink.Count":  77,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  20,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  3,
-  "DialogMessages.Count":  18,
-  "DialogAnswers.Count":  26,
-  "Operations.Count":  11,
-  "Statements.Count":  7,
-  "Loops.Count":  0,
   "Visual.Objects":  
   [
     {
@@ -530,6 +512,35 @@
           "StrengthMin":  "0",
           "StrengthMax":  "0",
           "Ruins":  ""        
+        },
+        {
+          "Type":  "TGroup",
+          "Name":  "Group1",
+          "Pos.x":  0,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  90,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  0,
+          "CntShipMax":  0,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  false,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
         }      
       ],
       "Operations":      
@@ -541,7 +552,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -555,7 +565,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  864,
           "Code.Type":  "Init",
           "Code":          
           [
@@ -589,9 +598,8 @@
               "    HullHP(ship,ItemSize(ShipItems(ship,0)));",
               "    SetName(ship,\"Морфина\");",
               "    ShipType(ship,'FemRanger');",
-              "    int hullbonus = FindBonusByNameInCfg(489);",
-              "    hullstat=ShipItems(ship,0);",
-              "    SpecialToEquipment(hullbonus, hullstat);",
+              "    SFT('Ta, kto chitaet eto - nyashka');",
+              "    SpecialToEquipment(FindBonusByNameInCfg('489'),ShipEqInSlot(ship,t_Hull));",
               "    Chameleon(ship);",
               "    ShipFace(ship,28);",
               "    //Делаем корпус",
@@ -912,9 +920,11 @@
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
               "        //Спецагентке - гибридник!",
-              "        SpecialToEquipment(FindBonusByNameInCfg(491),equip);",
+              "        SFT('Lublu svoyu lapku :3');",
+              "        SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    }",
-              "    //ОКАЗЫВАЕТСЯ у рейнджера может не быть радара. КАК?!if(!ShipEqInSlot(ship,t_RepairRobot))",
+              "    else SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
+              "    //ОКАЗЫВАЕТСЯ у рейнджера может не быть радара. КАК?!",
               "    if(!ShipEqInSlot(ship,t_Radar))",
               "    {",
               "        size = Rnd(15,25);",
@@ -948,14 +958,15 @@
               "        GetItemFromShip(ship,tequip);",
               "        FreeItem(tequip);",
               "    }",
+              "    SFT('Ti moe solnechnoe solnishko :* *Tmok*');",
               "    for(i=0;i<4;i=i+1) {",
               "        size = Rnd(10,15);",
               "        equip = CreateEquipment(t_Weapon4,size,min(8,GalaxyTechLevel()+2),Rnd(2,4));",
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
-              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg(511),equip);",
-              "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg(210));",
-              "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg(2));",
+              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg('511'),equip);",
+              "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg('210'));",
+              "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg('2'));",
               "    }",
               "    size = Rnd(30,45);",
               "    equip = CreateEquipment(t_Weapon9,size,min(8,GalaxyTechLevel()+2),4);",
@@ -965,9 +976,10 @@
               "    //Накидываем пигамары",
               "    ShipSpecialBonuses(ship,bonDroid,25);",
               "    ShipSpecialBonuses(ship,bonDef,max(3,GalaxyTechLevel()));",
-              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg(406),ShipEqInSlot(ship,t_CargoHook));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(401),ShipEqInSlot(ship,t_FuelTanks));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(396),ShipEqInSlot(ship,t_Radar));",
+              "    SFT('Tmokayu tvoi shetski :3');",
+              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg('406'),ShipEqInSlot(ship,t_CargoHook));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('401'),ShipEqInSlot(ship,t_FuelTanks));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('396'),ShipEqInSlot(ship,t_Radar));",
               "    for(i=ShipItems(ship);i>0;i=i-1)",
               "    {",
               "        equip=ShipItems(ship,i);",
@@ -984,6 +996,7 @@
               "            FreeItem(tequip);",
               "        }",
               "    }",
+              "    SFT('Celuyu tvoi lapki ^-^');",
               "    for(i=0;i<4;i=i+1) {",
               "        if(i == 0){",
               "            equip=CreateArt(t_ArtPDTurret,ShipOwner(ship));",
@@ -1015,9 +1028,7 @@
               "    HullHP(ship,ItemSize(ShipItems(ship,0)));",
               "    SetName(ship,\"Валя\");",
               "    ShipType(ship,'FemRanger');",
-              "    hullbonus = FindBonusByNameInCfg(483);",
-              "    hullstat=ShipItems(ship,0);",
-              "    SpecialToEquipment(hullbonus, hullstat);",
+              "    SpecialToEquipment(FindBonusByNameInCfg('483'),ShipEqInSlot(ship,t_Hull));",
               "    Chameleon(ship);",
               "    ShipFace(ship,28);",
               "    //Делаем корпус",
@@ -1053,8 +1064,9 @@
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
               "        //Спецагентке - гибридник!",
-              "        SpecialToEquipment(FindBonusByNameInCfg(491),equip);",
+              "        SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    }",
+              "    else SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    //ОКАЗЫВАЕТСЯ у рейнджера может не быть радара. КАК?!",
               "    if(!ShipEqInSlot(ship,t_Radar))",
               "    {",
@@ -1094,9 +1106,9 @@
               "        equip = CreateEquipment(t_Weapon4,size,min(8,GalaxyTechLevel()+2),Rnd(2,4));",
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
-              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg(511),equip);",
-              "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg(210));",
-              "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg(2));",
+              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg('511'),equip);",
+              "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg('210'));",
+              "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg('2'));",
               "    }",
               "    size = Rnd(30,45);",
               "    equip = CreateEquipment(t_Weapon9,size,min(8,GalaxyTechLevel()+2),4);",
@@ -1104,9 +1116,9 @@
               "    AddItemToShip(ship,equip);",
               "    ItemIsInUse(equip,ship,1);",
               "    //Накидываем пигамары",
-              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg(406),ShipEqInSlot(ship,t_CargoHook));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(401),ShipEqInSlot(ship,t_FuelTanks));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(396),ShipEqInSlot(ship,t_Radar));",
+              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg('406'),ShipEqInSlot(ship,t_CargoHook));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('401'),ShipEqInSlot(ship,t_FuelTanks));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('396'),ShipEqInSlot(ship,t_Radar));",
               "    for(i=ShipItems(ship);i>0;i=i-1)",
               "    {",
               "        equip=ShipItems(ship,i);",
@@ -1153,9 +1165,7 @@
               "    HullHP(ship,ItemSize(ShipItems(ship,0)));",
               "    SetName(ship,\"Аня\");",
               "    ShipType(ship,'FemRanger');",
-              "    hullbonus = FindBonusByNameInCfg(482);",
-              "    hullstat=ShipItems(ship,0);",
-              "    SpecialToEquipment(hullbonus, hullstat);",
+              "    SpecialToEquipment(FindBonusByNameInCfg('482'),ShipEqInSlot(ship,t_Hull));",
               "    Chameleon(ship);",
               "    ShipFace(ship,26);",
               "    //Делаем корпус",
@@ -1191,8 +1201,9 @@
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
               "        //Спецагентке - гибридник!",
-              "        SpecialToEquipment(FindBonusByNameInCfg(491),equip);",
+              "        SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    }",
+              "    else SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    //ОКАЗЫВАЕТСЯ у рейнджера может не быть радара. КАК?!",
               "    if(!ShipEqInSlot(ship,t_Radar))",
               "    {",
@@ -1232,7 +1243,7 @@
               "        equip = CreateEquipment(t_Weapon4,size,min(8,GalaxyTechLevel()+1),Rnd(2,4));",
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
-              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg(511),equip);",
+              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg('511'),equip);",
               "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg(210));",
               "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg(2));",
               "    }",
@@ -1242,9 +1253,9 @@
               "    AddItemToShip(ship,equip);",
               "    ItemIsInUse(equip,ship,1);",
               "    //Накидываем пигамары",
-              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg(406),ShipEqInSlot(ship,t_CargoHook));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(401),ShipEqInSlot(ship,t_FuelTanks));",
-              "    SpecialToEquipment(FindBonusByNameInCfg(396),ShipEqInSlot(ship,t_Radar));",
+              "    if(ShipEqInSlot(ship,t_CargoHook)) SpecialToEquipment(FindBonusByNameInCfg('406'),ShipEqInSlot(ship,t_CargoHook));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('401'),ShipEqInSlot(ship,t_FuelTanks));",
+              "    SpecialToEquipment(FindBonusByNameInCfg('396'),ShipEqInSlot(ship,t_Radar));",
               "    for(i=ShipItems(ship);i>0;i=i-1)",
               "    {",
               "        equip=ShipItems(ship,i);",
@@ -1253,8 +1264,8 @@
               "        {",
               "            //Обнова оборудования",
               "            tequip=CreateEquipment(ItemType(equip),ItemSize(equip)+Rnd(7,12),GalaxyTechLevel(),ItemOwner(equip));",
-              "            if(EqSpecial(equip)>-1)SpecialToEquipment(EqSpecial(equip),tequip);",
-              "            if(EqModule(equip)>-1)ModuleToEquipment(EqModule(equip),tequip);",
+              "            if(~EqSpecial(equip))SpecialToEquipment(EqSpecial(equip),tequip);",
+              "            if(~EqModule(equip))ModuleToEquipment(EqModule(equip),tequip);",
               "            ItemLevel(equip,GalaxyTechLevel());",
               "            ItemCost(equip,ItemCost(tequip));",
               "            if(Rnd(1,100)<=75)NoDropItem(equip,1);",
@@ -1291,9 +1302,7 @@
               "    HullHP(ship,ItemSize(ShipItems(ship,0)));",
               "    SetName(ship,\"Маша\");",
               "    ShipType(ship,'FemRanger');",
-              "    hullbonus = FindBonusByNameInCfg(481);",
-              "    hullstat=ShipItems(ship,0);",
-              "    SpecialToEquipment(hullbonus, hullstat);",
+              "    SpecialToEquipment(FindBonusByNameInCfg('481'),ShipEqInSlot(ship,t_Hull));",
               "    Chameleon(ship);",
               "    ShipFace(ship,25);",
               "    //Делаем корпус",
@@ -1329,8 +1338,9 @@
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
               "        //Спецагентке - гибридник!",
-              "        SpecialToEquipment(FindBonusByNameInCfg(491),equip);",
+              "        SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    }",
+              "    else SpecialToEquipment(FindBonusByNameInCfg('491'),equip);",
               "    //ОКАЗЫВАЕТСЯ у рейнджера может не быть радара. КАК?!",
               "    if(!ShipEqInSlot(ship,t_Radar))",
               "    {",
@@ -1370,7 +1380,7 @@
               "        equip = CreateEquipment(t_Weapon4,size,min(8,GalaxyTechLevel()),Rnd(2,4));",
               "        AddItemToShip(ship,equip);",
               "        ItemIsInUse(equip,ship,1);",
-              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg(511),equip);",
+              "        if(Rnd(1,2) == 2) SpecialToEquipment(FindBonusByNameInCfg('511'),equip);",
               "        if(Rnd(1,10) == 10) EqModule(equip,FindBonusByNameInCfg(210));",
               "        else if(Rnd(1,7) > 5) EqModule(equip,FindBonusByNameInCfg(2));",
               "    }",
@@ -1391,8 +1401,8 @@
               "        {",
               "            //Обнова оборудования",
               "            tequip=CreateEquipment(ItemType(equip),ItemSize(equip)+Rnd(7,12),GalaxyTechLevel(),ItemOwner(equip));",
-              "            if(EqSpecial(equip)>-1)SpecialToEquipment(EqSpecial(equip),tequip);",
-              "            if(EqModule(equip)>-1)ModuleToEquipment(EqModule(equip),tequip);",
+              "            if(~EqSpecial(equip))SpecialToEquipment(EqSpecial(equip),tequip);",
+              "            if(~EqModule(equip))ModuleToEquipment(EqModule(equip),tequip);",
               "            ItemLevel(equip,GalaxyTechLevel());",
               "            ItemCost(equip,ItemCost(tequip));",
               "            if(Rnd(1,100)<=75)NoDropItem(equip,1);",
@@ -1422,7 +1432,11 @@
               "PlanetRace(planet,planetRace);",
               "ShipSetPartner(IdToShip(VaID),IdToShip(MorphinaID),9999);",
               "ShipSetPartner(IdToShip(AnID),IdToShip(MorphinaID),9999);",
-              "ShipSetPartner(IdToShip(MaID),IdToShip(MorphinaID),9999);"          
+              "ShipSetPartner(IdToShip(MaID),IdToShip(MorphinaID),9999);",
+              "ShipJoin(Group1,IdToShip(MorphinaID));",
+              "ShipJoin(Group1,IdToShip(VaID));",
+              "ShipJoin(Group1,IdToShip(AnID));",
+              "ShipJoin(Group1,IdToShip(MaID));"          
           ]        
         },
         {
@@ -1432,7 +1446,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  7,
-          "Total.Lines":  43,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1488,7 +1501,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  8,
-          "Total.Lines":  11,
           "Code.Type":  "DialogBegin",
           "Code":          
           [
@@ -1512,7 +1524,6 @@
           "Pos.y":  -310,
           "Parent":  -1,
           "#":  17,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1526,7 +1537,6 @@
           "Pos.y":  -230,
           "Parent":  -1,
           "#":  22,
-          "Total.Lines":  4,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1543,7 +1553,6 @@
           "Pos.y":  100,
           "Parent":  -1,
           "#":  39,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1557,7 +1566,6 @@
           "Pos.y":  70,
           "Parent":  -1,
           "#":  63,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1571,7 +1579,6 @@
           "Pos.y":  -130,
           "Parent":  -1,
           "#":  64,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1585,7 +1592,6 @@
           "Pos.y":  -140,
           "Parent":  -1,
           "#":  87,
-          "Total.Lines":  5,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1603,7 +1609,6 @@
           "Pos.y":  20,
           "Parent":  -1,
           "#":  89,
-          "Total.Lines":  2,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1683,7 +1688,6 @@
           "Pos.y":  -230,
           "Parent":  -1,
           "#":  20,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1697,7 +1701,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  25,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1711,7 +1714,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  35,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1725,7 +1727,6 @@
           "Pos.y":  140,
           "Parent":  -1,
           "#":  41,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1739,7 +1740,6 @@
           "Pos.y":  140,
           "Parent":  -1,
           "#":  43,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1753,7 +1753,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  48,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1767,7 +1766,6 @@
           "Pos.y":  -60,
           "Parent":  -1,
           "#":  57,
-          "Total.Lines":  1,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -1785,6 +1783,24 @@
           "Parent":  -1,
           "#":  3,
           "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        },
+        {
+          "Type":  "TState",
+          "Name":  "State1",
+          "Pos.x":  0,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  91,
+          "Move":  5,
           "MoveObj":  -1,
           "Attack.Count":  0,
           "TakeItem":  -1,
@@ -2561,9 +2577,23 @@
       "End":  76,
       "Nom":  0,
       "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  90,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  90,
+      "End":  91,
+      "Nom":  0,
+      "Arrow":  true    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  50,
+  "BlockPar.EC.Total.Strings":  49,
   "BlockPar.EC":  
   [
     {
@@ -2697,10 +2727,6 @@
     {
       "#":  "4",
       "String":  "Вот и умничка! Эти деньги пойдут на хорошие дела."    
-    },
-    {
-      "#":  "40",
-      "String":  "<0>"    
     },
     {
       "#":  "41",
