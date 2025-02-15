@@ -153,12 +153,17 @@
           "Code.Type":  "Turn",
           "Code":          
           [
+              "if(CurTurn() == 302) NewsAdd('And Marshal said: Puur zhlob');",
+              "SFT('RefCrusades -1');",
               "if(CrusSpent < 9) {",
               "    if(!CoalitionDefeated()) {",
+              "        SFT('RefCrusades 0');",
               "        NewsAdd('Ход '+CurTurn()+', Походов проведено '+CrusSpent+', до следующего похода осталось '+CrusadeCD+', флаг похода - '+CrusFlag+', в группах крестоносцев '+GroupCount(GroupHospitaliers)+' госпитальеров, '+GroupCount(GroupLazar)+' лазаритов, '+GroupCount(GroupTampliers)+' тамплиеров.');",
               "        if(ControlledSystems(0)) {",
+              "            SFT('RefCrusades 1');",
               "            if(CrusadeCD) CrusadeCD = CrusadeCD - 1;",
               "            else {",
+              "                SFT('RefCrusades 2');",
               "                if(!GroupCount(GroupTampliers) && !GroupCount(GroupHospitaliers) && !GroupCount(GroupLazar) && CrusFlag) {",
               "                    CrusadeCD = Rnd(1200,2000);",
               "                    CrusFlag = 0;",
@@ -372,7 +377,9 @@
               "            ArrayAdd(tarr,Id(star));",
               "        }",
               "    }",
-              "}"          
+              "}",
+              "",
+              "CrusSpent = 0;"          
           ]        
         },
         {

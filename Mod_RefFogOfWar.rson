@@ -67,7 +67,29 @@
           "Code":          
           [
               "for(i=0;GalaxySectors()>i;i=i+1) {",
-              "    if(GalaxySectors(i) == StarToCon(PlanetToStar(PlanetPirateClan()))) continue;",
+              "    if(GalaxySectors(i) == StarToCon(PlanetToStar(PlanetPirateClan()))) {",
+              "        if(!SectorVisible(GalaxySectors(i))) {",
+              "            if(!DiceaFlag) {",
+              "                if(ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GetSectorAdjacentToDicea(),1);",
+              "                continue;",
+              "            }",
+              "            else {",
+              "                if(ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GalaxySectors(i),1);",
+              "                continue;",
+              "            }",
+              "        }",
+              "        else {",
+              "            if(!DiceaFlag) {",
+              "                DiceaFlag = 1;",
+              "                if(!ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GalaxySectors(i),0);",
+              "                continue;",
+              "            }",
+              "            else {",
+              "                if(!ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GalaxySectors(i),0);",
+              "                continue;",
+              "            }",
+              "        }",
+              "    }",
               "    if(StarToCon(ShipStar(Player())) == GalaxySectors(i)) SectorVisible(GalaxySectors(i),1);",
               "    else if(ConNear(StarToCon(ShipStar(Player())),GalaxySectors(i))) SectorVisible(GalaxySectors(i),1);",
               "    else SectorVisible(GalaxySectors(i),0);",
@@ -169,6 +191,17 @@
           "#":  7,
           "Var.Type":  "Int",
           "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "DiceaFlag",
+          "Pos.x":  -100,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  8,
+          "Var.Type":  "Int",
+          "Init":  "0",
           "Global":  false        
         }      
       ]    

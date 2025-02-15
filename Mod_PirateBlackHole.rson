@@ -744,10 +744,8 @@
               "    }",
               "",
               "}",
-              "if(ShipInNormalSpace(Player())) {",
-              "    if(PirateWin()==3 || PirateWin==4) {",
-              "        AllShipOut();",
-              "    }",
+              "if(PirateWin()==3 || PirateWin==4) {",
+              "    AllShipOut();",
               "}"          
           ]        
         },
@@ -1015,8 +1013,8 @@
               "        //На всякий случай заставляем эту мразь принять исла... Пеленгство своё",
               "        if(ShipPilotRace(ship) != 1) {",
               "            ShipPilotRace(ship,1);",
-              "            ShipOwner(ship,7);",
               "        }",
+              "        ShipOwner(ship,7);",
               "        //Заставляем закупится корабль",
               "        for(i=0;i<8;i = i +1) {",
               "            ShipRefit(ship);",

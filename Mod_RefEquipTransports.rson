@@ -143,7 +143,7 @@
               "    ShipRefit(cur_ship);",
               "    ArrangeItems(cur_ship);",
               "",
-              "    ShipJoinToScript(cur_ship,'Mod_RefEquipTransports.GroupTransports');",
+              "    ShipJoin(GroupTransports,cur_ship);",
               "",
               "    for(i=t_FuelTanks;i<t_DefGenerator;i=i+1) {",
               "        //Чтобы транспортник не вешал себе невесть чего",

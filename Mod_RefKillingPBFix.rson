@@ -88,6 +88,19 @@
               "    NewsAdd(Format(\"Рейнджер! Недавно вы устранили пиратский притон в системе system. Мы не могли оставить этот вопрос в стороне и немедленно занялись связью с местными правительствами. Теперь вы сможете спокойно пользоваться всеми услугами, предоставляемыми рейнджерам на планетах этой системы и сектора вообще.<br>Политотдел КВСМК.\",'system',Name(GalaxyStar(tdwd-1))));",
               "    Sound('Sound.NewMsg');",
               "    ChangeGlobalRelationsPlanets(Player(),StarToCon(GalaxyStar(tdwd-1)),1,60,159);",
+              "    tdwd = StarToCon(GalaxyStar(tdwd-1));",
+              "    for(i=0;ConStars(tdwd)>i;i=i+1) {",
+              "        tdwd2 = ConStar(tdwd,i);",
+              "        for(j=0;StarPlanets(tdwd2)>j;j=j+1) {",
+              "            tdwd3 = StarPlanets(tdwd2,j);",
+              "            for(k=0;PlanetWarriors(tdwd3)>k;k=k+1) {",
+              "                tdwd4 = PlanetWarriors(tdwd3,k);",
+              "                if(tdwd4 < 1) continue;",
+              "                if(ShipGetBad(tdwd4) == Player()) ShipGetBad(tdwd4,0);",
+              "                //if(RelationToRanger(tdwd4) < 9) RelationToRanger(tdwd4,10);",
+              "            }",
+              "        }",
+              "    }",
               "    tdwd = 0;",
               "}"          
           ]        
@@ -204,11 +217,66 @@
           "Type":  "TVar",
           "Name":  "HelpingCD",
           "Pos.x":  -90,
-          "Pos.y":  -200,
+          "Pos.y":  -230,
           "Parent":  -1,
           "#":  9,
           "Var.Type":  "Int",
           "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "j",
+          "Pos.x":  -50,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  10,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tdwd2",
+          "Pos.x":  -90,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  11,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "k",
+          "Pos.x":  -10,
+          "Pos.y":  -140,
+          "Parent":  -1,
+          "#":  12,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tdwd3",
+          "Pos.x":  0,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  13,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tdwd4",
+          "Pos.x":  0,
+          "Pos.y":  -170,
+          "Parent":  -1,
+          "#":  14,
+          "Var.Type":  "Dword",
+          "Init":  "",
           "Global":  false        
         }      
       ]    

@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  1768,
-  "ViewPos.y":  -129,
+  "ViewPos.x":  -201,
+  "ViewPos.y":  63,
   "ScriptName":  "Mod_RefNisper",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
@@ -6928,7 +6928,7 @@
               "",
               "//Глобалка с автообновлением для других модов",
               "if(~IdToShip(bossId)) {",
-              "    Nisper = IdToShip(bossId);",
+              "    Nisper = bossId;",
               "}",
               "else Nisper = 0;"          
           ]        
@@ -11129,7 +11129,8 @@
               "QuestFlag = 0;",
               "QuestDays = 0;",
               "dword item = QuestItem;",
-              "//ReleaseItemFromScript(item);",
+              "NoDropItem(item,0);",
+              "ReleaseItemFromScript(QuestItem);",
               "FreeItem(GetItemFromShip(Player(),item));",
               "",
               "Sound('Sound.QuestOk');",
