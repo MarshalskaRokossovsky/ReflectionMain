@@ -137,7 +137,7 @@
               "//Помните хреновину из тёрнкода ниже? Так вот, теперь подобное нужно навесить на игрока",
               "/*if(!ShipFindCustomShipInfoByType(Player(),'FixHulls')) ShipAddCustomShipInfo(Player(),'FixHulls','NoShow');*/",
               "",
-              "if(CurrentMods('ShusRangers\\ShuNukes') && !ShipFindCustomShipInfoByType(Player(),'FixShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');",
+              "//if(CurrentMods('ShusRangers\\ShuNukes') && !ShipFindCustomShipInfoByType(Player(),'FixShuNukes')) ShipAddCustomShipInfo(Player(),'FixShuNukes','NoShow');",
               "",
               "//Обновляем глобалки для квестов",
               "GQuestVarExt_PlayerAttack = ShipSkill(Player(),'AccuracyCur');",

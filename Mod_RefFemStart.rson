@@ -162,7 +162,9 @@
           "Code.Type":  "Init",
           "Code":          
           [
-              "ShipAddCustomShipInfo(Player(),'RefFemStart','NoShow');"          
+              "if(ShipPilotRace(Player()) == People) {",
+              "    ShipAddCustomShipInfo(Player(),'RefFemStart','NoShow');",
+              "}"          
           ]        
         },
         {

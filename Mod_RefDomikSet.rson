@@ -4,26 +4,8 @@
   "ViewPos.x":  -227,
   "ViewPos.y":  -241,
   "ScriptName":  "Mod_RefDomikSet",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefDomikSet\\DATA\\Script\\Mod_RefDomikSet.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\ReflectionFixes\\Mods\\Reflection\\RefDomikSet\\DATA\\Script\\Mod_RefDomikSet.txt",
-  "GraphPoint.Count":  7,
-  "GraphLink.Count":  4,
-  "GraphRectText.Count":  0,
-  "Variables.Count":  0,
-  "Stars.Count":  1,
-  "Planets.Count":  1,
-  "Ships.Count":  1,
-  "States.Count":  1,
-  "Groups.Count":  1,
-  "Places.Count":  0,
-  "Items.Count":  0,
-  "Ethers.Count":  0,
-  "Dialogs.Count":  0,
-  "DialogMessages.Count":  0,
-  "DialogAnswers.Count":  0,
-  "Operations.Count":  2,
-  "Statements.Count":  0,
-  "Loops.Count":  0,
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefDomikSet\\DATA\\Script\\Mod_RefDomikSet.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefDomikSet\\DATA\\Script\\Mod_RefDomikSet.txt",
   "Visual.Objects":  
   [
     {
@@ -68,7 +50,6 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  5,
-          "Total.Lines":  1,
           "Code.Type":  "Global",
           "Code":          
           [
@@ -82,11 +63,10 @@
           "Pos.y":  -90,
           "Parent":  -1,
           "#":  6,
-          "Total.Lines":  1,
           "Code.Type":  "Init",
           "Code":          
           [
-              "ShipAddCustomShipInfo(Player(),'DomikSetInfo','NoShow');"          
+              "ShipAddCustomShipInfo(Player(),'DomikSetInfoMain','NoShow');"          
           ]        
         }      
       ],

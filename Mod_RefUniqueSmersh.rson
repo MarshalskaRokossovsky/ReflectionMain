@@ -213,7 +213,7 @@
               "temp_dword = CreateHull(1,350+GalaxyTechLevel()*200,GalaxyTechLevel(),Fei,-1);",
               "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Missile'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
-              "ItemCost(temp_dword,temp_int);",
+              "ItemCost(temp_dword,temp_int/2);",
               "Sound('Sound.Buy');",
               "LinkItemToScript(temp_dword,Shershen);",
               "Bought = Bought + 0.2;",

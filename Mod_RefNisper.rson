@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -201,
-  "ViewPos.y":  63,
+  "ViewPos.x":  1494,
+  "ViewPos.y":  -139,
   "ScriptName":  "Mod_RefNisper",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
@@ -10192,8 +10192,8 @@
               "}",
               "random = RndObject(1,100,GetShipRuins(Player()));",
               "",
-              "if(random < PortionInDiapason(bl,0,ControlledSystems(1),0,1,100)) bonusBoss=1;",
-              "else if(random > PortionInDiapason(tr+kl+bl,0,ControlledSystems(1),0,1,100)) bonusBoss=3;",
+              "if(random < PortionInDiapason(bl,0,ControlledSystems(1),1,100)) bonusBoss=1;",
+              "else if(random > PortionInDiapason(tr+kl+bl,0,ControlledSystems(1),1,100)) bonusBoss=3;",
               "else bonusBoss=2;"          
           ]        
         },
