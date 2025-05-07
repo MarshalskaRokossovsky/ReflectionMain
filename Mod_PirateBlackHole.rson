@@ -737,6 +737,11 @@
               "        //SFT('REFLECTION-PIRATE-BLACKHOLE-Start SESSION-SPAWN-SHU');",
               "        tship = SpawnPirate(4,planet);",
               "        ShipJoin(PirateShu,tship);",
+              "",
+              "        if(ArtefactTypeInUse(Player(),t_ArtefactAnalyzer)) {",
+              "            Sound('Sound.NewMsg');",
+              "            NewsAdd(\"Вероятностный анализатор провёл вычисления, связанные с упоминаниями активности пиратов, и пришёл к выводу, что вскоре должна начаться крупная атака пиратского Клана.\");",
+              "        }",
               "    }",
               "    else {",
               "        //SFT('REFLECTION-PIRATE-BLACKHOLE-Start-ATTACK-WANT-NO');",
@@ -3068,7 +3073,7 @@
       "fsUnderline":  false    
     }  
   ],
-  "BlockPar.EC.Total.Strings":  44,
+  "BlockPar.EC.Total.Strings":  45,
   "BlockPar.EC":  
   [
     {
@@ -3226,6 +3231,10 @@
     {
       "#":  "45",
       "String":  "А какого года!"    
+    },
+    {
+      "#":  "46",
+      "String":  "Вероятностный анализатор провёл вычисления, связанные с упоминаниями активности пиратов, и пришёл к выводу, что вскоре должна начаться крупная атака пиратского Клана."    
     },
     {
       "#":  "5",

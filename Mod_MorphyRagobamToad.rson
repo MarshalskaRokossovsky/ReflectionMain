@@ -1,0 +1,541 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -695,
+  "ViewPos.y":  -473,
+  "ScriptName":  "Mod_MorphyRagobamToad",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Downloads\\Mod_MorphyRagobamToad.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Downloads\\Mod_MorphyRagobamToad.txt",
+  "Visual.Objects":  
+  [
+    {
+      "DialogAnswers":      
+      [
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  140,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  14,
+          "Msg":  "<tstr2>",
+          "AMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "planet",
+          "Pos.x":  180,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  16,
+          "Msg":  "<tstr3>",
+          "AMsg.Num":  "1"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "restart",
+          "Pos.x":  280,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  24,
+          "Msg":  "<tstr2>",
+          "AMsg.Num":  "2"        
+        }      
+      ],
+      "DialogMessages":      
+      [
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  13,
+          "Msg":  "<tstr1>",
+          "DMsg.Num":  "0"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  -70,
+          "Parent":  -1,
+          "#":  23,
+          "Msg":  "<tstr1>",
+          "DMsg.Num":  "1"        
+        }      
+      ],
+      "Dialogs":      
+      [
+        {
+          "Type":  "TDialog",
+          "Name":  "OnPlanet",
+          "Pos.x":  140,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  9        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "AfterQuest",
+          "Pos.x":  280,
+          "Pos.y":  -150,
+          "Parent":  -1,
+          "#":  21        
+        }      
+      ],
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  6,
+          "Code.Type":  "DialogBegin",
+          "Code":          
+          [
+              "if(GetShipPlanet(Player())) {",
+              "    if(StimAdded) {",
+              "        if(IdToPlanet(PlanetID) == GetShipPlanet(Player())) {",
+              "            if(!chibis) AddDialogInject('OnPlanet',CT('Script.Mod_MorphyRagobamToad.AddToGreeting'),CT('Script.Mod_MorphyRagobamToad.PlayerAsks'),10);",
+              "            else AddDialogOverride('AfterQuest',99);",
+              "        }",
+              "    }",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  7,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "if(ShipPilotRace(Player()) != Fei && ShipPilotRace(Player()) != Gaal) {",
+              "    if(!StimAdded) {",
+              "        if(ShipHealthFactor(Player(),19)) {",
+              "            //Раз в пять ходов, чтобы не так сильно напрягало игру",
+              "            if(CurTurn() % 5 == 0) {",
+              "                if(~SearchForPlanet()) {",
+              "                    PlanetID = SearchForPlanet();",
+              "                    StimAdded = 1;",
+              "                    Sound('Sound.NewMsg');",
+              "                    NewsAdd(Format(CT('Script.Mod_MorphyRagobamToad.InvitingMessage'),'planet',Name(IdToPlanet(PlanetID)),'star',Name(PlanetToStar(IdToPlanet(PlanetID)))));",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "}",
+              "",
+              "if(StimAdded) {",
+              "    //Стимулятор помер - обнуляем",
+              "    if(!ShipHealthFactor(Player(),19)) {",
+              "        StimAdded = 0;",
+              "    }",
+              "",
+              "    if(StimAdded == 1) {",
+              "        //Проверяем, не захватили ли планету",
+              "        if(PlanetID > 0) {",
+              "            dword planet = IdToPlanet(PlanetID);",
+              "    ",
+              "            if(PlanetOwner(planet)) {",
+              "                StimAdded = 0;",
+              "            }",
+              "            if(PlanetCustomFaction(planet) != '') {",
+              "                StimAdded = 0;",
+              "            }",
+              "        }",
+              "    }",
+              "}",
+              "",
+              "if(GQuestStatus == 3) {",
+              "    RelationToRanger(IdToPlanet(PlanetID),Player(),RelationToRanger(IdToPlanet(PlanetID),Player()) - 10);",
+              "}",
+              "else if(GQuestStatus == 2) {",
+              "    FormChange('Gov');",
+              "    chibis = 1;",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  8,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              "function SearchForPlanet() {",
+              "    int i;",
+              "    dword star;",
+              "    dword planet = 0;",
+              "",
+              "    for(i=0;GalaxyStars()>i;i=i+1) {",
+              "        star = StarNearbyStars(ShipStar(Player()),i);",
+              "        //Отсеиваем ненужные системы",
+              "        if(StarOwner(star)) continue;",
+              "        if(StarCustomFaction(star) != '') continue;",
+              "",
+              "        planet = FindPlanet(star,'NotNone,NotMaloc,NotGaal,NotPeople,NotFei,NotPirateClan,NotKling');",
+              "    }",
+              "",
+              "    if(planet > 0) result = Id(planet);",
+              "    else result = -1;",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  12,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "tstr1 = Format(CT('Script.Mod_MorphyRagobamToad.GovAnswer'),'planet',Name(GetShipPlanet(Player())),'star',Name(ShipStar(Player())));",
+              "tstr2 = CT('Script.Mod_MorphyRagobamToad.PlayerAgree');",
+              "tstr3 = CT('Script.Mod_MorphyRagobamToad.PlayerReject');"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  140,
+          "Pos.y":  10,
+          "Parent":  -1,
+          "#":  15,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "StartTextQuest('145',CT('Script.Mod_MorphyRagobamToad.QuestOk'),CT('Script.Mod_MorphyRagobamToad.QuestFailed'));",
+              "FormChange('Planet');"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  280,
+          "Pos.y":  -110,
+          "Parent":  -1,
+          "#":  22,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "int temp_money = GalaxyMoney(4,3) * 4;",
+              "ShipMoney(Player(),ShipMoney(Player())+temp_money);",
+              "Sound('Sound.QuestOk');",
+              "",
+              "AddItemToShip(Player(),CreateArt(t_ArtBio,Maloc));",
+              "",
+              "tstr1 = Format(CT('Script.Mod_MorphyRagobamToad.GovReward'),'money',temp_money,'planet',Name(GetShipPlanet(Player())),'star',Name(ShipStar(Player())));",
+              "tstr1 = tstr1 + Format('<br>') + CT('Artefacts.ArtBio.Description');",
+              "tstr2 = CT('Script.Mod_MorphyRagobamToad.PlayerRewardAnswer');",
+              "StimAdded = 2;",
+              "chibis = 0;"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "StimAdded",
+          "Pos.x":  -70,
+          "Pos.y":  -200,
+          "Parent":  -1,
+          "#":  10,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "PlanetID",
+          "Pos.x":  -70,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  11,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr1",
+          "Pos.x":  50,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  17,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr2",
+          "Pos.x":  50,
+          "Pos.y":  -230,
+          "Parent":  -1,
+          "#":  18,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr3",
+          "Pos.x":  50,
+          "Pos.y":  -210,
+          "Parent":  -1,
+          "#":  19,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "chibis",
+          "Pos.x":  -70,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  20,
+          "Var.Type":  "Int",
+          "Init":  "0",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  9,
+      "End":  12,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  12,
+      "End":  13,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  13,
+      "End":  16,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  13,
+      "End":  14,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  14,
+      "End":  15,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  23,
+      "End":  24,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  21,
+      "End":  22,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  22,
+      "End":  23,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  1,
+  "BlockPar.EC":  
+  [
+    {
+      "#":  "0",
+      "String":  "<0>"    
+    }  
+  ]
+}

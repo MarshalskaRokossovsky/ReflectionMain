@@ -92,6 +92,7 @@
               "    }",
               "    for(w = 0; w < StarShips(star); w = w + 1) {",
               "        ship = StarShips(star,w);",
+              "        if(IsPlayer(ship)) continue;",
               "        if(ShipEqInSlot(ship,t_Hull)) ItemLevel(ShipEqInSlot(ship,t_Hull),1);",
               "        if(ShipEqInSlot(ship,t_CargoHook)) ItemLevel(ShipEqInSlot(ship,t_CargoHook),1);",
               "        if(ShipEqInSlot(ship,t_Engine)) ItemLevel(ShipEqInSlot(ship,t_Engine),1);",

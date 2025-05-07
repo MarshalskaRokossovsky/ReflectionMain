@@ -1,8 +1,8 @@
 {
   "FileID":  573785173,
   "FileVersion":  8,
-  "ViewPos.x":  -561,
-  "ViewPos.y":  -571,
+  "ViewPos.x":  -477,
+  "ViewPos.y":  -521,
   "ScriptName":  "Mod_RefMorphinaTheSpAg",
   "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.scr",
   "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\RefMorphinaTheSpAg\\DATA\\Script\\Mod_RefMorphinaTheSpAg.txt",
@@ -270,6 +270,16 @@
           "#":  81,
           "Msg":  "Ну, как знаешь.",
           "AMsg.Num":  "25"        
+        },
+        {
+          "Type":  "TDialogAnswer",
+          "Name":  "fastexit",
+          "Pos.x":  590,
+          "Pos.y":  100,
+          "Parent":  -1,
+          "#":  99,
+          "Msg":  "Ну, ладно...",
+          "AMsg.Num":  "26"        
         }      
       ],
       "DialogMessages":      
@@ -453,6 +463,16 @@
           "#":  80,
           "Msg":  "Это противоречит принципам Га, рейнджер. Сначала я обращусь к агрессорам по личному каналу связи с предложением мирного решения конфликта.",
           "DMsg.Num":  "17"        
+        },
+        {
+          "Type":  "TDialogMsg",
+          "Name":  "",
+          "Pos.x":  590,
+          "Pos.y":  60,
+          "Parent":  -1,
+          "#":  98,
+          "Msg":  "Рейнджер? А, не важно - брысь с канала связи!",
+          "DMsg.Num":  "18"        
         }      
       ],
       "Dialogs":      
@@ -480,6 +500,14 @@
           "Pos.y":  -350,
           "Parent":  -1,
           "#":  13        
+        },
+        {
+          "Type":  "TDialog",
+          "Name":  "ShuDialog",
+          "Pos.x":  590,
+          "Pos.y":  -20,
+          "Parent":  -1,
+          "#":  95        
         }      
       ],
       "Groups":      
@@ -516,7 +544,7 @@
         {
           "Type":  "TGroup",
           "Name":  "Group1",
-          "Pos.x":  0,
+          "Pos.x":  -220,
           "Pos.y":  0,
           "Parent":  -1,
           "#":  90,
@@ -541,6 +569,35 @@
           "StrengthMin":  "0",
           "StrengthMax":  "0",
           "Ruins":  ""        
+        },
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupShu",
+          "Pos.x":  -360,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  93,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  0,
+          "CntShipMax":  0,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  false,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  95,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
         }      
       ],
       "Operations":      
@@ -555,6 +612,8 @@
           "Code.Type":  "Global",
           "Code":          
           [
+              "//state == 0 - базовое состояние скрипта",
+              "",
               "GRun();"          
           ]        
         },
@@ -571,7 +630,7 @@
               "for(i=0;GalaxyStars()>i;i=i+1) {",
               "    planet = 0;",
               "    if(StarOwner(GalaxyStar(i)) != 0) continue;",
-              "    if(Name(GalaxyStar(i)) == 'Тарон') {",
+              "    if(i == 0) {",
               "        for(j=0;StarPlanets(GalaxyStar(i))>j;j=j+1) {",
               "            if(Name(StarPlanets(GalaxyStar(i),j)) != CT('PlanetName.Maloc.02')) continue;",
               "            planet = StarPlanets(GalaxyStar(i),j);",
@@ -1430,13 +1489,33 @@
               "    MaID = Id(ship);",
               "}",
               "PlanetRace(planet,planetRace);",
+              "//Делаем сестёр партнёрами Морфины",
               "ShipSetPartner(IdToShip(VaID),IdToShip(MorphinaID),9999);",
               "ShipSetPartner(IdToShip(AnID),IdToShip(MorphinaID),9999);",
               "ShipSetPartner(IdToShip(MaID),IdToShip(MorphinaID),9999);",
+              "//Отправляем корабли в группу",
               "ShipJoin(Group1,IdToShip(MorphinaID));",
               "ShipJoin(Group1,IdToShip(VaID));",
               "ShipJoin(Group1,IdToShip(AnID));",
-              "ShipJoin(Group1,IdToShip(MaID));"          
+              "ShipJoin(Group1,IdToShip(MaID));",
+              "",
+              "function SpawnShu(dword star) {",
+              "    dword plan = FindPlanet(star,'NotNone');",
+              "    dword pirate;",
+              "    int k = PlanetRace(planet);",
+              "",
+              "    //Меняем расу на пеленга",
+              "    PlanetRace(planet,Peleng);",
+              "    PlanetOwner(planet,Peleng);",
+              "",
+              "    pirate = BuyPirate(planet,1000);",
+              "    SpecialToEquipment(FindBonusByNameInCfg('484'),ShipEqInSlot(pirate,t_Hull));",
+              "    ShipRefit(pirate,Rnd(400,550)+GalaxyTechLevel()*55,300000);",
+              "    SetName(pirate,\"Шу\");",
+              "",
+              "    ShipJoin(GroupShu,pirate);",
+              "    OrderTakeOff(pirate);",
+              "}"          
           ]        
         },
         {
@@ -1450,6 +1529,7 @@
           "Code":          
           [
               "if(IdToShip(MorphinaID) > 0) Morphy = IdToShip(MorphinaID);",
+              "//Имитируем выполнение Морфиной спецзаданий",
               "if(GetShipPlanet(Morphy) != 0) {",
               "    rand = Rnd(1,7);",
               "    if(rand == 7) {",
@@ -1476,6 +1556,7 @@
               "        }",
               "    }",
               "}",
+              "//Автоматически продлеваем контракты с сёстрами",
               "if(ShipPartners(Morphy) > 0) {",
               "    for(i=0;ShipPartners(Morphy)>i;i=i+1) {",
               "        if(ShipPartners(Morphy,i) == IdToShip(VaID)) ShipSetPartner(IdToShip(VaID),IdToShip(MorphinaID),9999);",
@@ -1483,6 +1564,7 @@
               "        if(ShipPartners(Morphy,i) == IdToShip(MaID)) ShipSetPartner(IdToShip(MaID),IdToShip(MorphinaID),9999);",
               "    }",
               "}",
+              "//На всякий случай меняем имена (их могут изменить скрипты, меняющие имена спецагенток)",
               "if(IdToShip(VaID) > 0) {",
               "    if(ShortName(IdToShip(VaID)) != \"Валя\") SetName(IdToShip(VaID),\"Валя\");",
               "}",
@@ -1491,6 +1573,26 @@
               "}",
               "if(IdToShip(MaID) > 0) {",
               "    if(ShortName(IdToShip(MaID)) != \"Маша\") SetName(IdToShip(MaID),\"Маша\");",
+              "}",
+              "",
+              "if(state == 0) {",
+              "    if(GRunFrom == 3) {",
+              "        planet = ShipStar(Player());",
+              "        if(ShipInStar(Morphy,planet)) {",
+              "            if(!StarBattle(planet)) {",
+              "                if(!StarOwner(planet) && StarCustomFaction(planet) == '') {",
+              "                    if(!NoComeKlingToStar(planet)) {",
+              "                        state = 1;",
+              "                        NoComeKlingToStar(planet,1);",
+              "                        SpawnShu(planet);",
+              "                    }",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "}",
+              "else if(state == 1) {",
+              "    ",
               "}"          
           ]        
         },
@@ -1596,10 +1698,10 @@
           "Code":          
           [
               "rand = Rnd(1,4);",
-              "if(rand == 1) str1 = 'Привет, рейнджер <Player>! С чем пожаловал?';",
-              "if(rand == 2) str1 = 'Привет, рейнджер! Интересуешься искусством вырезания Иикэ-Бааны? Мне лично больше всего нравится дерево. Оно такое гладкое, этот запах... М-м-м! Ну, или выжигать. Чего молчишь?';",
-              "if(rand == 3) str1 = 'О, <Player, привет! Как думаешь, гаальская дипломатия способна навести порядок в Галактике? Мне кажется, что во ВТорую Клисанскую мы больше растерялись при виде врагов.';",
-              "if(rand == 4) str1 = 'Подозрительная ты личность, рейнджер, но, так и быть, поговорю с тобой.';"          
+              "if(rand == 1) str1 = \"Привет, рейнджер <Player>! С чем пожаловал?\";",
+              "if(rand == 2) str1 = \"Привет, рейнджер! Интересуешься искусством вырезания Иикэ-Бааны? Мне лично больше всего нравится дерево. Оно такое гладкое, этот запах... М-м-м! Ну, или выжигать. Чего молчишь?\";",
+              "if(rand == 3) str1 = \"О, <Player>, привет! Как думаешь, гаальская дипломатия способна навести порядок в Галактике? Мне кажется, что во Вторую Клисанскую мы больше растерялись при виде врагов.\";",
+              "if(rand == 4) str1 = \"Подозрительная ты личность, рейнджер, но, так и быть, поговорю с тобой.\";"          
           ]        
         },
         {
@@ -1769,7 +1871,33 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "RelationToRanger(IdToShip(MorphinaID),Player()) > 90"          
+              "RelationToRanger(IdToShip(MorphinaID),Player()) > 90 && !state"          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  590,
+          "Pos.y":  20,
+          "Parent":  -1,
+          "#":  96,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              ""          
+          ]        
+        },
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  670,
+          "Pos.y":  20,
+          "Parent":  -1,
+          "#":  97,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              ""          
           ]        
         }      
       ],
@@ -1796,10 +1924,28 @@
         {
           "Type":  "TState",
           "Name":  "State1",
-          "Pos.x":  0,
+          "Pos.x":  -220,
           "Pos.y":  30,
           "Parent":  -1,
           "#":  91,
+          "Move":  5,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        },
+        {
+          "Type":  "TState",
+          "Name":  "StateShu",
+          "Pos.x":  -360,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  94,
           "Move":  5,
           "MoveObj":  -1,
           "Attack.Count":  0,
@@ -2032,6 +2178,17 @@
           "#":  88,
           "Var.Type":  "Str",
           "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "state",
+          "Pos.x":  -250,
+          "Pos.y":  -360,
+          "Parent":  -1,
+          "#":  92,
+          "Var.Type":  "Int",
+          "Init":  "0",
           "Global":  false        
         }      
       ]    
@@ -2589,6 +2746,48 @@
       "Type":  "TGraphLink",
       "Begin":  90,
       "End":  91,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  93,
+      "End":  94,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  95,
+      "End":  96,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  95,
+      "End":  97,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  96,
+      "End":  98,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  98,
+      "End":  99,
       "Nom":  0,
       "Arrow":  true    
     }  

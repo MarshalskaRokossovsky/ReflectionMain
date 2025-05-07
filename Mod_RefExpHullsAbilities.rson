@@ -115,25 +115,21 @@
           "Code.Type":  "DialogBegin",
           "Code":          
           [
-              "if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) > 1) {",
+              "if(~EqSpecial(ShipEqInSlot(Player(),t_Hull))) {",
               "    if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Bolide5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('352')) {",
               "        if(!MetFlag) {",
-              "            tstr98=\"Отключен\";",
-              "            AddDialogInject('MetDialogOff',\"Режим невидимости: <tstr98>\",\"Включить режим невидимости\",13);",
+              "            AddDialogInject('MetDialogOff',\"Режим невидимости: <clr>Отключен<clrEnd>\",\"Включить режим невидимости\",13);",
               "        }",
-              "        else if(MetFlag == 1) {",
-              "            tstr98=\"Включен\";",
-              "            AddDialogInject('MetDialogOn',\"Режим невидимости: <tstr98>\",\"Отключить режим невидимости\",13);",
+              "        else if(MetFlag) {",
+              "            AddDialogInject('MetDialogOn',\"Режим невидимости: <clr>Включен<clrEnd>\",\"Отключить режим невидимости\",13);",
               "        }",
               "    }",
               "    else if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Rock5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('351')) {",
               "        if(!BastFlag) {",
-              "            tstr98=\"Отключен\";",
-              "            AddDialogInject('BastDialogOff',\"Режим контрбатарейного огня: <tstr98>\",\"Включить режим контрбатарейного огня\",13);",
+              "            AddDialogInject('BastDialogOff',\"Режим контрбатарейного огня: <clr>Отключен<clrEnd>\",\"Включить режим контрбатарейного огня\",13);",
               "        }",
-              "        else if(BastFlag == 1) {",
-              "            tstr98=\"Включен\";",
-              "            AddDialogInject('BastDialogOn',\"Режим контрбатарейного огня: <tstr98>\",\"Отключить режим контрбатарейного огня\",13);",
+              "        else if(BastFlag) {",
+              "            AddDialogInject('BastDialogOn',\"Режим контрбатарейного огня: <clr>Включен<clrEnd>\",\"Отключить режим контрбатарейного огня\",13);",
               "        }",
               "    }",
               "}"          
@@ -255,7 +251,7 @@
           "Pos.x":  290,
           "Pos.y":  -180,
           "Parent":  -1,
-          "#":  21,
+          "#":  20,
           "Code.Type":  "Turn",
           "Code":          
           [
@@ -426,17 +422,6 @@
           "Var.Type":  "Int",
           "Init":  "0",
           "Global":  false        
-        },
-        {
-          "Type":  "TVar",
-          "Name":  "tstr98",
-          "Pos.x":  -100,
-          "Pos.y":  -220,
-          "Parent":  -1,
-          "#":  20,
-          "Var.Type":  "Str",
-          "Init":  "",
-          "Global":  false        
         }      
       ]    
     }  
@@ -515,32 +500,32 @@
       "String":  "Включить режим невидимости"    
     },
     {
+      "#":  "11",
+      "String":  "Режим контрбатарейного огня: <clr>Включен<clrEnd>"    
+    },
+    {
+      "#":  "12",
+      "String":  "Режим контрбатарейного огня: <clr>Отключен<clrEnd>"    
+    },
+    {
+      "#":  "13",
+      "String":  "Режим невидимости: <clr>Включен<clrEnd>"    
+    },
+    {
+      "#":  "14",
+      "String":  "Режим невидимости: <clr>Отключен<clrEnd>"    
+    },
+    {
       "#":  "2",
       "String":  "Отключить режим контрбатарейного огня"    
-    },
-    {
-      "#":  "3",
-      "String":  "Режим контрбатарейного огня: <0>"    
-    },
-    {
-      "#":  "4",
-      "String":  "Включен"    
     },
     {
       "#":  "5",
       "String":  "Включить режим контрбатарейного огня"    
     },
     {
-      "#":  "6",
-      "String":  "Отключен"    
-    },
-    {
       "#":  "8",
       "String":  "Отключить режим невидимости"    
-    },
-    {
-      "#":  "9",
-      "String":  "Режим невидимости: <0>"    
     }  
   ]
 }

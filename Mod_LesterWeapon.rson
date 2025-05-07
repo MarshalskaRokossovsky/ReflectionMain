@@ -1,0 +1,487 @@
+{
+  "FileID":  573785173,
+  "FileVersion":  8,
+  "ViewPos.x":  -688,
+  "ViewPos.y":  -643,
+  "ScriptName":  "Mod_LesterWeapon",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Downloads\\LesterWeapon\\DATA\\Script\\Mod_LesterWeapon.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Downloads\\LesterWeapon\\DATA\\Script\\Mod_LesterWeapon.txt",
+  "Visual.Objects":  
+  [
+    {
+      "Groups":      
+      [
+        {
+          "Type":  "TGroup",
+          "Name":  "GroupNew",
+          "Pos.x":  -100,
+          "Pos.y":  0,
+          "Parent":  -1,
+          "#":  4,
+          "Owner":  62,
+          "Group.Type":  126,
+          "CntShipMin":  1,
+          "CntShipMax":  1,
+          "SpeedMin":  100,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "AddPlayer":  true,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "DistSearch":  10000,
+          "Dialog":  -1,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Operations":      
+      [
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  5,
+          "Code.Type":  "Global",
+          "Code":          
+          [
+              "GRun();"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -50,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  6,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "//Цикл для раздачи Миниганов по доминионам и пираткам",
+              "if(GalaxyTechLevel() == 8) {",
+              "    if(CD == 0) {",
+              "        //Набиваем массив военками, где будут располагаться наши БСОшки",
+              "        ArrayClear(tarr);",
+              "        ArrayDelete(tarr,0);",
+              "        for(i=0;GalaxyStars()>i;i=i+1) {",
+              "            star = GalaxyStar(i);",
+              "            for(j=0;StarShips(star)>j;j=j+1) {",
+              "                if(ShipType(StarShips(star,j)) == 'PB') ArrayAdd(tarr,StarShips(star,j));",
+              "                if(ShipType(StarShips(star,j)) == 'CB') ArrayAdd(tarr,StarShips(star,j));",
+              "            }",
+              "        }",
+              "",
+              "        //Считаем БСОхи по магазинам, доспавниваем, если их мало",
+              "        if(ArrayDim(tarr)) {",
+              "            for(i=1;ArrayDim(tarr)>i;i=i+1) {",
+              "                cur_ruin = tarr[i-1];",
+              "                coun = 0;",
+              "                tdwd2 = 0;",
+              "                for(j=0;ShopItems(cur_ruin)>j;j=j+1) {",
+              "                    item = ShopItems(cur_ruin,j);",
+              "                    if(ItemType(item) != t_CustomWeapon) continue;",
+              "                    if(CustomWeaponType(item) != 'Lester_minigun') continue;",
+              "",
+              "                    coun = coun + 1;",
+              "                    if(!ItemImprovement(item)) tdwd2 = item;",
+              "                }",
+              "",
+              "                //Чтобы БСОхи спавнились не гарантированно, а с шансом",
+              "                if(coun < 2) {",
+              "                    if(Rnd(1,4) == 4) {",
+              "                        SpawnMinigun(cur_ruin);",
+              "                        if(coun < 1 && Rnd(1,4) == 4) {",
+              "                            SpawnMinigun(cur_ruin);",
+              "                            if(!coun && Rnd(1,4) == 4) {",
+              "                                tdwd2 = SpawnMinigun(cur_ruin);",
+              "                                if(Rnd(1,4) == 4) {",
+              "                                    ItemImprovement(tdwd2,3);",
+              "                                }",
+              "                            }",
+              "                        }",
+              "                    }",
+              "                }",
+              "                else if(tdwd2 && Rnd(1,4) == 4) ItemImprovement(tdwd2,3);",
+              "            }",
+              "        }",
+              "",
+              "        CD = 30;",
+              "    }",
+              "    else CD = CD - 1;",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  7,
+          "Code.Type":  "Init",
+          "Code":          
+          [
+              "InventLesterGuns();",
+              "gunUpdateCheck=CT('Items.Weapon.CustomWeapon.StatsVersion.LesterWeapon');",
+              "",
+              "//Функция для объявления и обновления кастомных орудий",
+              "function InventLesterGuns()",
+              "{",
+              "    for(i=1;i<=CT('Items.Weapon.CustomWeapon.LesterWeapon.Count');i=i+1)",
+              "    {",
+              "        //По очереди выбираем системное название каждой новой пушки из Lang",
+              "        if(i==1) tstr='Lester_minigun';",
+              "        if(i==2) tstr='Lester_minigun_crutch';",
+              "        tstr2='Items.Weapon.CustomWeapon.';",
+              "        //Прописываем пушку/сбрасываем уже прописанную пушку до уровня базовой из оригинальной игры",
+              "        temp_dword=InventNewCustomWeapon(tstr,t_Weapon1-1+CT('Items.Weapon.OriginalWeaponType.'+CT(tstr2+tstr+'.BaseGun')));",
+              "        //Задаём характеристики оружия",
+              "        SetCustomWeaponShotData(temp_dword,CT(tstr2+tstr+'.ShotType'),CT(tstr2+tstr+'.Speed'),CT(tstr2+tstr+'.AverageRadius'),CT(tstr2+tstr+'.SecondaryDamageRadius'),CT(tstr2+tstr+'.MiningFactor'),CT(tstr2+tstr+'.ShotsPerTurn'));",
+              "        SetCustomWeaponDamageData(temp_dword,CT(tstr2+tstr+'.MinDamage'),CT(tstr2+tstr+'.MaxDamage'),CT(tstr2+tstr+'.DamageSet'),CT(tstr2+tstr+'.mWeaponDamage'));",
+              "        SetCustomMissileWeaponStats(temp_dword,CT(tstr2+tstr+'.MissileRadius'),CT(tstr2+tstr+'.MissileMaxSpeed'),CT(tstr2+tstr+'.MissileMinSpeed'),CT(tstr2+tstr+'.MissileChanceToBeHit'));",
+              "        SetCustomWeaponPrimaryData(temp_dword,CT(tstr2+tstr+'.TechLevel'),t_Weapon1-1+CT('Items.Weapon.OriginalWeaponType.'+CT(tstr2+tstr+'.InventTechLevel')),t_Weapon1-1+CT('Items.Weapon.OriginalWeaponType.'+CT(tstr2+tstr+'.ArcadeType')));",
+              "        SetCustomWeaponSizeAndCost(temp_dword,CT(tstr2+tstr+'.kCost'),CT(tstr2+tstr+'.AverageSize'));",
+              "        SetCustomWeaponAvailability(temp_dword,CT(tstr2+tstr+'.StoreAvailability'));",
+              "        SetCustomWeaponSE(temp_dword,CT(tstr2+tstr+'.ShotEffectPath'),CT(tstr2+tstr+'.SplashEffectPath'),CT(tstr2+tstr+'.MissileExplosionEffectPath'),CT(tstr2+tstr+'.ShotEffectPalette'));",
+              "    }",
+              "}",
+              "",
+              "function SpawnMinigun(dword cur_ruin) {",
+              "    dword tdwd;",
+              "    int rand;",
+              "",
+              "    //Выбираем расу БСОшки",
+              "    rand = Rnd(1,100);",
+              "",
+              "    tdwd = CreateCustomWeapon('Lester_minigun',CustomArtSizeCalc(CT('Items.Weapon.CustomWeapon.Lester_minigun.AverageSize')),GalaxyTechLevel(),PirateClan);",
+              "",
+              "    LinkItemToScript(tdwd);",
+              "    ItemOnActCode(tdwd,GenerateCodeStringFromBlock('ActCodeBlocksList.LesterWeaponMinigunActCode'));",
+              "    //ReleaseItemFromScript(tdwd);",
+              "",
+              "    AddItemToShop(cur_ruin,tdwd);",
+              "",
+              "    result = tdwd;",
+              "}"          
+          ]        
+        },
+        {
+          "Type":  "Top",
+          "Name":  "",
+          "Pos.x":  -10,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  9,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "//Автоматическое обновление характеристик кастомных орудий",
+              "//Срабатывает, только если параметр StatsVersion для Cat_Guns был изменён",
+              "if(gunUpdateCheck!=CT('Items.Weapon.CustomWeapon.StatsVersion.Cat_Guns'))",
+              "{",
+              "    InventCatGuns();",
+              "    gunUpdateCheck=CT('Items.Weapon.CustomWeapon.StatsVersion.Cat_Guns');",
+              "}"          
+          ]        
+        }      
+      ],
+      "Planets":      
+      [
+        {
+          "Type":  "TPlanet",
+          "Name":  "PlanetNew",
+          "Pos.x":  -100,
+          "Pos.y":  -30,
+          "Parent":  -1,
+          "#":  1,
+          "Race":  62,
+          "Owner":  62,
+          "Economy":  14,
+          "Goverment":  62,
+          "RangeMin":  0,
+          "RangeMax":  100,
+          "Dialog":  -1        
+        }      
+      ],
+      "Ships":      
+      [
+        {
+          "Type":  "TStarShip",
+          "Name":  "",
+          "Pos.x":  -100,
+          "Pos.y":  -90,
+          "Parent":  -1,
+          "#":  2,
+          "Count":  1,
+          "Owner":  62,
+          "Ship.Type":  126,
+          "Player":  true,
+          "SpeedMin":  0,
+          "SpeedMax":  10000,
+          "Weapon":  0,
+          "CargoHook":  0,
+          "EmptySpace":  0,
+          "StatusTraderMin":  0,
+          "StatusTraderMax":  100,
+          "StatusWarriorMin":  0,
+          "StatusWarriorMax":  100,
+          "StatusPirateMin":  0,
+          "StatusPirateMax":  100,
+          "StrengthMin":  "0",
+          "StrengthMax":  "0",
+          "Ruins":  ""        
+        }      
+      ],
+      "Stars":      
+      [
+        {
+          "Type":  "TStar",
+          "Name":  "StarNew",
+          "Pos.x":  -100,
+          "Pos.y":  -60,
+          "Parent":  -1,
+          "#":  0,
+          "Constellation":  0,
+          "Priority":  0,
+          "NoKling":  false,
+          "NoComeKling":  false        
+        }      
+      ],
+      "Statements":      
+      [
+        {
+          "Type":  "Tif",
+          "Name":  "",
+          "Pos.x":  30,
+          "Pos.y":  -130,
+          "Parent":  -1,
+          "#":  10,
+          "Code.Type":  "Turn",
+          "Code":          
+          [
+              "!ShipIsTakeoff(Player())"          
+          ]        
+        }      
+      ],
+      "States":      
+      [
+        {
+          "Type":  "TState",
+          "Name":  "StateNew",
+          "Pos.x":  -100,
+          "Pos.y":  30,
+          "Parent":  -1,
+          "#":  3,
+          "Move":  0,
+          "MoveObj":  -1,
+          "Attack.Count":  0,
+          "TakeItem":  -1,
+          "TakeAllItem":  false,
+          "OnTalk":  "",
+          "OnActCode":  "",
+          "EType":  1,
+          "EUnique":  "",
+          "EMsg":  ""        
+        }      
+      ],
+      "Variables":      
+      [
+        {
+          "Type":  "TVar",
+          "Name":  "gunUpdateCheck",
+          "Pos.x":  -100,
+          "Pos.y":  -190,
+          "Parent":  -1,
+          "#":  8,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tarr",
+          "Pos.x":  -100,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  11,
+          "Var.Type":  "Array",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "CD",
+          "Pos.x":  -30,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  12,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "cur_ruin",
+          "Pos.x":  -100,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  13,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "i",
+          "Pos.x":  -10,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  14,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "j",
+          "Pos.x":  30,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  15,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "coun",
+          "Pos.x":  -100,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  16,
+          "Var.Type":  "Int",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "star",
+          "Pos.x":  -10,
+          "Pos.y":  -280,
+          "Parent":  -1,
+          "#":  17,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tdwd2",
+          "Pos.x":  -100,
+          "Pos.y":  -310,
+          "Parent":  -1,
+          "#":  18,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "item",
+          "Pos.x":  -10,
+          "Pos.y":  -310,
+          "Parent":  -1,
+          "#":  19,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr",
+          "Pos.x":  80,
+          "Pos.y":  -190,
+          "Parent":  -1,
+          "#":  20,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "tstr2",
+          "Pos.x":  80,
+          "Pos.y":  -220,
+          "Parent":  -1,
+          "#":  21,
+          "Var.Type":  "Str",
+          "Init":  "",
+          "Global":  false        
+        },
+        {
+          "Type":  "TVar",
+          "Name":  "temp_dword",
+          "Pos.x":  80,
+          "Pos.y":  -250,
+          "Parent":  -1,
+          "#":  22,
+          "Var.Type":  "Dword",
+          "Init":  "",
+          "Global":  false        
+        }      
+      ]    
+    }  
+  ],
+  "Visual.Links":  
+  [
+    {
+      "Type":  "TGraphLink",
+      "Begin":  2,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  1,
+      "End":  0,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  1,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  4,
+      "End":  3,
+      "Nom":  0,
+      "Arrow":  true    
+    },
+    {
+      "Type":  "TGraphLink",
+      "Begin":  10,
+      "End":  9,
+      "Nom":  0,
+      "Arrow":  true    
+    }  
+  ],
+  "BlockPar.EC.Total.Strings":  0,
+  "BlockPar.EC":  
+  [
+  
+  ]
+}

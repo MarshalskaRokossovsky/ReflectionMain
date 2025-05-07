@@ -257,7 +257,7 @@
               "    tempik = tempik - 1;",
               "    if(SectorVisible(GalaxySectors(tempik))) NoFlagy = 1;",
               "    else if(!SectorVisible(GalaxySectors(tempik))) {",
-              "        strSector = NamesArray[tempik];",
+              "        strSector = NamesArray[tempik+1];",
               "        if(ShipMoney(Player()) > 5000000) ein = ShipMoney(Player()) / 50000;",
               "        if(ShipMoney(Player()) < 5000000) ein = ShipMoney(Player()) / 30000;",
               "        if(ShipMoney(Player()) < 1000000) ein = ShipMoney(Player()) / 15000;",

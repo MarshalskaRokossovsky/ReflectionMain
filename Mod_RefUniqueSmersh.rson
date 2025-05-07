@@ -214,6 +214,8 @@
               "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Missile'),temp_dword);",
               "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
               "ItemCost(temp_dword,temp_int/2);",
+              "ItemOwner(temp_dword,Kling);",
+              "ItemSubrace(temp_dword,Rnd(0,2));",
               "Sound('Sound.Buy');",
               "LinkItemToScript(temp_dword,Shershen);",
               "Bought = Bought + 0.2;",

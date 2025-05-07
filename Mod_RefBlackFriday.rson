@@ -82,8 +82,8 @@
               "        GoodsRuinsForBuy(IdToShip(BKarr[ForRand]),t_Arms);",
               "        GoodsRuinsForBuy(IdToShip(BKarr[ForRand]),t_Technics);",
               "        GoodsRuinsForBuy(IdToShip(BKarr[ForRand]),t_Luxury);",
-              "        SaleCD = Rnd(max(30,80-jopa*10),max(50,120-jopa*15));",
-              "        NewsAdd(Format(CT('BlackFridayNews.'+Rnd(1,CT('BlackFridayNews.Count'))),'base',Name(IdToShip(BKarr[ForRand]))));",
+              "        SaleCD = Rnd(max(70,150-jopa*10),max(100,200-jopa*15));",
+              "        AddPlanetNews(Format(CT('BlackFridayNews.'+Rnd(1,CT('BlackFridayNews.Count'))),'base',Name(IdToShip(BKarr[ForRand]))),100);",
               "    }",
               "}"          
           ]        

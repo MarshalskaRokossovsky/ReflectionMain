@@ -4,8 +4,8 @@
   "ViewPos.x":  -678,
   "ViewPos.y":  -563,
   "ScriptName":  "Mod_MilleniumFalcon",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Downloads\\MilleniumFalcon\\DATA\\Script\\Mod_MilleniumFalcon.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Downloads\\MilleniumFalcon\\DATA\\Script\\Mod_MilleniumFalcon.txt",
+  "ScriptFileOut":  "C:\\Users\\DmitB\\Установщики\\Community Mods\\Mods\\OtherMods\\MilleniumFalcon\\DATA\\Script\\Mod_MilleniumFalcon.scr",
+  "ScriptTextOut":  "C:\\Users\\DmitB\\Установщики\\Community Mods\\Mods\\OtherMods\\MilleniumFalcon\\DATA\\Script\\Mod_MilleniumFalcon.txt",
   "Visual.Objects":  
   [
     {
@@ -144,7 +144,7 @@
           "Code":          
           [
               "if(GetShipRuins(Player())) {",
-              "    if(ShipType(GetShipRuins(Player()))) {",
+              "    if(ShipType(GetShipRuins(Player())) == 'BK') {",
               "        if(!vState) {",
               "            if(~ShipFindCustomShipInfoByType(Player(),'PlayerBridge_ContrabandWin')) {",
               "                if(ShipCustomShipInfoData(Player(),'PlayerBridge_ContrabandWin',1) > GalaxyDiffLevels(7) * 2000) {",
