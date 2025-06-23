@@ -1,531 +1,536 @@
 {
-  "FileID":  573785173,
-  "FileVersion":  8,
-  "ViewPos.x":  -524,
-  "ViewPos.y":  -560,
-  "ScriptName":  "Mod_RefExpHullsAbilities",
-  "ScriptFileOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.scr",
-  "ScriptTextOut":  "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.txt",
-  "Visual.Objects":  
-  [
-    {
-      "Dialogs":      
-      [
+    "FileID": 573785173,
+    "FileVersion": 8,
+    "ViewPos.x": -524,
+    "ViewPos.y": -560,
+    "ScriptName": "Mod_RefExpHullsAbilities",
+    "ScriptFileOut": "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.scr",
+    "ScriptTextOut": "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.txt",
+    "LangDatIn": "",
+    "LangDatOut": "",
+    "MainDatIn": "",
+    "MainDatOut": "",
+    "CacheDatIn": "",
+    "CacheDatOut": "",
+    "ExportLang": false,
+    "Visual.Objects": 
+    [
         {
-          "Type":  "TDialog",
-          "Name":  "MetDialogOff",
-          "Pos.x":  40,
-          "Pos.y":  -220,
-          "Parent":  -1,
-          "#":  11        
+            "Dialogs": 
+            [
+                {
+                    "Type": "TDialog",
+                    "Name": "MetDialogOff",
+                    "Pos.x": 40,
+                    "Pos.y": -220,
+                    "Parent": -1,
+                    "#": 11
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "MetDialogOn",
+                    "Pos.x": 90,
+                    "Pos.y": -180,
+                    "Parent": -1,
+                    "#": 12
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "BastDialogOff",
+                    "Pos.x": 40,
+                    "Pos.y": -110,
+                    "Parent": -1,
+                    "#": 13
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "BastDialogOn",
+                    "Pos.x": 90,
+                    "Pos.y": -70,
+                    "Parent": -1,
+                    "#": 14
+                }
+            ],
+            "Groups": 
+            [
+                {
+                    "Type": "TGroup",
+                    "Name": "GroupNew",
+                    "Pos.x": -100,
+                    "Pos.y": 0,
+                    "Parent": -1,
+                    "#": 4,
+                    "Owner": 62,
+                    "Group.Type": 126,
+                    "CntShipMin": 1,
+                    "CntShipMax": 1,
+                    "SpeedMin": 100,
+                    "SpeedMax": 10000,
+                    "Weapon": 0,
+                    "CargoHook": 0,
+                    "EmptySpace": 0,
+                    "AddPlayer": true,
+                    "StatusTraderMin": 0,
+                    "StatusTraderMax": 100,
+                    "StatusWarriorMin": 0,
+                    "StatusWarriorMax": 100,
+                    "StatusPirateMin": 0,
+                    "StatusPirateMax": 100,
+                    "DistSearch": 10000,
+                    "Dialog": -1,
+                    "StrengthMin": "0",
+                    "StrengthMax": "0",
+                    "Ruins": ""
+                }
+            ],
+            "Operations": 
+            [
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 250,
+                    "Pos.y": -140,
+                    "Parent": -1,
+                    "#": 5,
+                    "Code.Type": "Global",
+                    "Code": 
+                    [
+                        "GRun();"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 290,
+                    "Pos.y": -140,
+                    "Parent": -1,
+                    "#": 6,
+                    "Code.Type": "Init",
+                    "Code": 
+                    [
+                        "ShipAddCustomShipInfo(Player(),'RefAssasinInfo','NoShow');",
+                        "ShipAddCustomShipInfo(Player(),'RefGunBatteryLabelsSwitcher','NoShow');"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 250,
+                    "Pos.y": -180,
+                    "Parent": -1,
+                    "#": 8,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "if(~EqSpecial(ShipEqInSlot(Player(),t_Hull))) {",
+                        "    if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Bolide5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('352')) {",
+                        "        if(!MetFlag) {",
+                        "            AddDialogInject('MetDialogOff',\"Режим невидимости: <clr>Отключен<clrEnd>\",\"Включить режим невидимости\",13);",
+                        "        }",
+                        "        else if(MetFlag) {",
+                        "            AddDialogInject('MetDialogOn',\"Режим невидимости: <clr>Включен<clrEnd>\",\"Отключить режим невидимости\",13);",
+                        "        }",
+                        "    }",
+                        "    else if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Rock5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('351')) {",
+                        "        if(!BastFlag) {",
+                        "            AddDialogInject('BastDialogOff',\"Режим контрбатарейного огня: <clr>Отключен<clrEnd>\",\"Включить режим контрбатарейного огня\",13);",
+                        "        }",
+                        "        else if(BastFlag) {",
+                        "            AddDialogInject('BastDialogOn',\"Режим контрбатарейного огня: <clr>Включен<clrEnd>\",\"Отключить режим контрбатарейного огня\",13);",
+                        "        }",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 40,
+                    "Pos.y": -180,
+                    "Parent": -1,
+                    "#": 15,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "MetFlag = 1;",
+                        "Sound('Sound.Repair');",
+                        "DAnswer('main');",
+                        "ShipAddCustomShipInfo(Player(),'RefMeteorFlag');",
+                        "Chameleon(Player(), 'Ship.Akrin.Invisible');",
+                        "ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) - 1000);",
+                        "ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 10);",
+                        "ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) - 75);",
+                        "ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) - 275);",
+                        "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - 500);",
+                        "ShipSpecialBonuses(Player(),bonRadar,-10000);",
+                        "ShipAddCustomShipInfo(Player(),'RefMeteorDef');",
+                        "NoTalkToShip(Player(),1);",
+                        "ShipVisibility(Player(),-1,0.0);",
+                        "PlayerLogicChameleon(0,2);",
+                        "PlayerLogicChameleon(1,2);",
+                        "PlayerLogicChameleon(2,2);"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 90,
+                    "Pos.y": -140,
+                    "Parent": -1,
+                    "#": 16,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "MetFlag = 0;",
+                        "Sound('Sound.Repair');",
+                        "DAnswer('main');",
+                        "ShipDeleteCustomShipInfo(Player(),'RefMeteorFlag');",
+                        "Chameleon(Player());",
+                        "ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 1000);",
+                        "ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 10);",
+                        "ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) + 75);",
+                        "ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 275);",
+                        "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 500);",
+                        "ShipSpecialBonuses(Player(),bonRadar,10000);",
+                        "if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
+                        "NoTalkToShip(Player(),0);",
+                        "ShipVisibility(Player(),-1,255.0);",
+                        "PlayerLogicChameleon(0,0);",
+                        "PlayerLogicChameleon(1,0);",
+                        "PlayerLogicChameleon(2,0);"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 40,
+                    "Pos.y": -70,
+                    "Parent": -1,
+                    "#": 17,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "int MinusSpeed,flagg;",
+                        "BastFlag = 1;",
+                        "Sound('Sound.Repair');",
+                        "DAnswer('main');",
+                        "ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) + 5);",
+                        "MinusSpeed = 0;",
+                        "while(1) {",
+                        "    flagg = MinusSpeed * 100;",
+                        "    if(ShipSpeed(Player()) - flagg > 400) {",
+                        "        MinusSpeed = MinusSpeed + 1;",
+                        "        continue;",
+                        "    }",
+                        "    else break;",
+                        "}",
+                        "ShipAddCustomShipInfo(Player(),'RefBastionFlag','',MinusSpeed);",
+                        "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - flagg);",
+                        "ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) + 1);"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 90,
+                    "Pos.y": -30,
+                    "Parent": -1,
+                    "#": 18,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "BastFlag = 0;",
+                        "Sound('Sound.Repair');",
+                        "DAnswer('main');",
+                        "ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) - 5);",
+                        "int Speeda = ShipCustomShipInfoData(Player(),'RefBastionFlag',1) * 100;",
+                        "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + Speeda);",
+                        "ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) - 1);",
+                        "ShipDeleteCustomShipInfo(Player(),'RefBastionFlag');"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 290,
+                    "Pos.y": -180,
+                    "Parent": -1,
+                    "#": 20,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "if(!ShipInNormalSpace(Player())) {",
+                        "    if(HullSpecial(Player()) != FindBonusByCustomTag('Meteor') && HullSpecial(Player()) != FindBonusByCustomTag('SuperHullSB')) {",
+                        "        if(ShipFindCustomShipInfoByType(Player(),'RefMeteorFlag') > 0) {",
+                        "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 1000);",
+                        "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 10);",
+                        "            ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) + 75);",
+                        "            ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 275);",
+                        "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 500);",
+                        "            ShipSpecialBonuses(Player(),bonRadar,10000);",
+                        "            ShipDeleteCustomShipInfo(Player(),'RefMeteorFlag');",
+                        "            Chameleon(Player());",
+                        "            MetFlag = 0;",
+                        "            if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
+                        "            ShipVisibility(Player(),-1,255.0);",
+                        "            NoTalkToShip(Player(),0);",
+                        "            PlayerLogicChameleon(0,0);",
+                        "            PlayerLogicChameleon(1,0);",
+                        "            PlayerLogicChameleon(2,0);",
+                        "        }",
+                        "    }",
+                        "    if(HullSpecial(Player()) != FindBonusByCustomTag('Bastion') || HullSpecial(Player()) != FindBonusByCustomTag('SuperHullWB')) {",
+                        "        if(ShipFindCustomShipInfoByType(Player(),'RefBastionFlag') > 0) {",
+                        "            int Speeda = ShipCustomShipInfoData(Player(),'RefBastionFlag',1) * 100;",
+                        "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + Speeda);",
+                        "            ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) - 5);",
+                        "            MinusSpeed = 0;",
+                        "            ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) - 1);",
+                        "            ShipDeleteCustomShipInfo(Player(),'RefBastionFlag');",
+                        "            BastFlag = 0;",
+                        "        }",
+                        "    }",
+                        "}"
+                    ]
+                }
+            ],
+            "Planets": 
+            [
+                {
+                    "Type": "TPlanet",
+                    "Name": "PlanetNew",
+                    "Pos.x": -100,
+                    "Pos.y": -30,
+                    "Parent": -1,
+                    "#": 1,
+                    "Race": 62,
+                    "Owner": 62,
+                    "Economy": 14,
+                    "Goverment": 62,
+                    "RangeMin": 0,
+                    "RangeMax": 100,
+                    "Dialog": -1
+                }
+            ],
+            "Ships": 
+            [
+                {
+                    "Type": "TStarShip",
+                    "Name": "",
+                    "Pos.x": -100,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 2,
+                    "Count": 1,
+                    "Owner": 62,
+                    "Ship.Type": 126,
+                    "Player": true,
+                    "SpeedMin": 0,
+                    "SpeedMax": 10000,
+                    "Weapon": 0,
+                    "CargoHook": 0,
+                    "EmptySpace": 0,
+                    "StatusTraderMin": 0,
+                    "StatusTraderMax": 100,
+                    "StatusWarriorMin": 0,
+                    "StatusWarriorMax": 100,
+                    "StatusPirateMin": 0,
+                    "StatusPirateMax": 100,
+                    "StrengthMin": "0",
+                    "StrengthMax": "0",
+                    "Ruins": ""
+                }
+            ],
+            "Stars": 
+            [
+                {
+                    "Type": "TStar",
+                    "Name": "StarNew",
+                    "Pos.x": -100,
+                    "Pos.y": -60,
+                    "Parent": -1,
+                    "#": 0,
+                    "Constellation": 0,
+                    "Priority": 0,
+                    "NoKling": false,
+                    "NoComeKling": false
+                }
+            ],
+            "Statements": 
+            [
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": 250,
+                    "Pos.y": -220,
+                    "Parent": -1,
+                    "#": 7,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "PlayerBridge()==12"
+                    ]
+                }
+            ],
+            "States": 
+            [
+                {
+                    "Type": "TState",
+                    "Name": "StateNew",
+                    "Pos.x": -100,
+                    "Pos.y": 30,
+                    "Parent": -1,
+                    "#": 3,
+                    "Move": 0,
+                    "MoveObj": -1,
+                    "Attack.Count": 0,
+                    "TakeItem": -1,
+                    "TakeAllItem": false,
+                    "OnTalk": "",
+                    "OnActCode": "",
+                    "EType": 1,
+                    "EUnique": "",
+                    "EMsg": ""
+                }
+            ],
+            "Variables": 
+            [
+                {
+                    "Type": "TVar",
+                    "Name": "MetFlag",
+                    "Pos.x": -100,
+                    "Pos.y": -160,
+                    "Parent": -1,
+                    "#": 9,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "BastFlag",
+                    "Pos.x": -100,
+                    "Pos.y": -130,
+                    "Parent": -1,
+                    "#": 10,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "MinusSpeed",
+                    "Pos.x": -100,
+                    "Pos.y": -190,
+                    "Parent": -1,
+                    "#": 19,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                }
+            ]
+        }
+    ],
+    "Visual.Links": 
+    [
+        {
+            "Type": "TGraphLink",
+            "Begin": 2,
+            "End": 0,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "TDialog",
-          "Name":  "MetDialogOn",
-          "Pos.x":  90,
-          "Pos.y":  -180,
-          "Parent":  -1,
-          "#":  12        
+            "Type": "TGraphLink",
+            "Begin": 1,
+            "End": 0,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "TDialog",
-          "Name":  "BastDialogOff",
-          "Pos.x":  40,
-          "Pos.y":  -110,
-          "Parent":  -1,
-          "#":  13        
+            "Type": "TGraphLink",
+            "Begin": 4,
+            "End": 1,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "TDialog",
-          "Name":  "BastDialogOn",
-          "Pos.x":  90,
-          "Pos.y":  -70,
-          "Parent":  -1,
-          "#":  14        
-        }      
-      ],
-      "Groups":      
-      [
-        {
-          "Type":  "TGroup",
-          "Name":  "GroupNew",
-          "Pos.x":  -100,
-          "Pos.y":  0,
-          "Parent":  -1,
-          "#":  4,
-          "Owner":  62,
-          "Group.Type":  126,
-          "CntShipMin":  1,
-          "CntShipMax":  1,
-          "SpeedMin":  100,
-          "SpeedMax":  10000,
-          "Weapon":  0,
-          "CargoHook":  0,
-          "EmptySpace":  0,
-          "AddPlayer":  true,
-          "StatusTraderMin":  0,
-          "StatusTraderMax":  100,
-          "StatusWarriorMin":  0,
-          "StatusWarriorMax":  100,
-          "StatusPirateMin":  0,
-          "StatusPirateMax":  100,
-          "DistSearch":  10000,
-          "Dialog":  -1,
-          "StrengthMin":  "0",
-          "StrengthMax":  "0",
-          "Ruins":  ""        
-        }      
-      ],
-      "Operations":      
-      [
-        {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  250,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  5,
-          "Code.Type":  "Global",
-          "Code":          
-          [
-              "GRun();"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 4,
+            "End": 3,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  290,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  6,
-          "Code.Type":  "Init",
-          "Code":          
-          [
-              "ShipAddCustomShipInfo(Player(),'RefAssasinInfo','NoShow');",
-              "ShipAddCustomShipInfo(Player(),'RefGunBatteryLabelsSwitcher','NoShow');"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 7,
+            "End": 8,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  250,
-          "Pos.y":  -180,
-          "Parent":  -1,
-          "#":  8,
-          "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "if(~EqSpecial(ShipEqInSlot(Player(),t_Hull))) {",
-              "    if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Bolide5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('352')) {",
-              "        if(!MetFlag) {",
-              "            AddDialogInject('MetDialogOff',\"Режим невидимости: <clr>Отключен<clrEnd>\",\"Включить режим невидимости\",13);",
-              "        }",
-              "        else if(MetFlag) {",
-              "            AddDialogInject('MetDialogOn',\"Режим невидимости: <clr>Включен<clrEnd>\",\"Отключить режим невидимости\",13);",
-              "        }",
-              "    }",
-              "    else if(EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('ExpHulls_Rock5') || EqSpecial(ShipEqInSlot(Player(),t_Hull)) == FindBonusByNameInCfg('351')) {",
-              "        if(!BastFlag) {",
-              "            AddDialogInject('BastDialogOff',\"Режим контрбатарейного огня: <clr>Отключен<clrEnd>\",\"Включить режим контрбатарейного огня\",13);",
-              "        }",
-              "        else if(BastFlag) {",
-              "            AddDialogInject('BastDialogOn',\"Режим контрбатарейного огня: <clr>Включен<clrEnd>\",\"Отключить режим контрбатарейного огня\",13);",
-              "        }",
-              "    }",
-              "}"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 11,
+            "End": 15,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  40,
-          "Pos.y":  -180,
-          "Parent":  -1,
-          "#":  15,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "MetFlag = 1;",
-              "Sound('Sound.ButtonInfoEnter');",
-              "DAnswer('main');",
-              "ShipAddCustomShipInfo(Player(),'RefMeteorFlag');",
-              "Chameleon(Player(), 'Ship.Akrin.Invisible');",
-              "ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) - 1000);",
-              "ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) - 10);",
-              "ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) - 75);",
-              "ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) - 275);",
-              "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - 500);",
-              "ShipSpecialBonuses(Player(),bonRadar,-10000);",
-              "ShipAddCustomShipInfo(Player(),'RefMeteorDef');",
-              "NoTalkToShip(Player(),1);",
-              "ShipVisibility(Player(),-1,0.0);",
-              "PlayerLogicChameleon(0,2);",
-              "PlayerLogicChameleon(1,2);",
-              "PlayerLogicChameleon(2,2);"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 12,
+            "End": 16,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  90,
-          "Pos.y":  -140,
-          "Parent":  -1,
-          "#":  16,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "MetFlag = 0;",
-              "Sound('Sound.ButtonInfoEnter');",
-              "DAnswer('main');",
-              "ShipDeleteCustomShipInfo(Player(),'RefMeteorFlag');",
-              "Chameleon(Player());",
-              "ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 1000);",
-              "ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 10);",
-              "ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) + 75);",
-              "ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 275);",
-              "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 500);",
-              "ShipSpecialBonuses(Player(),bonRadar,10000);",
-              "if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
-              "NoTalkToShip(Player(),0);",
-              "ShipVisibility(Player(),-1,255.0);",
-              "PlayerLogicChameleon(0,0);",
-              "PlayerLogicChameleon(1,0);",
-              "PlayerLogicChameleon(2,0);"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 13,
+            "End": 17,
+            "Nom": 0,
+            "Arrow": true
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  40,
-          "Pos.y":  -70,
-          "Parent":  -1,
-          "#":  17,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "int countylka,usl,MinusSpeed,flagg;",
-              "BastFlag = 1;",
-              "Sound('Sound.ButtonInfoEnter');",
-              "DAnswer('main');",
-              "ShipAddCustomShipInfo(Player(),'RefBastionFlag');",
-              "ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) + 5);",
-              "countylka = ShipSpeed(Player());",
-              "MinusSpeed = 0;",
-              "while(usl = 0) {",
-              "    flagg = MinusSpeed * 100;",
-              "    countylka = ShipSpeed(Player()) - flagg;",
-              "    if(countylka > 400) {",
-              "        MinusSpeed = MinusSpeed + 1;",
-              "        continue;",
-              "    }",
-              "    else exit;",
-              "}",
-              "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) - flagg);",
-              "ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) + 1);"          
-          ]        
+            "Type": "TGraphLink",
+            "Begin": 14,
+            "End": 18,
+            "Nom": 0,
+            "Arrow": true
+        }
+    ],
+    "BlockPar.EC.Total.Strings": 8,
+    "BlockPar.EC": 
+    [
+        {
+            "#": "10",
+            "String": "Включить режим невидимости"
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  90,
-          "Pos.y":  -30,
-          "Parent":  -1,
-          "#":  18,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "BastFlag = 0;",
-              "Sound('Sound.ButtonInfoEnter');",
-              "DAnswer('main');",
-              "ShipDeleteCustomShipInfo(Player(),'RefBastionFlag');",
-              "ShipSpecialBonuses(Player(),bonHull,ShipSpecialBonuses(Player(),bonHull) - 5);",
-              "int Speeda = MinusSpeed * 100;",
-              "ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + Speeda);",
-              "MinusSpeed = 0;",
-              "ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) - 1);"          
-          ]        
+            "#": "11",
+            "String": "Режим контрбатарейного огня: <clr>Включен<clrEnd>"
         },
         {
-          "Type":  "Top",
-          "Name":  "",
-          "Pos.x":  290,
-          "Pos.y":  -180,
-          "Parent":  -1,
-          "#":  20,
-          "Code.Type":  "Turn",
-          "Code":          
-          [
-              "if(!ShipInNormalSpace(Player())) {",
-              "    if(HullSpecial(Player()) != FindBonusByCustomTag('Meteor') && HullSpecial(Player()) != FindBonusByCustomTag('SuperHullSB')) {",
-              "        if(ShipFindCustomShipInfoByType(Player(),'RefMeteorFlag') > 0) {",
-              "            ShipSpecialBonuses(Player(),bonWRadius,ShipSpecialBonuses(Player(),bonWRadius) + 1000);",
-              "            ShipSpecialBonuses(Player(),bonSkill1,ShipSpecialBonuses(Player(),bonSkill1) + 10);",
-              "            ShipSpecialBonuses(Player(),bonResistAsteroid,ShipSpecialBonuses(Player(),bonResistAsteroid) + 75);",
-              "            ShipSpecialBonuses(Player(),bonHookRadius,ShipSpecialBonuses(Player(),bonHookRadius) + 275);",
-              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + 500);",
-              "            ShipSpecialBonuses(Player(),bonRadar,10000);",
-              "            ShipDeleteCustomShipInfo(Player(),'RefMeteorFlag');",
-              "            Chameleon(Player());",
-              "            MetFlag = 0;",
-              "            if(ShipFindCustomShipInfoByType(Player(),'RefMeteorDef') > 0) ShipDeleteCustomShipInfo(Player(),'RefMeteorDef');",
-              "            ShipVisibility(Player(),-1,255.0);",
-              "            NoTalkToShip(Player(),0);",
-              "            PlayerLogicChameleon(0,0);",
-              "            PlayerLogicChameleon(1,0);",
-              "            PlayerLogicChameleon(2,0);",
-              "        }",
-              "    }",
-              "    if(HullSpecial(Player()) != FindBonusByCustomTag('Bastion') || HullSpecial(Player()) != FindBonusByCustomTag('SuperHullWB')) {",
-              "        if(ShipFindCustomShipInfoByType(Player(),'RefBastionFlag') > 0) {",
-              "            int Speeda = MinusSpeed * 100;",
-              "            ShipSpecialBonuses(Player(),bonSpeed,ShipSpecialBonuses(Player(),bonSpeed) + Speeda);",
-              "            MinusSpeed = 0;",
-              "            ShipSpecialBonuses(Player(),bonAttacks,ShipSpecialBonuses(Player(),bonAttacks) - 1);",
-              "            ShipDeleteCustomShipInfo(Player(),'RefBastionFlag');",
-              "            BastFlag = 0;",
-              "        }",
-              "    }",
-              "}"          
-          ]        
-        }      
-      ],
-      "Planets":      
-      [
-        {
-          "Type":  "TPlanet",
-          "Name":  "PlanetNew",
-          "Pos.x":  -100,
-          "Pos.y":  -30,
-          "Parent":  -1,
-          "#":  1,
-          "Race":  62,
-          "Owner":  62,
-          "Economy":  14,
-          "Goverment":  62,
-          "RangeMin":  0,
-          "RangeMax":  100,
-          "Dialog":  -1        
-        }      
-      ],
-      "Ships":      
-      [
-        {
-          "Type":  "TStarShip",
-          "Name":  "",
-          "Pos.x":  -100,
-          "Pos.y":  -90,
-          "Parent":  -1,
-          "#":  2,
-          "Count":  1,
-          "Owner":  62,
-          "Ship.Type":  126,
-          "Player":  true,
-          "SpeedMin":  0,
-          "SpeedMax":  10000,
-          "Weapon":  0,
-          "CargoHook":  0,
-          "EmptySpace":  0,
-          "StatusTraderMin":  0,
-          "StatusTraderMax":  100,
-          "StatusWarriorMin":  0,
-          "StatusWarriorMax":  100,
-          "StatusPirateMin":  0,
-          "StatusPirateMax":  100,
-          "StrengthMin":  "0",
-          "StrengthMax":  "0",
-          "Ruins":  ""        
-        }      
-      ],
-      "Stars":      
-      [
-        {
-          "Type":  "TStar",
-          "Name":  "StarNew",
-          "Pos.x":  -100,
-          "Pos.y":  -60,
-          "Parent":  -1,
-          "#":  0,
-          "Constellation":  0,
-          "Priority":  0,
-          "NoKling":  false,
-          "NoComeKling":  false        
-        }      
-      ],
-      "Statements":      
-      [
-        {
-          "Type":  "Tif",
-          "Name":  "",
-          "Pos.x":  250,
-          "Pos.y":  -220,
-          "Parent":  -1,
-          "#":  7,
-          "Code.Type":  "DialogBegin",
-          "Code":          
-          [
-              "PlayerBridge()==12"          
-          ]        
-        }      
-      ],
-      "States":      
-      [
-        {
-          "Type":  "TState",
-          "Name":  "StateNew",
-          "Pos.x":  -100,
-          "Pos.y":  30,
-          "Parent":  -1,
-          "#":  3,
-          "Move":  0,
-          "MoveObj":  -1,
-          "Attack.Count":  0,
-          "TakeItem":  -1,
-          "TakeAllItem":  false,
-          "OnTalk":  "",
-          "OnActCode":  "",
-          "EType":  1,
-          "EUnique":  "",
-          "EMsg":  ""        
-        }      
-      ],
-      "Variables":      
-      [
-        {
-          "Type":  "TVar",
-          "Name":  "MetFlag",
-          "Pos.x":  -100,
-          "Pos.y":  -160,
-          "Parent":  -1,
-          "#":  9,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
+            "#": "12",
+            "String": "Режим контрбатарейного огня: <clr>Отключен<clrEnd>"
         },
         {
-          "Type":  "TVar",
-          "Name":  "BastFlag",
-          "Pos.x":  -100,
-          "Pos.y":  -130,
-          "Parent":  -1,
-          "#":  10,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
+            "#": "13",
+            "String": "Режим невидимости: <clr>Включен<clrEnd>"
         },
         {
-          "Type":  "TVar",
-          "Name":  "MinusSpeed",
-          "Pos.x":  -100,
-          "Pos.y":  -190,
-          "Parent":  -1,
-          "#":  19,
-          "Var.Type":  "Int",
-          "Init":  "0",
-          "Global":  false        
-        }      
-      ]    
-    }  
-  ],
-  "Visual.Links":  
-  [
-    {
-      "Type":  "TGraphLink",
-      "Begin":  2,
-      "End":  0,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  1,
-      "End":  0,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  4,
-      "End":  1,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  4,
-      "End":  3,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  7,
-      "End":  8,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  11,
-      "End":  15,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  12,
-      "End":  16,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  13,
-      "End":  17,
-      "Nom":  0,
-      "Arrow":  true    
-    },
-    {
-      "Type":  "TGraphLink",
-      "Begin":  14,
-      "End":  18,
-      "Nom":  0,
-      "Arrow":  true    
-    }  
-  ],
-  "BlockPar.EC.Total.Strings":  8,
-  "BlockPar.EC":  
-  [
-    {
-      "#":  "10",
-      "String":  "Включить режим невидимости"    
-    },
-    {
-      "#":  "11",
-      "String":  "Режим контрбатарейного огня: <clr>Включен<clrEnd>"    
-    },
-    {
-      "#":  "12",
-      "String":  "Режим контрбатарейного огня: <clr>Отключен<clrEnd>"    
-    },
-    {
-      "#":  "13",
-      "String":  "Режим невидимости: <clr>Включен<clrEnd>"    
-    },
-    {
-      "#":  "14",
-      "String":  "Режим невидимости: <clr>Отключен<clrEnd>"    
-    },
-    {
-      "#":  "2",
-      "String":  "Отключить режим контрбатарейного огня"    
-    },
-    {
-      "#":  "5",
-      "String":  "Включить режим контрбатарейного огня"    
-    },
-    {
-      "#":  "8",
-      "String":  "Отключить режим невидимости"    
-    }  
-  ]
+            "#": "14",
+            "String": "Режим невидимости: <clr>Отключен<clrEnd>"
+        },
+        {
+            "#": "2",
+            "String": "Отключить режим контрбатарейного огня"
+        },
+        {
+            "#": "5",
+            "String": "Включить режим контрбатарейного огня"
+        },
+        {
+            "#": "8",
+            "String": "Отключить режим невидимости"
+        }
+    ]
 }
