@@ -252,7 +252,7 @@
                         "        else if(c<=20) NewsTimer = Rnd(1,4);",
                         "        else if(c<=30) NewsTimer = Rnd(1,3); // чем больше свободных систем, тем чаще новасти",
                         "        else if(c<=50) NewsTimer = Rnd(1,2);",
-                        "        else if(c<=100) NewsTimer = Rnd(1,1);",
+                        "        else NewsTimer = 1;",
                         "        timer[ForRandom] = Rnd(35,80);",
                         "        if (ForRandom == 15) timer[15] = 1460; //Новость про Олимпиаду",
                         "        if (ForRandom == 88) timer[88] = Rnd(150,400); //Новость про успехи пятилетки",
