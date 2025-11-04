@@ -1,18 +1,19 @@
 {
     "FileID": 573785173,
     "FileVersion": 8,
-    "ViewPos.x": -18,
-    "ViewPos.y": -10,
+    "ViewPos.x": 87,
+    "ViewPos.y": -203,
     "ScriptName": "mod_RefNews",
-    "ScriptFileOut": "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
-    "ScriptTextOut": "C:\\Users\\DmitB\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
+    "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
+    "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
     "LangDatIn": "",
     "LangDatOut": "",
     "MainDatIn": "",
     "MainDatOut": "",
     "CacheDatIn": "",
     "CacheDatOut": "",
-    "ExportLang": false,
+    "ExportLangTxt": false,
+    "ExportLangDat": false,
     "Visual.Objects": 
     [
         {
@@ -67,12 +68,17 @@
                         "PlanetChoosed1 = 0;",
                         "PlanetChoosed2 = 0;",
                         "for(i=0;i<=CT('AdditionalNews.RegularNewsCount');i=i+1) { //чтобы не писать каждый элемент массива, отнимаем 1 от КД циклично",
-                        "    if(!((i == blacklist[1])||(i == blacklist[2])||(i == blacklist[3])||(i == blacklist[4])||(i == blacklist[5])||(i == blacklist[6])||(i == blacklist[7])))",
+                        "    for(j=0;ArrayDim(blacklist)>j;j=j+1) {",
+                        "        if(i == blacklist[j]) continue;",
+                        "    }",
+                        "",
+                        "    /*if(!((i == blacklist[1])||(i == blacklist[2])||(i == blacklist[3])||(i == blacklist[4])||(i == blacklist[5])||(i == blacklist[6])||(i == blacklist[7])))",
                         "    {",
                         "        timer[i] = timer[i] - 1;",
-                        "    }//отнимаем по единице кулдауна у всех новостей",
+                        "    }*/",
+                        "    //отнимаем по единице кулдауна у всех новостей",
                         "}",
-                        "if (NewsTimer <= 0) //если закончился кулдаун новостей (сделан, чтобы не спамить игроку в хлебало новостями",
+                        "if(NewsTimer <= 0) //если закончился кулдаун новостей (сделан, чтобы не спамить игроку в хлебало новостями",
                         "{",
                         "    while(nope == 0) {",
                         "        ForRandom = Rnd(1,CT('AdditionalNews.RegularNewsCount'));",
@@ -190,52 +196,53 @@
                         "    }",
                         "    if(ForRandom == 105) {",
                         "        ForRnd = Rnd(1,3);",
-                        "        if(ForRnd == 1) strTapok = '«Цуфай», «Операция Коалиционная сила», «Песнь радиоактивной пустыни», «Гралгарский бой»';",
-                        "        if(ForRnd == 2) strTapok ='«Иное неважно», «Аль-Дагор», «Смута», «Алая лилия»';",
-                        "        if(ForRnd == 3) strTapok ='«Солнце», «Пробил час», «Стальные воины», «Я жду»';",
+                        "        if(ForRnd == 1) strTapok = \"«Цуфай», «Операция Коалиционная сила», «Песнь радиоактивной пустыни», «Гралгарский бой»\";",
+                        "        if(ForRnd == 2) strTapok = \"«Иное неважно», «Аль-Дагор», «Смута», «Алая лилия»\";",
+                        "        if(ForRnd == 3) strTapok = \"«Солнце», «Пробил час», «Стальные воины», «Я жду»\";",
                         "    }",
                         "    if(ForRandom == 102) {",
                         "        ForRnd = Rnd(1,5);",
-                        "        if(ForRnd == 1) strStalin ='Айзиф Желязны';",
-                        "        if(ForRnd == 2) strStalin ='Феникс Держинский';",
-                        "        if(ForRnd == 3) strStalin ='Вальдемар Аль-Лени';",
-                        "        if(ForRnd == 4) strStalin ='Серго Кир';",
-                        "        if(ForRnd == 5) strStalin ='Лазарре Каган';",
+                        "        if(ForRnd == 1) strStalin = \"Айзиф Желязны\";",
+                        "        if(ForRnd == 2) strStalin = \"Феникс Держинский\";",
+                        "        if(ForRnd == 3) strStalin = \"Вальдемар Аль-Лени\";",
+                        "        if(ForRnd == 4) strStalin = \"Серго Кир\";",
+                        "        if(ForRnd == 5) strStalin = \"Лазарре Каган\";",
+                        "        if(ForRnd == 6) strStalin = \"Яссиф Юразельски\";",
                         "    }",
                         "    if(ForRandom == 95) {",
                         "        ForRnd = Rnd(1,10);",
-                        "        if(ForRnd == 1) strComplex ='Азириум';",
-                        "        if(ForRnd == 2) strComplex ='Лайстар';",
-                        "        if(ForRnd == 3) strComplex ='Мезинно';",
-                        "        if(ForRnd == 4) strComplex ='Ветрум';",
-                        "        if(ForRnd == 5) strComplex ='Фонсторт';",
-                        "        if(ForRnd == 6) strComplex ='Алленто';",
-                        "        if(ForRnd == 7) strComplex ='Венеччо';",
-                        "        if(ForRnd == 8) strComplex ='Лигари';",
-                        "        if(ForRnd == 9) strComplex ='Анабакко';",
-                        "        if(ForRnd == 10) strComplex ='Шелесто';",
+                        "        if(ForRnd == 1) strComplex = \"Азириум\";",
+                        "        if(ForRnd == 2) strComplex = \"Лайстар\";",
+                        "        if(ForRnd == 3) strComplex = \"Мезинно\";",
+                        "        if(ForRnd == 4) strComplex = \"Ветрум\";",
+                        "        if(ForRnd == 5) strComplex = \"Фонсторт\";",
+                        "        if(ForRnd == 6) strComplex = \"Алленто\";",
+                        "        if(ForRnd == 7) strComplex = \"Венеччо\";",
+                        "        if(ForRnd == 8) strComplex = \"Лигари\";",
+                        "        if(ForRnd == 9) strComplex = \"Анабакко\";",
+                        "        if(ForRnd == 10) strComplex = \"Шелесто\";",
                         "    }",
                         "    if(ForRandom == 44) {",
                         "        ForRnd = Rnd(1,5);",
-                        "        if(ForRnd == 1) strRadio ='Маяк';",
-                        "        if(ForRnd == 2) strRadio ='Энергия';",
-                        "        if(ForRnd == 3) strRadio ='Искра';",
-                        "        if(ForRnd == 4) strRadio ='Вестник';",
-                        "        if(ForRnd == 5) strRadio ='3294';",
+                        "        if(ForRnd == 1) strRadio = \"Маяк\";",
+                        "        if(ForRnd == 2) strRadio = \"Энергия\";",
+                        "        if(ForRnd == 3) strRadio = \"Искра\";",
+                        "        if(ForRnd == 4) strRadio = \"Вестник\";",
+                        "        if(ForRnd == 5) strRadio = \"3294\";",
                         "    }",
                         "    if(ForRandom == 59) {",
                         "        ForRnd = Rnd(1,5);",
-                        "        if(ForRnd == 1) strMolotov ='Литвинова';",
-                        "        if(ForRnd == 2) strMolotov ='Молоточкина';",
-                        "        if(ForRnd == 3) strMolotov ='Кисельродде';",
-                        "        if(ForRnd == 4) strMolotov ='Громина';",
-                        "        if(ForRnd == 5) strMolotov ='Грибожуева';",
+                        "        if(ForRnd == 1) strMolotov = \"Литвинова\";",
+                        "        if(ForRnd == 2) strMolotov = \"Молоточкина\";",
+                        "        if(ForRnd == 3) strMolotov = \"Кисельродде\";",
+                        "        if(ForRnd == 4) strMolotov = \"Громина\";",
+                        "        if(ForRnd == 5) strMolotov = \"Грибожуева\";",
                         "    }",
                         "    if(ForRandom == 89) {",
                         "        ForRnd = Rnd(1,3);",
-                        "        if(ForRnd == 1) strCenter ='Холодная Кинза';",
-                        "        if(ForRnd == 2) strCenter ='ГУМ';",
-                        "        if(ForRnd == 3) strCenter ='Тайкон-холл';",
+                        "        if(ForRnd == 1) strCenter = \"Холодная Кинза\";",
+                        "        if(ForRnd == 2) strCenter = \"ГУМ\";",
+                        "        if(ForRnd == 3) strCenter = \"Тайкон-холл\";",
                         "    }",
                         "    //SFT(Name(PlanetChoosed));",
                         "    //SFT(Name(PlanetChoosed1));",
@@ -296,6 +303,7 @@
                         "ArrayAdd(blacklist, 59);",
                         "ArrayAdd(blacklist, 93);",
                         "ArrayAdd(blacklist, 111);",
+                        "ArrayAdd(blacklist, 117);",
                         "for (i= 0; i < ArrayDim(timer); i = i + 1) timer[i] = 0;",
                         "//Функция для исправления перевеса корабля (если он есть): расширяет вместимость корпуса, повышает HP до максимума",
                         "function FixOverweight(ship)",
@@ -323,6 +331,10 @@
                         "            break;",
                         "        }",
                         "    }",
+                        "}",
+                        "",
+                        "function g_UpdateCD() {",
+                        "    NewsCD = Rnd(100,250);",
                         "}"
                     ]
                 },
@@ -749,10 +761,11 @@
                         "                        KillsCD = 0;",
                         "                        BertorsKilled = 0;",
                         "                        TitleCD = 400;",
-                        "                        NewsAdd(Format(CT('BertorThanks.1'),'name',ShortName(Player())));",
-                        "                        AddPlanetNews(Format(CT('BertorThanks.1'),'name',ShortName(Player())),75);",
+                        "                        tstr = '</color>' + Format(CT('BertorThanks.1'),'name',ShortName(Player()));",
+                        "                        NewsAdd(tstr);",
+                        "                        AddPlanetNews(tstr,75);",
                         "                        if(~findsubstr(Name(Player()),CT('BertorThanks.Rank'))) SetName(Player(),ShortName(Player())+' '+CT('BertorThanks.Rank'));",
-                        "                        GiveReward(Player(),People,0);",
+                        "                        GiveReward(Player(),ShipPilotRace(),0);",
                         "                        Sound('Sound.NewMsg');",
                         "                    }",
                         "                }",
@@ -765,6 +778,19 @@
                         "",
                         "    if(TitleCD > 0) TitleCD = TitleCD - 1;",
                         "    if(KillsCD > 0) KillsCD = KillsCD - 1;",
+                        "}",
+                        "",
+                        "//Титул Освободитель",
+                        "if(!Liberator) {",
+                        "    if(ShipStatistic(Player(),3) > 99) {",
+                        "        Liberator = 1;",
+                        "        GiveReward(Player(),ShipPilotRace(),0);",
+                        "        tstr = '</color>' + Format(CT('SaverOfWorldsThanks.1'),'name',ShortName(Player()));",
+                        "        NewsAdd(tstr);",
+                        "        AddPlanetNews(tstr,75);",
+                        "        if(~findsubstr(Name(Player()),CT('SaverOfWorldsThanks.Rank'))) SetName(Player(),ShortName(Player())+' '+CT('SaverOfWorldsThanks.Rank'));",
+                        "        Sound('Sound.NewMsg');",
+                        "    }",
                         "}"
                     ]
                 },
@@ -1096,25 +1122,31 @@
                         "dword tdwd;",
                         "if(FlagDomDef == 1) {",
                         "    tdwd = CurTurn() - DomiksVictoryDate;",
-                        "    if(tdwd % 365 == 0) {",
-                        "        if(!CoalitionDefeated()) {",
-                        "            AddPlanetNews(Format(CT('CelebrationEvents.CelebrateDomiksCoal'),'#count#',tdwd / 365),81);",
-                        "        }",
-                        "        else {",
-                        "            AddPlanetNews(Format(CT('CelebrationEvents.DomiksCelebrateDomiksClan'),'#count#',tdwd / 365),81);",
+                        "    if(CurTurn() != DomiksVictoryDate) {",
+                        "        if(tdwd % 365 == 0) {",
+                        "            if(!CoalitionDefeated()) {",
+                        "                AddPlanetNews(Format(CT('CelebrationEvents.CelebrateDomiksCoal'),'#count#',tdwd / 365),81);",
+                        "            }",
+                        "            else {",
+                        "                AddPlanetNews(Format(CT('CelebrationEvents.DomiksCelebrateDomiksClan'),'#count#',tdwd / 365),81);",
+                        "            }",
                         "        }",
                         "    }",
                         "}",
                         "if(FlagPiratesDef == 1) {",
-                        "    tdwd = CurTurn() - ClanDeathDate;",
-                        "    if(tdwd % 365 == 0) {",
-                        "        AddPlanetNews(Format(CT('CelebrationEvents.CelebratePiratesDeath'),'#count#',tdwd / 365),81);",
+                        "    if(CurTurn() != ClanDeathDate) {",
+                        "        tdwd = CurTurn() - ClanDeathDate;",
+                        "        if(tdwd % 365 == 0) {",
+                        "            AddPlanetNews(Format(CT('CelebrationEvents.CelebratePiratesDeath'),'#count#',tdwd / 365),81);",
+                        "        }",
                         "    }",
                         "}",
                         "if(FlagNoCoal == 1) {",
-                        "    tdwd = CurTurn() - CoalDeathDate;",
-                        "    if(tdwd % 365 == 0) {",
-                        "        AddPlanetNews(Format(CT('CelebrationEvents.CelebrateCoalitionDeath'),'#count#',tdwd / 365),81);",
+                        "    if(CurTurn() != CoalDeathDate) {",
+                        "        tdwd = CurTurn() - CoalDeathDate;",
+                        "        if(tdwd % 365 == 0) {",
+                        "            AddPlanetNews(Format(CT('CelebrationEvents.CelebrateCoalitionDeath'),'#count#',tdwd / 365),81);",
+                        "        }",
                         "    }",
                         "}"
                     ]
@@ -1399,7 +1431,7 @@
                         "        for(j=0;f>j;j=j+1) {",
                         "            StarChoosed1 = ConStar(StarChoosed,j);",
                         "            //if(StarChoosed1 < 1) continue;",
-                        "    ",
+                        "",
                         "            //SFT('RefNews logging star number '+j+': name is '+Name(StarChoosed1));",
                         "            //SFT('RefNews logging i is '+i);",
                         "            //SFT('RefNews logging tint is '+tint);",
@@ -1413,11 +1445,11 @@
                         "    else {",
                         "        for(j=0;f>j;j=j+1) {",
                         "            StarChoosed1 = ConStar(StarChoosed,j);",
-                        "            ",
+                        "",
                         "            if(StarOwner(StarChoosed1) || StarCustomFaction(StarChoosed1) != '') break;",
                         "            else l = l + 1;",
                         "        }",
-                        "        ",
+                        "",
                         "        if(l == f) {",
                         "            SectorsArray[i] = 0;",
                         "            tstr = CT('SectorLiberationNews.'+Rnd(1,CT('SectorLiberationNews.Count')));",
@@ -1426,6 +1458,64 @@
                         "            NewsAdd(tstr);",
                         "            Sound('Sound.NewMsg');",
                         "        }",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 1290,
+                    "Pos.y": 180,
+                    "Parent": -1,
+                    "#": 132,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "//Блок для поиска лучшего воина",
+                        "if(BestWarrior == 0) i = 0;",
+                        "else if(IdToShip(BestWarrior) < 1) i = 0;",
+                        "else if(!RangerStatus(IdToShip(BestWarrior),'EminentWarrior')) i = 0;",
+                        "else i = 1;",
+                        "",
+                        "if(i) {",
+                        "}",
+                        "else {",
+                        "    BestWarrior = 0;",
+                        "    dword cur_ship = 0;",
+                        "",
+                        "    for(i=0;GalaxyRangers()>i;i=i+1) {",
+                        "        cur_ship = GalaxyRangers(i);",
+                        "        if(!RangerStatus(cur_ship,'EminentWarrior')) continue;",
+                        "        else {",
+                        "            BestWarrior = Id(cur_ship);",
+                        "            ShipAddCustomShipInfo(cur_ship,'EminentWarriorNews','NoShow');",
+                        "        }",
+                        "    }",
+                        "}",
+                        "",
+                        "//Таймер, чтобы не спамило новостями об таких воюнах",
+                        "if(NewsCD) NewsCD = NewsCD - 1;"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 820,
+                    "Pos.y": 430,
+                    "Parent": -1,
+                    "#": 135,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "if(!GreatVictory) {",
+                        "    if(ControlledSystems(0) == GalaxyStars()) {",
+                        "        GreatVictory = 1;",
+                        "        tstr = CT('GreatVictoryCelebration');",
+                        "        if(!CurrentMods('ShusRangers\\ShuKlissan')) NewsAdd(tstr);",
+                        "        else CustomEther('GalaxyAlert', 7, '',tstr);",
+                        "        AddPlanetNews(tstr,81);",
+                        "        Sound('Sound.NewMsg');",
                         "    }",
                         "}"
                     ]
@@ -2763,6 +2853,39 @@
                     "Var.Type": "Array",
                     "Init": "20",
                     "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "NewsCD",
+                    "Pos.x": 1340,
+                    "Pos.y": 160,
+                    "Parent": -1,
+                    "#": 133,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "Liberator",
+                    "Pos.x": 440,
+                    "Pos.y": 670,
+                    "Parent": -1,
+                    "#": 134,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "GreatVictory",
+                    "Pos.x": 880,
+                    "Pos.y": 430,
+                    "Parent": -1,
+                    "#": 136,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
                 }
             ]
         }
@@ -2889,9 +3012,136 @@
             "Arrow": true
         }
     ],
-    "BlockPar.EC.Total.Strings": 0,
+    "BlockPar.EC.Total.Strings": 32,
     "BlockPar.EC": 
     [
-      
+        {
+            "#": "0",
+            "String": "Тайкон-холл"
+        },
+        {
+            "#": "1",
+            "String": "ГУМ"
+        },
+        {
+            "#": "10",
+            "String": "Искра"
+        },
+        {
+            "#": "11",
+            "String": "Энергия"
+        },
+        {
+            "#": "12",
+            "String": "Маяк"
+        },
+        {
+            "#": "13",
+            "String": "Шелесто"
+        },
+        {
+            "#": "14",
+            "String": "Анабакко"
+        },
+        {
+            "#": "15",
+            "String": "Лигари"
+        },
+        {
+            "#": "16",
+            "String": "Венеччо"
+        },
+        {
+            "#": "17",
+            "String": "Алленто"
+        },
+        {
+            "#": "18",
+            "String": "Фонсторт"
+        },
+        {
+            "#": "19",
+            "String": "Ветрум"
+        },
+        {
+            "#": "2",
+            "String": "Холодная Кинза"
+        },
+        {
+            "#": "20",
+            "String": "Мезинно"
+        },
+        {
+            "#": "21",
+            "String": "Лайстар"
+        },
+        {
+            "#": "22",
+            "String": "Азириум"
+        },
+        {
+            "#": "23",
+            "String": "Яссиф Юразельски"
+        },
+        {
+            "#": "24",
+            "String": "Лазарре Каган"
+        },
+        {
+            "#": "25",
+            "String": "Серго Кир"
+        },
+        {
+            "#": "26",
+            "String": "Вальдемар Аль-Лени"
+        },
+        {
+            "#": "27",
+            "String": "Феникс Держинский"
+        },
+        {
+            "#": "28",
+            "String": "Айзиф Желязны"
+        },
+        {
+            "#": "29",
+            "String": "«Солнце», «Пробил час», «Стальные воины», «Я жду»"
+        },
+        {
+            "#": "3",
+            "String": "Грибожуева"
+        },
+        {
+            "#": "30",
+            "String": "«Иное неважно», «Аль-Дагор», «Смута», «Алая лилия»"
+        },
+        {
+            "#": "31",
+            "String": "«Цуфай», «Операция Коалиционная сила», «Песнь радиоактивной пустыни», «Гралгарский бой»"
+        },
+        {
+            "#": "4",
+            "String": "Громина"
+        },
+        {
+            "#": "5",
+            "String": "Кисельродде"
+        },
+        {
+            "#": "6",
+            "String": "Молоточкина"
+        },
+        {
+            "#": "7",
+            "String": "Литвинова"
+        },
+        {
+            "#": "8",
+            "String": "3294"
+        },
+        {
+            "#": "9",
+            "String": "Вестник"
+        }
     ]
 }
