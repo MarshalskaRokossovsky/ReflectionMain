@@ -1,8 +1,8 @@
 {
     "FileID": 573785173,
     "FileVersion": 8,
-    "ViewPos.x": 87,
-    "ViewPos.y": -203,
+    "ViewPos.x": -16,
+    "ViewPos.y": -85,
     "ScriptName": "mod_RefNews",
     "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
     "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
@@ -2885,6 +2885,17 @@
                     "#": 136,
                     "Var.Type": "Int",
                     "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "BestWarrior",
+                    "Pos.x": 1340,
+                    "Pos.y": 180,
+                    "Parent": -1,
+                    "#": 137,
+                    "Var.Type": "Dword",
+                    "Init": "",
                     "Global": false
                 }
             ]
