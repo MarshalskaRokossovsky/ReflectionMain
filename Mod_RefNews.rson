@@ -335,7 +335,9 @@
                         "",
                         "function g_UpdateCD() {",
                         "    NewsCD = Rnd(100,250);",
-                        "}"
+                        "}",
+                        "",
+                        "NewsCD = 0;"
                     ]
                 },
                 {
