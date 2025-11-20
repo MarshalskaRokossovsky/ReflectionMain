@@ -75,7 +75,7 @@
                     "Code": 
                     [
                         "if(ShipIsTakeoff(Player())) {",
-                        "    int fuel = ShipFuel(Player());",
+                        "   fuel = ShipFuel(Player());",
                         "",
                         "    if(GetShipRuins(Player())) {",
                         "        if(fuel) {",
@@ -190,6 +190,20 @@
                     "EType": 1,
                     "EUnique": "",
                     "EMsg": ""
+                }
+            ],
+            "Variables": 
+            [
+                {
+                    "Type": "TVar",
+                    "Name": "fuel",
+                    "Pos.x": -90,
+                    "Pos.y": -130,
+                    "Parent": -1,
+                    "#": 7,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
                 }
             ]
         }

@@ -1116,7 +1116,7 @@
                         "    }",
                         "    PlanetRace(planet,planetRace);",
                         "    //Возвращаем овнера, какой бы он ни был",
-                        "    PlanetOwner(planetOwner,PirateClan);",
+                        "    PlanetOwner(planet,PirateClan);",
                         "    ShipSpecialBonuses(ship,bonJump,-50000000);",
                         "    result=ship;",
                         "}",
