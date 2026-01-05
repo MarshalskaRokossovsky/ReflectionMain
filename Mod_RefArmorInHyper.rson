@@ -4,8 +4,8 @@
     "ViewPos.x": -688,
     "ViewPos.y": -643,
     "ScriptName": "Mod_RefArmorInHyper",
-    "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefGreeting\\DATA\\Script\\Mod_RefArmorInHyper.scr",
-    "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefGreeting\\DATA\\Script\\Mod_RefArmorInHyper.txt",
+    "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefArmorInHyper\\DATA\\Script\\Mod_RefArmorInHyper.scr",
+    "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefArmorInHyper\\DATA\\Script\\Mod_RefArmorInHyper.txt",
     "LangDatIn": "",
     "LangDatOut": "",
     "MainDatIn": "",
@@ -61,7 +61,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

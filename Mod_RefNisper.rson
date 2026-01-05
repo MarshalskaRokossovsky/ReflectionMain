@@ -1,8 +1,8 @@
 {
     "FileID": 573785173,
     "FileVersion": 8,
-    "ViewPos.x": 69,
-    "ViewPos.y": -63,
+    "ViewPos.x": -135,
+    "ViewPos.y": 139,
     "ScriptName": "Mod_RefNisper",
     "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
     "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
@@ -6229,7 +6229,7 @@
                         "",
                         "//На всякий случай",
                         "bonusDomiks = -1;",
-                        "bonusGlobal = -1;"
+                        "bonusGlobal = 4;"
                     ]
                 },
                 {
@@ -8225,7 +8225,7 @@
                         "        }",
                         "    }",
                         "}",
-                        "else if (bonusGlobal == -1 && NewsFlag) {",
+                        "else if (bonusGlobal == 4 && NewsFlag) {",
                         "    if(shipRuins) {",
                         "        if(!ShipOnSidePirateClan(Player())) {",
                         "            if(ShipType(shipRuins) == 'SB') {",
@@ -14287,7 +14287,7 @@
                     "Parent": -1,
                     "#": 10,
                     "Var.Type": "Dword",
-                    "Init": "-1",
+                    "Init": "",
                     "Global": false
                 },
                 {
@@ -14298,7 +14298,7 @@
                     "Parent": -1,
                     "#": 11,
                     "Var.Type": "Dword",
-                    "Init": "-1",
+                    "Init": "",
                     "Global": false
                 },
                 {
