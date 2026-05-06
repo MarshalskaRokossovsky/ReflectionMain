@@ -1,8 +1,8 @@
 {
     "FileID": 573785173,
     "FileVersion": 8,
-    "ViewPos.x": -357,
-    "ViewPos.y": 224,
+    "ViewPos.x": -241,
+    "ViewPos.y": -139,
     "ScriptName": "mod_RefNews",
     "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.scr",
     "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefNews\\DATA\\Script\\mod_RefNews.txt",
@@ -1262,7 +1262,7 @@
                     "Code": 
                     [
                         "if(ShipInPrison(Player()) && InPris == 0) {",
-                        "    CT('InprisonmentNews',InprisonmentArr);",
+                        "    CT('AdditionalNews.InprisonmentNews',InprisonmentArr);",
                         "    AddPlanetNews(Format(InprisonmentArr[Rnd(0,(ArrayDim(InprisonmentArr)-1))],'FullName',Name(Player()),'Planet',Name(GetShipPlanet(Player())),'Month',round(ShipInPrison(Player()) / 30),'Star',Name(ShipStar(Player()))),76);",
                         "    InPris = 1;",
                         "}",

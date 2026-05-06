@@ -231,7 +231,13 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "rand = RndObject(501,500+int(CT('RobotsMap.RefDomCount')),Player());",
+                        "while(1) {",
+                        "    rand = RndObject(501,500+int(CT('RobotsMap.RefDomCount')),Player());",
+                        "    if(StarSeries(ShipStar(Player())) == 0 && ~findsubstr(CT('RobotsMap.'+rand+'.Side'),'Red')) continue;",
+                        "    else if(StarSeries(ShipStar(Player())) == 1 && ~findsubstr(CT('RobotsMap.'+rand+'.Side'),'Blue')) continue;",
+                        "    else if(StarSeries(ShipStar(Player())) == 2 && ~findsubstr(CT('RobotsMap.'+rand+'.Side'),'Terron')) continue;",
+                        "    else break;",
+                        "}",
                         "StartRobots(CT('RobotsMap.'+rand+'.Map'),CT('RobotsMap.'+rand+'.RobotsStart'),CT('RobotsMap.'+rand+'.RobotsWin'),CT('RobotsMap.'+rand+'.RobotsLoss'),Name(pl),'621');",
                         "PlayerBridge(0);",
                         "FormChange('PlanetNO');"
