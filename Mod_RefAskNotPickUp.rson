@@ -1,8 +1,8 @@
 {
     "FileID": 573785173,
     "FileVersion": 8,
-    "ViewPos.x": -590,
-    "ViewPos.y": -497,
+    "ViewPos.x": -597,
+    "ViewPos.y": -472,
     "ScriptName": "Mod_RefAskNotPickUp",
     "ScriptFileOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefAskNotPickUp\\DATA\\Script\\Mod_RefAskNotPickUp.scr",
     "ScriptTextOut": "C:\\Users\\DmitB\\Documents\\Фиксы\\Reflection Fixes\\Mods\\Reflection\\RefAskNotPickUp\\DATA\\Script\\Mod_RefAskNotPickUp.txt",
@@ -33,7 +33,7 @@
                     "Type": "TDialogAnswer",
                     "Name": "fastexit",
                     "Pos.x": 240,
-                    "Pos.y": 60,
+                    "Pos.y": 100,
                     "Parent": -1,
                     "#": 18,
                     "Msg": "Спасибо за услугу.",
@@ -153,7 +153,7 @@
                     "Type": "Top",
                     "Name": "",
                     "Pos.x": 240,
-                    "Pos.y": 100,
+                    "Pos.y": 60,
                     "Parent": -1,
                     "#": 19,
                     "Code.Type": "Turn",
@@ -168,6 +168,7 @@
                         "    if(!ShipPicksItem(cur_ship,item)) continue;",
                         "",
                         "    ShipPicksItem(cur_ship,item,-1);",
+                        "    ShipFreeFlight(cur_ship);",
                         "}"
                     ]
                 },
@@ -497,20 +498,6 @@
         },
         {
             "Type": "TGraphLink",
-            "Begin": 17,
-            "End": 18,
-            "Nom": 0,
-            "Arrow": true
-        },
-        {
-            "Type": "TGraphLink",
-            "Begin": 18,
-            "End": 19,
-            "Nom": 0,
-            "Arrow": true
-        },
-        {
-            "Type": "TGraphLink",
             "Begin": 11,
             "End": 15,
             "Nom": 0,
@@ -569,6 +556,20 @@
             "Type": "TGraphLink",
             "Begin": 20,
             "End": 17,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 17,
+            "End": 19,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 19,
+            "End": 18,
             "Nom": 0,
             "Arrow": true
         }
