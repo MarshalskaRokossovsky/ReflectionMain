@@ -267,7 +267,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GLastTurnRun(GScriptName)==0"
+                        "GLastTurnRun(GScriptName)==0 && !GCntRun(GScriptName)"
                     ]
                 }
             ],
