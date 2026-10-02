@@ -1,0 +1,994 @@
+{
+    "FileID": 573785173,
+    "FileVersion": 8,
+    "ViewPos.x": -939,
+    "ViewPos.y": -560,
+    "ScriptName": "Mod_RefUniqueSmersh",
+    "ScriptFileOut": "D:\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.scr",
+    "ScriptTextOut": "D:\\Steam\\steamapps\\common\\Space Rangers HD A War Apart\\Mods\\Reflection\\RefUniqueSmersh\\DATA\\Script\\Mod_RefUniqueSmersh.txt",
+    "LangDatIn": "",
+    "LangDatOut": "",
+    "MainDatIn": "",
+    "MainDatOut": "",
+    "CacheDatIn": "",
+    "CacheDatOut": "",
+    "ExportLangTxt": false,
+    "ExportLangDat": false,
+    "Visual.Objects": 
+    [
+        {
+            "DialogAnswers": 
+            [
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": 30,
+                    "Parent": -1,
+                    "#": 13,
+                    "Msg": "Хочу купить!",
+                    "AMsg.Num": "0"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "block",
+                    "Pos.x": 100,
+                    "Pos.y": 30,
+                    "Parent": -1,
+                    "#": 14,
+                    "Msg": "Хочу купить!",
+                    "AMsg.Num": "1"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "restart",
+                    "Pos.x": 100,
+                    "Pos.y": -50,
+                    "Parent": -1,
+                    "#": 15,
+                    "Msg": "Нет, не сейчас",
+                    "AMsg.Num": "2"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "exit",
+                    "Pos.x": 60,
+                    "Pos.y": 150,
+                    "Parent": -1,
+                    "#": 26,
+                    "Msg": "Спасибо!",
+                    "AMsg.Num": "3"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "restart",
+                    "Pos.x": -148,
+                    "Pos.y": -52,
+                    "Parent": -1,
+                    "#": 31,
+                    "Msg": "Нет, пожалуй, я пока придержу эту технологию у себя.",
+                    "AMsg.Num": "4"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "exit",
+                    "Pos.x": -212,
+                    "Pos.y": 135,
+                    "Parent": -1,
+                    "#": 32,
+                    "Msg": "Спасибо!",
+                    "AMsg.Num": "5"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "restart",
+                    "Pos.x": -176,
+                    "Pos.y": 12,
+                    "Parent": -1,
+                    "#": 33,
+                    "Msg": "Ясно.",
+                    "AMsg.Num": "6"
+                },
+                {
+                    "Type": "TDialogAnswer",
+                    "Name": "",
+                    "Pos.x": -212,
+                    "Pos.y": 12,
+                    "Parent": -1,
+                    "#": 42,
+                    "Msg": "Отличная сделка. Забирайте корабль и вот <temp_int> кредитов.",
+                    "AMsg.Num": "7"
+                }
+            ],
+            "DialogMessages": 
+            [
+                {
+                    "Type": "TDialogMsg",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": -50,
+                    "Parent": -1,
+                    "#": 8,
+                    "Msg": "Прикладная доминаторология - важнейшее направление в исследовании доминаторов. Оно подразделяется на использование доминаторских технологий для победы над угрозой в принципе, на использование новых знаний для борьбы с рядовыми доминаторами и на использование полученной информации в собственно наших разработках.\r\n\r\nОдним из примеров такой работы и является то, что мы хотим вам предложить.\r\n\r\nКорпус \"Шершень\" - уникальный корпус, созданный на основе передовых акриновых технологий и революционных доминаторских разработок. Этот корпус имеет три режима, каждый из которых основан на технологиях одной из серий доминаторов.\r\n\r\nТекущая цена корпуса - <temp_int> cr.",
+                    "DMsg.Num": "0"
+                },
+                {
+                    "Type": "TDialogMsg",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": 110,
+                    "Parent": -1,
+                    "#": 18,
+                    "Msg": "Отлично! Корпус уже отправлен на склад. Пользуйтесь!",
+                    "DMsg.Num": "1"
+                },
+                {
+                    "Type": "TDialogMsg",
+                    "Name": "",
+                    "Pos.x": -212,
+                    "Pos.y": -53,
+                    "Parent": -1,
+                    "#": 39,
+                    "Msg": "Опа-на, а ну-ка дай глянуть... Тысяча дохлых пенчекряков! Вот это железяка! Слушай, брателло, наши технари в ангаре могут выпотрошить это корыто и собрать из него настоящий корабль. Работа тонкая, обычным плазморезаком тут не обойдешься, так что с тебя <temp_int> кредитов. Ну че, по рукам?",
+                    "DMsg.Num": "2"
+                },
+                {
+                    "Type": "TDialogMsg",
+                    "Name": "",
+                    "Pos.x": -212,
+                    "Pos.y": 94,
+                    "Parent": -1,
+                    "#": 44,
+                    "Msg": "Отличная сделка.",
+                    "DMsg.Num": "3"
+                }
+            ],
+            "Dialogs": 
+            [
+                {
+                    "Type": "TDialog",
+                    "Name": "SmershBuy",
+                    "Pos.x": 60,
+                    "Pos.y": -130,
+                    "Parent": -1,
+                    "#": 7
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "SwitchOnKeller",
+                    "Pos.x": 260,
+                    "Pos.y": -70,
+                    "Parent": -1,
+                    "#": 22
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "SwitchOnTerron",
+                    "Pos.x": 300,
+                    "Pos.y": -40,
+                    "Parent": -1,
+                    "#": 23
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "SwitchOnBlazer",
+                    "Pos.x": 340,
+                    "Pos.y": -10,
+                    "Parent": -1,
+                    "#": 29
+                },
+                {
+                    "Type": "TDialog",
+                    "Name": "CB_PhantomBuy",
+                    "Pos.x": -213,
+                    "Pos.y": -128,
+                    "Parent": -1,
+                    "#": 34
+                }
+            ],
+            "Groups": 
+            [
+                {
+                    "Type": "TGroup",
+                    "Name": "GroupNew",
+                    "Pos.x": -100,
+                    "Pos.y": 0,
+                    "Parent": -1,
+                    "#": 4,
+                    "Owner": 62,
+                    "Group.Type": 126,
+                    "CntShipMin": 1,
+                    "CntShipMax": 1,
+                    "SpeedMin": 100,
+                    "SpeedMax": 10000,
+                    "Weapon": 0,
+                    "CargoHook": 0,
+                    "EmptySpace": 0,
+                    "AddPlayer": true,
+                    "StatusTraderMin": 0,
+                    "StatusTraderMax": 100,
+                    "StatusWarriorMin": 0,
+                    "StatusWarriorMax": 100,
+                    "StatusPirateMin": 0,
+                    "StatusPirateMax": 100,
+                    "DistSearch": 10000,
+                    "Dialog": -1,
+                    "StrengthMin": "0",
+                    "StrengthMax": "0",
+                    "Ruins": ""
+                }
+            ],
+            "Items": 
+            [
+                {
+                    "Type": "TItem",
+                    "Name": "Hornet",
+                    "Pos.x": -100,
+                    "Pos.y": 67,
+                    "Parent": -1,
+                    "#": 27,
+                    "Class": 5,
+                    "Item.Type": 0,
+                    "Size": 10,
+                    "Level": 1,
+                    "Radius": 150,
+                    "Owner": 6,
+                    "Useless": ""
+                }
+            ],
+            "Operations": 
+            [
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": -22,
+                    "Pos.y": -89,
+                    "Parent": -1,
+                    "#": 5,
+                    "Code.Type": "Global",
+                    "Code": 
+                    [
+                        "GRun();",
+                        "if(Bought >= 1) {",
+                        "    if(ItemExist(Hornet)) {",
+                        "        ItemOnUseCode(Hornet,GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnUseCode'));",
+                        "        ItemOnActCode(Hornet,'[t_OnDealingDamage,t_OnStep|0]'+GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnActCode'));",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 0,
+                    "Pos.y": -89,
+                    "Parent": -1,
+                    "#": 6,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "if(ShipRank(Player()) >= 4 && !ShipOnSidePirateClan(Player()) && GalaxyDominatorResearchPercent() > 25) {",
+                        "    if(GetShipRuins(Player())) {",
+                        "        if(ShipType(GetShipRuins(Player())) == 'SB') {",
+                        "            if(Bought < 1 && !CurrentMods('Evolution\\\\EvoSB')) {",
+                        "                AddDialogInject('SmershBuy', \"Не хотите взглянуть на результат работы спецотдела Коалиции и специалистов в сфере прикладной доминаторологии? Мы готовы дать доступ вам как отличившемуся бойцу Коалиции\", \"А что это у вас там за доминаторология?\", 34);",
+                        "            }",
+                        "        }",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 9,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "temp_int = (round(round((110 - GalaxyDominatorResearchPercent())*5500) + GalaxyDiffLevels()*1000 + Rnd(3000,9000)))*max(1,Bought);"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": 70,
+                    "Parent": -1,
+                    "#": 16,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player(),ShipMoney(Player()) - temp_int);",
+                        "temp_dword = CreateHull(1,350+GalaxyTechLevel()*200,GalaxyTechLevel(),Kling,-1);",
+                        "SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Keller'),temp_dword);",
+                        "if(HullSpecial(temp_dword) != FindBonusByNameInCfg('RefUniqueSmersh_Keller')) {",
+                        "    ShipMoney(Player(),ShipMoney(Player()) + temp_int);",
+                        "    ItemDestroy(temp_dword,1);",
+                        "    MessageBox('Ошибка создания корпуса: не найден режим Keller. Проверьте Lang.dat мода.');",
+                        "    exit;",
+                        "}",
+                        "AddItemToStorage(GetShipRuins(Player()),temp_dword);",
+                        "ItemCost(temp_dword,temp_int/2);",
+                        "Sound('Sound.Buy');",
+                        "LinkItemToScript(temp_dword,Hornet);",
+                        "if(Bought < 1) Bought = 1;",
+                        "Bought = Bought + 0.2;",
+                        "ItemOnUseCode(temp_dword,GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnUseCode'));",
+                        "ItemOnActCode(temp_dword,'[t_OnDealingDamage,t_OnStep|0]'+GenerateCodeStringFromBlock('ShipInfo.AddInfo.CustomInfos.RefSmershMainInfo.OnActCode'));"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 20,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 20,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "temp_dword = HullSpecial(Player());",
+                        "if(temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Keller') || temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Terron') || temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Blazer')) {",
+                        "    if(temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Keller'))",
+                        "    {",
+                        "        temp_str=\"Keller\";",
+                        "        AddDialogInject('SwitchOnTerron',\"Текущий режим: <temp_str>\",\"Переключить Шершень на режим Terron\",17);",
+                        "    }",
+                        "    if(temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Terron'))",
+                        "    {",
+                        "        temp_str=\"Terron\";",
+                        "        AddDialogInject('SwitchOnBlazer',\"Текущий режим: <temp_str>\",\"Переключить Шершень на режим Blazer\",17);",
+                        "    }",
+                        "    if(temp_dword == FindBonusByNameInCfg('RefUniqueSmersh_Blazer'))",
+                        "    {",
+                        "        temp_str=\"Blazer\";",
+                        "        AddDialogInject('SwitchOnKeller',\"Текущий режим: <temp_str>\",\"Переключить Шершень на режим Keller\",17);",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 260,
+                    "Pos.y": 0,
+                    "Parent": -1,
+                    "#": 24,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "temp_dword = HullHP(Player());",
+                        "SwitchToMirrorImage(Player(),FindBonusByNameInCfg('RefUniqueSmersh_Keller'));",
+                        "Sound('Sound.ButtonInfoEnter');",
+                        "HullHP(Player(),temp_dword);",
+                        "DAnswer('main');"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 300,
+                    "Pos.y": 0,
+                    "Parent": -1,
+                    "#": 25,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "temp_dword = HullHP(Player());",
+                        "SwitchToMirrorImage(Player(),FindBonusByNameInCfg('RefUniqueSmersh_Terron'));",
+                        "Sound('Sound.ButtonInfoEnter');",
+                        "HullHP(Player(),temp_dword);",
+                        "DAnswer('main');"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 340,
+                    "Pos.y": 0,
+                    "Parent": -1,
+                    "#": 30,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "temp_dword = HullHP(Player());",
+                        "SwitchToMirrorImage(Player(),FindBonusByNameInCfg('RefUniqueSmersh_Blazer'));",
+                        "Sound('Sound.ButtonInfoEnter');",
+                        "HullHP(Player(),temp_dword);",
+                        "DAnswer('main');"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": -250,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 35,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "if(GetShipPirateRank(Player()) >= 4 && ShipOnSidePirateClan(Player()) && GalaxyDominatorResearchPercent() > 25) {",
+                        "    if(GetShipRuins(Player())) {",
+                        "        if(ShipType(GetShipRuins(Player())) == 'CB') {",
+						"            if(Bought >= 1 && PhantomUpgraded == 0 && !CurrentMods('Evolution\\\\EvoSB')) {",
+                        "                AddDialogInject('CB_PhantomBuy', \"\", \"Слушай, у меня тут есть уникальный коалиционный корпус. Слышал, ваши парни могут его как-то улучшить?\", 1);",
+                        "            }",
+                        "        }",
+                        "    }",
+                        "}"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": -213,
+                    "Pos.y": -87,
+                    "Parent": -1,
+                    "#": 38,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "temp_int = (round(round((110 - GalaxyDominatorResearchPercent())*5500) + GalaxyDiffLevels()*1000 + Rnd(3000,9000)))*max(1,Bought);"
+                    ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": -212,
+                    "Pos.y": 53,
+                    "Parent": -1,
+                    "#": 43,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player(), ShipMoney(Player()) - temp_int);",
+                        "",
+                        "for(phantom_i=ShipItems(Player())-1; phantom_i>=0; phantom_i=phantom_i-1) {",
+                        "    phantom_itm = ShipItems(Player(), phantom_i);",
+                        "",
+                        "    // Ищем любой из режимов Шершня",
+                        "    if(HullSpecial(phantom_itm) == FindBonusByNameInCfg('RefUniqueSmersh_Keller') || HullSpecial(phantom_itm) == FindBonusByNameInCfg('RefUniqueSmersh_Terron') || HullSpecial(phantom_itm) == FindBonusByNameInCfg('RefUniqueSmersh_Blazer')) {",
+                        "",
+                        "        // Перепрошиваем корпус в Фантом",
+                        "        SpecialToEquipment(FindBonusByNameInCfg('RefUniqueSmersh_Phantom'), phantom_itm);",
+						"        ItemOwner(phantom_itm, PirateClan);",
+                        "        ItemCost(phantom_itm, ItemCost(phantom_itm) + (temp_int / 2));",
+                        "",
+                        "        // ТРЮК: Проверяем, надет ли этот корпус на игрока прямо сейчас?",
+                        "        if(HullSpecial(Player()) == FindBonusByNameInCfg('RefUniqueSmersh_Phantom')) {",
+                        "            // Сохраняем прочность (чтобы игра не вылечила или не сломала корпус при смене визуала)",
+                        "            temp_dword = HullHP(Player());",
+                        "            // Принудительно обновляем внешний вид корабля!",
+                        "            SwitchToMirrorImage(Player(), FindBonusByNameInCfg('RefUniqueSmersh_Phantom'));",
+                        "            HullHP(Player(), temp_dword);",
+                        "        }",
+                        "",
+                        "        Sound('Sound.Buy');",
+						"		 PhantomUpgraded = 1;",
+                        "        break;",
+                        "    }",
+                        "}"
+                    ]
+                }
+            ],
+            "Planets": 
+            [
+                {
+                    "Type": "TPlanet",
+                    "Name": "PlanetNew",
+                    "Pos.x": -100,
+                    "Pos.y": -30,
+                    "Parent": -1,
+                    "#": 1,
+                    "Race": 62,
+                    "Owner": 62,
+                    "Economy": 14,
+                    "Goverment": 62,
+                    "RangeMin": 0,
+                    "RangeMax": 100,
+                    "Dialog": -1
+                }
+            ],
+            "Ships": 
+            [
+                {
+                    "Type": "TStarShip",
+                    "Name": "",
+                    "Pos.x": -100,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 2,
+                    "Count": 1,
+                    "Owner": 62,
+                    "Ship.Type": 126,
+                    "Player": true,
+                    "SpeedMin": 0,
+                    "SpeedMax": 10000,
+                    "Weapon": 0,
+                    "CargoHook": 0,
+                    "EmptySpace": 0,
+                    "StatusTraderMin": 0,
+                    "StatusTraderMax": 100,
+                    "StatusWarriorMin": 0,
+                    "StatusWarriorMax": 100,
+                    "StatusPirateMin": 0,
+                    "StatusPirateMax": 100,
+                    "StrengthMin": "0",
+                    "StrengthMax": "0",
+                    "Ruins": ""
+                }
+            ],
+            "Stars": 
+            [
+                {
+                    "Type": "TStar",
+                    "Name": "StarNew",
+                    "Pos.x": -100,
+                    "Pos.y": -60,
+                    "Parent": -1,
+                    "#": 0,
+                    "Constellation": 0,
+                    "Priority": 0,
+                    "NoKling": false,
+                    "NoComeKling": false
+                }
+            ],
+            "Statements": 
+            [
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": 60,
+                    "Pos.y": -10,
+                    "Parent": -1,
+                    "#": 11,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player()) >= temp_int"
+                    ]
+                },
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": 100,
+                    "Pos.y": -10,
+                    "Parent": -1,
+                    "#": 12,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player()) < temp_int"
+                    ]
+                },
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": 20,
+                    "Pos.y": -130,
+                    "Parent": -1,
+                    "#": 19,
+                    "Code.Type": "DialogBegin",
+                    "Code": 
+                    [
+                        "PlayerBridge()==12"
+                    ]
+                },
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": -212,
+                    "Pos.y": -24,
+                    "Parent": -1,
+                    "#": 40,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player()) >= temp_int"
+                    ]
+                },
+                {
+                    "Type": "Tif",
+                    "Name": "",
+                    "Pos.x": -176,
+                    "Pos.y": -24,
+                    "Parent": -1,
+                    "#": 41,
+                    "Code.Type": "Turn",
+                    "Code": 
+                    [
+                        "ShipMoney(Player()) < temp_int"
+                    ]
+                }
+            ],
+            "States": 
+            [
+                {
+                    "Type": "TState",
+                    "Name": "StateNew",
+                    "Pos.x": -100,
+                    "Pos.y": 30,
+                    "Parent": -1,
+                    "#": 3,
+                    "Move": 0,
+                    "MoveObj": -1,
+                    "Attack.Count": 0,
+                    "TakeItem": -1,
+                    "TakeAllItem": false,
+                    "OnTalk": "",
+                    "OnActCode": "",
+                    "EType": 1,
+                    "EUnique": "",
+                    "EMsg": ""
+                }
+            ],
+            "Variables": 
+            [
+                {
+                    "Type": "TVar",
+                    "Name": "temp_int",
+                    "Pos.x": -100,
+                    "Pos.y": -140,
+                    "Parent": -1,
+                    "#": 10,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "temp_dword",
+                    "Pos.x": -100,
+                    "Pos.y": -170,
+                    "Parent": -1,
+                    "#": 17,
+                    "Var.Type": "Dword",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "temp_str",
+                    "Pos.x": -100,
+                    "Pos.y": -200,
+                    "Parent": -1,
+                    "#": 21,
+                    "Var.Type": "Str",
+                    "Init": "",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "Bought",
+                    "Pos.x": -100,
+                    "Pos.y": -226,
+                    "Parent": -1,
+                    "#": 28,
+                    "Var.Type": "Float",
+                    "Init": "0",
+                    "Global": true
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "phantom_i",
+                    "Pos.x": -200,
+                    "Pos.y": -200,
+                    "Parent": -1,
+                    "#": 36,
+                    "Var.Type": "Int",
+                    "Init": "0",
+                    "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "phantom_itm",
+                    "Pos.x": -200,
+                    "Pos.y": -226,
+                    "Parent": -1,
+                    "#": 37,
+                    "Var.Type": "Dword",
+                    "Init": "0",
+                    "Global": false
+                },
+				{
+					"Type": "TVar",
+					"Name": "PhantomUpgraded",
+					"Pos.x": -200,
+					"Pos.y": -250,
+					"Parent": -1,
+					"#": 50,
+					"Var.Type": "Int",
+					"Init": "0",
+					"Global": true
+				}
+            ]
+        }
+    ],
+    "Visual.Links": 
+    [
+        {
+            "Type": "TGraphLink",
+            "Begin": 2,
+            "End": 0,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 1,
+            "End": 0,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 4,
+            "End": 1,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 4,
+            "End": 3,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 7,
+            "End": 9,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 9,
+            "End": 8,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 8,
+            "End": 11,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 8,
+            "End": 12,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 11,
+            "End": 13,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 12,
+            "End": 14,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 8,
+            "End": 15,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 13,
+            "End": 16,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 16,
+            "End": 18,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 19,
+            "End": 20,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 22,
+            "End": 24,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 23,
+            "End": 25,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 29,
+            "End": 30,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 18,
+            "End": 26,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 34,
+            "End": 38,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 38,
+            "End": 39,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 39,
+            "End": 31,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 39,
+            "End": 40,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 39,
+            "End": 41,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 41,
+            "End": 33,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 40,
+            "End": 42,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 42,
+            "End": 43,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 43,
+            "End": 44,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 44,
+            "End": 32,
+            "Nom": 0,
+            "Arrow": true
+        }
+    ],
+    "BlockPar.EC.Total.Strings": 21,
+    "BlockPar.EC": 
+    [
+        {
+            "#": "1",
+            "String": "Текущий режим: <0>"
+        },
+        {
+            "#": "10",
+            "String": "Переключить Шершень на режим Terron"
+        },
+        {
+            "#": "11",
+            "String": "Спасибо!"
+        },
+        {
+            "#": "12",
+            "String": "А что это у вас там за доминаторология?"
+        },
+        {
+            "#": "13",
+            "String": "Не хотите взглянуть на результат работы спецотдела Коалиции и специалистов в сфере прикладной доминаторологии? Мы готовы дать доступ вам как отличившемуся бойцу Коалиции"
+        },
+        {
+            "#": "14",
+            "String": "Переключить Шершень на режим Blazer"
+        },
+        {
+            "#": "16",
+            "String": "Terron"
+        },
+        {
+            "#": "17",
+            "String": "Слушай, у меня тут есть уникальный коалиционный корпус. Слышал, ваши парни могут его как-то улучшить?"
+        },
+        {
+            "#": "20",
+            "String": "Нет, пожалуй, я пока придержу эту технологию у себя."
+        },
+        {
+            "#": "23",
+            "String": "Ясно."
+        },
+        {
+            "#": "25",
+            "String": "Опа-на, а ну-ка дай глянуть... Тысяча дохлых пенчекряков! Вот это железяка! Слушай, брателло, наши технари в ангаре могут выпотрошить это корыто и собрать из него настоящий корабль. Работа тонкая, обычным плазморезаком тут не обойдешься, так что с тебя <0> кредитов. Ну че, по рукам?"
+        },
+        {
+            "#": "27",
+            "String": ""
+        },
+        {
+            "#": "28",
+            "String": "Отличная сделка."
+        },
+        {
+            "#": "3",
+            "String": "Blazer"
+        },
+        {
+            "#": "4",
+            "String": "Keller"
+        },
+        {
+            "#": "5",
+            "String": "Прикладная доминаторология - важнейшее направление в исследовании доминаторов. Оно подразделяется на использование доминаторских технологий для победы над угрозой в принципе, на использование новых знаний для борьбы с рядовыми доминаторами и на использование полученной информации в собственно наших разработках.<br><br>Одним из примеров такой работы и является то, что мы хотим вам предложить.<br><br>Корпус \"Шершень\" - уникальный корпус, созданный на основе передовых акриновых технологий и революционных доминаторских разработок. Этот корпус имеет три режима, каждый из которых основан на технологиях одной из серий доминаторов.<br><br>Текущая цена корпуса - <0> cr."
+        },
+        {
+            "#": "6",
+            "String": "Отлично! Корпус уже отправлен на склад. Пользуйтесь!"
+        },
+        {
+            "#": "7",
+            "String": "Хочу купить!"
+        },
+        {
+            "#": "8",
+            "String": "Нет, не сейчас"
+        },
+        {
+            "#": "9",
+            "String": "Переключить Шершень на режим Keller"
+        }
+    ]
+}
