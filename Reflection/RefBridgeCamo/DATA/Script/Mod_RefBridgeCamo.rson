@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefBridgeCamo",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\DATA\\Script\\Mod_RefBridgeCamo.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\DATA\\Script\\Mod_RefBridgeCamo.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeCamo\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -208,7 +208,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -222,10 +222,10 @@
                     "Code": 
                     [
                         "AddDialogInject('CamoDialog',\"\",\"Управление камуфляжем\",20);",
-                        "if(PlayerChameleonCurType() == -1) temp_str = 'Неактивен';",
-                        "if(PlayerChameleonCurType() == 0) temp_str = 'Блазероидной серии';",
-                        "if(PlayerChameleonCurType() == 1) temp_str = 'Келлероидной серии';",
-                        "if(PlayerChameleonCurType() == 2) temp_str = 'Терроноидной серии';",
+                        "if(PlayerChameleonCurType() == -1) temp_str = \"Неактивен\";",
+                        "if(PlayerChameleonCurType() == 0) temp_str = \"Блазероидной серии\";",
+                        "if(PlayerChameleonCurType() == 1) temp_str = \"Келлероидной серии\";",
+                        "if(PlayerChameleonCurType() == 2) temp_str = \"Терроноидной серии\";",
                         "K = PlayerChameleonCharges(1); //серии: 0 - Блазер, 1 - Келлер, 2 - Террон (K и B были перепутаны)",
                         "B = PlayerChameleonCharges(0);",
                         "T = PlayerChameleonCharges(2);"

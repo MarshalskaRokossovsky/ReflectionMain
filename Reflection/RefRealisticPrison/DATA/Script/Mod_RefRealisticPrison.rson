@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefRealisticPrison",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\DATA\\Script\\Mod_RefRealisticPrison.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\DATA\\Script\\Mod_RefRealisticPrison.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRealisticPrison\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -61,7 +61,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

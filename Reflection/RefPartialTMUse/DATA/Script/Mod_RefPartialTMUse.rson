@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefPartialTMUse",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\DATA\\Script\\Mod_RefPartialTMUse.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\DATA\\Script\\Mod_RefPartialTMUse.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefPartialTMUse\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -214,7 +214,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -255,28 +255,28 @@
                     [
                         "for(i=0;ShipArts(Player()) > i;i=i+1){",
                         "    if(ItemType(ShipArts(Player(),i)) == t_ArtefactTransmitter) {",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 0) race = 'малокский';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 1) race = 'пеленгский';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 2) race = 'человеческий';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 3) race = 'фэянский';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 4) race = 'гаальский';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 5) race = 'доминаторский';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 6) race = 'неизвестного производителя';",
-                        "        if(ItemOwner(ShipArts(Player(),i)) == 7) race = 'пиратский';",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 0) race = \"малокский\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 1) race = \"пеленгский\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 2) race = \"человеческий\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 3) race = \"фэянский\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 4) race = \"гаальский\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 5) race = \"доминаторский\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 6) race = \"неизвестного производителя\";",
+                        "        if(ItemOwner(ShipArts(Player(),i)) == 7) race = \"пиратский\";",
                         "        tstr = Format(\"Трансфакторный маяк (wt т., race, заряд pw)\",'wt',ItemSize(ShipArts(Player(),i)),'race',race,'pw',ItemCharge(ShipArts(Player(),i)));",
                         "        InjectAnswer('TMUsage',tstr,ShipArts(Player(),i));",
                         "    }",
                         "}",
                         "for(i=0;ShipItems(Player()) > i;i=i+1){ //маяки из трюма (цикл не выполнялся)",
                         "    if(ItemType(ShipItems(Player(),i)) == t_ArtefactTransmitter) {",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 0) race = 'малокский';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 1) race = 'пеленгский';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 2) race = 'человеческий';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 3) race = 'фэянский';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 4) race = 'гаальский';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 5) race = 'доминаторский';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 6) race = 'неизвестного производителя';",
-                        "        if(ItemOwner(ShipItems(Player(),i)) == 7) race = 'пиратский';",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 0) race = \"малокский\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 1) race = \"пеленгский\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 2) race = \"человеческий\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 3) race = \"фэянский\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 4) race = \"гаальский\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 5) race = \"доминаторский\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 6) race = \"неизвестного производителя\";",
+                        "        if(ItemOwner(ShipItems(Player(),i)) == 7) race = \"пиратский\";",
                         "        tstr = Format(\"Трансфакторный маяк (wt т., race, заряд pw)\",'wt',ItemSize(ShipItems(Player(),i)),'race',race,'pw',ItemCharge(ShipItems(Player(),i)));",
                         "        InjectAnswer('TMUsage',tstr,ShipItems(Player(),i));",
                         "    }",
@@ -296,14 +296,14 @@
                         "tdwd = GAnswerData;",
                         "mass = ItemSize(tdwd);",
                         "charge = ItemCharge(tdwd);",
-                        "if(ItemOwner(tdwd) == 0) race = 'малокский';",
-                        "if(ItemOwner(tdwd) == 1) race = 'пеленгский';",
-                        "if(ItemOwner(tdwd) == 2) race = 'человеческий';",
-                        "if(ItemOwner(tdwd) == 3) race = 'фэянский';",
-                        "if(ItemOwner(tdwd) == 4) race = 'гаальский';",
-                        "if(ItemOwner(tdwd) == 5) race = 'доминаторский';",
-                        "if(ItemOwner(tdwd) == 6) race = 'неизвестного производителя';",
-                        "if(ItemOwner(tdwd) == 7) race = 'пиратский';"
+                        "if(ItemOwner(tdwd) == 0) race = \"малокский\";",
+                        "if(ItemOwner(tdwd) == 1) race = \"пеленгский\";",
+                        "if(ItemOwner(tdwd) == 2) race = \"человеческий\";",
+                        "if(ItemOwner(tdwd) == 3) race = \"фэянский\";",
+                        "if(ItemOwner(tdwd) == 4) race = \"гаальский\";",
+                        "if(ItemOwner(tdwd) == 5) race = \"доминаторский\";",
+                        "if(ItemOwner(tdwd) == 6) race = \"неизвестного производителя\";",
+                        "if(ItemOwner(tdwd) == 7) race = \"пиратский\";"
                     ]
                 },
                 {
@@ -316,7 +316,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "MessageBox('Учтите! В процессе данной операции 10% передаваемой энергии будет безвозвратно утеряно!');"
+                        "MessageBox(\"Учтите! В процессе данной операции 10% передаваемой энергии будет безвозвратно утеряно!\");"
                     ]
                 },
                 {
@@ -329,7 +329,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "InjectAnswer('TMUsage','Вернуться к выбору действий с данным маяком',tdwd); //без маяка дальше было ItemSize(0)",
+                        "InjectAnswer('TMUsage',\"Вернуться к выбору действий с данным маяком\",tdwd); //без маяка дальше было ItemSize(0)",
                         "for(i=0;ShipArts(Player()) > i;i=i+1){",
                         "    if(ShipArts(Player(),i) == tdwd) continue;",
                         "    if(ItemType(ShipArts(Player(),i)) == t_ArtefactTransmitter) {",
@@ -357,7 +357,7 @@
                     "Code": 
                     [
                         "tcharge = ItemCharge(tdwd);",
-                        "dword tdwd3 = NumberBox('Bm.Items.2ArtTransmitter_s','Выберите заряд, который хотите использовать',100,1500,ItemCharge(tdwd),'',100);",
+                        "dword tdwd3 = NumberBox('Bm.Items.2ArtTransmitter_s',\"Выберите заряд, который хотите использовать\",100,1500,ItemCharge(tdwd),'',100);",
                         "if(tdwd3 >= 100) {",
                         "    ItemCharge(tdwd,tdwd3);",
                         "    OnUseCodeTransmitter(tdwd);",
@@ -386,7 +386,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "InjectAnswer('TMUse','Вернуться к управлению маяками');"
+                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\");"
                     ]
                 },
                 {
@@ -412,7 +412,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "dword tdwd4 = NumberBox('Bm.Items.2ArtTransmitter_s','Выберите заряд, который хотите передать выбранному маяку',0,ItemCharge(tdwd));",
+                        "dword tdwd4 = NumberBox('Bm.Items.2ArtTransmitter_s',\"Выберите заряд, который хотите передать выбранному маяку\",0,ItemCharge(tdwd));",
                         "if(tdwd4 > 0) {",
                         "    ItemCharge(tdwd,ItemCharge(tdwd) - tdwd4);",
                         "    tdwd4 = round(tdwd4 * 90 / 100);",
@@ -430,7 +430,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "InjectAnswer('TMUse','Вернуться к управлению маяками');"
+                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\");"
                     ]
                 }
             ],

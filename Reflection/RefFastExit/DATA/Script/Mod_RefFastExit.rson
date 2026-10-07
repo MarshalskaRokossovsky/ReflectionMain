@@ -1,4 +1,8 @@
 {
+  "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\CacheData.dat",
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -712,
@@ -6,6 +10,10 @@
   "ScriptName":  "Mod_RefFastExit",
   "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\DATA\\Script\\Mod_RefFastExit.scr",
   "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\DATA\\Script\\Mod_RefFastExit.txt",
+    "ExportLangDat": true,
+    "ExportLangTxt": true,
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\Rus\\Lang.dat",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFastExit\\CFG\\Rus\\Lang.txt",
   "GraphPoint.Count":  10,
   "GraphLink.Count":  5,
   "GraphRectText.Count":  0,
@@ -117,7 +125,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "throw 'Быстрый выход из игры успешно произведён';"          
+              "throw \"Быстрый выход из игры успешно произведён\";"          
           ]        
         }      
       ],

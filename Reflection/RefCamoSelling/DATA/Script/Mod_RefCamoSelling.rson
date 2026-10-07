@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefCamoSelling",
     "ScriptFileOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\DATA\\Script\\Mod_RefCamoSelling.scr",
     "ScriptTextOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\DATA\\Script\\Mod_RefCamoSelling.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": [
@@ -145,7 +145,7 @@
                     "#": 6,
                     "Code.Type": "Global",
                     "Code": [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

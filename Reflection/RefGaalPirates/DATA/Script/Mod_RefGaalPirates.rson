@@ -1,4 +1,12 @@
 {
+  "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\Rus\\Lang.txt",
+  "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\Rus\\Lang.dat",
+  "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGaalPirates\\CFG\\CacheData.dat",
+  "ExportLangTxt": true,
+  "ExportLangDat": true,
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -688,
@@ -90,7 +98,7 @@
           "Code.Type":  "Global",
           "Code":          
           [
-              "GRun();"          
+              "if(!GCntRun(GScriptName)) GRun();"          
           ]        
         },
         {

@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefExpHullsAbilities",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\DATA\\Script\\Mod_RefExpHullsAbilities.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefExpHullsAbilities\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -96,7 +96,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

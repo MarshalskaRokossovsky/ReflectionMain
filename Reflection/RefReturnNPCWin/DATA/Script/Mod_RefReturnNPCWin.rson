@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefReturnNPCWin",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\DATA\\Script\\Mod_RefReturnNPCWin.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\DATA\\Script\\Mod_RefReturnNPCWin.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefReturnNPCWin\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -198,7 +198,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

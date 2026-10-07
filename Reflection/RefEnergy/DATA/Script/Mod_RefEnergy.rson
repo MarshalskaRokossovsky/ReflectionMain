@@ -8,10 +8,10 @@
     "ScriptTextOut": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\DATA\\Script\\Mod_RefEnergy.txt",
     "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\Rus\\Lang.txt",
     "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\Rus\\Lang.dat",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefEnergy\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": [
@@ -257,7 +257,7 @@
                     "#": 5,
                     "Code.Type": "Global",
                     "Code": [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

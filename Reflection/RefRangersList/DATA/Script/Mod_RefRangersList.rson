@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefRangersList",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\DATA\\Script\\Mod_RefRangersList.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\DATA\\Script\\Mod_RefRangersList.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangersList\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -484,7 +484,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -545,7 +545,7 @@
                         "                    RangersList = RangersList + \"Восстановление дроидом: \" + ShipDroidRepair(cur_ship) + CT('FormInfo.br');",
                         "                    RangersList = RangersList + temp_str + CT('FormInfo.br');",
                         "                    CostIncrease = 1;",
-                        "                    AddDialogInject('DialNaim','','Связаться с '+Name(cur_ship),30,0,cur_ship); //GAnswerData - 6-й аргумент (было: i как приоритет, корабль не передавался)",
+                        "                    AddDialogInject('DialNaim','',\"Связаться с \"+Name(cur_ship),30,0,cur_ship); //GAnswerData - 6-й аргумент (было: i как приоритет, корабль не передавался)",
                         "                }",
                         "            }",
                         "        }",
@@ -574,7 +574,7 @@
                         "    }",
                         "}",
                         "//Если никого не нашли :(",
-                        "if(cnt1 != 1) RangersList = RangersList + 'Подходящих кандидатур в текущем секторе не обнаружено';"
+                        "if(cnt1 != 1) RangersList = RangersList + \"Подходящих кандидатур в текущем секторе не обнаружено\";"
                     ]
                 },
                 {

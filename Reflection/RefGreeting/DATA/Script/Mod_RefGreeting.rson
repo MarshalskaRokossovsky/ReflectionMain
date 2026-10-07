@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefGreeting",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\DATA\\Script\\Mod_RefGreeting.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\DATA\\Script\\Mod_RefGreeting.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGreeting\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -61,7 +61,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -74,7 +74,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Ether(0,'','Привет тебе, космический воин! Ты должен знать, что наша раса уважает борцов, а потому мы надеемся, что ты не опозоришь Коалицию и будешь храбро биться с её врагами.');",
+                        "Ether(0,'',\"Привет тебе, космический воин! Ты должен знать, что наша раса уважает борцов, а потому мы надеемся, что ты не опозоришь Коалицию и будешь храбро биться с её врагами.\");",
                         "MalocFlag = 1;",
                         "Sound('Sound.NewMsg');"
                     ]
@@ -89,7 +89,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Ether(0,'','Рады видеть новый элемент галактической Иикэ-Бааны в родной обители сынов Гаала! Надеемся, что ваш приход в мир космогоний принесёт гармонию и мир');",
+                        "Ether(0,'',\"Рады видеть новый элемент галактической Иикэ-Бааны в родной обители сынов Гаала! Надеемся, что ваш приход в мир космогоний принесёт гармонию и мир\");",
                         "GaalFlag = 1;",
                         "Sound('Sound.NewMsg');"
                     ]
@@ -104,7 +104,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Ether(0,'','Рады видеть нового рейнджера в Солнечной системе - колыбели человеческой расы! Именно отсюда род людской начал колонизацию окружающего его космоса. Будем рады, если вы взглянете на земные товары.');",
+                        "Ether(0,'',\"Рады видеть нового рейнджера в Солнечной системе - колыбели человеческой расы! Именно отсюда род людской начал колонизацию окружающего его космоса. Будем рады, если вы взглянете на земные товары.\");",
                         "PeopleFlag = 1;",
                         "Sound('Sound.NewMsg');"
                     ]
@@ -119,7 +119,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Ether(0,'','Привет тебе, новый рейнджер! Мы рады видеть ещё одного участника проекта наших давних друзей по космосу. Надеемся, что план пойдёт так, как задумывалось, и эта глупая война скоро закончится');",
+                        "Ether(0,'',\"Привет тебе, новый рейнджер! Мы рады видеть ещё одного участника проекта наших давних друзей по космосу. Надеемся, что план пойдёт так, как задумывалось, и эта глупая война скоро закончится\");",
                         "FeiFlag = 1;",
                         "Sound('Sound.NewMsg');"
                     ]
@@ -134,7 +134,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Ether(0,'','Ого, новый рейнджер! Рады видеть новое лицо в небе над Рахишем - колыбелью великой пеленгской цивилизации. Именно здесь проворачиваются тысячи всевозможных махинаций, на которых честно зарабатывают Верховные Лякуши.');",
+                        "Ether(0,'',\"Ого, новый рейнджер! Рады видеть новое лицо в небе над Рахишем - колыбелью великой пеленгской цивилизации. Именно здесь проворачиваются тысячи всевозможных махинаций, на которых честно зарабатывают Верховные Лякуши.\");",
                         "PelengFlag = 1;",
                         "Sound('Sound.NewMsg');"
                     ]
@@ -152,7 +152,7 @@
                         "//ShipStatistic(,10) - родная ПЛАНЕТА (раньше сравнивалась со звездой напрямую и не совпадала никогда)",
                         "if(ShipStar(Player()) == PlanetToStar(ShipStatistic(Player(),10))) {",
                         "    if(DaysOut > 1095) {",
-                        "        Ether(0,'','С возвращением в родную гавань, рейнджер! В родной системе всегда рады обогреть путника, прибывшего из странствий меж дальних звёзд.');",
+                        "        Ether(0,'',\"С возвращением в родную гавань, рейнджер! В родной системе всегда рады обогреть путника, прибывшего из странствий меж дальних звёзд.\");",
                         "        Sound('Sound.NewMsg');",
                         "    }",
                         "    DaysOut = 0;",
@@ -247,7 +247,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Name(ShipStar(Player())) == 'Тарон'"
+                        "Name(ShipStar(Player())) == substr(CT('Star.00'),0,findsubstr(CT('Star.00'),','))"
                     ]
                 },
                 {
@@ -260,7 +260,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Name(ShipStar(Player())) == 'Краа'"
+                        "Name(ShipStar(Player())) == substr(CT('Star.04'),0,findsubstr(CT('Star.04'),','))"
                     ]
                 },
                 {
@@ -273,7 +273,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Name(ShipStar(Player())) == 'Солнце'"
+                        "Name(ShipStar(Player())) == substr(CT('Star.02'),0,findsubstr(CT('Star.02'),','))"
                     ]
                 },
                 {
@@ -286,7 +286,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Name(ShipStar(Player())) == 'Атлан'"
+                        "Name(ShipStar(Player())) == substr(CT('Star.03'),0,findsubstr(CT('Star.03'),','))"
                     ]
                 },
                 {
@@ -299,7 +299,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "Name(ShipStar(Player())) == 'Пхедок'"
+                        "Name(ShipStar(Player())) == substr(CT('Star.01'),0,findsubstr(CT('Star.01'),','))"
                     ]
                 },
                 {

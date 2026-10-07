@@ -1,4 +1,8 @@
 {
+  "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\CacheData.dat",
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -901,
@@ -6,6 +10,10 @@
   "ScriptName":  "Mod_RefCollectors",
   "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\DATA\\Script\\Mod_RefCollectors.scr",
   "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\DATA\\Script\\Mod_RefCollectors.txt",
+    "ExportLangDat": true,
+    "ExportLangTxt": true,
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\Rus\\Lang.dat",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCollectors\\CFG\\Rus\\Lang.txt",
   "GraphPoint.Count":  98,
   "GraphLink.Count":  80,
   "GraphRectText.Count":  1,
@@ -493,7 +501,7 @@
           "Code.Type":  "Global",
           "Code":          
           [
-              "GRun();"          
+              "if(!GCntRun(GScriptName)) GRun();"          
           ]        
         },
         {
@@ -922,7 +930,7 @@
           "Code":          
           [
               "Sound('Sound.NewMsg');",
-              "NewsAdd('Вы погасили свою задолженность, и коллекторы вам больше не страшны');",
+              "NewsAdd(\"Вы погасили свою задолженность, и коллекторы вам больше не страшны\");",
               "SetRelationGroup(GroupCommander,PlayerGroup,2);",
               "SetRelationGroup(CollectorsGroup,PlayerGroup,2);",
               "End = 1;",

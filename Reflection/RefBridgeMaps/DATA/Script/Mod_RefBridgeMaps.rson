@@ -1,4 +1,8 @@
 {
+  "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\CacheData.dat",
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -729,
@@ -6,6 +10,10 @@
   "ScriptName":  "Mod_RefBridgeMaps",
   "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.scr",
   "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\DATA\\Script\\Mod_RefBridgeMaps.txt",
+    "ExportLangDat": true,
+    "ExportLangTxt": true,
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\Rus\\Lang.dat",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefBridgeMaps\\CFG\\Rus\\Lang.txt",
   "Visual.Objects":  
   [
     {
@@ -220,7 +228,7 @@
           "Code.Type":  "Global",
           "Code":          
           [
-              "GRun();"          
+              "if(!GCntRun(GScriptName)) GRun();"          
           ]        
         },
         {
@@ -250,7 +258,7 @@
           "Code":          
           [
               "NoFlagy = 0;",
-              "tempik = ListBox('Выберите систему из списка',NamesArray);",
+              "tempik = ListBox(\"Выберите систему из списка\",NamesArray);",
               "if(tempik == -1) NoFlagy = 2;",
               "else if(tempik == 0 || tempik > GalaxySectors()) NoFlagy = 2; //[0] - пустой служебный пункт, последний - «Вернуться» (было tempik == 20)",
               "else {",
@@ -267,8 +275,8 @@
               "        money = 30 * ein * zwei * Rnd(80,120) / 100 + 5000;",
               "        if(ConNear(StarToCon(ShipStar(Player())),GalaxySectors(tempik))) int dab;",
               "        else money = money * 2;",
-              "        if(ShipMoney(Player()) < money) AddDialogBlock('Да, пересылайте!',1);",
-              "        else AddDialogBlock('Да, пересылайте!',0);",
+              "        if(ShipMoney(Player()) < money) AddDialogBlock(\"Да, пересылайте!\",1);",
+              "        else AddDialogBlock(\"Да, пересылайте!\",0);",
               "    }",
               "}",
               "//SFT(NoFlagy);",
@@ -301,8 +309,8 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "if(StartFlag == 1) temp_str = 'Вы вновь зашли на сайт Картографической Комиссии. Снова вас встретила приятная анимация перехода к чёрно-звёздному фону, и вы подумали, что не зря они ставят такие цены на звёздные карты - хотя бы смогли нанять хороших программистов и художников.';",
-              "else temp_str = 'Этот сайт отличался от других. Несмотря на, походу, уходящие далеко в века рассказы о том, какие анахронизмы, ляпы, глюки и баги встречаются на сайтах государственных учреждений, этот сайт встретил приятной анимацией постепенного перехода к чёрно-звёздному фону.';"          
+              "if(StartFlag == 1) temp_str = \"Вы вновь зашли на сайт Картографической Комиссии. Снова вас встретила приятная анимация перехода к чёрно-звёздному фону, и вы подумали, что не зря они ставят такие цены на звёздные карты - хотя бы смогли нанять хороших программистов и художников.\";",
+              "else temp_str = \"Этот сайт отличался от других. Несмотря на, походу, уходящие далеко в века рассказы о том, какие анахронизмы, ляпы, глюки и баги встречаются на сайтах государственных учреждений, этот сайт встретил приятной анимацией постепенного перехода к чёрно-звёздному фону.\";"          
           ]        
         },
         {
@@ -324,7 +332,7 @@
               "for(i = 0; i < GalaxySectors(); i = i + 1) { //было 19 жёстко",
               "    ArrayAdd(NamesArray,Name(GalaxySectors(i)));",
               "}",
-              "ArrayAdd(NamesArray,'Вернуться к выбору','Eexit');"
+              "ArrayAdd(NamesArray,\"Вернуться к выбору\",'Eexit');"
           ]        
         }      
       ],

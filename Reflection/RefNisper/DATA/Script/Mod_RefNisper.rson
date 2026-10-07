@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefNisper",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\DATA\\Script\\Mod_RefNisper.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNisper\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": [
         {
             "DialogAnswers": [
@@ -4071,7 +4071,7 @@
                     "#": 5,
                     "Code.Type": "Global",
                     "Code": [
-                        "GRun()"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -5485,7 +5485,7 @@
                         "",
                         "function GiveBossAllEq(ship, level) {",
                         "    ShipType(ship,'NisperBoss');",
-                        "    SetName(ship,'Ниспер');",
+                        "    SetName(ship,\"Ниспер\");",
                         "    ShipCustomFaction(ship,'SubFaction.Nisper');",
                         "    ShipTechLevelKnowledge(ship,8);",
                         "    SpecialToEquipment(FindBonusByNameInCfg('ZelDomiks_Nisper5'),ShipItems(ship, 0));",
@@ -8115,7 +8115,7 @@
                         "if(isStartedDomiks==1) {",
                         "    if(shipRuins) {",
                         "        if(ShipType(shipRuins) == 'DB') {",
-                        "            AddDialogInject('dBank', \"Приветствуем вас, рейнджер, на нашей <ShipName(shipRuins)>! Здесь мы занимаемся передовыми исследованиями в области доминаторов, в особенности - теми, которые помогут в исследовании\", 'Пополнить банк', 1, 1);",
+                        "            AddDialogInject('dBank', \"Приветствуем вас, рейнджер, на нашей <ShipName(shipRuins)>! Здесь мы занимаемся передовыми исследованиями в области доминаторов, в особенности - теми, которые помогут в исследовании\", \"Пополнить банк\", 1, 1);",
                         "            AddDialogInject('dShipyard', '', \"Хочу посмотреть информацию о верфях\", 6);",
                         "            if(domLevel < 10) {",
                         "                  if(daysForResearch > 0) AddDialogInject('dUpgrade', '', \"Помочь исследованиям\", 2);",
@@ -8186,7 +8186,7 @@
                         "                            else AddDialogInject('d8MissionHum', '', \"Это вы Леонард?\", 1);",
                         "                        }",
                         "                        else {",
-                        "                            if(m8HumIs) AddDialogInject('d8MissionHumNo', '', 'Ну так что, вы согласны с предложением Научного совета?', 1);",
+                        "                            if(m8HumIs) AddDialogInject('d8MissionHumNo', '', \"Ну так что, вы согласны с предложением Научного совета?\", 1);",
                         "                            else AddDialogInject('d8MissionHumN', '', \"Это вы Леонард?\", 1);",
                         "                        }",
                         "                    }",
@@ -8293,7 +8293,7 @@
                         "    completeTask=2;",
                         "    daysMission=0;",
                         "    daysMissionComplete=50+difficultOfPirates*4;",
-                        "    CustomEther('NisperEther',3,'ZelDomiksQuest','Нужно защитить систему <StarName(targetStar)> и не дать ей перейти в руки пиратского клана до конца передачи информации. Осталось дней: <daysMissionComplete-daysMission>.');",
+                        "    CustomEther('NisperEther',3,'ZelDomiksQuest',\"Нужно защитить систему <StarName(targetStar)> и не дать ей перейти в руки пиратского клана до конца передачи информации. Осталось дней: <daysMissionComplete-daysMission>.\");",
                         "    for(i=0;i<difficultOfPirates/2+10;i=i+1){",
                         "        dom=BuyWarrior(ourPlanet,50+20*difficultOfPirates);",
                         "        ourHullSize=300+25*difficultOfPirates;",
@@ -9150,7 +9150,7 @@
                     "Code": [
                         "if(!IdToItem(idFean)){",
                         "    completeTask=0;",
-                        "    CustomEther('NisperEther',5,'ZelDomiksQuest','Кто-то уничтожил капсулу с Абером. Задание провалено.');",
+                        "    CustomEther('NisperEther',5,'ZelDomiksQuest',\"Кто-то уничтожил капсулу с Абером. Задание провалено.\");",
                         "    Sound('Sound.QuestCancel');",
                         "}"
                     ]
@@ -10010,7 +10010,7 @@
                         "for(i=1;i<ShipItems(Player());i=i+1){",
                         "  ourItemDomPlayer=ShipItems(Player(),i);",
                         "  if(ItemOwner(ourItemDomPlayer)==5&&!ItemIsInUse(ourItemDomPlayer)&&!ItemIsInSet(ourItemDomPlayer)){",
-                        "    InjectAnswer('dGiveItemOnSB',ItemFullName(ourItemDomPlayer)+' (<ItemSize(ourItemDomPlayer)> тонн)',ourItemDomPlayer);",
+                        "    InjectAnswer('dGiveItemOnSB',ItemFullName(ourItemDomPlayer)+\" (<ItemSize(ourItemDomPlayer)> тонн)\",ourItemDomPlayer);",
                         "    j=j+1;",
                         "  }",
                         "}"
@@ -21631,7 +21631,7 @@
             "fsUnderline": false
         }
     ],
-    "BlockPar.EC.Total.Strings": 395,
+    "BlockPar.EC.Total.Strings": 393,
     "BlockPar.EC": [
         {
             "#": "105",
@@ -22746,10 +22746,6 @@
             "String": "Все пять гуманоидов согласились помогать в улучшении доминаторов Ниспера. Задание выполнено, осталось вернуться на Базу Доминаторов."
         },
         {
-            "#": "493",
-            "String": "Необходимо уговорить Борфорса, Куварда, Леонарда, Абера и Арту присоединиться к команде улучшения Ниспера и его доминаторов. На выполнение этого задания у вас осталось <0> дней.<br>Текущий статус:<br>Борфорс <1><br>Кувард <2><br>Леонард <3><br>Абер <4><br>Арту <5>"
-        },
-        {
             "#": "494",
             "String": "попросил <0> дней на раздумья. Осталось ждать <1> дней."
         },
@@ -22880,10 +22876,6 @@
         {
             "#": "523",
             "String": "попросил обратиться к нему позже."
-        },
-        {
-            "#": "524",
-            "String": "присоединился к команде изучения доминаторов Ниспера."
         },
         {
             "#": "525",

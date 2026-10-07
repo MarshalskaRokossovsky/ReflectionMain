@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefNodesCreating",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\DATA\\Script\\Mod_RefNodesCreating.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\DATA\\Script\\Mod_RefNodesCreating.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -146,7 +146,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

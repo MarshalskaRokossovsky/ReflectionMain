@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefGovCoffee",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\DATA\\Script\\Mod_RefGovCoffee.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\DATA\\Script\\Mod_RefGovCoffee.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefGovCoffee\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -256,7 +256,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -303,11 +303,11 @@
                         "//Дать ли игроку доп бафф?",
                         "ForRace = ShipPilotRace(Player());",
                         "ForPlanet = -1; //TVar: без сброса оставалось значение с прошлой планеты (и 0 = малоки)",
-                        "if(Name(GetShipPlanet(Player())) == 'Земля') ForPlanet = 2;",
-                        "if(Name(GetShipPlanet(Player())) == 'Рамгатру') ForPlanet = 0;",
-                        "if(Name(GetShipPlanet(Player())) == 'Гаалдок') ForPlanet = 4;",
-                        "if(Name(GetShipPlanet(Player())) == 'Эйпентак') ForPlanet = 3;",
-                        "if(Name(GetShipPlanet(Player())) == 'Рахиш') ForPlanet = 1;",
+                        "if(Name(GetShipPlanet(Player())) == CT('PlanetName.Solar 2')) ForPlanet = 2;",
+                        "if(Name(GetShipPlanet(Player())) == CT('PlanetName.Maloc 02')) ForPlanet = 0;",
+                        "if(Name(GetShipPlanet(Player())) == CT('PlanetName.Gaal 02')) ForPlanet = 4;",
+                        "if(Name(GetShipPlanet(Player())) == CT('PlanetName.Fei 02')) ForPlanet = 3;",
+                        "if(Name(GetShipPlanet(Player())) == CT('PlanetName.Peleng 02')) ForPlanet = 1;",
                         "if(ForPlanet == ForRace) {",
                         "    ShipCustomShipInfoData(Player(),'RefCoffeeFlag',2,1);",
                         "}",
@@ -510,7 +510,7 @@
                         "        }",
                         "        ShipDeleteCustomShipInfo(Player(),'RefCoffeeFlag');",
                         "        ShipDeleteCustomShipInfo(Player(),'RefMainCoffeeInfo');",
-                        "        NewsAdd(\"Вы проснулись, но что-то было не так... Не прежней энергии в ваших действиях. Походу, действие кофе закончилось.\");",
+                        "        NewsAdd(\"Вы проснулись, но что-то было не так... Нет прежней энергии в ваших действиях. Похоже, действие кофе закончилось.\");",
                         "    }",
                         "}",
                         "//Обнуляем напитые кружки",
@@ -1270,7 +1270,7 @@
         },
         {
             "#": "30",
-            "String": "Вы проснулись, но что-то было не так... Не прежней энергии в ваших действиях. Походу, действие кофе закончилось."
+            "String": "Вы проснулись, но что-то было не так... Нет прежней энергии в ваших действиях. Похоже, действие кофе закончилось."
         },
         {
             "#": "31",

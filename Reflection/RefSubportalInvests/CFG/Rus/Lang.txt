@@ -62,7 +62,7 @@ Artefacts ^{
                     06=if(ShipFindCustomShipInfoByType(Player(),'RefHoleInfo') == -1) ShipAddCustomShipInfo(Player(),'RefHoleInfo','NoShow');
                     07=ShipCustomShipInfoData(Player(),'RefHoleInfo',1,Id(tdwd));
                     08=OrderJumpHole(Player(),tdwd);
-                    09=NoDropItem(CurItem(), 1);
+                    09=FreeItem(GetArtFromShip(Player(), FindItemInShip(Player(), CurItem())));
                 }
             }
             Size=7

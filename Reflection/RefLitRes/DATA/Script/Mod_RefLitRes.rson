@@ -1,4 +1,8 @@
 {
+  "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\CacheData.dat",
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -735,
@@ -6,6 +10,10 @@
   "ScriptName":  "Mod_RefLitRes",
   "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\DATA\\Script\\Mod_RefLitRes.scr",
   "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\DATA\\Script\\Mod_RefLitRes.txt",
+    "ExportLangDat": true,
+    "ExportLangTxt": true,
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\Rus\\Lang.dat",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefLitRes\\CFG\\Rus\\Lang.txt",
   "GraphPoint.Count":  26,
   "GraphLink.Count":  14,
   "GraphRectText.Count":  0,
@@ -145,7 +153,7 @@
           "Code.Type":  "Global",
           "Code":          
           [
-              "GRun();"          
+              "if(!GCntRun(GScriptName)) GRun();"          
           ]        
         },
         {
@@ -229,7 +237,7 @@
               "    temp_int2 = GAnswerData;",
               "}",
               "if(GAnswerData == 0) {",
-              "    temp_int2 = CountBox('Bm.ItemsUseless.2Usl_Pilot_s','Выберите нужную страницу',1,CT('BooksCategory.Book'+temp_int+'.PagesCount'));",
+              "    temp_int2 = CountBox('Bm.ItemsUseless.2Usl_Pilot_s',\"Выберите нужную страницу\",1,CT('BooksCategory.Book'+temp_int+'.PagesCount'));",
               "}",
               "if(temp_int2 < 1) temp_int2 = 1; //отмена выбора страницы",
               "temp_str = CT('BooksCategory.Book'+temp_int+'.Page'+temp_int2); //текст страницы (раньше не загружался - показывалось предисловие)"

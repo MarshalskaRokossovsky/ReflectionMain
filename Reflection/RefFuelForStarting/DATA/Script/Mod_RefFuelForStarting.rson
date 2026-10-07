@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefFuelForStarting",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\DATA\\Script\\Mod_RefFuelForStarting.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\DATA\\Script\\Mod_RefFuelForStarting.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFuelForStarting\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -61,7 +61,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

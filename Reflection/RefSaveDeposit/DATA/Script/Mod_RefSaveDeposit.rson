@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefSaveDeposit",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\DATA\\Script\\Mod_RefSaveDeposit.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\DATA\\Script\\Mod_RefSaveDeposit.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefSaveDeposit\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -61,7 +61,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

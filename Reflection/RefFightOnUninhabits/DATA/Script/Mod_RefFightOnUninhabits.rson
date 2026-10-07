@@ -6,12 +6,12 @@
     "ScriptName": "Mod_RefFightOnUninhabits",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\DATA\\Script\\Mod_RefFightOnUninhabits.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\DATA\\Script\\Mod_RefFightOnUninhabits.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefFightOnUninhabits\\CFG\\CacheData.dat",
     "ExportLangTxt": false,
     "ExportLangDat": false,
     "Visual.Objects": 
@@ -128,7 +128,7 @@
                     "Code.Type": "Global",
                     "Code": 
                     [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {

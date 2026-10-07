@@ -6,14 +6,14 @@
     "ScriptName": "Mod_RefRangers",
     "ScriptFileOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\DATA\\Script\\Mod_RefRangers.scr",
     "ScriptTextOut":  "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\DATA\\Script\\Mod_RefRangers.txt",
-    "LangDatIn": "",
-    "LangDatOut": "",
-    "MainDatIn": "",
-    "MainDatOut": "",
-    "CacheDatIn": "",
-    "CacheDatOut": "",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "LangDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\Rus\\Lang.txt",
+    "LangDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\Rus\\Lang.dat",
+    "MainDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\Main.txt",
+    "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\Main.dat",
+    "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\CacheData.txt",
+    "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefRangers\\CFG\\CacheData.dat",
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": [
         {
             "ConstellationCount": 0,
@@ -64,7 +64,7 @@
                     "#": 9,
                     "Code.Type": "Global",
                     "Code": [
-                        "GRun();"
+                        "if(!GCntRun(GScriptName)) GRun();"
                     ]
                 },
                 {
@@ -144,7 +144,7 @@
                         "",
                         "    //Поднимаем ТУ корпуса",
                         "    ItemLevel(hull,8);",
-                        "    HullSeries(hull,FindSeriesByName('Экстрим-лайт'));",
+                        "    HullSeries(hull,FindSeriesByName(CT('HullType.4.Name')));",
                         "    ItemSize(hull,1100);",
                         "    for(i=3;i<8;i=i+1) {",
                         "        ShipSpecialBonuses(ship,12+i,ShipSpecialBonuses(ship,12+i)+1);",
