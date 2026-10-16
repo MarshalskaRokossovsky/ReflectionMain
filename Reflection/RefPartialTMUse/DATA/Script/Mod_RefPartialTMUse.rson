@@ -386,7 +386,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\");"
+                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\",0);"
                     ]
                 },
                 {
@@ -430,7 +430,7 @@
                     "Code.Type": "Turn",
                     "Code": 
                     [
-                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\");"
+                        "InjectAnswer('TMUse',\"Вернуться к управлению маяками\",0);"
                     ]
                 }
             ],

@@ -1,4 +1,8 @@
 {
+  "MainDatIn": "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\Main.txt",
+  "MainDatOut": "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\Main.dat",
+  "CacheDatIn": "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\CacheData.txt",
+  "CacheDatOut": "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\CacheData.dat",
   "FileID":  573785173,
   "FileVersion":  8,
   "ViewPos.x":  -614,
@@ -8,8 +12,8 @@
   "ScriptTextOut":  "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\DATA\\Script\\Mod_FairanDestruct.txt",
   "LangDatIn":  "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\Rus\\Lang.txt",
   "LangDatOut":  "E:\\disasm2500\\Mods\\MarshalsRebalances\\FairanDestructorBuff\\CFG\\Rus\\Lang.dat",
-  "ExportLangTxt":  false,
-  "ExportLangDat":  false,
+  "ExportLangTxt":  true,
+  "ExportLangDat":  true,
   "Visual.Objects":  
   [
     {

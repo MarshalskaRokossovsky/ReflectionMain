@@ -1863,10 +1863,10 @@
               "if(j == 4) tempItem = CreateEquipment(EquipType,Rnd(25,35),i,Gaal);",
               "if(j == 5) tempItem = CreateEquipment(EquipType,Rnd(25,40),i,Fei);",
               "if(j == 6) tempItem = CreateEquipment(EquipType,Rnd(25,45),i,PirateClan);",
-              "if(tdwd != -1) if(!MayAddBonusToEq(tdwd,tempItem)) {",
+              "if(tdwd != -1) { if(!MayAddBonusToEq(tdwd,tempItem)) {",
               "    returnFlag = 1;",
               "    MessageBox(\"Выбранный микромодуль в данное оборудование вставить невозможно! Процесс сбора варианта для аренды отменён.\");",
-              "}",
+              "} }",
               "FreeItem(tempItem); //проверочный экземпляр больше не нужен"
           ]        
         }      

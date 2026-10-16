@@ -777,6 +777,19 @@
                     [
                         "extramoney = GalaxyMoney(4,4) * 2;"
                     ]
+                },
+                {
+                    "Type": "Top",
+                    "Name": "",
+                    "Pos.x": 1030,
+                    "Pos.y": 100,
+                    "Parent": -1,
+                    "#": 97,
+                    "Code.Type": "Turn",
+                    "Code":
+                    [
+                        "Ranger = Name(Player());"
+                    ]
                 }
             ],
             "Planets": 
@@ -1271,6 +1284,17 @@
                     "Var.Type": "Int",
                     "Init": "",
                     "Global": false
+                },
+                {
+                    "Type": "TVar",
+                    "Name": "Ranger",
+                    "Pos.x": 430,
+                    "Pos.y": 130,
+                    "Parent": -1,
+                    "#": 96,
+                    "Var.Type": "Str",
+                    "Init": "",
+                    "Global": false
                 }
             ]
         }
@@ -1504,14 +1528,14 @@
         {
             "Type": "TGraphLink",
             "Begin": 43,
-            "End": 48,
+            "End": 97,
             "Nom": 0,
             "Arrow": true
         },
         {
             "Type": "TGraphLink",
             "Begin": 47,
-            "End": 48,
+            "End": 97,
             "Nom": 0,
             "Arrow": true
         },
@@ -1827,6 +1851,13 @@
             "Type": "TGraphLink",
             "Begin": 41,
             "End": 95,
+            "Nom": 0,
+            "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 97,
+            "End": 48,
             "Nom": 0,
             "Arrow": true
         }

@@ -12,8 +12,8 @@
     "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\Main.dat",
     "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\CacheData.txt",
     "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefCamoSelling\\CFG\\CacheData.dat",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": [
         {
             "ConstellationCount": 0,
@@ -163,7 +163,7 @@
                         "        if(GetShipRuins(Player())) {",
                         "            if(!PlayerBridge()) {",
                         "                if(ShipType(GetShipRuins(Player())) == 'WB' || ShipType(GetShipRuins(Player())) == 'CB') {",
-                        "                    AddDialogInject('CamoSell','',CT('Script.Mod_RefCamoSelling.9'),10);",
+                        "                    AddDialogInject('CamoSell','',CT('Script.Mod_RefCamoSelling.Str9'),10);",
                         "                }",
                         "            }",
                         "        }",
@@ -181,8 +181,8 @@
                     "#": 17,
                     "Code.Type": "Turn",
                     "Code": [
-                        "if(ShipType(GetShipRuins(Player())) == 'WB') tstr = CT('Script.Mod_RefCamoSelling.11');",
-                        "else tstr = CT('Script.Mod_RefCamoSelling.10');",
+                        "if(ShipType(GetShipRuins(Player())) == 'WB') tstr = CT('Script.Mod_RefCamoSelling.Str11');",
+                        "else tstr = CT('Script.Mod_RefCamoSelling.Str10');",
                         "DChange(0);",
                         "exit;"
                     ]
