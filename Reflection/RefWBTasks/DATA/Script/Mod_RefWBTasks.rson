@@ -253,11 +253,11 @@
               "    if(ShipType(GetShipRuins(Player())) == 'WB') {",
               "        if(!DefSys) {",
               "            if(!DomiksDefeated()) {",
-              "                AddDialogInject('WBTask',\"Нет ли у вас для меня какого особого задания?\",'',20);",
+              "                AddDialogInject('WBTask','',\"Нет ли у вас для меня какого особого задания?\",20);",
               "            }",
               "        }",
               "        else {",
-              "            AddDialogInject('WBTaskEnd',\"Я хочу сложить свои полномочия\",'',20);",
+              "            AddDialogInject('WBTaskEnd','',\"Я хочу сложить свои полномочия\",20);",
               "        }",
               "    }",
               "}"          
