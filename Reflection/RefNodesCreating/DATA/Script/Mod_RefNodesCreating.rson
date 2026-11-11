@@ -12,8 +12,8 @@
     "MainDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\Main.dat",
     "CacheDatIn": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\CacheData.txt",
     "CacheDatOut": "E:\\disasm2500\\Mods\\Reflection\\RefNodesCreating\\CFG\\CacheData.dat",
-    "ExportLangTxt": false,
-    "ExportLangDat": false,
+    "ExportLangTxt": true,
+    "ExportLangDat": true,
     "Visual.Objects": 
     [
         {
@@ -81,6 +81,16 @@
                     "#": 21,
                     "Msg": "Отлично! Оборудование изъято, а <nods> нд. уже перенесены в ваш трюм.\r\n\r\nБыстро мы работаем, а?",
                     "DMsg.Num": "2"
+                },
+                {
+                    "Type": "TDialogMsg",
+                    "Name": "",
+                    "Pos.x": 260,
+                    "Pos.y": -90,
+                    "Parent": -1,
+                    "#": 25,
+                    "Msg": "На вашем корабле нет подходящего для разбора доминаторского оборудования.",
+                    "DMsg.Num": "3"
                 }
             ],
             "Dialogs": 
@@ -188,8 +198,6 @@
                         "    dword item = ShipItems(Player(), i);",
                         "    if(ItemOwner(item) != Kling) continue;",
                         "    if(EqCustomFaction(item) != '') continue;",
-                        "    if(ItemIsInUse(item)) continue;",
-                        "    if(ItemIsInSet(item)) continue;",
                         "    if(NoDropItem(item)) continue;",
                         "    if(ItemInScript(item) == 1) continue;",
                         "",
@@ -205,7 +213,8 @@
                         "    tarr1[j, 2] = '';",
                         "}",
                         "",
-                        "if(ArrayDim(tarr1)) ArraySort(tarr2, tarr1); //пустой список оставляем пустым (раньше [0] -> ответ с Name(0))"
+                        "if(ArrayDim(tarr1)) ArraySort(tarr2, tarr1);",
+                        "else { DChange(3); exit; } //нет подходящих предметов — показываем объяснение"
                     ]
                 },
                 {
@@ -519,9 +528,16 @@
             "End": 19,
             "Nom": 0,
             "Arrow": true
+        },
+        {
+            "Type": "TGraphLink",
+            "Begin": 25,
+            "End": 19,
+            "Nom": 0,
+            "Arrow": true
         }
     ],
-    "BlockPar.EC.Total.Strings": 8,
+    "BlockPar.EC.Total.Strings": 9,
     "BlockPar.EC": 
     [
         {
@@ -555,6 +571,10 @@
         {
             "#": "7",
             "String": "Выберу другие услуги"
+        },
+        {
+            "#": "8",
+            "String": "На вашем корабле нет подходящего для разбора доминаторского оборудования."
         }
     ]
 }

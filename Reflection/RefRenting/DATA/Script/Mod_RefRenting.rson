@@ -549,7 +549,7 @@
           "Pos.y":  220,
           "Parent":  -1,
           "#":  109,
-          "Msg":  "Рейнджер, о чём мы говорили при заключении сделки? Почему оборудование в таком состоянии?!\r\n\r\nПочините его, и тогда мы сможем поговорить о возвращении нам оборудования и закрытии задолженности.",
+          "Msg":  "Это оборудование сейчас нельзя сдать: выберите предмет из списка или восстановите полностью сломанное оборудование. Если предмет утрачен, выберите его в списке и оплатите неустойку.",
           "DMsg.Num":  "13"        
         },
         {
@@ -559,7 +559,7 @@
           "Pos.y":  300,
           "Parent":  -1,
           "#":  112,
-          "Msg":  "Итак... Рейнджер <Player>, вы задолжали нам целых <money1> cr.!\r\n\r\nБудете платить или у вас теперь нет денег? Пеня продолжит капать - если что.",
+          "Msg":  "Стоимость закрытия выбранной аренды с учётом долга и, при утрате предмета, неустойки составляет <money1> cr. Оплачиваете?",
           "DMsg.Num":  "14"        
         },
         {
@@ -569,7 +569,7 @@
           "Pos.y":  300,
           "Parent":  -1,
           "#":  113,
-          "Msg":  "Итак, рейнджер, аренда оборудования выходит вам в <money1> cr.\r\nОплачиваете?",
+          "Msg":  "Стоимость закрытия выбранной аренды с учётом долга и, при утрате предмета, неустойки составляет <money1> cr. Оплачиваете?",
           "DMsg.Num":  "15"        
         },
         {
@@ -579,7 +579,7 @@
           "Pos.y":  460,
           "Parent":  -1,
           "#":  121,
-          "Msg":  "Итак, деньги списаны. Оборудование снова у нас. Заходите, если вам потребуется что-то ещё. Только не стоит задерживать возвращение оборудования...",
+          "Msg":  "Платёж принят. Выбранная аренда закрыта.",
           "DMsg.Num":  "16"        
         },
         {
@@ -589,7 +589,7 @@
           "Pos.y":  460,
           "Parent":  -1,
           "#":  122,
-          "Msg":  "Итак, деньги списаны. Оборудование снова у нас. Заходите, если вам потребуется что-то ещё. ",
+          "Msg":  "Платёж принят. Выбранная аренда закрыта.",
           "DMsg.Num":  "17"        
         },
         {
@@ -1305,16 +1305,19 @@
           "Code":          
           [
               "int z;",
-              "if(ShipEqInSlot(Player(),ItemType(IdToItem(EquipArr[h]))) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "else if(ItemType(IdToItem(EquipArr[h])) > 49 && ItemType(IdToItem(EquipArr[h])) < 69) {",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,1) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,2) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,3) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,4) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,5) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "ShipMoney(Player(),ShipMoney(Player()) - money1);",
+              "if(propusk == 1 && IdToItem(EquipArr[h]) != 0 && ItemIn(IdToItem(EquipArr[h]),Player())) {",
+              "    if(ShipEqInSlot(Player(),ItemType(IdToItem(EquipArr[h]))) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "    else if(ItemType(IdToItem(EquipArr[h])) > 49 && ItemType(IdToItem(EquipArr[h])) < 69) {",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,1) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,2) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,3) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,4) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,5) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "    }",
+              "    else GetItemFromShip(Player(),IdToItem(EquipArr[h]));",
+              "    FreeItem(IdToItem(EquipArr[h]));",
               "}",
-              "else GetItemFromShip(Player(),IdToItem(EquipArr[h]));",
-              "FreeItem(IdToItem(EquipArr[h]));",
               "ArrayDelete(payment,h);",
               "ArrayDelete(EquipArr,h);",
               "ArrayDelete(bonk,h);",
@@ -1332,7 +1335,7 @@
               "        infoStr = infoStr + strsArchive[z];",
               "    }",
               "    ShipCustomShipInfoDescription(Player(),'RefRentInfo',infoStr);",
-              "}"          
+              "}"
           ]        
         },
         {
@@ -1353,16 +1356,19 @@
               "    ShipCustomShipInfoDescription(Player(),'RefRentInfo',infoStr);",
               "}",
               "else ShipCustomShipInfoDescription(Player(),'RefRentInfo','NoShow');",
-              "if(ShipEqInSlot(Player(),ItemType(IdToItem(EquipArr[h]))) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "else if(ItemType(IdToItem(EquipArr[h])) > 49 && ItemType(IdToItem(EquipArr[h])) < 69) {",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,1) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,2) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,3) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,4) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
-              "    if(ShipEqInSlot(Player(),t_Weapon1,5) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "ShipMoney(Player(),ShipMoney(Player()) - money1);",
+              "if(propusk == 1 && IdToItem(EquipArr[h]) != 0 && ItemIn(IdToItem(EquipArr[h]),Player())) {",
+              "    if(ShipEqInSlot(Player(),ItemType(IdToItem(EquipArr[h]))) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "    else if(ItemType(IdToItem(EquipArr[h])) > 49 && ItemType(IdToItem(EquipArr[h])) < 69) {",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,1) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,2) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,3) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,4) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "        if(ShipEqInSlot(Player(),t_Weapon1,5) == IdToItem(EquipArr[h])) DeleteEquipment(Player(),ItemType(IdToItem(EquipArr[h])));",
+              "    }",
+              "    else GetItemFromShip(Player(),IdToItem(EquipArr[h]));",
+              "    FreeItem(IdToItem(EquipArr[h]));",
               "}",
-              "else GetItemFromShip(Player(),IdToItem(EquipArr[h]));",
-              "FreeItem(IdToItem(EquipArr[h]));",
               "ArrayDelete(payment,h);",
               "ArrayDelete(EquipArr,h);",
               "ArrayDelete(bonk,h);",
@@ -1378,7 +1384,7 @@
               "for(z = 1; z < ArrayDim(timer); z = z + 1) {",
               "    infoStr = infoStr + strsArchive[z];",
               "}",
-              "ShipCustomShipInfoDescription(Player(),'RefRentInfo',infoStr);"          
+              "ShipCustomShipInfoDescription(Player(),'RefRentInfo',infoStr);"
           ]        
         },
         {
@@ -1391,19 +1397,21 @@
           "Code.Type":  "Turn",
           "Code":          
           [
+              "propusk = 0;",
               "h = ListBox(\"Выберите оборудование, которое хотите вернуть\",namesArr);",
-              "if(h != -1) {",
-              "    if(ItemDurability(IdToItem(EquipArr[h])) < 95) propusk = 0;",
-              "    else {",
-              "        money1 = payment[h] + penya[h];",
-              "        propusk = 1;",
+              "if(h > 0 && h < ArrayDim(EquipArr)) {",
+              "    money1 = payment[h] + penya[h];",
+              "    if(IdToItem(EquipArr[h]) == 0) {",
+              "        money1 = money1 + 7000;",
+              "        propusk = 2;",
               "    }",
-              "    if(!ItemIn(IdToItem(EquipArr[h]),Player())) {",
-              "        MessageBox(\"Оборудование должно быть на борту корабля, чтобы его можно было сдать!\");",
-              "        GotoGov(1);",
+              "    else if(!ItemIn(IdToItem(EquipArr[h]),Player())) {",
+              "        money1 = money1 + ItemCost(IdToItem(EquipArr[h])) * 2;",
+              "        propusk = 2;",
               "    }",
-              "}",
-              "else GotoGov(1);"          
+              "    else if(ItemIsBroken(IdToItem(EquipArr[h]))) propusk = 0;",
+              "    else propusk = 1;",
+              "}"
           ]        
         },
         {
@@ -1416,19 +1424,21 @@
           "Code.Type":  "Turn",
           "Code":          
           [
+              "propusk = 0;",
               "h = ListBox(\"Выберите оборудование, которое хотите вернуть\",namesArr);",
-              "if(h != -1) {",
-              "    if(ItemDurability(IdToItem(EquipArr[h])) < 95) propusk = 0;",
-              "    else {",
-              "        money1 = payment[h] + penya[h];",
-              "        propusk = 1;",
+              "if(h > 0 && h < ArrayDim(EquipArr)) {",
+              "    money1 = payment[h] + penya[h];",
+              "    if(IdToItem(EquipArr[h]) == 0) {",
+              "        money1 = money1 + 7000;",
+              "        propusk = 2;",
               "    }",
-              "    if(!ItemIn(IdToItem(EquipArr[h]),Player())) {",
-              "        MessageBox(\"Оборудование должно быть на борту корабля, чтобы его можно было сдать!\");",
-              "        GotoGov(1);",
+              "    else if(!ItemIn(IdToItem(EquipArr[h]),Player())) {",
+              "        money1 = money1 + ItemCost(IdToItem(EquipArr[h])) * 2;",
+              "        propusk = 2;",
               "    }",
-              "}",
-              "else GotoGov(1);"          
+              "    else if(ItemIsBroken(IdToItem(EquipArr[h]))) propusk = 0;",
+              "    else propusk = 1;",
+              "}"
           ]        
         },
         {
@@ -2049,7 +2059,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "propusk == 1"          
+              "propusk > 0"
           ]        
         },
         {
@@ -2088,7 +2098,7 @@
           "Code.Type":  "Turn",
           "Code":          
           [
-              "propusk == 1"          
+              "propusk > 0"
           ]        
         },
         {
